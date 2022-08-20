@@ -1,0 +1,34 @@
+{
+  "autorun": true,
+  "terminals": [
+    {
+      "name": "server-dev",
+      "focus": true,
+      "icon": "server",
+      "color": "terminal.ansiGreen"
+    },
+    {
+      "name": "client-dev",
+      "color": "terminal.ansiCyan"
+    },
+    {
+      "name": "sass",
+      "icon": "star",
+      "color": "terminal.ansiMagenta"
+    },
+    {
+      "name": "database",
+      "icon": "database",
+      "color": "terminal.ansiYellow"
+    },
+    {
+      "name": "github",
+      "icon": "github",
+      "color": "terminal.ansiGreen"
+    },
+    {
+      "name": "other",
+      "icon": "terminal-cmd"
+    }
+  ]
+}
