@@ -1,0 +1,114 @@
+@font-face {
+  font-weight: normal;
+  font-family: 'Code';
+  src: url(../assets/fonts/code_pro/Code\ Pro\ Light.otf);
+}
+
+@font-face {
+  font-weight: normal;
+  font-family: 'Code-Bold';
+  src: url(../assets/fonts/code_pro/Code\ Pro\ LC.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Code-Bold';
+
+  // border: 1px solid red;
+}
+
+@mixin mainView($fontSize) {
+  #root{
+    height: 500vh;
+
+    header {
+      height: 2.5vh;
+      position: sticky;
+      top: 0;
+      font-size: $fontSize * 0.8;
+      padding: $fontSize * 0.2  $fontSize * 0.25;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .buttons {
+        button {
+          border-radius: 50%;
+          width: $fontSize * 0.95;
+          height: $fontSize * 0.95;
+          border: none;
+          margin: 0 $fontSize * 0.15;
+
+          i {
+            font-size: $fontSize * 0.65;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+          }
+        }
+      }
+
+      .file-name {
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      .time {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 500;
+        display: none;
+      }
+    }
+
+    nav {
+      width: $fontSize * 3.5;
+      height: calc(97.5vh - ($fontSize * 0.4) - ($fontSize * 2));
+      padding: $fontSize 0;
+      position: sticky;
+      top: calc(2.5vh + ($fontSize * 0.4) + 1px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+        flex-direction: column;
+
+        a, i {
+          text-align: center;
+          font-size: $fontSize * 1.75;
+          margin: $fontSize * 0.5 0;
+          color: inherit;
+        }
+
+        &.second-nav {
+          i {
+            margin: $fontSize * 0.75 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin largeScreens($fontSize) {
+  #root {
+    header {
+      .time {
+        display: initial;
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  @include mainView(16px);
+}
+
+@media (min-width: 850px) {
+  @include mainView(20px);
+  @include largeScreens(20px);
+}

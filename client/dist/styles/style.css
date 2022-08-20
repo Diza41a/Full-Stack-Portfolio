@@ -1,0 +1,144 @@
+@font-face {
+  font-weight: normal;
+  font-family: "Code";
+  src: url(../assets/fonts/code_pro/Code\ Pro\ Light.otf);
+}
+@font-face {
+  font-weight: normal;
+  font-family: "Code-Bold";
+  src: url(../assets/fonts/code_pro/Code\ Pro\ LC.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Code-Bold";
+}
+
+@media (max-width: 850px) {
+  #root {
+    height: 500vh;
+  }
+  #root header {
+    height: 2.5vh;
+    position: sticky;
+    top: 0;
+    font-size: 12.8px;
+    padding: 3.2px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #root header .buttons button {
+    border-radius: 50%;
+    width: 15.2px;
+    height: 15.2px;
+    border: none;
+    margin: 0 2.4px;
+  }
+  #root header .buttons button i {
+    font-size: 10.4px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  #root header .file-name {
+    font-family: "Open Sans", sans-serif;
+  }
+  #root header .time {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    display: none;
+  }
+  #root nav {
+    width: 56px;
+    height: calc(97.5vh - 6.4px - 32px);
+    padding: 16px 0;
+    position: sticky;
+    top: calc(2.5vh + 6.4px + 1px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #root nav div {
+    display: flex;
+    flex-direction: column;
+  }
+  #root nav div a, #root nav div i {
+    text-align: center;
+    font-size: 28px;
+    margin: 8px 0;
+    color: inherit;
+  }
+  #root nav div.second-nav i {
+    margin: 12px 0;
+  }
+}
+@media (min-width: 850px) {
+  #root {
+    height: 500vh;
+  }
+  #root header {
+    height: 2.5vh;
+    position: sticky;
+    top: 0;
+    font-size: 16px;
+    padding: 4px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #root header .buttons button {
+    border-radius: 50%;
+    width: 19px;
+    height: 19px;
+    border: none;
+    margin: 0 3px;
+  }
+  #root header .buttons button i {
+    font-size: 13px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  #root header .file-name {
+    font-family: "Open Sans", sans-serif;
+  }
+  #root header .time {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    display: none;
+  }
+  #root nav {
+    width: 70px;
+    height: calc(97.5vh - 8px - 40px);
+    padding: 20px 0;
+    position: sticky;
+    top: calc(2.5vh + 8px + 1px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #root nav div {
+    display: flex;
+    flex-direction: column;
+  }
+  #root nav div a, #root nav div i {
+    text-align: center;
+    font-size: 35px;
+    margin: 10px 0;
+    color: inherit;
+  }
+  #root nav div.second-nav i {
+    margin: 15px 0;
+  }
+
+  #root header .time {
+    display: initial;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

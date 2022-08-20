@@ -4,6 +4,8 @@ import { createRoot } from 'react-dom/client';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 
 // Component imports
+import Header from './components/reusable/Header';
+
 const root = createRoot(document.getElementById('root'));
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
     <Suspense fallback="loading">
       <HashRouter>
         <Routes>
-          <Route path="/" element={<div>Howdy There</div>} />
+          <Route path="/" element={<Header />} />
         </Routes>
       </HashRouter>
     </Suspense>
