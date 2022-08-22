@@ -18,9 +18,16 @@
   // border: 1px solid red;
 }
 
+button {
+  cursor: pointer;
+}
+
 @mixin mainView($fontSize) {
-  #root{
-    height: 500vh;
+  #app {
+    height: 100%;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
 
     header {
       height: 2.5vh;
@@ -63,30 +70,92 @@
       }
     }
 
-    nav {
-      width: $fontSize * 3.5;
-      height: calc(97.5vh - ($fontSize * 0.4) - ($fontSize * 2));
-      padding: $fontSize 0;
-      position: sticky;
-      top: calc(2.5vh + ($fontSize * 0.4) + 1px);
+    .content-body-wrap {
+      height: inherit;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
 
-      div {
+      nav {
+        width: $fontSize * 3.5;
+        height: calc(97.5vh - ($fontSize * 0.4) - ($fontSize * 2) - 1px);
+        padding: $fontSize 0;
+        position: sticky;
+        top: calc(2.5vh + ($fontSize * 0.4) + 1px);
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
 
-        a, i {
-          text-align: center;
-          font-size: $fontSize * 1.75;
-          margin: $fontSize * 0.5 0;
-          color: inherit;
+        div {
+          display: flex;
+          flex-direction: column;
+
+          a, i {
+            text-align: center;
+            font-size: $fontSize * 1.75;
+            margin: $fontSize * 0.5 0;
+            color: inherit;
+            cursor: pointer;
+          }
+
+          &.second-nav {
+            i {
+              margin: $fontSize * 0.75 0;
+            }
+          }
         }
+      }
 
-        &.second-nav {
-          i {
-            margin: $fontSize * 0.75 0;
+      .content {
+        height: 500vh;
+        width: calc(100% - $fontSize * 3.5);
+        // margin-left: $fontSize * 3.5;
+
+        .about-section-selector {
+          display: flex;
+          flex-direction: column;
+          position: sticky;
+          top: calc(2.5vh + ($fontSize * 0.4) + 1px);
+
+          .about-section-selector-list {
+            overflow: hidden;
+            a {
+              margin: $fontSize * 0.35 0;
+              padding: $fontSize * 0.4;
+              display: flex;
+              flex-direction: column;
+
+              &.active {
+                transition: background-color 0.25s;
+              }
+
+              .title {
+                font-size: $fontSize * 1.3;
+                font-family: 'Code';
+              }
+              .description {
+                font-size: $fontSize * 1.1;
+                font-family: 'Code-Bold';
+              }
+            }
+
+            max-height: 100vh;
+            transition: max-height 1s;
+            +.selector-toggle {
+              transform: rotate(180deg);
+            }
+            &.shrinked {
+              transition: max-height 0.25s;
+              max-height: 0;
+              +.selector-toggle {
+                transform: rotate(0deg);
+              }
+            }
+          }
+          .selector-toggle {
+            width: 100%;
+            color: inherit;
+            text-align: center;
+            font-size: $fontSize * 1.5;
+            cursor: pointer;
           }
         }
       }
@@ -95,10 +164,42 @@
 }
 
 @mixin largeScreens($fontSize) {
-  #root {
+  #app {
     header {
       .time {
         display: initial;
+      }
+    }
+
+    .content {
+      display: flex;
+
+      .about-section-selector {
+        position: sticky;
+        top: calc(2.5vh + ($fontSize * 0.4) + 1px);
+        height: calc( 100vh - (2.5vh + ($fontSize * 0.4) + 1px));
+        width: 25vw;
+
+        .about-section-selector-list {
+          padding-top: $fontSize;
+
+          a {
+            .title {
+              font-size: $fontSize * 1.1!important;
+            }
+            .description {
+              font-size: $fontSize * 0.9!important;
+            }
+          }
+
+          max-height: 100vh;
+          &.shrinked {
+            max-height: 100vh;
+          }
+        }
+        .selector-toggle {
+          display: none;
+        }
       }
     }
   }

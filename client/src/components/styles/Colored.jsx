@@ -1,13 +1,21 @@
 import styled from 'styled-components';
 
-const colors = {
+export const colors = {
   mainDark: '#181924',
+  mainDarkTransparent: 'rgba(24, 25, 36, 0.9)',
   mainMedium: '#313244',
   mainText: '#D9D9D9',
   secondText: '#C8C2C2',
   border: '#626262',
 
+  tab: '#342F30',
+  subsectionSelector: '#575764',
   navHighlight: '#F8B172',
+};
+
+export const background = {
+  image: 'url("assets/images/background-curves.png")',
+  color: '#181924',
 };
 
 const Colored = {
@@ -15,6 +23,7 @@ const Colored = {
     background-color: ${colors.mainDark};
     color: ${colors.secondText};
     border-bottom: 1px solid ${colors.border};
+    font-family: 'Code-Bold',
   `,
   Nav: styled.nav`
     background-color: ${colors.mainMedium};
@@ -27,6 +36,32 @@ const Colored = {
       }
     }
   `,
+  About: {
+    SubsectionSelector: styled.div`
+      background-color: ${colors.mainDarkTransparent};
+      color: ${colors.mainText};
+      border-right: 1px solid ${colors.border};
+
+      .about-section-selector-list {
+        a {
+          text-decoration: none;
+          .title {
+            color: ${colors.mainText};
+          }
+          .description {
+            color: ${colors.secondText};
+          }
+          &.active {
+            background-color: ${colors.subsectionSelector};
+          }
+        }
+      }
+
+      .selector-toggle {
+          background-color: ${colors.mainDark};
+        }
+    `,
+  },
 };
 
 export default Colored;
