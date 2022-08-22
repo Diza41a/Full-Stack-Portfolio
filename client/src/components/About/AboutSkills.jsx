@@ -1,9 +1,14 @@
 import React from 'react';
 
+// Subcomponent imports
+import Colored from '../styles/Colored';
+
+const { Subsection } = Colored.About;
+
 export default function AboutSkills() {
   return (
-    <div style={{ color: 'white' }}>
-      This is about AboutSkills
-    </div>
+    <Subsection className="about-subsection skills">
+      {/*  */}
+    </Subsection>
   );
 }

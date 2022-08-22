@@ -37,7 +37,7 @@ export default function AboutManager() {
   return (
     <>
       <SubsectionSelector className="about-section-selector">
-        <div className="about-section-selector-list">
+        <div className="about-section-selector-list shrinked">
           <NavLink
             to="introduction"
             data-section="introduction"
@@ -61,6 +61,7 @@ export default function AboutManager() {
         </div>
         <i className="fa-solid fa-angle-down selector-toggle" onClick={toggleSubsectionList} />
       </SubsectionSelector>
+
       { subsection === 'skills' ? <AboutSkills /> : <AboutDescription />}
     </>
   );

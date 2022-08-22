@@ -1,0 +1,2 @@
+CodeMirror - embedding code
+textarea w/line numbers -> https://www.webtips.dev/add-line-numbers-to-html-textarea#:~:text=We%20can%20use%20the%20built,a%20%3A%3Abefore%20pseudo%2Delement.

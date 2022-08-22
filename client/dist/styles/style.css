@@ -87,7 +87,6 @@ button {
     margin: 12px 0;
   }
   #app .content-body-wrap .content {
-    height: 500vh;
     width: calc(100% - 56px);
   }
   #app .content-body-wrap .content .about-section-selector {
@@ -134,6 +133,20 @@ button {
     text-align: center;
     font-size: 24px;
     cursor: pointer;
+  }
+  #app .content-body-wrap .content .about-subsection .tab-title {
+    font-size: 13.2px;
+    padding: 4px;
+    font-family: "Open Sans";
+    text-align: center;
+    width: 150px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body {
+    min-height: calc(100vh - 49.6px - 3px);
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body .about-paragraph {
+    padding: 16px 5.6px;
+    font-size: 14.4px;
   }
 }
 @media (min-width: 850px) {
@@ -205,7 +218,6 @@ button {
     margin: 15px 0;
   }
   #app .content-body-wrap .content {
-    height: 500vh;
     width: calc(100% - 70px);
   }
   #app .content-body-wrap .content .about-section-selector {
@@ -253,9 +265,29 @@ button {
     font-size: 30px;
     cursor: pointer;
   }
+  #app .content-body-wrap .content .about-subsection .tab-title {
+    font-size: 16.5px;
+    padding: 5px;
+    font-family: "Open Sans";
+    text-align: center;
+    width: 150px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body {
+    min-height: calc(100vh - 62px - 3px);
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body .about-paragraph {
+    padding: 20px 7px;
+    font-size: 18px;
+  }
 
   #app header .time {
     display: initial;
+  }
+  #app header .file-name {
+    position: absolute;
+    width: 50vw;
+    left: 25vw;
+    text-align: center;
   }
   #app .content {
     display: flex;
@@ -265,6 +297,7 @@ button {
     top: calc(2.5vh + 8px + 1px);
     height: calc(100vh - (2.5vh + 8px + 1px));
     width: 25vw;
+    flex-basis: 27.5%;
   }
   #app .content .about-section-selector .about-section-selector-list {
     padding-top: 20px;
@@ -277,10 +310,14 @@ button {
     font-size: 18px !important;
   }
   #app .content .about-section-selector .about-section-selector-list.shrinked {
-    max-height: 100vh;
+    max-height: 100vh !important;
   }
   #app .content .about-section-selector .selector-toggle {
     display: none;
+  }
+  #app .content .about-subsection {
+    flex-basis: 60%;
+    flex-grow: 1;
   }
 }
 

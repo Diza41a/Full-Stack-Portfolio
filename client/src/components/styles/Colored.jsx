@@ -8,7 +8,7 @@ export const colors = {
   secondText: '#C8C2C2',
   border: '#626262',
 
-  tab: '#342F30',
+  tab: 'rgba(52, 47, 48, 0.8)',
   subsectionSelector: '#575764',
   navHighlight: '#F8B172',
 };
@@ -59,7 +59,22 @@ const Colored = {
 
       .selector-toggle {
           background-color: ${colors.mainDark};
+      }
+    `,
+    Subsection: styled.section`
+      .tab-title {
+        color: ${colors.secondText};
+        background-color: ${colors.tab};
+        border-top: 3px solid ${colors.navHighlight};
+      }
+
+      .about-subsection-body {
+        background-color: ${colors.tab};
+
+        .about-paragraph {
+          color: ${colors.mainText}
         }
+      }
     `,
   },
 };
