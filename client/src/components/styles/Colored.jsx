@@ -110,6 +110,28 @@ const Colored = {
         }
       }
     `,
+    SkillSection: styled.section`
+      .title-wrap {
+        .title {
+          color: ${colors.mainText};
+        }
+      }
+
+      .skills-body {
+        .skill-wrap {
+          .skill-title-wrap {
+            .skill-title {
+              color: ${colors.mainText};
+            }
+          }
+          .subskill-list {
+            li {
+              color: ${colors.secondText};
+            }
+          }
+        }
+      }
+    `,
   },
 };
 

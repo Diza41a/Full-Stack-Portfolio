@@ -215,6 +215,59 @@ button {
               }
             }
 
+            &.skills {
+              .skill-container {
+                display: flex;
+                flex-wrap: wrap;
+                padding: $fontSize * 1.5 $fontSize * 2;
+
+                .skill-section {
+
+                  .title-wrap {
+                    display: flex;
+                    align-items: center;
+
+                    .logo {
+                      width: $fontSize * 5;
+                      height: $fontSize * 5.75;
+                      object-fit: contain;
+                    }
+
+                    .title {
+                      font-family: 'Code';
+                      font-size: $fontSize * 1.8;
+                      padding-left: $fontSize;
+                    }
+                  }
+
+                  .skills-body {
+                    .skill-wrap {
+                      .skill-title-wrap {
+                        .skill-title {
+                          font-size: $fontSize;
+                        }
+                      }
+
+                      .subskill-list {
+                        list-style: none;
+
+                        li {
+                          padding-left: $fontSize * 0.25;
+                          font-size: $fontSize;
+
+
+                          &::before {
+                            content: '-';
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                }
+              }
+
+            }
           }
         }
       }
