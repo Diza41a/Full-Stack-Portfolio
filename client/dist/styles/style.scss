@@ -30,6 +30,7 @@ button {
     background-attachment: fixed;
 
     header {
+      z-index: 1000;
       height: 2.5vh;
       position: sticky;
       top: 0;
@@ -75,6 +76,7 @@ button {
       display: flex;
 
       nav {
+        z-index: 1000;
         width: $fontSize * 3.5;
         height: calc(97.5vh - ($fontSize * 0.4) - ($fontSize * 2) - 1px);
         padding: $fontSize 0;
@@ -109,6 +111,7 @@ button {
         // margin-left: $fontSize * 3.5;
 
         .about-section-selector {
+          z-index: 1000;
           display: flex;
           flex-direction: column;
           position: sticky;
@@ -168,11 +171,50 @@ button {
           }
 
           .about-subsection-body {
-            min-height: calc(100vh - ($fontSize * 3.1) - 3px);
-            .about-paragraph {
-              padding: $fontSize $fontSize * 0.35;
-              font-size: $fontSize * 0.9;
+            height: calc(100vh - ($fontSize * 3.1) - 3px);
+            overflow-y: auto;
+
+            &.introduction {
+              display: flex;
+              flex-direction: column;
+
+              .code-editor {
+                padding-top: 2vh;
+                font-size: $fontSize * 0.9;
+              }
+
+              .about-me-pics {
+                margin: 5vh 0;
+                align-self: center;
+                width: calc(100% - $fontSize * 3.5);
+                max-width: 500px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                  width: 50vw;
+                  height: 25vh;
+                  max-width: $fontSize * 17;
+                  max-height: $fontSize * 10;
+                  object-fit: cover;
+                  box-shadow: 0.5vw 0.5vh 0 0 black;
+
+                  &:nth-child(1) {
+                    align-self: flex-start;
+                    margin-bottom: 4vh;
+                    transform: rotate(-5deg);
+                  }
+
+                  &:nth-child(2) {
+                    align-self: flex-end;
+                    transform: rotate(5deg);
+                  }
+                }
+              }
             }
+
           }
         }
       }
@@ -202,8 +244,8 @@ button {
         position: sticky;
         top: calc(2.5vh + ($fontSize * 0.4) + 1px);
         height: calc( 100vh - (2.5vh + ($fontSize * 0.4) + 1px));
-        width: 25vw;
         flex-basis: 27.5%;
+        max-width: 275px;
 
         .about-section-selector-list {
           padding-top: $fontSize;
@@ -234,7 +276,33 @@ button {
         flex-basis: 60%;
         flex-grow: 1;
 
-        .about-paragraph {
+        .about-subsection-body {
+          .code-editor {
+            margin-left: 1.25vw;
+            font-size: $fontSize * 0.75!important;
+            max-width: 64.5vw;
+          }
+
+          .about-me-pics {
+            width: 50vw;
+            min-width: 300px;
+            max-width: 500px;
+
+            img {
+              width: 30vw;
+              height: 25vh;
+
+              &:nth-child(1) {
+                align-self: flex-start;
+                transform: rotate(-5deg);
+              }
+
+              &:nth-child(2) {
+                align-self: flex-end;
+                transform: rotate(5deg);
+              }
+            }
+          }
 
         }
       }

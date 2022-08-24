@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { createTheme } from '@uiw/codemirror-themes';
+import { tags as t } from '@lezer/highlight';
 
 export const colors = {
   mainDark: '#181924',
@@ -11,12 +13,44 @@ export const colors = {
   tab: 'rgba(52, 47, 48, 0.8)',
   subsectionSelector: '#575764',
   navHighlight: '#F8B172',
+  gutterBackground: '#0D1116',
+  gutterForeground: '#6B727D',
 };
 
 export const background = {
   image: 'url("assets/images/background-curves.png")',
   color: '#181924',
 };
+
+export const codeMirrorTxtTheme = createTheme({
+  theme: 'light',
+  settings: {
+    background: 'transparent',
+    foreground: `${colors.mainText}`,
+    caret: '#5d00ff',
+    selection: `${colors.mainMedium}`,
+    selectionMatch: `${colors.mainMedium}`,
+    lineHighlight: `${colors.mainMedium}`,
+    gutterBackground: `${colors.gutterBackground}`,
+    gutterForeground: `${colors.gutterForeground}`,
+  },
+  styles: [
+    { tag: t.comment, color: '#787b8099' },
+    { tag: t.variableName, color: `${colors.mainText}` },
+    { tag: [t.string, t.special(t.brace)], color: `${colors.mainText}` },
+    { tag: t.number, color: `${colors.mainText}` },
+    { tag: t.bool, color: `${colors.mainText}` },
+    { tag: t.null, color: `${colors.mainText}` },
+    { tag: t.keyword, color: `${colors.mainText}` },
+    { tag: t.operator, color: `${colors.mainText}` },
+    { tag: t.className, color: `${colors.mainText}` },
+    { tag: t.definition(t.typeName), color: `${colors.mainText}` },
+    { tag: t.typeName, color: `${colors.mainText}` },
+    { tag: t.angleBracket, color: `${colors.mainText}` },
+    { tag: t.tagName, color: `${colors.mainText}` },
+    { tag: t.attributeName, color: `${colors.mainText}` },
+  ],
+});
 
 const Colored = {
   Toolbar: styled.header`

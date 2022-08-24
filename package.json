@@ -5,6 +5,12 @@
   "author": "Davyd Zakorchennyi <Diza41a@mail.com>",
   "license": "MIT",
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.0.2",
+    "@codemirror/view": "^6.2.0",
+    "@lezer/highlight": "^1.0.0",
+    "@uiw/codemirror-themes": "^4.11.5",
+    "@uiw/react-codemirror": "^4.11.5",
+    "axios": "^0.27.2",
     "express": "^4.18.1",
     "nodemon": "^2.0.19",
     "react": "^18.2.0",
