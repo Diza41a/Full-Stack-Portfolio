@@ -9,6 +9,7 @@ import { Routes, Route, HashRouter } from 'react-router-dom';
 import MainLayout from './components/reusable/MainLayout';
 import Landing from './components/Landing';
 import AboutManager from './components/About/AboutManager';
+import PortfolioManager from './components/Portfolio/PortfolioManager';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -24,6 +25,7 @@ function App() {
               <Route path="introduction" element={<AboutManager />} />
               <Route path="skills" element={<AboutManager value="skills" />} />
             </Route>
+            <Route path="portfolio" element={<PortfolioManager />} />
           </Route>
         </Routes>
       </HashRouter>

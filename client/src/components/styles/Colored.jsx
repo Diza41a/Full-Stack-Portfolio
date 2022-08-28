@@ -15,6 +15,8 @@ export const colors = {
   navHighlight: '#F8B172',
   gutterBackground: '#0D1116',
   gutterForeground: '#6B727D',
+  resumeButton: '#188AEB',
+  projectListItem: '#53B0FF',
 };
 
 export const background = {
@@ -108,6 +110,13 @@ const Colored = {
         .about-paragraph {
           color: ${colors.mainText}
         }
+
+        .description {
+          #resume-btn {
+            color: white;
+            background-color: ${colors.resumeButton};
+          }
+        }
       }
     `,
     SkillSection: styled.section`
@@ -131,6 +140,35 @@ const Colored = {
           }
         }
       }
+    `,
+  },
+  Portfolio: {
+    Selector: styled.div`
+       background-color: ${colors.mainDark};
+       border-right: 1px solid ${colors.border};
+       color: ${colors.secondText};
+
+       .title {
+         color: #FFFFFF;
+       }
+
+       ul {
+         li {
+           color: ${colors.projectListItem};
+           cursor: pointer;
+
+           &.selected {
+            background-color: ${colors.border};
+           }
+         }
+
+         &.disabled {
+           li {
+             color: ${colors.secondText};
+             cursor: not-allowed;
+           }
+         }
+       }
     `,
   },
 };

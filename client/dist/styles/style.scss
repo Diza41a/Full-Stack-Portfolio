@@ -162,6 +162,9 @@ button {
         }
 
         .about-subsection {
+          display: flex;
+          flex-direction: column;
+
           .tab-title {
             font-size: $fontSize * 0.825;
             padding: $fontSize * 0.25;
@@ -172,15 +175,55 @@ button {
 
           .about-subsection-body {
             height: calc(100vh - ($fontSize * 3.1) - 3px);
+            flex-grow: 1;
             overflow-y: auto;
+            /* width */
+            &::-webkit-scrollbar {
+              width: 1.2vw;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+              box-shadow: inset 0 0 5px grey;
+              border-radius: 1vw;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+              background: rgba(68, 68, 68, 0.656);
+              border-radius: 1vw;
+            }
+
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+              background: rgba(92, 92, 92, 0.779);
+            }
 
             &.introduction {
               display: flex;
               flex-direction: column;
 
-              .code-editor {
-                padding-top: 2vh;
-                font-size: $fontSize * 0.9;
+              .description {
+                display: flex;
+                flex-direction: column;
+
+                .code-editor {
+                  padding-top: 2vh;
+                  font-size: $fontSize * 0.9;
+                }
+
+                #resume-btn {
+                  font-family: 'Code';
+                  font-size: $fontSize;
+                  padding: $fontSize * 0.35 $fontSize * 2;
+                  margin: $fontSize * 1.5 $fontSize * 2;
+                  border: none;
+                  border-radius: $fontSize * 0.2;
+
+                  &:hover {
+                    filter: brightness(90%);
+                  }
+                }
               }
 
               .about-me-pics {
@@ -219,45 +262,68 @@ button {
               .skill-container {
                 display: flex;
                 flex-wrap: wrap;
+                // justify-content: space-between;
+                justify-content: center;
                 padding: $fontSize * 1.5 $fontSize * 2;
 
                 .skill-section {
+                  margin: 0 $fontSize * 0.75 $fontSize * 2 $fontSize * 0.75;
 
                   .title-wrap {
                     display: flex;
                     align-items: center;
 
                     .logo {
-                      width: $fontSize * 5;
-                      height: $fontSize * 5.75;
+                      width: $fontSize * 4;
+                      height: $fontSize * 4.75;
                       object-fit: contain;
                     }
 
                     .title {
                       font-family: 'Code';
-                      font-size: $fontSize * 1.8;
+                      font-size: $fontSize * 1.7;
                       padding-left: $fontSize;
                     }
                   }
 
                   .skills-body {
+                    margin-top: $fontSize * 1.25;
+                    margin-left: $fontSize * 2;
+
                     .skill-wrap {
+                      margin-bottom: $fontSize * 0.75;
+
                       .skill-title-wrap {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: $fontSize * 0.5;
+
+                        .logo {
+                          width: $fontSize * 1.5;
+                          height: auto;
+                          object-fit: contain;
+                          margin-right: $fontSize * 0.5;
+                        }
+
                         .skill-title {
                           font-size: $fontSize;
+                          position: relative;
+                          top: $fontSize * 0.15;
                         }
                       }
 
                       .subskill-list {
+                        margin-left: $fontSize * 2;
                         list-style: none;
 
                         li {
+                          margin: $fontSize * 0.1 0;
                           padding-left: $fontSize * 0.25;
                           font-size: $fontSize;
 
 
                           &::before {
-                            content: '-';
+                            content: '- ';
                           }
                         }
                       }
@@ -270,12 +336,90 @@ button {
             }
           }
         }
+
+        .portfolio-manager-wrap {
+          display: flex;
+          flex-direction: column;
+
+          .project-selector {
+            padding: $fontSize * 1.25 0;
+
+            .project-selector-list {
+              overflow: hidden;
+              max-height: 100vh;
+              transition: max-height 1s;
+              .project-selector-section {
+                .title {
+                  font-family: 'Code';
+                  font-size: $fontSize * 2;
+                  padding: 0 $fontSize;
+                  margin-bottom: $fontSize * 0.7;
+                }
+
+                ul {
+                  max-height: 25vh;
+                  overflow-y: auto;
+                  list-style: none;
+                  margin-bottom: $fontSize * 2;
+
+                  /* Width */
+                  &::-webkit-scrollbar {
+                    width: 1.2vw;
+                  }
+
+                  /* Track */
+                  &::-webkit-scrollbar-track {
+                    box-shadow: inset 0 0 5px grey;
+                    border-radius: 1vw;
+                  }
+
+                  /* Handle */
+                  &::-webkit-scrollbar-thumb {
+                    background: rgba(68, 68, 68, 0.656);
+                    border-radius: 1vw;
+                  }
+
+                  /* Handle on hover */
+                  &::-webkit-scrollbar-thumb:hover {
+                    background: rgba(92, 92, 92, 0.779);
+                  }
+                  li {
+                    font-size: $fontSize * 1.25;
+                    margin: $fontSize * 0.75 0;
+                    padding: 0 $fontSize;
+                  }
+                }
+              }
+
+              +.selector-toggle {
+                transform: rotate(180deg);
+                width: 100%;
+                color: inherit;
+                text-align: center;
+                font-size: $fontSize * 1.5;
+                cursor: pointer;
+              }
+              &.shrinked {
+                transition: max-height 0.25s;
+                max-height: 0;
+                +.selector-toggle {
+                  transform: rotate(0deg);
+                }
+              }
+            }
+          }
+
+        }
       }
     }
   }
 }
 
 @mixin largeScreens($fontSize) {
+  html {
+    overflow: hidden;
+  }
+
   #app {
     header {
       .time {
@@ -330,16 +474,23 @@ button {
         flex-grow: 1;
 
         .about-subsection-body {
-          .code-editor {
-            margin-left: 1.25vw;
-            font-size: $fontSize * 0.75!important;
-            max-width: 64.5vw;
+          flex-direction: row!important;
+          flex-wrap: wrap;
+          align-items: center;
+
+          .description {
+            display: block!important;
+
+            .code-editor {
+              margin-left: 1.25vw;
+              font-size: $fontSize * 0.75!important;
+              max-width: 44.5vw;
+            }
           }
 
           .about-me-pics {
-            width: 50vw;
+            margin-left: 2.25vw!important;
             min-width: 300px;
-            max-width: 500px;
 
             img {
               width: 30vw;
@@ -357,6 +508,51 @@ button {
             }
           }
 
+          &.skills {
+            .skill-container {
+              // justify-content: initial!important;
+            }
+          }
+
+        }
+      }
+
+      .portfolio-manager-wrap {
+        flex-direction: row!important;
+        width: 100%;
+
+        .project-selector {
+          flex-basis: 35%;
+          flex-grow: 1;
+          position: sticky;
+          top: calc(2.5vh + ($fontSize * 0.4) + 1px);
+          max-width: 500px;
+
+          .project-selector-list {
+            padding: $fontSize * 3 $fontSize * 4;
+
+            .title {
+              font-size: $fontSize * 1.25!important;
+            }
+
+            ul {
+              li {
+                font-size: $fontSize!important;
+              }
+            }
+
+            &.shrinked {
+              max-height: 100vh!important;
+            }
+          }
+
+          .selector-toggle {
+            display: none;
+          }
+        }
+
+        .project-wrap {
+          flex-basis: 65%;
         }
       }
     }
@@ -370,4 +566,9 @@ button {
 @media (min-width: 850px) {
   @include mainView(20px);
   @include largeScreens(20px);
+}
+
+@media (min-width: 1600px) {
+  @include mainView(24px);
+  @include largeScreens(24px);
 }

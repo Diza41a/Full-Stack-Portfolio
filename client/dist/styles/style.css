@@ -137,6 +137,10 @@ button {
     font-size: 24px;
     cursor: pointer;
   }
+  #app .content-body-wrap .content .about-subsection {
+    display: flex;
+    flex-direction: column;
+  }
   #app .content-body-wrap .content .about-subsection .tab-title {
     font-size: 13.2px;
     padding: 4px;
@@ -146,15 +150,49 @@ button {
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body {
     height: calc(100vh - 49.6px - 3px);
+    flex-grow: 1;
     overflow-y: auto;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar {
+    width: 1.2vw;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb {
+    background: rgba(68, 68, 68, 0.656);
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 92, 92, 0.779);
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .code-editor {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor {
     padding-top: 2vh;
     font-size: 14.4px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn {
+    font-family: "Code";
+    font-size: 16px;
+    padding: 5.6px 32px;
+    margin: 24px 32px;
+    border: none;
+    border-radius: 3.2px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn:hover {
+    filter: brightness(90%);
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics {
     margin: 5vh 0;
@@ -185,34 +223,122 @@ button {
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 24px 32px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section {
+    margin: 0 12px 32px 12px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap {
     display: flex;
     align-items: center;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo {
-    width: 80px;
-    height: 92px;
+    width: 64px;
+    height: 76px;
     object-fit: contain;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .title {
     font-family: "Code";
-    font-size: 28.8px;
+    font-size: 27.2px;
     padding-left: 16px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body {
+    margin-top: 20px;
+    margin-left: 32px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap {
+    margin-bottom: 12px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
+    width: 24px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 8px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
     font-size: 16px;
+    position: relative;
+    top: 2.4px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
+    margin-left: 32px;
     list-style: none;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
+    margin: 1.6px 0;
     padding-left: 4px;
     font-size: 16px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
-    content: "-";
+    content: "- ";
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector {
+    padding: 20px 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list {
+    overflow: hidden;
+    max-height: 100vh;
+    transition: max-height 1s;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
+    font-family: "Code";
+    font-size: 32px;
+    padding: 0 16px;
+    margin-bottom: 11.2px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul {
+    max-height: 25vh;
+    overflow-y: auto;
+    list-style: none;
+    margin-bottom: 32px;
+    /* Width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar {
+    width: 1.2vw;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-thumb {
+    background: rgba(68, 68, 68, 0.656);
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 92, 92, 0.779);
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li {
+    font-size: 20px;
+    margin: 12px 0;
+    padding: 0 16px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list + .selector-toggle {
+    transform: rotate(180deg);
+    width: 100%;
+    color: inherit;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked {
+    transition: max-height 0.25s;
+    max-height: 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked + .selector-toggle {
+    transform: rotate(0deg);
   }
 }
 @media (min-width: 850px) {
@@ -334,6 +460,10 @@ button {
     font-size: 30px;
     cursor: pointer;
   }
+  #app .content-body-wrap .content .about-subsection {
+    display: flex;
+    flex-direction: column;
+  }
   #app .content-body-wrap .content .about-subsection .tab-title {
     font-size: 16.5px;
     padding: 5px;
@@ -343,15 +473,49 @@ button {
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body {
     height: calc(100vh - 62px - 3px);
+    flex-grow: 1;
     overflow-y: auto;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar {
+    width: 1.2vw;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb {
+    background: rgba(68, 68, 68, 0.656);
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 92, 92, 0.779);
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .code-editor {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor {
     padding-top: 2vh;
     font-size: 18px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn {
+    font-family: "Code";
+    font-size: 20px;
+    padding: 7px 40px;
+    margin: 30px 40px;
+    border: none;
+    border-radius: 4px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn:hover {
+    filter: brightness(90%);
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics {
     margin: 5vh 0;
@@ -382,34 +546,126 @@ button {
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 30px 40px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section {
+    margin: 0 15px 40px 15px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap {
     display: flex;
     align-items: center;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo {
-    width: 100px;
-    height: 115px;
+    width: 80px;
+    height: 95px;
     object-fit: contain;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .title {
     font-family: "Code";
-    font-size: 36px;
+    font-size: 34px;
     padding-left: 20px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body {
+    margin-top: 25px;
+    margin-left: 40px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap {
+    margin-bottom: 15px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 10px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
     font-size: 20px;
+    position: relative;
+    top: 3px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
+    margin-left: 40px;
     list-style: none;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
+    margin: 2px 0;
     padding-left: 5px;
     font-size: 20px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
-    content: "-";
+    content: "- ";
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector {
+    padding: 25px 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list {
+    overflow: hidden;
+    max-height: 100vh;
+    transition: max-height 1s;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
+    font-family: "Code";
+    font-size: 40px;
+    padding: 0 20px;
+    margin-bottom: 14px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul {
+    max-height: 25vh;
+    overflow-y: auto;
+    list-style: none;
+    margin-bottom: 40px;
+    /* Width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar {
+    width: 1.2vw;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-thumb {
+    background: rgba(68, 68, 68, 0.656);
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 92, 92, 0.779);
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li {
+    font-size: 25px;
+    margin: 15px 0;
+    padding: 0 20px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list + .selector-toggle {
+    transform: rotate(180deg);
+    width: 100%;
+    color: inherit;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked {
+    transition: max-height 0.25s;
+    max-height: 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked + .selector-toggle {
+    transform: rotate(0deg);
+  }
+
+  html {
+    overflow: hidden;
   }
 
   #app header .time {
@@ -451,15 +707,22 @@ button {
     flex-basis: 60%;
     flex-grow: 1;
   }
-  #app .content .about-subsection .about-subsection-body .code-editor {
+  #app .content .about-subsection .about-subsection-body {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  #app .content .about-subsection .about-subsection-body .description {
+    display: block !important;
+  }
+  #app .content .about-subsection .about-subsection-body .description .code-editor {
     margin-left: 1.25vw;
     font-size: 15px !important;
-    max-width: 64.5vw;
+    max-width: 44.5vw;
   }
   #app .content .about-subsection .about-subsection-body .about-me-pics {
-    width: 50vw;
+    margin-left: 2.25vw !important;
     min-width: 300px;
-    max-width: 500px;
   }
   #app .content .about-subsection .about-subsection-body .about-me-pics img {
     width: 30vw;
@@ -472,6 +735,460 @@ button {
   #app .content .about-subsection .about-subsection-body .about-me-pics img:nth-child(2) {
     align-self: flex-end;
     transform: rotate(5deg);
+  }
+  #app .content .portfolio-manager-wrap {
+    flex-direction: row !important;
+    width: 100%;
+  }
+  #app .content .portfolio-manager-wrap .project-selector {
+    flex-basis: 35%;
+    flex-grow: 1;
+    position: sticky;
+    top: calc(2.5vh + 8px + 1px);
+    max-width: 500px;
+  }
+  #app .content .portfolio-manager-wrap .project-selector .project-selector-list {
+    padding: 60px 80px;
+  }
+  #app .content .portfolio-manager-wrap .project-selector .project-selector-list .title {
+    font-size: 25px !important;
+  }
+  #app .content .portfolio-manager-wrap .project-selector .project-selector-list ul li {
+    font-size: 20px !important;
+  }
+  #app .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked {
+    max-height: 100vh !important;
+  }
+  #app .content .portfolio-manager-wrap .project-selector .selector-toggle {
+    display: none;
+  }
+  #app .content .portfolio-manager-wrap .project-wrap {
+    flex-basis: 65%;
+  }
+}
+@media (min-width: 1600px) {
+  #app {
+    height: 100%;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+  }
+  #app header {
+    z-index: 1000;
+    height: 2.5vh;
+    position: sticky;
+    top: 0;
+    font-size: 19.2px;
+    padding: 4.8px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #app header .buttons button {
+    border-radius: 50%;
+    width: 22.8px;
+    height: 22.8px;
+    border: none;
+    margin: 0 3.6px;
+  }
+  #app header .buttons button i {
+    font-size: 15.6px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  #app header .file-name {
+    font-family: "Open Sans", sans-serif;
+  }
+  #app header .time {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    display: none;
+  }
+  #app .content-body-wrap {
+    height: inherit;
+    display: flex;
+  }
+  #app .content-body-wrap nav {
+    z-index: 1000;
+    width: 84px;
+    height: calc(97.5vh - 9.6px - 48px - 1px);
+    padding: 24px 0;
+    position: sticky;
+    top: calc(2.5vh + 9.6px + 1px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #app .content-body-wrap nav div {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap nav div a, #app .content-body-wrap nav div i {
+    text-align: center;
+    font-size: 42px;
+    margin: 12px 0;
+    color: inherit;
+    cursor: pointer;
+  }
+  #app .content-body-wrap nav div.second-nav i {
+    margin: 18px 0;
+  }
+  #app .content-body-wrap .content {
+    width: calc(100% - 84px);
+  }
+  #app .content-body-wrap .content .about-section-selector {
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: calc(2.5vh + 9.6px + 1px);
+  }
+  #app .content-body-wrap .content .about-section-selector .about-section-selector-list {
+    overflow: hidden;
+    max-height: 100vh;
+    transition: max-height 1s;
+  }
+  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a {
+    margin: 8.4px 0;
+    padding: 9.6px;
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a.active {
+    transition: background-color 0.25s;
+  }
+  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a .title {
+    font-size: 31.2px;
+    font-family: "Code";
+  }
+  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a .description {
+    font-size: 26.4px;
+    font-family: "Code-Bold";
+  }
+  #app .content-body-wrap .content .about-section-selector .about-section-selector-list + .selector-toggle {
+    transform: rotate(180deg);
+  }
+  #app .content-body-wrap .content .about-section-selector .about-section-selector-list.shrinked {
+    transition: max-height 0.25s;
+    max-height: 0;
+  }
+  #app .content-body-wrap .content .about-section-selector .about-section-selector-list.shrinked + .selector-toggle {
+    transform: rotate(0deg);
+  }
+  #app .content-body-wrap .content .about-section-selector .selector-toggle {
+    width: 100%;
+    color: inherit;
+    text-align: center;
+    font-size: 36px;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .about-subsection {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .about-subsection .tab-title {
+    font-size: 19.8px;
+    padding: 6px;
+    font-family: "Open Sans";
+    text-align: center;
+    width: 150px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body {
+    height: calc(100vh - 74.4px - 3px);
+    flex-grow: 1;
+    overflow-y: auto;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar {
+    width: 1.2vw;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb {
+    background: rgba(68, 68, 68, 0.656);
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 92, 92, 0.779);
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor {
+    padding-top: 2vh;
+    font-size: 21.6px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn {
+    font-family: "Code";
+    font-size: 24px;
+    padding: 8.4px 48px;
+    margin: 36px 48px;
+    border: none;
+    border-radius: 4.8px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn:hover {
+    filter: brightness(90%);
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics {
+    margin: 5vh 0;
+    align-self: center;
+    width: calc(100% - 84px);
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img {
+    width: 50vw;
+    height: 25vh;
+    max-width: 408px;
+    max-height: 240px;
+    object-fit: cover;
+    box-shadow: 0.5vw 0.5vh 0 0 black;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(1) {
+    align-self: flex-start;
+    margin-bottom: 4vh;
+    transform: rotate(-5deg);
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(2) {
+    align-self: flex-end;
+    transform: rotate(5deg);
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 36px 48px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section {
+    margin: 0 18px 48px 18px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap {
+    display: flex;
+    align-items: center;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo {
+    width: 96px;
+    height: 114px;
+    object-fit: contain;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .title {
+    font-family: "Code";
+    font-size: 40.8px;
+    padding-left: 24px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body {
+    margin-top: 30px;
+    margin-left: 48px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap {
+    margin-bottom: 18px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
+    width: 36px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 12px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
+    font-size: 24px;
+    position: relative;
+    top: 3.6px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
+    margin-left: 48px;
+    list-style: none;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
+    margin: 2.4px 0;
+    padding-left: 6px;
+    font-size: 24px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
+    content: "- ";
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector {
+    padding: 30px 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list {
+    overflow: hidden;
+    max-height: 100vh;
+    transition: max-height 1s;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
+    font-family: "Code";
+    font-size: 48px;
+    padding: 0 24px;
+    margin-bottom: 16.8px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul {
+    max-height: 25vh;
+    overflow-y: auto;
+    list-style: none;
+    margin-bottom: 48px;
+    /* Width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar {
+    width: 1.2vw;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-thumb {
+    background: rgba(68, 68, 68, 0.656);
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 92, 92, 0.779);
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li {
+    font-size: 30px;
+    margin: 18px 0;
+    padding: 0 24px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list + .selector-toggle {
+    transform: rotate(180deg);
+    width: 100%;
+    color: inherit;
+    text-align: center;
+    font-size: 36px;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked {
+    transition: max-height 0.25s;
+    max-height: 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked + .selector-toggle {
+    transform: rotate(0deg);
+  }
+
+  html {
+    overflow: hidden;
+  }
+
+  #app header .time {
+    display: initial;
+  }
+  #app header .file-name {
+    position: absolute;
+    width: 50vw;
+    left: 25vw;
+    text-align: center;
+  }
+  #app .content {
+    display: flex;
+  }
+  #app .content .about-section-selector {
+    position: sticky;
+    top: calc(2.5vh + 9.6px + 1px);
+    height: calc(100vh - (2.5vh + 9.6px + 1px));
+    flex-basis: 27.5%;
+    max-width: 275px;
+  }
+  #app .content .about-section-selector .about-section-selector-list {
+    padding-top: 24px;
+    max-height: 100vh;
+  }
+  #app .content .about-section-selector .about-section-selector-list a .title {
+    font-size: 26.4px !important;
+  }
+  #app .content .about-section-selector .about-section-selector-list a .description {
+    font-size: 21.6px !important;
+  }
+  #app .content .about-section-selector .about-section-selector-list.shrinked {
+    max-height: 100vh !important;
+  }
+  #app .content .about-section-selector .selector-toggle {
+    display: none;
+  }
+  #app .content .about-subsection {
+    flex-basis: 60%;
+    flex-grow: 1;
+  }
+  #app .content .about-subsection .about-subsection-body {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  #app .content .about-subsection .about-subsection-body .description {
+    display: block !important;
+  }
+  #app .content .about-subsection .about-subsection-body .description .code-editor {
+    margin-left: 1.25vw;
+    font-size: 18px !important;
+    max-width: 44.5vw;
+  }
+  #app .content .about-subsection .about-subsection-body .about-me-pics {
+    margin-left: 2.25vw !important;
+    min-width: 300px;
+  }
+  #app .content .about-subsection .about-subsection-body .about-me-pics img {
+    width: 30vw;
+    height: 25vh;
+  }
+  #app .content .about-subsection .about-subsection-body .about-me-pics img:nth-child(1) {
+    align-self: flex-start;
+    transform: rotate(-5deg);
+  }
+  #app .content .about-subsection .about-subsection-body .about-me-pics img:nth-child(2) {
+    align-self: flex-end;
+    transform: rotate(5deg);
+  }
+  #app .content .portfolio-manager-wrap {
+    flex-direction: row !important;
+    width: 100%;
+  }
+  #app .content .portfolio-manager-wrap .project-selector {
+    flex-basis: 35%;
+    flex-grow: 1;
+    position: sticky;
+    top: calc(2.5vh + 9.6px + 1px);
+    max-width: 500px;
+  }
+  #app .content .portfolio-manager-wrap .project-selector .project-selector-list {
+    padding: 72px 96px;
+  }
+  #app .content .portfolio-manager-wrap .project-selector .project-selector-list .title {
+    font-size: 30px !important;
+  }
+  #app .content .portfolio-manager-wrap .project-selector .project-selector-list ul li {
+    font-size: 24px !important;
+  }
+  #app .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked {
+    max-height: 100vh !important;
+  }
+  #app .content .portfolio-manager-wrap .project-selector .selector-toggle {
+    display: none;
+  }
+  #app .content .portfolio-manager-wrap .project-wrap {
+    flex-basis: 65%;
   }
 }
 

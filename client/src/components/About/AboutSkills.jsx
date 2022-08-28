@@ -1,40 +1,46 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 
-// Subcomponent imports
+// Subcomponent/Data imports
 import Colored from '../styles/Colored';
+import { frontEndSkills, backEndSkills, devOpsSkills } from './skills';
 
 const { Subsection, SkillSection } = Colored.About;
 
 export default function AboutSkills() {
+  // Rendering
+  const renderSkills = (skillsObj) => (
+    <SkillSection className="skill-section">
+      <div className="title-wrap">
+        <img src={skillsObj.area.imagePath} alt="" className="logo" />
+        <h3 className="title">{skillsObj.area.title}</h3>
+      </div>
+      <div className="skills-body">
+        {skillsObj.skills.map((skill, i) => (
+          <div className="skill-wrap" key={i}>
+            <div className="skill-title-wrap">
+              <img src={skill.imagePath} alt="" className="logo" />
+              <h5 className="skill-title">{skill.title}</h5>
+            </div>
+            <ul className="subskill-list">
+              {skill.subskills.map((subskill, j) => (
+                <li key={j}>{subskill}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </SkillSection>
+  );
+
   return (
     <Subsection className="about-subsection skills">
       <p className="tab-title">Dev Toolkit</p>
       <div className="about-subsection-body skills">
         <div className="skill-container">
-          <SkillSection className="skill-section front-end">
-            <div className="title-wrap">
-              <img src="./assets/images/about-skills/frontend.svg" alt="" className="logo" />
-              <h3 className="title">Front End</h3>
-            </div>
-            <div className="skills-body">
-              <div className="skill-wrap">
-                <div className="skill-title-wrap">
-                  <img src="" alt="" className="logo" />
-                  <h5 className="skill-title">React 18</h5>
-                </div>
-                <ul className="subskill-list">
-                  <li>Router</li>
-                  <li>Hooks</li>
-                </ul>
-              </div>
-            </div>
-          </SkillSection>
-          <SkillSection className="skill-section back-end">
-            {/*  */}
-          </SkillSection>
-          <SkillSection className="skill-section dev-ops">
-            {/*  */}
-          </SkillSection>
+          {renderSkills(frontEndSkills)}
+          {renderSkills(backEndSkills)}
+          {renderSkills(devOpsSkills)}
         </div>
       </div>
     </Subsection>

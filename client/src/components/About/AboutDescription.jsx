@@ -23,14 +23,17 @@ export default function AboutDescription() {
     <Subsection className="about-subsection introduction">
       <p className="tab-title">About me.txt</p>
       <div className="about-subsection-body introduction">
-        <CodeMirror
-          className="code-editor"
-          value={aboutText}
-          height="auto"
-          readOnly
-          theme={codeMirrorTxtTheme}
-          extensions={[javascript({ jsx: true }), EditorView.lineWrapping]}
-        />
+        <div className="description">
+          <CodeMirror
+            className="code-editor"
+            value={aboutText}
+            height="auto"
+            readOnly
+            theme={codeMirrorTxtTheme}
+            extensions={[javascript({ jsx: true }), EditorView.lineWrapping]}
+          />
+          <button type="button" id="resume-btn">Download Resume</button>
+        </div>
         <div className="about-me-pics">
           <img src="./assets/images/about-me/about-me-1.jpeg" alt="" />
           <img src="./assets/images/about-me/about-me-2.jpeg" alt="" />
