@@ -19,6 +19,10 @@ button {
 }
 
 @media (max-width: 850px) {
+  html {
+    overflow: hidden;
+  }
+
   #app {
     height: 100%;
     background-size: cover;
@@ -137,18 +141,18 @@ button {
     font-size: 24px;
     cursor: pointer;
   }
-  #app .content-body-wrap .content .about-subsection {
+  #app .content-body-wrap .content .about-subsection, #app .content-body-wrap .content .tab {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .tab-title {
+  #app .content-body-wrap .content .about-subsection .tab-title, #app .content-body-wrap .content .tab .tab-title {
     font-size: 13.2px;
     padding: 4px;
     font-family: "Open Sans";
     text-align: center;
     width: 150px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body, #app .content-body-wrap .content .about-subsection .tab-body, #app .content-body-wrap .content .tab .about-subsection-body, #app .content-body-wrap .content .tab .tab-body {
     height: calc(100vh - 49.6px - 3px);
     flex-grow: 1;
     overflow-y: auto;
@@ -157,33 +161,37 @@ button {
     /* Handle */
     /* Handle on hover */
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar {
-    width: 1.2vw;
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar {
+    width: 8px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-track {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-track, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 1vw;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb {
     background: rgba(68, 68, 68, 0.656);
     border-radius: 1vw;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb:hover {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb:hover {
     background: rgba(92, 92, 92, 0.779);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction, #app .content-body-wrap .content .about-subsection .tab-body.introduction, #app .content-body-wrap .content .tab .about-subsection-body.introduction, #app .content-body-wrap .content .tab .tab-body.introduction {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description, #app .content-body-wrap .content .tab .tab-body.introduction .description {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor {
     padding-top: 2vh;
     font-size: 14.4px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
     font-family: "Code";
     font-size: 16px;
     padding: 5.6px 32px;
@@ -191,10 +199,10 @@ button {
     border: none;
     border-radius: 3.2px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn:hover {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn:hover {
     filter: brightness(90%);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics {
     margin: 5vh 0;
     align-self: center;
     width: calc(100% - 56px);
@@ -203,7 +211,7 @@ button {
     flex-direction: column;
     align-items: center;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img {
     width: 50vw;
     height: 25vh;
     max-width: 272px;
@@ -211,71 +219,71 @@ button {
     object-fit: cover;
     box-shadow: 0.5vw 0.5vh 0 0 black;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(1) {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(1) {
     align-self: flex-start;
     margin-bottom: 4vh;
     transform: rotate(-5deg);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(2) {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(2) {
     align-self: flex-end;
     transform: rotate(5deg);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .tab .tab-body.skills .skill-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 24px 32px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section {
     margin: 0 12px 32px 12px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap {
     display: flex;
     align-items: center;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .logo {
     width: 64px;
     height: 76px;
     object-fit: contain;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .title {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .title {
     font-family: "Code";
     font-size: 27.2px;
     padding-left: 16px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body {
     margin-top: 20px;
     margin-left: 32px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap {
     margin-bottom: 12px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
     width: 24px;
     height: auto;
     object-fit: contain;
     margin-right: 8px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
     font-size: 16px;
     position: relative;
     top: 2.4px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
     margin-left: 32px;
     list-style: none;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
     margin: 1.6px 0;
     padding-left: 4px;
     font-size: 16px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
     content: "- ";
   }
   #app .content-body-wrap .content .portfolio-manager-wrap {
@@ -283,18 +291,19 @@ button {
     flex-direction: column;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector {
-    padding: 20px 0;
+    position: sticky;
+    top: calc(2.5vh + 6.4px + 1px);
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list {
+    padding-top: 20px;
     overflow: hidden;
     max-height: 100vh;
     transition: max-height 1s;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
     font-family: "Code";
-    font-size: 32px;
+    font-size: 27.2px;
     padding: 0 16px;
-    margin-bottom: 11.2px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul {
     max-height: 25vh;
@@ -305,6 +314,15 @@ button {
     /* Track */
     /* Handle */
     /* Handle on hover */
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li {
+    font-size: 16.8px;
+    margin: 12px 0;
+    padding: 0 16px;
+    transition: background-color 0.25s;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li.selected {
+    transition: background-color 0.25s;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar {
     width: 1.2vw;
@@ -320,11 +338,6 @@ button {
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-thumb:hover {
     background: rgba(92, 92, 92, 0.779);
   }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li {
-    font-size: 20px;
-    margin: 12px 0;
-    padding: 0 16px;
-  }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list + .selector-toggle {
     transform: rotate(180deg);
     width: 100%;
@@ -334,14 +347,112 @@ button {
     cursor: pointer;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked {
+    padding-top: 0;
     transition: max-height 0.25s;
     max-height: 0;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked + .selector-toggle {
     transform: rotate(0deg);
   }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.6px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile img {
+    width: 32px;
+    height: 48px;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile img.project-prev-btn {
+    transform: scaleX(-1);
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile img.hidden {
+    visibility: hidden;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-title {
+    font-family: "Code";
+    font-size: 23.2px;
+    text-align: center;
+    margin: 20px 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile {
+    margin: 16px 10.4px;
+    text-align: center;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile img {
+    width: 100%;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .large {
+    display: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 32px 5.6px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card {
+    max-width: 400px;
+    margin: 0 12px 32px 12px;
+    border-radius: 16px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap {
+    display: flex;
+    align-items: center;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap .star {
+    border-radius: 4px;
+    padding: 7.2px 12px;
+    font-size: 20.8px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap .card-title {
+    margin-left: 5.6px;
+    font-family: "Code";
+    font-size: 18.8px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .body {
+    line-height: 1.45;
+    font-size: 13.6px;
+    padding: 12px 24px;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap {
+    padding: 24px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo {
+    text-decoration: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img {
+    width: 56px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a {
+    text-decoration: none;
+    font-family: "Code";
+    font-size: 16px;
+    text-align: center;
+    padding: 2.4px 32px;
+    margin: 1.6px 0;
+    border-radius: 4px;
+    min-width: 100px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a.disabled {
+    cursor: not-allowed;
+  }
 }
 @media (min-width: 850px) {
+  html {
+    overflow: hidden;
+  }
+
   #app {
     height: 100%;
     background-size: cover;
@@ -460,18 +571,18 @@ button {
     font-size: 30px;
     cursor: pointer;
   }
-  #app .content-body-wrap .content .about-subsection {
+  #app .content-body-wrap .content .about-subsection, #app .content-body-wrap .content .tab {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .tab-title {
+  #app .content-body-wrap .content .about-subsection .tab-title, #app .content-body-wrap .content .tab .tab-title {
     font-size: 16.5px;
     padding: 5px;
     font-family: "Open Sans";
     text-align: center;
     width: 150px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body, #app .content-body-wrap .content .about-subsection .tab-body, #app .content-body-wrap .content .tab .about-subsection-body, #app .content-body-wrap .content .tab .tab-body {
     height: calc(100vh - 62px - 3px);
     flex-grow: 1;
     overflow-y: auto;
@@ -480,33 +591,37 @@ button {
     /* Handle */
     /* Handle on hover */
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar {
-    width: 1.2vw;
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar {
+    width: 10px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-track {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-track, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 1vw;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb {
     background: rgba(68, 68, 68, 0.656);
     border-radius: 1vw;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb:hover {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb:hover {
     background: rgba(92, 92, 92, 0.779);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction, #app .content-body-wrap .content .about-subsection .tab-body.introduction, #app .content-body-wrap .content .tab .about-subsection-body.introduction, #app .content-body-wrap .content .tab .tab-body.introduction {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description, #app .content-body-wrap .content .tab .tab-body.introduction .description {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor {
     padding-top: 2vh;
     font-size: 18px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
     font-family: "Code";
     font-size: 20px;
     padding: 7px 40px;
@@ -514,10 +629,10 @@ button {
     border: none;
     border-radius: 4px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn:hover {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn:hover {
     filter: brightness(90%);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics {
     margin: 5vh 0;
     align-self: center;
     width: calc(100% - 70px);
@@ -526,7 +641,7 @@ button {
     flex-direction: column;
     align-items: center;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img {
     width: 50vw;
     height: 25vh;
     max-width: 340px;
@@ -534,71 +649,71 @@ button {
     object-fit: cover;
     box-shadow: 0.5vw 0.5vh 0 0 black;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(1) {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(1) {
     align-self: flex-start;
     margin-bottom: 4vh;
     transform: rotate(-5deg);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(2) {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(2) {
     align-self: flex-end;
     transform: rotate(5deg);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .tab .tab-body.skills .skill-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 30px 40px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section {
     margin: 0 15px 40px 15px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap {
     display: flex;
     align-items: center;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .logo {
     width: 80px;
     height: 95px;
     object-fit: contain;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .title {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .title {
     font-family: "Code";
     font-size: 34px;
     padding-left: 20px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body {
     margin-top: 25px;
     margin-left: 40px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap {
     margin-bottom: 15px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
     width: 30px;
     height: auto;
     object-fit: contain;
     margin-right: 10px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
     font-size: 20px;
     position: relative;
     top: 3px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
     margin-left: 40px;
     list-style: none;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
     margin: 2px 0;
     padding-left: 5px;
     font-size: 20px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
     content: "- ";
   }
   #app .content-body-wrap .content .portfolio-manager-wrap {
@@ -606,18 +721,19 @@ button {
     flex-direction: column;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector {
-    padding: 25px 0;
+    position: sticky;
+    top: calc(2.5vh + 8px + 1px);
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list {
+    padding-top: 25px;
     overflow: hidden;
     max-height: 100vh;
     transition: max-height 1s;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
     font-family: "Code";
-    font-size: 40px;
+    font-size: 34px;
     padding: 0 20px;
-    margin-bottom: 14px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul {
     max-height: 25vh;
@@ -628,6 +744,15 @@ button {
     /* Track */
     /* Handle */
     /* Handle on hover */
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li {
+    font-size: 21px;
+    margin: 15px 0;
+    padding: 0 20px;
+    transition: background-color 0.25s;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li.selected {
+    transition: background-color 0.25s;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar {
     width: 1.2vw;
@@ -643,11 +768,6 @@ button {
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-thumb:hover {
     background: rgba(92, 92, 92, 0.779);
   }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li {
-    font-size: 25px;
-    margin: 15px 0;
-    padding: 0 20px;
-  }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list + .selector-toggle {
     transform: rotate(180deg);
     width: 100%;
@@ -657,11 +777,105 @@ button {
     cursor: pointer;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked {
+    padding-top: 0;
     transition: max-height 0.25s;
     max-height: 0;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked + .selector-toggle {
     transform: rotate(0deg);
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile img {
+    width: 40px;
+    height: 60px;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile img.project-prev-btn {
+    transform: scaleX(-1);
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile img.hidden {
+    visibility: hidden;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-title {
+    font-family: "Code";
+    font-size: 29px;
+    text-align: center;
+    margin: 25px 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile {
+    margin: 20px 13px;
+    text-align: center;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile img {
+    width: 100%;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .large {
+    display: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 7px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card {
+    max-width: 400px;
+    margin: 0 15px 40px 15px;
+    border-radius: 20px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap {
+    display: flex;
+    align-items: center;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap .star {
+    border-radius: 5px;
+    padding: 9px 15px;
+    font-size: 26px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap .card-title {
+    margin-left: 7px;
+    font-family: "Code";
+    font-size: 23.5px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .body {
+    line-height: 1.45;
+    font-size: 17px;
+    padding: 15px 30px;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap {
+    padding: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo {
+    text-decoration: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img {
+    width: 70px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a {
+    text-decoration: none;
+    font-family: "Code";
+    font-size: 20px;
+    text-align: center;
+    padding: 3px 40px;
+    margin: 2px 0;
+    border-radius: 5px;
+    min-width: 100px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a.disabled {
+    cursor: not-allowed;
   }
 
   html {
@@ -736,19 +950,29 @@ button {
     align-self: flex-end;
     transform: rotate(5deg);
   }
+  #app .content .about-subsection .about-subsection-body.skills .skill-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #app .content .about-subsection .about-subsection-body.skills .skill-container .skill-section {
+    margin-left: 3vw !important;
+    margin-right: 3vw !important;
+  }
   #app .content .portfolio-manager-wrap {
     flex-direction: row !important;
     width: 100%;
   }
   #app .content .portfolio-manager-wrap .project-selector {
+    padding: 25px 0;
     flex-basis: 35%;
+    min-width: 35vw;
     flex-grow: 1;
     position: sticky;
     top: calc(2.5vh + 8px + 1px);
     max-width: 500px;
   }
   #app .content .portfolio-manager-wrap .project-selector .project-selector-list {
-    padding: 60px 80px;
+    padding: 10vh 80px 60px 80px !important;
   }
   #app .content .portfolio-manager-wrap .project-selector .project-selector-list .title {
     font-size: 25px !important;
@@ -762,11 +986,140 @@ button {
   #app .content .portfolio-manager-wrap .project-selector .selector-toggle {
     display: none;
   }
-  #app .content .portfolio-manager-wrap .project-wrap {
-    flex-basis: 65%;
+  #app .content .portfolio-manager-wrap .tab {
+    flex-grow: 1;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .project-nav-mobile {
+    display: none !important;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .project-title {
+    text-align: right;
+    margin-right: 30px;
+    margin-bottom: 80px;
+    font-size: 35px !important;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .mobile {
+    display: none !important;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn {
+    flex-basis: 5%;
+    width: 40px;
+    height: 60px;
+    cursor: pointer;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn.project-prev-btn, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn.project-prev-btn {
+    transform: scaleX(-1);
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn.hidden, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn.hidden {
+    visibility: hidden;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap {
+    max-width: 500px;
+    width: 12.5vw;
+    position: relative;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-img {
+    max-width: 500px;
+    width: 12.5vw;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content {
+    background: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 10.5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    width: 86%;
+    height: 78%;
+    cursor: pointer;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content img, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content video {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap {
+    flex-basis: 35%;
+    max-width: 1200px;
+    width: 35vw;
+    position: relative;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-img {
+    max-width: 1200px;
+    width: 35vw;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content {
+    background: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 6.5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    width: 76%;
+    height: 85%;
+    cursor: pointer;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content img, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content video {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards {
+    margin: 60px 7px 40px 7px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card {
+    max-width: 600px;
+    margin: 0 15px 40px 15px;
+    border-radius: 20px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .title-wrap .star {
+    padding: 7px 13px;
+    font-size: 22px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .title-wrap .card-title {
+    font-size: 20px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .body {
+    line-height: 1.45;
+    font-size: 14px;
+    padding: 15px 30px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap {
+    padding: 24px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .octo-logo img {
+    width: 70px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .links a {
+    font-size: 17px;
+    padding: 3px 40px;
+    margin: 2px 0;
+    min-width: 100px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .links a.disabled {
+    cursor: not-allowed;
   }
 }
 @media (min-width: 1600px) {
+  html {
+    overflow: hidden;
+  }
+
   #app {
     height: 100%;
     background-size: cover;
@@ -885,18 +1238,18 @@ button {
     font-size: 36px;
     cursor: pointer;
   }
-  #app .content-body-wrap .content .about-subsection {
+  #app .content-body-wrap .content .about-subsection, #app .content-body-wrap .content .tab {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .tab-title {
+  #app .content-body-wrap .content .about-subsection .tab-title, #app .content-body-wrap .content .tab .tab-title {
     font-size: 19.8px;
     padding: 6px;
     font-family: "Open Sans";
     text-align: center;
     width: 150px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body, #app .content-body-wrap .content .about-subsection .tab-body, #app .content-body-wrap .content .tab .about-subsection-body, #app .content-body-wrap .content .tab .tab-body {
     height: calc(100vh - 74.4px - 3px);
     flex-grow: 1;
     overflow-y: auto;
@@ -905,33 +1258,37 @@ button {
     /* Handle */
     /* Handle on hover */
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar {
-    width: 1.2vw;
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar {
+    width: 12px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-track {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-track, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 1vw;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb {
     background: rgba(68, 68, 68, 0.656);
     border-radius: 1vw;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb:hover {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb:hover {
     background: rgba(92, 92, 92, 0.779);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction, #app .content-body-wrap .content .about-subsection .tab-body.introduction, #app .content-body-wrap .content .tab .about-subsection-body.introduction, #app .content-body-wrap .content .tab .tab-body.introduction {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description, #app .content-body-wrap .content .tab .tab-body.introduction .description {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor {
     padding-top: 2vh;
     font-size: 21.6px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
     font-family: "Code";
     font-size: 24px;
     padding: 8.4px 48px;
@@ -939,10 +1296,10 @@ button {
     border: none;
     border-radius: 4.8px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn:hover {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn:hover {
     filter: brightness(90%);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics {
     margin: 5vh 0;
     align-self: center;
     width: calc(100% - 84px);
@@ -951,7 +1308,7 @@ button {
     flex-direction: column;
     align-items: center;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img {
     width: 50vw;
     height: 25vh;
     max-width: 408px;
@@ -959,71 +1316,71 @@ button {
     object-fit: cover;
     box-shadow: 0.5vw 0.5vh 0 0 black;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(1) {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(1) {
     align-self: flex-start;
     margin-bottom: 4vh;
     transform: rotate(-5deg);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(2) {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(2) {
     align-self: flex-end;
     transform: rotate(5deg);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .tab .tab-body.skills .skill-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 36px 48px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section {
     margin: 0 18px 48px 18px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap {
     display: flex;
     align-items: center;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .logo {
     width: 96px;
     height: 114px;
     object-fit: contain;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .title {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .title {
     font-family: "Code";
     font-size: 40.8px;
     padding-left: 24px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body {
     margin-top: 30px;
     margin-left: 48px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap {
     margin-bottom: 18px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
     display: flex;
     align-items: center;
     margin-bottom: 12px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
     width: 36px;
     height: auto;
     object-fit: contain;
     margin-right: 12px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
     font-size: 24px;
     position: relative;
     top: 3.6px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
     margin-left: 48px;
     list-style: none;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
     margin: 2.4px 0;
     padding-left: 6px;
     font-size: 24px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
     content: "- ";
   }
   #app .content-body-wrap .content .portfolio-manager-wrap {
@@ -1031,18 +1388,19 @@ button {
     flex-direction: column;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector {
-    padding: 30px 0;
+    position: sticky;
+    top: calc(2.5vh + 9.6px + 1px);
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list {
+    padding-top: 30px;
     overflow: hidden;
     max-height: 100vh;
     transition: max-height 1s;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
     font-family: "Code";
-    font-size: 48px;
+    font-size: 40.8px;
     padding: 0 24px;
-    margin-bottom: 16.8px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul {
     max-height: 25vh;
@@ -1053,6 +1411,15 @@ button {
     /* Track */
     /* Handle */
     /* Handle on hover */
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li {
+    font-size: 25.2px;
+    margin: 18px 0;
+    padding: 0 24px;
+    transition: background-color 0.25s;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li.selected {
+    transition: background-color 0.25s;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar {
     width: 1.2vw;
@@ -1068,11 +1435,6 @@ button {
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-thumb:hover {
     background: rgba(92, 92, 92, 0.779);
   }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul li {
-    font-size: 30px;
-    margin: 18px 0;
-    padding: 0 24px;
-  }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list + .selector-toggle {
     transform: rotate(180deg);
     width: 100%;
@@ -1082,11 +1444,105 @@ button {
     cursor: pointer;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked {
+    padding-top: 0;
     transition: max-height 0.25s;
     max-height: 0;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list.shrinked + .selector-toggle {
     transform: rotate(0deg);
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.4px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile img {
+    width: 48px;
+    height: 72px;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile img.project-prev-btn {
+    transform: scaleX(-1);
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-nav-mobile img.hidden {
+    visibility: hidden;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .project-title {
+    font-family: "Code";
+    font-size: 34.8px;
+    text-align: center;
+    margin: 30px 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile {
+    margin: 24px 15.6px;
+    text-align: center;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile img {
+    width: 100%;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .large {
+    display: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 48px 8.4px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card {
+    max-width: 400px;
+    margin: 0 18px 48px 18px;
+    border-radius: 24px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap {
+    display: flex;
+    align-items: center;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap .star {
+    border-radius: 6px;
+    padding: 10.8px 18px;
+    font-size: 31.2px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap .card-title {
+    margin-left: 8.4px;
+    font-family: "Code";
+    font-size: 28.2px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .body {
+    line-height: 1.45;
+    font-size: 20.4px;
+    padding: 18px 36px;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap {
+    padding: 36px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo {
+    text-decoration: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img {
+    width: 84px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links {
+    display: flex;
+    flex-direction: column;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a {
+    text-decoration: none;
+    font-family: "Code";
+    font-size: 24px;
+    text-align: center;
+    padding: 3.6px 48px;
+    margin: 2.4px 0;
+    border-radius: 6px;
+    min-width: 100px;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a.disabled {
+    cursor: not-allowed;
   }
 
   html {
@@ -1110,7 +1566,7 @@ button {
     top: calc(2.5vh + 9.6px + 1px);
     height: calc(100vh - (2.5vh + 9.6px + 1px));
     flex-basis: 27.5%;
-    max-width: 275px;
+    max-width: 330px;
   }
   #app .content .about-section-selector .about-section-selector-list {
     padding-top: 24px;
@@ -1161,19 +1617,29 @@ button {
     align-self: flex-end;
     transform: rotate(5deg);
   }
+  #app .content .about-subsection .about-subsection-body.skills .skill-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #app .content .about-subsection .about-subsection-body.skills .skill-container .skill-section {
+    margin-left: 3vw !important;
+    margin-right: 3vw !important;
+  }
   #app .content .portfolio-manager-wrap {
     flex-direction: row !important;
     width: 100%;
   }
   #app .content .portfolio-manager-wrap .project-selector {
+    padding: 30px 0;
     flex-basis: 35%;
+    min-width: 35vw;
     flex-grow: 1;
     position: sticky;
     top: calc(2.5vh + 9.6px + 1px);
-    max-width: 500px;
+    max-width: 600px;
   }
   #app .content .portfolio-manager-wrap .project-selector .project-selector-list {
-    padding: 72px 96px;
+    padding: 10vh 96px 72px 96px !important;
   }
   #app .content .portfolio-manager-wrap .project-selector .project-selector-list .title {
     font-size: 30px !important;
@@ -1187,8 +1653,133 @@ button {
   #app .content .portfolio-manager-wrap .project-selector .selector-toggle {
     display: none;
   }
-  #app .content .portfolio-manager-wrap .project-wrap {
-    flex-basis: 65%;
+  #app .content .portfolio-manager-wrap .tab {
+    flex-grow: 1;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .project-nav-mobile {
+    display: none !important;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .project-title {
+    text-align: right;
+    margin-right: 36px;
+    margin-bottom: 96px;
+    font-size: 42px !important;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .mobile {
+    display: none !important;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn {
+    flex-basis: 5%;
+    width: 48px;
+    height: 72px;
+    cursor: pointer;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn.project-prev-btn, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn.project-prev-btn {
+    transform: scaleX(-1);
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn.hidden, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn.hidden {
+    visibility: hidden;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap {
+    max-width: 500px;
+    width: 12.5vw;
+    position: relative;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-img {
+    max-width: 500px;
+    width: 12.5vw;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content {
+    background: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 10.5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    width: 86%;
+    height: 78%;
+    cursor: pointer;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content img, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content video {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap {
+    flex-basis: 35%;
+    max-width: 1200px;
+    width: 35vw;
+    position: relative;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-img {
+    max-width: 1200px;
+    width: 35vw;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content {
+    background: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 6.5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    width: 76%;
+    height: 85%;
+    cursor: pointer;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content img, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content video {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards {
+    margin: 72px 8.4px 48px 8.4px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card {
+    max-width: 600px;
+    margin: 0 18px 48px 18px;
+    border-radius: 24px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .title-wrap .star {
+    padding: 8.4px 15.6px;
+    font-size: 26.4px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .title-wrap .card-title {
+    font-size: 24px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .body {
+    line-height: 1.45;
+    font-size: 16.8px;
+    padding: 18px 36px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap {
+    padding: 28.8px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .octo-logo img {
+    width: 84px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .links a {
+    font-size: 20.4px;
+    padding: 3.6px 48px;
+    margin: 2.4px 0;
+    min-width: 100px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .links a.disabled {
+    cursor: not-allowed;
   }
 }
 

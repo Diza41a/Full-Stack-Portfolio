@@ -104,7 +104,7 @@ const Colored = {
         border-top: 3px solid ${colors.navHighlight};
       }
 
-      .about-subsection-body {
+      .about-subsection-body, .tab-body {
         background-color: ${colors.tab};
 
         .about-paragraph {
@@ -166,6 +166,47 @@ const Colored = {
            li {
              color: ${colors.secondText};
              cursor: not-allowed;
+           }
+         }
+       }
+    `,
+    Wrap: styled.div`
+       .project-nav-mobile {
+         /* background-color: ${colors.mainDark}; */
+         border-top: 1px solid ${colors.border};
+         border-bottom: 1px solid ${colors.border};
+       }
+
+       .project-title {
+         color: ${colors.mainText};
+       }
+
+       .info-cards {
+
+         .card {
+            background-color: rgb(12, 12, 12);
+
+           .star {
+             color: #FFFFFF;
+             background-color: ${colors.resumeButton};
+           }
+           .card-title {
+            color: ${colors.mainText};
+           }
+           .body {
+             color: ${colors.mainText};
+           }
+           .links-wrap {
+             .links {
+               a {
+                 color: ${colors.mainText};
+                 background-color: ${colors.resumeButton};
+
+                 &.disabled {
+                   background-color: gray;
+                 }
+               }
+             }
            }
          }
        }

@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 
 // Component imports
@@ -8,7 +8,21 @@ import Colored, { background } from '../styles/Colored';
 
 const { Toolbar, Nav } = Colored;
 
+const getCurrentTime = () => {
+  const dateTime = new Date();
+  const datePart = dateTime.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+  const timePart = dateTime.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric', timezone: 'EST' });
+  return `${datePart} ${timePart}`;
+};
+
 export default function MainLayout() {
+  const [time, setTime] = useState(getCurrentTime());
+
+  // Update the clock
+  setInterval(() => {
+    setTime(getCurrentTime());
+  }, 1000);
+
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
     <div id="app" style={{ backgroundColor: background.color, backgroundImage: background.image }}>
@@ -27,7 +41,7 @@ export default function MainLayout() {
 
         <p className="file-name">Landing.jsx - Davyd Zakorchennyi</p>
 
-        <strong className="time">Fri Aug 19 12:16 PM</strong>
+        <strong className="time">{time}</strong>
       </Toolbar>
 
       <div className="content-body-wrap">

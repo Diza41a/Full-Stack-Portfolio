@@ -20,9 +20,9 @@ export default function AboutDescription() {
   }, []);
 
   return (
-    <Subsection className="about-subsection introduction">
+    <Subsection className="about-subsection introduction tab-wrap">
       <p className="tab-title">About me.txt</p>
-      <div className="about-subsection-body introduction">
+      <div className="about-subsection-body introduction tab-body">
         <div className="description">
           <CodeMirror
             className="code-editor"
@@ -32,7 +32,7 @@ export default function AboutDescription() {
             theme={codeMirrorTxtTheme}
             extensions={[javascript({ jsx: true }), EditorView.lineWrapping]}
           />
-          <button type="button" id="resume-btn">Download Resume</button>
+          <a href="./assets/resume.docx" download="Davyd Zakorchennyi Resume" id="resume-btn">Download Resume</a>
         </div>
         <div className="about-me-pics">
           <img src="./assets/images/about-me/about-me-1.jpeg" alt="" />
