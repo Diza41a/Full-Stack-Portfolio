@@ -6,7 +6,7 @@ const frontEndSkills = {
     { title: 'React 18', subskills: ['Router', 'Hooks'], imagePath: `${rootImgPath}react.png` },
     { title: 'HTML5', subskills: ['Semantic Elements'], imagePath: `${rootImgPath}html.png` },
     { title: 'CSS', subskills: ['FlexBox', 'Grid'], imagePath: `${rootImgPath}css.png` },
-    { title: 'Sass', subskills: [], imagePath: `${rootImgPath}sass.png` },
+    { title: 'Sass', subskills: ['Mixins', 'Functions'], imagePath: `${rootImgPath}sass.png` },
   ],
 };
 

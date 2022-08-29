@@ -10,6 +10,7 @@ import MainLayout from './components/reusable/MainLayout';
 import Landing from './components/Landing';
 import AboutManager from './components/About/AboutManager';
 import PortfolioManager from './components/Portfolio/PortfolioManager';
+import ReachOut from './components/ReachOut/ReachOut';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="skills" element={<AboutManager value="skills" />} />
             </Route>
             <Route path="portfolio" element={<PortfolioManager />} />
+            <Route path="contact" element={<ReachOut />} />
           </Route>
         </Routes>
       </HashRouter>

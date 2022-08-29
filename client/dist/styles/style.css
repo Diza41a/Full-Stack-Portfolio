@@ -310,7 +310,7 @@ button {
     overflow-y: auto;
     list-style: none;
     margin-bottom: 32px;
-    /* Width */
+    /* width */
     /* Track */
     /* Handle */
     /* Handle on hover */
@@ -325,7 +325,7 @@ button {
     transition: background-color 0.25s;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar {
-    width: 1.2vw;
+    width: 8px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
@@ -446,6 +446,131 @@ button {
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a.disabled {
     cursor: not-allowed;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .title {
+    font-family: "Code";
+    font-size: 28px;
+    margin: 20px 16px 20px 16px;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 8px;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .smartphone {
+    z-index: 1000;
+    max-width: 400px;
+    width: 80vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .tablet {
+    z-index: 1000;
+    display: none;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console {
+    position: absolute;
+    top: 2.5%;
+    max-width: 360px;
+    width: 72vw;
+    height: 95%;
+    overflow-y: auto;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+    background-color: black;
+    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 100%);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console * {
+    z-index: 1001;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar {
+    width: 8px;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar-thumb {
+    background: rgba(68, 68, 68, 0.656);
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 92, 92, 0.779);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns {
+    margin: 32px 5% 0 5%;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn {
+    margin: 0 4px 16px 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn i {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: rgb(153, 153, 153);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn.active {
+    background-color: #242424;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn:hover {
+    background-color: #272727;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions {
+    margin-top: 4px;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions * {
+    margin: 4px 0;
+    color: white;
+    font: 14.4px "Open Sans", sans-serif;
+    text-shadow: 0 0 5px #C8C8C8;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .answered {
+    color: #c1c1c1 !important;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
+    cursor: pointer !important;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    position: relative;
+    width: 100%;
+  }
+  @keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: #fff;
+    }
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
+    height: aut;
   }
 }
 @media (min-width: 850px) {
@@ -740,7 +865,7 @@ button {
     overflow-y: auto;
     list-style: none;
     margin-bottom: 40px;
-    /* Width */
+    /* width */
     /* Track */
     /* Handle */
     /* Handle on hover */
@@ -755,7 +880,7 @@ button {
     transition: background-color 0.25s;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar {
-    width: 1.2vw;
+    width: 10px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
@@ -877,6 +1002,131 @@ button {
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a.disabled {
     cursor: not-allowed;
   }
+  #app .content-body-wrap .content .reach-out-body-wrap .title {
+    font-family: "Code";
+    font-size: 35px;
+    margin: 25px 20px 25px 20px;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .smartphone {
+    z-index: 1000;
+    max-width: 400px;
+    width: 80vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .tablet {
+    z-index: 1000;
+    display: none;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console {
+    position: absolute;
+    top: 2.5%;
+    max-width: 360px;
+    width: 72vw;
+    height: 95%;
+    overflow-y: auto;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+    background-color: black;
+    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 100%);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console * {
+    z-index: 1001;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar {
+    width: 10px;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar-thumb {
+    background: rgba(68, 68, 68, 0.656);
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 92, 92, 0.779);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns {
+    margin: 40px 5% 0 5%;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn {
+    margin: 0 5px 20px 0;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn i {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(153, 153, 153);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn.active {
+    background-color: #242424;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn:hover {
+    background-color: #272727;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions {
+    margin-top: 5px;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions * {
+    margin: 5px 0;
+    color: white;
+    font: 18px "Open Sans", sans-serif;
+    text-shadow: 0 0 5px #C8C8C8;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .answered {
+    color: #c1c1c1 !important;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
+    cursor: pointer !important;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    position: relative;
+    width: 100%;
+  }
+  @keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: #fff;
+    }
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
+    height: aut;
+  }
 
   html {
     overflow: hidden;
@@ -893,6 +1143,9 @@ button {
   }
   #app .content {
     display: flex;
+  }
+  #app .content .tab {
+    flex-grow: 1;
   }
   #app .content .about-section-selector {
     position: sticky;
@@ -1113,6 +1366,86 @@ button {
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .links a.disabled {
     cursor: not-allowed;
+  }
+  #app .content .reach-out-body-wrap .title {
+    font-size: 45px !important;
+    margin: 25px 30px 25px 30px !important;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap {
+    justify-content: flex-start !important;
+    margin: 0 30px !important;
+    max-width: 900px;
+    width: 80vw;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .smartphone {
+    display: none !important;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .tablet {
+    display: initial !important;
+    max-width: 900px;
+    width: 80vw;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console {
+    z-index: 2000 !important;
+    position: absolute;
+    top: 7% !important;
+    left: 10.5%;
+    max-width: 708px !important;
+    width: 62.75vw !important;
+    height: 87% !important;
+    background-color: black;
+    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 100%);
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns {
+    margin: 40px 5% 0 5%;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn {
+    margin: 0 5px 20px 0;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn i {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(153, 153, 153);
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn.active {
+    background-color: #242424;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn:hover {
+    background-color: #272727;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .questions {
+    margin-top: 5px;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .questions * {
+    margin: 5px 0;
+    color: white;
+    font: 18px "Open Sans", sans-serif;
+    text-shadow: 0 0 5px #C8C8C8;
   }
 }
 @media (min-width: 1600px) {
@@ -1407,7 +1740,7 @@ button {
     overflow-y: auto;
     list-style: none;
     margin-bottom: 48px;
-    /* Width */
+    /* width */
     /* Track */
     /* Handle */
     /* Handle on hover */
@@ -1422,7 +1755,7 @@ button {
     transition: background-color 0.25s;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar {
-    width: 1.2vw;
+    width: 12px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section ul::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
@@ -1544,6 +1877,131 @@ button {
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a.disabled {
     cursor: not-allowed;
   }
+  #app .content-body-wrap .content .reach-out-body-wrap .title {
+    font-family: "Code";
+    font-size: 42px;
+    margin: 30px 24px 30px 24px;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 12px;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .smartphone {
+    z-index: 1000;
+    max-width: 400px;
+    width: 80vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .tablet {
+    z-index: 1000;
+    display: none;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console {
+    position: absolute;
+    top: 2.5%;
+    max-width: 360px;
+    width: 72vw;
+    height: 95%;
+    overflow-y: auto;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+    background-color: black;
+    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 100%);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console * {
+    z-index: 1001;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar {
+    width: 12px;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar-thumb {
+    background: rgba(68, 68, 68, 0.656);
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 92, 92, 0.779);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns {
+    margin: 48px 5% 0 5%;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn {
+    margin: 0 6px 24px 0;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn i {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: rgb(153, 153, 153);
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn.active {
+    background-color: #242424;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn:hover {
+    background-color: #272727;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions {
+    margin-top: 6px;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions * {
+    margin: 6px 0;
+    color: white;
+    font: 21.6px "Open Sans", sans-serif;
+    text-shadow: 0 0 5px #C8C8C8;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .answered {
+    color: #c1c1c1 !important;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
+    cursor: pointer !important;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    position: relative;
+    width: 100%;
+  }
+  @keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: #fff;
+    }
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
+    height: aut;
+  }
 
   html {
     overflow: hidden;
@@ -1560,6 +2018,9 @@ button {
   }
   #app .content {
     display: flex;
+  }
+  #app .content .tab {
+    flex-grow: 1;
   }
   #app .content .about-section-selector {
     position: sticky;
@@ -1780,6 +2241,86 @@ button {
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .links a.disabled {
     cursor: not-allowed;
+  }
+  #app .content .reach-out-body-wrap .title {
+    font-size: 54px !important;
+    margin: 30px 36px 30px 36px !important;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap {
+    justify-content: flex-start !important;
+    margin: 0 36px !important;
+    max-width: 1080px;
+    width: 80vw;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .smartphone {
+    display: none !important;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .tablet {
+    display: initial !important;
+    max-width: 1080px;
+    width: 80vw;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console {
+    z-index: 2000 !important;
+    position: absolute;
+    top: 7% !important;
+    left: 10.5%;
+    max-width: 849.6px !important;
+    width: 62.75vw !important;
+    height: 87% !important;
+    background-color: black;
+    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 100%);
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns {
+    margin: 48px 5% 0 5%;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn {
+    margin: 0 6px 24px 0;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn i {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: rgb(153, 153, 153);
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn.active {
+    background-color: #242424;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn:hover {
+    background-color: #272727;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .questions {
+    margin-top: 6px;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .questions * {
+    margin: 6px 0;
+    color: white;
+    font: 21.6px "Open Sans", sans-serif;
+    text-shadow: 0 0 5px #C8C8C8;
   }
 }
 

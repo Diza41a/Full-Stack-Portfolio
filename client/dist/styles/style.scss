@@ -20,6 +20,30 @@ button {
   cursor: pointer;
 }
 
+@mixin scrollbar($fontSize) {
+  /* width */
+  &::-webkit-scrollbar {
+    width: $fontSize * 0.5;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1vw;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgba(68, 68, 68, 0.656);
+    border-radius: 1vw;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 92, 92, 0.779);
+  }
+}
+
 @mixin mainView($fontSize) {
   html {
     overflow: hidden;
@@ -179,27 +203,7 @@ button {
             height: calc(100vh - ($fontSize * 3.1) - 3px);
             flex-grow: 1;
             overflow-y: auto;
-            /* width */
-            &::-webkit-scrollbar {
-              width: $fontSize * 0.5;
-            }
-
-            /* Track */
-            &::-webkit-scrollbar-track {
-              box-shadow: inset 0 0 5px grey;
-              border-radius: 1vw;
-            }
-
-            /* Handle */
-            &::-webkit-scrollbar-thumb {
-              background: rgba(68, 68, 68, 0.656);
-              border-radius: 1vw;
-            }
-
-            /* Handle on hover */
-            &::-webkit-scrollbar-thumb:hover {
-              background: rgba(92, 92, 92, 0.779);
-            }
+            @include scrollbar($fontSize);
 
             &.introduction {
               display: flex;
@@ -382,27 +386,7 @@ button {
                     }
                   }
 
-                  /* Width */
-                  &::-webkit-scrollbar {
-                    width: 1.2vw;
-                  }
-
-                  /* Track */
-                  &::-webkit-scrollbar-track {
-                    box-shadow: inset 0 0 5px grey;
-                    border-radius: 1vw;
-                  }
-
-                  /* Handle */
-                  &::-webkit-scrollbar-thumb {
-                    background: rgba(68, 68, 68, 0.656);
-                    border-radius: 1vw;
-                  }
-
-                  /* Handle on hover */
-                  &::-webkit-scrollbar-thumb:hover {
-                    background: rgba(92, 92, 92, 0.779);
-                  }
+                  @include scrollbar($fontSize);
                 }
               }
 
@@ -551,6 +535,167 @@ button {
           }
 
         }
+
+        .reach-out-body-wrap {
+          .title {
+            font-family: 'Code';
+            font-size: $fontSize * 1.75;
+            margin: $fontSize * 1.25 $fontSize $fontSize * 1.25 $fontSize;
+          }
+
+          .console-device-wrap {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin: 0 $fontSize * 0.5;
+
+            .smartphone {
+              z-index: 1000;
+              max-width: 400px;
+              width: 80vw;
+            }
+
+            .tablet {
+              z-index: 1000;
+              display: none;
+            }
+
+            .console {
+              * {
+                z-index: 1001;
+              }
+              position: absolute;
+              top: 2.5%;
+              max-width: 360px;
+              width: 72vw;
+              height: 95%;
+              overflow-y: auto;
+              @include scrollbar($fontSize);
+
+              background-color: black;
+              // background-image: radial-gradient(
+              //   rgba(0, 150, 0, 0.75), black 120%
+              // );
+              background-image: linear-gradient(to bottom, #3c3e41 1%,#161616 100%);
+
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: repeating-linear-gradient(
+                  0deg,
+                  rgba(black, 0.15),
+                  rgba(black, 0.15) 1px,
+                  transparent 1px,
+                  transparent 2px
+                );
+              }
+
+              .format-btns {
+                margin: $fontSize * 2 5% 0 5%;
+                // position: sticky;
+                // top: $fontSize * 2;
+
+                .format-btn {
+                  margin: 0 $fontSize * 0.25 $fontSize 0;
+
+                  width: $fontSize * 2.75;
+                  height: $fontSize * 2.75;
+                  border-radius: 50%;
+                  border: none;
+                  background-color: transparent;
+                  position: relative;
+                  cursor: pointer;
+
+                  i {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: $fontSize * 1.5;
+                    color: rgb(153, 153, 153);
+                  }
+
+                  &.active {
+                    background-color: #242424;
+                  }
+
+                  &:hover {
+                    background-color: #272727;
+                  }
+                }
+              }
+
+              .questions {
+                margin-top: $fontSize * 0.25;
+                margin-left: 3%;
+                margin-right: 3%;
+
+                * {
+                  // font-family: 'Open Sans', sans-serif;
+                  // font-size: $fontSize * 0.9;
+                  // color: #C8C2C2;
+                  margin: $fontSize * 0.25 0;
+                  color: white;
+                  // font: $fontSize * 0.9 Inconsolata, monospace;
+                  font: $fontSize * 0.9 'Open Sans', sans-serif;
+                  text-shadow: 0 0 5px #C8C8C8;
+                }
+
+                .question-wrap {
+
+                  .answered {
+                    color: #c1c1c1!important;
+                  }
+
+                  input, textarea {
+                    cursor: pointer!important;
+                    border: none;
+                    background-color: transparent;
+                    outline: none;
+                    position: relative;
+                    width: 100%;
+
+                    // &:focus {
+                    //   &::after {
+                    //     content: '_';
+                    //     position: absolute;
+                    //     bottom: 0;
+                    //     right: 0;
+                    //     // animation: blink 1s step-end infinite;
+                    //     color: white;
+                    //   }
+                    // }
+                    @keyframes blink {
+                      from,
+                      to {
+                        color: transparent;
+                      }
+                      50% {
+                        color: #fff;
+                      }
+                    }
+
+                  }
+
+                  textarea {
+                    height: aut;
+                  }
+                }
+              }
+
+            }
+          }
+
+        }
       }
     }
   }
@@ -577,6 +722,10 @@ button {
 
     .content {
       display: flex;
+
+      .tab {
+        flex-grow: 1;
+      }
 
       .about-section-selector {
         position: sticky;
@@ -874,6 +1023,119 @@ button {
           }
         }
       }
+
+      .reach-out-body-wrap {
+
+        .title {
+          font-size: $fontSize * 2.25!important;
+          margin: $fontSize * 1.25 $fontSize * 1.5 $fontSize * 1.25 $fontSize * 1.5 !important;
+        }
+
+        .console-device-wrap {
+          justify-content: flex-start!important;
+          margin: 0 $fontSize * 1.5 !important;
+          max-width: $fontSize * 45;
+          width: 80vw;
+
+          .smartphone {
+            display: none!important;
+          }
+
+          .tablet {
+            display: initial!important;
+            max-width: $fontSize * 45;
+            width: 80vw;
+          }
+
+          .console {
+            z-index: 2000!important;
+            position: absolute;
+            top: 7%!important;
+            left: 10.5%;
+            max-width: $fontSize * 35.4!important;
+            width: 62.75vw!important;
+            height: 87%!important;
+            background-color: black;
+            // background-image: radial-gradient(
+            //   rgba(0, 150, 0, 0.75), black 120%
+            // );
+            background-image: linear-gradient(to bottom, #3c3e41 1%,#161616 100%);
+
+            &::after {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: repeating-linear-gradient(
+                0deg,
+                rgba(black, 0.15),
+                rgba(black, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+              );
+            }
+
+            .format-btns {
+              margin: $fontSize * 2 5% 0 5%;
+
+              .format-btn {
+                margin: 0 $fontSize * 0.25 $fontSize 0;
+
+                width: $fontSize * 2.75;
+                height: $fontSize * 2.75;
+                border-radius: 50%;
+                border: none;
+                background-color: transparent;
+                position: relative;
+                cursor: pointer;
+
+                i {
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-size: $fontSize * 1.5;
+                  color: rgb(153, 153, 153);
+                }
+
+                &.active {
+                  background-color: #242424;
+                }
+
+                &:hover {
+                  background-color: #272727;
+                }
+              }
+            }
+
+            .questions {
+              margin-top: $fontSize * 0.25;
+              margin-left: 3%;
+              margin-right: 3%;
+
+              * {
+                // font-family: 'Open Sans', sans-serif;
+                // font-size: $fontSize * 0.9;
+                // color: #C8C2C2;
+                margin: $fontSize * 0.25 0;
+                color: white;
+                // font: $fontSize * 0.9 Inconsolata, monospace;
+                font: $fontSize * 0.9 'Open Sans', sans-serif;
+                text-shadow: 0 0 5px #C8C8C8;
+              }
+            }
+
+          }
+        }
+
+      }
+
     }
   }
 }

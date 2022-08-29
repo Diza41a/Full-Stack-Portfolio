@@ -212,6 +212,11 @@ const Colored = {
        }
     `,
   },
+  ReachOutBody: styled.div`
+    .title {
+      color: ${colors.secondText};
+    }
+  `,
 };
 
 export default Colored;
