@@ -1,10 +1,68 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useEffect } from 'react';
 // import { Outlet } from 'react-router-dom';
 
+// Subcomponent imports
+import Colored from './styles/Colored';
+
+const { LandingWrap } = Colored;
+
 export default function Landing() {
+  // Helpers
+  const descriptionSlideshow = () => {
+    const slideshowContainer = document.querySelector('div.dynamic');
+    if (!slideshowContainer) {
+      return;
+    }
+    slideshowContainer.scrollBehavior = 'smooth';
+    const style = window.getComputedStyle(slideshowContainer, null).getPropertyValue('font-size');
+    const fontSize = parseFloat(style);
+    if (slideshowContainer.scrollTop + fontSize * 1.2 > fontSize * 1.2 * 4) {
+      slideshowContainer.scrollTop = 0;
+      return;
+    }
+    slideshowContainer.scrollTop += fontSize * 1.2;
+  };
+
+  // ComponentDidMount
+  useEffect(() => {
+    const sliderInterval = setInterval(descriptionSlideshow, 2000);
+    window.addEventListener('resize', () => {
+      const slideshowContainer = document.querySelector('div.dynamic');
+      slideshowContainer.scrollTop = 0;
+    });
+
+    // Cleanup after unmounting (side effect)
+    return function cleanup() {
+      clearInterval(sliderInterval);
+    };
+  }, []);
+
   return (
-    <div>
-      This is Landing
-    </div>
+    <LandingWrap className="landing-wrap">
+      <p className="landing-nav-lbl">
+        <i className="fa-solid fa-arrow-left" />
+        {' Nav Options'}
+      </p>
+
+      <div className="introduction">
+        <p className="static">Hello There!</p>
+        <p className="static">{'I\'m Davyd, and I\'m a'}</p>
+        <div className="dynamic">
+          <p>Immigrant</p>
+          <p>Philanthropist</p>
+          <p>Sweet Crepe</p>
+          <p>Software Engineer</p>
+          <p>Im going home</p>
+        </div>
+      </div>
+
+      <div className="photo-wrap">
+        <img src="./assets/images/projects/tablet-robot.png" alt="" className="robotic-hand" />
+        <img src="./assets/images/about-me/corporate.jpg" alt="" className="photo" />
+      </div>
+
+    </LandingWrap>
   );
 }

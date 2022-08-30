@@ -136,6 +136,76 @@ button {
         width: calc(100% - $fontSize * 3.5);
         // margin-left: $fontSize * 3.5;
 
+        .landing-wrap {
+          overflow: hidden;
+          flex-grow: 1;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .landing-nav-lbl {
+            user-select: none;
+            font-family: 'Code';
+            font-size: $fontSize * 1.5;
+            text-align: center;
+            width: 60vw;
+            max-width: 400px;
+            margin-top: $fontSize * 3.5;
+            padding: $fontSize * 0.1 0;
+          }
+
+          .introduction {
+            max-width: $fontSize * 40;
+            margin: 0 $fontSize * 0.25;
+            padding: $fontSize * 1.25 $fontSize * 0.25;
+            .static, .dynamic {
+              font-family: 'Code';
+              // font-size: $fontSize * 1.85;
+              font-size: 6vw;
+            }
+
+            .dynamic {
+              text-transform: uppercase;
+              // max-height: $fontSize * 1.95;
+              max-height: 7vw;
+              scroll-behavior: smooth;
+              overflow: hidden;
+
+              p {
+                position: relative;
+              }
+            }
+          }
+
+          .photo-wrap {
+            align-self: flex-end;
+            overflow: hidden;
+            position: relative;
+            top: $fontSize;
+            left: $fontSize * 1.25;
+            .robotic-hand {
+              position: relative;
+              z-index: 1000;
+              width: 90vw;
+              max-width: 800px;
+            }
+
+            .photo {
+              border-radius: $fontSize;
+              // opacity: 0.35;
+              position: absolute;
+              top: 11.25%;
+              left: 6%;
+              height: 62%;
+              width: 67vw;
+              max-width: 600px;
+              object-fit: cover;
+            }
+
+          }
+        }
+
         .about-section-selector {
           z-index: 1000;
           display: flex;
@@ -725,6 +795,48 @@ button {
 
       .tab {
         flex-grow: 1;
+      }
+
+      .landing-wrap {
+        // height: 100vh!important;
+        height: calc(110vh - (2.5vh + ($fontSize * 0.4) + 1px))!important;
+        overflow-y: auto!important;
+        @include scrollbar($fontSize);
+
+        .landing-nav-lbl {
+          margin-bottom: $fontSize * 1.5;
+        }
+
+        .introduction {
+          position: relative;
+          right: 5vw;
+          // width: 70vw;
+          max-width: none!important;
+          padding: $fontSize * 1.25 $fontSize * 0.25 $fontSize * 1.25 10vw !important;
+          .static, .dynamic {
+            font-size: $fontSize * 2.05!important;
+            // font-size: 6vw;
+          }
+
+          .dynamic {
+            max-height: $fontSize * 2.15!important;
+          }
+        }
+
+        .photo-wrap {
+          overflow: initial!important;
+          overflow-y: visible!important;
+          top: $fontSize * 0!important;
+          transform: scale(0.9);
+          .robotic-hand {
+            max-width: 900px!important;
+          }
+
+          .photo {
+            max-width: 700px!important;
+          }
+
+        }
       }
 
       .about-section-selector {

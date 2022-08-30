@@ -72,6 +72,21 @@ const Colored = {
       }
     }
   `,
+  LandingWrap: styled.div`
+    .landing-nav-lbl {
+      color: ${colors.mainText};
+      background-color: ${colors.subsectionSelector};
+    }
+
+    .introduction {
+      background-color: ${colors.mainDarkTransparent};
+      border: 4px solid ${colors.border};
+
+      .static, .dynamic {
+        color: ${colors.mainText};
+      }
+    }
+  `,
   About: {
     SubsectionSelector: styled.div`
       background-color: ${colors.mainDarkTransparent};
