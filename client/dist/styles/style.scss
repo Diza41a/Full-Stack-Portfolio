@@ -145,7 +145,7 @@ button {
           justify-content: space-between;
 
           .landing-nav-lbl {
-            user-select: none;
+            // user-select: none;
             font-family: 'Code';
             font-size: $fontSize * 1.5;
             text-align: center;
@@ -179,7 +179,7 @@ button {
           }
 
           .photo-wrap {
-            align-self: flex-end;
+            align-self: center;
             overflow: hidden;
             position: relative;
             top: $fontSize;
@@ -1264,4 +1264,8 @@ button {
 @media (min-width: 1600px) {
   @include mainView(24px);
   @include largeScreens(24px);
+
+  .photo-wrap {
+    align-self: flex-end!important;
+  }
 }

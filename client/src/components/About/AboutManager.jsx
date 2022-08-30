@@ -1,16 +1,18 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 // Subcomponent imports
 import AboutDescription from './AboutDescription';
 import AboutSkills from './AboutSkills';
 import Colored from '../styles/Colored';
+import { MainContext } from '../reusable/MainLayout';
 
 const { SubsectionSelector } = Colored.About;
 
 export default function AboutManager() {
+  const { setCurrentFileName } = useContext(MainContext);
   const [subsection, changeSubsection] = useState('introduction');
   const navigate = useNavigate();
 
@@ -23,6 +25,7 @@ export default function AboutManager() {
     } else if (link === 'about' || link === '/') {
       navigate('introduction');
     }
+    setCurrentFileName('AboutManager.jsx');
   }, []);
 
   const toggleSubsectionList = () => {

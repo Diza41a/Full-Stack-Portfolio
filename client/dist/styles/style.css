@@ -104,7 +104,6 @@ button {
     justify-content: space-between;
   }
   #app .content-body-wrap .content .landing-wrap .landing-nav-lbl {
-    user-select: none;
     font-family: "Code";
     font-size: 24px;
     text-align: center;
@@ -132,7 +131,7 @@ button {
     position: relative;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap {
-    align-self: flex-end;
+    align-self: center;
     overflow: hidden;
     position: relative;
     top: 16px;
@@ -718,7 +717,6 @@ button {
     justify-content: space-between;
   }
   #app .content-body-wrap .content .landing-wrap .landing-nav-lbl {
-    user-select: none;
     font-family: "Code";
     font-size: 30px;
     text-align: center;
@@ -746,7 +744,7 @@ button {
     position: relative;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap {
-    align-self: flex-end;
+    align-self: center;
     overflow: hidden;
     position: relative;
     top: 20px;
@@ -1701,7 +1699,6 @@ button {
     justify-content: space-between;
   }
   #app .content-body-wrap .content .landing-wrap .landing-nav-lbl {
-    user-select: none;
     font-family: "Code";
     font-size: 36px;
     text-align: center;
@@ -1729,7 +1726,7 @@ button {
     position: relative;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap {
-    align-self: flex-end;
+    align-self: center;
     overflow: hidden;
     position: relative;
     top: 24px;
@@ -2596,6 +2593,10 @@ button {
     color: white;
     font: 21.6px "Open Sans", sans-serif;
     text-shadow: 0 0 5px #C8C8C8;
+  }
+
+  .photo-wrap {
+    align-self: flex-end !important;
   }
 }
 

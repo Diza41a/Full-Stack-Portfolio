@@ -4,18 +4,25 @@
 /* eslint-disable consistent-return */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 // Subcomponent/Data imports
 import Colored from '../styles/Colored';
 import questions from './questions';
+import { MainContext } from '../reusable/MainLayout';
 
 const { Subsection } = Colored.About;
 const { ReachOutBody } = Colored;
 
 export default function ReachOut() {
+  const { setCurrentFileName } = useContext(MainContext);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [sessionId, generateSessionId] = useState(Math.round(Math.random() * 10000 + 1));
+
+  // ComponentDidMount
+  useEffect(() => {
+    setCurrentFileName('ReachOut.jsx');
+  }, []);
 
   // Helpers
   const activeLatestQuestion = () => {

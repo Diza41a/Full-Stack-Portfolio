@@ -1,14 +1,22 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 // import { Outlet } from 'react-router-dom';
 
 // Subcomponent imports
 import Colored from './styles/Colored';
+import { MainContext } from './reusable/MainLayout';
 
 const { LandingWrap } = Colored;
 
 export default function Landing() {
+  const { setCurrentFileName } = useContext(MainContext);
+
+  // ComponentDidMount
+  useEffect(() => {
+    setCurrentFileName('Landing.jsx');
+  }, []);
+
   // Helpers
   const descriptionSlideshow = () => {
     const slideshowContainer = document.querySelector('div.dynamic');
