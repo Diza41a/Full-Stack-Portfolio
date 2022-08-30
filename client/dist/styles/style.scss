@@ -20,6 +20,15 @@ button {
   cursor: pointer;
 }
 
+@keyframes slideInFromBottom {
+  from{
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 @mixin scrollbar($fontSize) {
   /* width */
   &::-webkit-scrollbar {
@@ -46,7 +55,6 @@ button {
 
 @mixin cardMobile($fontSize) {
   .card {
-
     max-width: 400px;
     // margin-bottom: $fontSi`ze * 2;
     margin: 0 $fontSize * 0.75 $fontSize * 2 $fontSize * 0.75;
@@ -189,6 +197,11 @@ button {
             justify-content: center;
             align-items: center;
             position: relative;
+            opacity: 0;
+
+            &:hover {
+              opacity: 1;
+            }
           }
         }
       }
@@ -292,6 +305,8 @@ button {
             position: relative;
             top: $fontSize;
             left: $fontSize * 1.25;
+
+            animation: slideInFromBottom 1s ease-in;
             .robotic-hand {
               position: relative;
               z-index: 1000;
@@ -809,12 +824,14 @@ button {
 
       .direct-links-card {
         z-index: 2000;
+        opacity: 1;
         position: fixed;
         right: 0;
         top: 35%;
         margin: 0;
-        border-radius: $fontSize * 0.35 0 0 $fontSize * 0.35;
+        border-radius: $fontSize * 0.85 0 0 $fontSize * 0.85;
         width: 50vw;
+        max-width: 400px;
 
         .star {
           font-size: $fontSize * 1.1;
@@ -825,11 +842,151 @@ button {
           font-size: $fontSize;
         }
 
-        transition: right ease-in 0.5s;
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          padding: 0!important;
+
+          ul.direct-links {
+            list-style: none;
+            li {
+              margin: $fontSize * 1.5 0;
+              a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                font-size: $fontSize * 0.8;
+                text-decoration: none;
+                color: white;
+
+                width: 25vw;
+                max-width: 200px;
+                padding: $fontSize * 0.25 $fontSize * 2;
+                max-height: $fontSize;
+                border-radius: $fontSize * 0.85 0 0 $fontSize * 0.85;
+
+                position: relative;
+                img {
+                  position: absolute;
+                  left: 0;
+                  width: $fontSize * 2;
+                  object-fit: contain;
+                }
+
+                &.linkedin {
+                  background-color: #188AEB;
+
+                  img {
+                    // top: -$fontSize * 0.3125;
+                  }
+                }
+
+                &.gmail {
+                  background-color: #DDDDDD;
+
+                  img {
+                    width: $fontSize * 2.15;
+                    height: $fontSize * 1.5;
+                    object-fit: fill;
+                  }
+                }
+
+                &.telegram {
+                  background-color: #37AEE2;
+                }
+              }
+            }
+          }
+        }
+
+        transition: opacity ease-out 1.5s, right ease-in 0.5s;
         &.hidden {
-          transition: right ease-in 0.5s;
+          opacity: 0;
+          transition: opacity ease-out 0.5s, right ease-in 0.5s;
           right: -100vw;
         }
+      }
+    }
+  }
+
+  .desktop-wrap {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+
+    .desktop-icon-wrap {
+      position: absolute;
+      cursor: pointer;
+      text-align: center;
+      max-width: $fontSize * 5;
+
+      &.vscode-icon {
+        top: 5%;
+        left: 5%;
+      }
+
+      .desktop-icon {
+        user-select: none;
+        width: $fontSize * 4;
+      }
+
+      .icon-title {
+        user-select: none;
+        font-size: $fontSize * 0.75;
+        color: white;
+        max-width: $fontSize * 5;
+      }
+
+      &.selected {
+        .desktop-icon {
+          border: 2px solid rgba(190, 189, 189, 0.705);
+        }
+
+        .icon-title {
+          background-color: rgba(103, 103, 103, 0.603);
+        }
+      }
+    }
+
+    .selection-area {
+      background-color: rgba(165, 165, 165, 0.531);
+      border: 1px solid rgb(211, 211, 211);
+
+      position: absolute;
+      z-index: 10;
+
+      &.hidden {
+        display: none;
+      }
+    }
+
+    .toolkit {
+      user-select: none;
+
+      .os, .time {
+        font-family: 'Code';
+      }
+
+      p {
+        .app {
+          font-size: 0.9em;
+          padding-left: $fontSize * 0.5;
+        }
+      }
+
+      padding: $fontSize * 0.1 $fontSize * 0.25;
+      display: flex;
+      justify-content: space-between;
+      font-size: $fontSize * 0.8;
+      background-color: rgba(71, 70, 70, 0.734);
+      color: white;
+
+      .time {
+        display: none;
       }
     }
   }
@@ -1269,6 +1426,23 @@ button {
 
       }
 
+    }
+  }
+
+  .desktop-wrap {
+    .toolkit {
+      .time {
+        display: initial!important;
+        position: absolute;
+        right: 0;
+      }
+
+      .os {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
     }
   }
 }

@@ -36,14 +36,16 @@ export default function Landing() {
   // ComponentDidMount
   useEffect(() => {
     const sliderInterval = setInterval(descriptionSlideshow, 2000);
-    window.addEventListener('resize', () => {
+    const sliderFunction = () => {
       const slideshowContainer = document.querySelector('div.dynamic');
       slideshowContainer.scrollTop = 0;
-    });
+    };
+    window.addEventListener('resize', sliderFunction);
 
     // Cleanup after unmounting (side effect)
     return function cleanup() {
       clearInterval(sliderInterval);
+      window.removeEventListener('resize', sliderFunction);
     };
   }, []);
 

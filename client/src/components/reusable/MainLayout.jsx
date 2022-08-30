@@ -3,8 +3,8 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
-import React, { useState, createContext } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import React, { useState, createContext, useEffect } from 'react';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 
 // Component imports
 import Particle from './Particle';
@@ -15,7 +15,7 @@ const { Toolbar, Nav } = Colored;
 
 export const MainContext = createContext('default');
 
-const getCurrentTime = () => {
+export const getCurrentTime = () => {
   const dateTime = new Date();
   const datePart = dateTime.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
   const timePart = dateTime.toLocaleTimeString(undefined, {
@@ -25,13 +25,29 @@ const getCurrentTime = () => {
 };
 
 export default function MainLayout() {
+  const navigate = useNavigate();
+
+  const [globalTheme, setGlobalTheme] = useState('default');
   const [time, setTime] = useState(getCurrentTime());
   const [currentFileName, setCurrentFileName] = useState('Landing.jsx');
 
-  // Update the clock
-  setInterval(() => {
-    setTime(getCurrentTime());
-  }, 1000);
+  // ComponentDidMount
+  useEffect(() => {
+    // Update the clock
+    const clockInterval = setInterval(() => {
+      setTime(getCurrentTime());
+    }, 1000);
+    // Cleanup after unmounting (side effect)
+    return function cleanup() {
+      clearInterval(clockInterval);
+    };
+  }, []);
+
+  // To desktop
+  const toDesktop = (e) => {
+    e.preventDefault();
+    navigate('/');
+  };
 
   // Toggle direct link visibility
   const toggleDirectLinks = (e) => {
@@ -48,12 +64,15 @@ export default function MainLayout() {
   };
 
   return (
-    <MainContext.Provider value={{ currentFileName, setCurrentFileName }}>
+    <MainContext.Provider value={{
+      currentFileName, setCurrentFileName, globalTheme, setGlobalTheme,
+    }}
+    >
       {/* // eslint-disable-next-line react/jsx-no-constructed-context-values */}
       <div id="app" style={{ backgroundColor: background.color, backgroundImage: background.image }}>
         <Toolbar>
           <div className="buttons">
-            <button type="button" style={{ color: 'white', backgroundColor: 'red' }}>
+            <button type="button" style={{ color: 'white', backgroundColor: 'red' }} onClick={toDesktop}>
               <i className="fa-solid fa-x" />
             </button>
             <button type="button" style={{ color: 'black', backgroundColor: '#FFDE59' }}>
@@ -72,7 +91,7 @@ export default function MainLayout() {
         <div className="content-body-wrap">
           <Nav>
             <div className="main-nav">
-              <NavLink to="/">
+              <NavLink to="landing">
                 <i className="fa-solid fa-flag-checkered" style={{ transform: 'rotate(20deg)' }} />
               </NavLink>
               <NavLink to="about">

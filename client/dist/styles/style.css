@@ -18,6 +18,14 @@ button {
   cursor: pointer;
 }
 
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 @media (max-width: 850px) {
   html {
     overflow: hidden;
@@ -109,6 +117,10 @@ button {
     justify-content: center;
     align-items: center;
     position: relative;
+    opacity: 0;
+  }
+  #app header .buttons button i:hover {
+    opacity: 1;
   }
   #app header .file-name {
     font-family: "Open Sans", sans-serif;
@@ -192,6 +204,7 @@ button {
     position: relative;
     top: 16px;
     left: 20px;
+    animation: slideInFromBottom 1s ease-in;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .robotic-hand {
     position: relative;
@@ -688,13 +701,15 @@ button {
   }
   #app .content-body-wrap .direct-links-card {
     z-index: 2000;
+    opacity: 1;
     position: fixed;
     right: 0;
     top: 35%;
     margin: 0;
-    border-radius: 5.6px 0 0 5.6px;
+    border-radius: 13.6px 0 0 13.6px;
     width: 50vw;
-    transition: right ease-in 0.5s;
+    max-width: 400px;
+    transition: opacity ease-out 1.5s, right ease-in 0.5s;
   }
   #app .content-body-wrap .direct-links-card .star {
     font-size: 17.6px;
@@ -703,9 +718,118 @@ button {
   #app .content-body-wrap .direct-links-card .card-title {
     font-size: 16px;
   }
+  #app .content-body-wrap .direct-links-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 !important;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links {
+    list-style: none;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li {
+    margin: 24px 0;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12.8px;
+    text-decoration: none;
+    color: white;
+    width: 25vw;
+    max-width: 200px;
+    padding: 4px 32px;
+    max-height: 16px;
+    border-radius: 13.6px 0 0 13.6px;
+    position: relative;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a img {
+    position: absolute;
+    left: 0;
+    width: 32px;
+    object-fit: contain;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.linkedin {
+    background-color: #188AEB;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.gmail {
+    background-color: #DDDDDD;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.gmail img {
+    width: 34.4px;
+    height: 24px;
+    object-fit: fill;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.telegram {
+    background-color: #37AEE2;
+  }
   #app .content-body-wrap .direct-links-card.hidden {
-    transition: right ease-in 0.5s;
+    opacity: 0;
+    transition: opacity ease-out 0.5s, right ease-in 0.5s;
     right: -100vw;
+  }
+
+  .desktop-wrap {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+  .desktop-wrap .desktop-icon-wrap {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    max-width: 80px;
+  }
+  .desktop-wrap .desktop-icon-wrap.vscode-icon {
+    top: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap .desktop-icon {
+    user-select: none;
+    width: 64px;
+  }
+  .desktop-wrap .desktop-icon-wrap .icon-title {
+    user-select: none;
+    font-size: 12px;
+    color: white;
+    max-width: 80px;
+  }
+  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon {
+    border: 2px solid rgba(190, 189, 189, 0.705);
+  }
+  .desktop-wrap .desktop-icon-wrap.selected .icon-title {
+    background-color: rgba(103, 103, 103, 0.603);
+  }
+  .desktop-wrap .selection-area {
+    background-color: rgba(165, 165, 165, 0.531);
+    border: 1px solid rgb(211, 211, 211);
+    position: absolute;
+    z-index: 10;
+  }
+  .desktop-wrap .selection-area.hidden {
+    display: none;
+  }
+  .desktop-wrap .toolkit {
+    user-select: none;
+    padding: 1.6px 4px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.8px;
+    background-color: rgba(71, 70, 70, 0.734);
+    color: white;
+  }
+  .desktop-wrap .toolkit .os, .desktop-wrap .toolkit .time {
+    font-family: "Code";
+  }
+  .desktop-wrap .toolkit p .app {
+    font-size: 0.9em;
+    padding-left: 8px;
+  }
+  .desktop-wrap .toolkit .time {
+    display: none;
   }
 }
 @media (min-width: 850px) {
@@ -799,6 +923,10 @@ button {
     justify-content: center;
     align-items: center;
     position: relative;
+    opacity: 0;
+  }
+  #app header .buttons button i:hover {
+    opacity: 1;
   }
   #app header .file-name {
     font-family: "Open Sans", sans-serif;
@@ -882,6 +1010,7 @@ button {
     position: relative;
     top: 20px;
     left: 25px;
+    animation: slideInFromBottom 1s ease-in;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .robotic-hand {
     position: relative;
@@ -1378,13 +1507,15 @@ button {
   }
   #app .content-body-wrap .direct-links-card {
     z-index: 2000;
+    opacity: 1;
     position: fixed;
     right: 0;
     top: 35%;
     margin: 0;
-    border-radius: 7px 0 0 7px;
+    border-radius: 17px 0 0 17px;
     width: 50vw;
-    transition: right ease-in 0.5s;
+    max-width: 400px;
+    transition: opacity ease-out 1.5s, right ease-in 0.5s;
   }
   #app .content-body-wrap .direct-links-card .star {
     font-size: 22px;
@@ -1393,9 +1524,118 @@ button {
   #app .content-body-wrap .direct-links-card .card-title {
     font-size: 20px;
   }
+  #app .content-body-wrap .direct-links-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 !important;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links {
+    list-style: none;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li {
+    margin: 30px 0;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    width: 25vw;
+    max-width: 200px;
+    padding: 5px 40px;
+    max-height: 20px;
+    border-radius: 17px 0 0 17px;
+    position: relative;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a img {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    object-fit: contain;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.linkedin {
+    background-color: #188AEB;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.gmail {
+    background-color: #DDDDDD;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.gmail img {
+    width: 43px;
+    height: 30px;
+    object-fit: fill;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.telegram {
+    background-color: #37AEE2;
+  }
   #app .content-body-wrap .direct-links-card.hidden {
-    transition: right ease-in 0.5s;
+    opacity: 0;
+    transition: opacity ease-out 0.5s, right ease-in 0.5s;
     right: -100vw;
+  }
+
+  .desktop-wrap {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+  .desktop-wrap .desktop-icon-wrap {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    max-width: 100px;
+  }
+  .desktop-wrap .desktop-icon-wrap.vscode-icon {
+    top: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap .desktop-icon {
+    user-select: none;
+    width: 80px;
+  }
+  .desktop-wrap .desktop-icon-wrap .icon-title {
+    user-select: none;
+    font-size: 15px;
+    color: white;
+    max-width: 100px;
+  }
+  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon {
+    border: 2px solid rgba(190, 189, 189, 0.705);
+  }
+  .desktop-wrap .desktop-icon-wrap.selected .icon-title {
+    background-color: rgba(103, 103, 103, 0.603);
+  }
+  .desktop-wrap .selection-area {
+    background-color: rgba(165, 165, 165, 0.531);
+    border: 1px solid rgb(211, 211, 211);
+    position: absolute;
+    z-index: 10;
+  }
+  .desktop-wrap .selection-area.hidden {
+    display: none;
+  }
+  .desktop-wrap .toolkit {
+    user-select: none;
+    padding: 2px 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    background-color: rgba(71, 70, 70, 0.734);
+    color: white;
+  }
+  .desktop-wrap .toolkit .os, .desktop-wrap .toolkit .time {
+    font-family: "Code";
+  }
+  .desktop-wrap .toolkit p .app {
+    font-size: 0.9em;
+    padding-left: 10px;
+  }
+  .desktop-wrap .toolkit .time {
+    display: none;
   }
 
   html {
@@ -1775,6 +2015,18 @@ button {
     font: 18px "Open Sans", sans-serif;
     text-shadow: 0 0 5px #C8C8C8;
   }
+
+  .desktop-wrap .toolkit .time {
+    display: initial !important;
+    position: absolute;
+    right: 0;
+  }
+  .desktop-wrap .toolkit .os {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
 }
 @media (min-width: 1600px) {
   html {
@@ -1867,6 +2119,10 @@ button {
     justify-content: center;
     align-items: center;
     position: relative;
+    opacity: 0;
+  }
+  #app header .buttons button i:hover {
+    opacity: 1;
   }
   #app header .file-name {
     font-family: "Open Sans", sans-serif;
@@ -1950,6 +2206,7 @@ button {
     position: relative;
     top: 24px;
     left: 30px;
+    animation: slideInFromBottom 1s ease-in;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .robotic-hand {
     position: relative;
@@ -2446,13 +2703,15 @@ button {
   }
   #app .content-body-wrap .direct-links-card {
     z-index: 2000;
+    opacity: 1;
     position: fixed;
     right: 0;
     top: 35%;
     margin: 0;
-    border-radius: 8.4px 0 0 8.4px;
+    border-radius: 20.4px 0 0 20.4px;
     width: 50vw;
-    transition: right ease-in 0.5s;
+    max-width: 400px;
+    transition: opacity ease-out 1.5s, right ease-in 0.5s;
   }
   #app .content-body-wrap .direct-links-card .star {
     font-size: 26.4px;
@@ -2461,9 +2720,118 @@ button {
   #app .content-body-wrap .direct-links-card .card-title {
     font-size: 24px;
   }
+  #app .content-body-wrap .direct-links-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 !important;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links {
+    list-style: none;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li {
+    margin: 36px 0;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19.2px;
+    text-decoration: none;
+    color: white;
+    width: 25vw;
+    max-width: 200px;
+    padding: 6px 48px;
+    max-height: 24px;
+    border-radius: 20.4px 0 0 20.4px;
+    position: relative;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a img {
+    position: absolute;
+    left: 0;
+    width: 48px;
+    object-fit: contain;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.linkedin {
+    background-color: #188AEB;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.gmail {
+    background-color: #DDDDDD;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.gmail img {
+    width: 51.6px;
+    height: 36px;
+    object-fit: fill;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.telegram {
+    background-color: #37AEE2;
+  }
   #app .content-body-wrap .direct-links-card.hidden {
-    transition: right ease-in 0.5s;
+    opacity: 0;
+    transition: opacity ease-out 0.5s, right ease-in 0.5s;
     right: -100vw;
+  }
+
+  .desktop-wrap {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+  .desktop-wrap .desktop-icon-wrap {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    max-width: 120px;
+  }
+  .desktop-wrap .desktop-icon-wrap.vscode-icon {
+    top: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap .desktop-icon {
+    user-select: none;
+    width: 96px;
+  }
+  .desktop-wrap .desktop-icon-wrap .icon-title {
+    user-select: none;
+    font-size: 18px;
+    color: white;
+    max-width: 120px;
+  }
+  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon {
+    border: 2px solid rgba(190, 189, 189, 0.705);
+  }
+  .desktop-wrap .desktop-icon-wrap.selected .icon-title {
+    background-color: rgba(103, 103, 103, 0.603);
+  }
+  .desktop-wrap .selection-area {
+    background-color: rgba(165, 165, 165, 0.531);
+    border: 1px solid rgb(211, 211, 211);
+    position: absolute;
+    z-index: 10;
+  }
+  .desktop-wrap .selection-area.hidden {
+    display: none;
+  }
+  .desktop-wrap .toolkit {
+    user-select: none;
+    padding: 2.4px 6px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 19.2px;
+    background-color: rgba(71, 70, 70, 0.734);
+    color: white;
+  }
+  .desktop-wrap .toolkit .os, .desktop-wrap .toolkit .time {
+    font-family: "Code";
+  }
+  .desktop-wrap .toolkit p .app {
+    font-size: 0.9em;
+    padding-left: 12px;
+  }
+  .desktop-wrap .toolkit .time {
+    display: none;
   }
 
   html {
@@ -2842,6 +3210,18 @@ button {
     color: white;
     font: 21.6px "Open Sans", sans-serif;
     text-shadow: 0 0 5px #C8C8C8;
+  }
+
+  .desktop-wrap .toolkit .time {
+    display: initial !important;
+    position: absolute;
+    right: 0;
+  }
+  .desktop-wrap .toolkit .os {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 
   .photo-wrap {

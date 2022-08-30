@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import styled from 'styled-components';
 import { createTheme } from '@uiw/codemirror-themes';
 import { tags as t } from '@lezer/highlight';

@@ -6,6 +6,8 @@ import { createRoot } from 'react-dom/client';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 
 // Component imports
+import Desktop from './components/Desktop/Desktop';
+
 import MainLayout from './components/reusable/MainLayout';
 import Landing from './components/Landing';
 import AboutManager from './components/About/AboutManager';
@@ -19,9 +21,11 @@ function App() {
     <Suspense fallback="loading">
       <HashRouter>
         <Routes>
-          <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<Desktop />} />
+          <Route path="/vscode" element={<MainLayout />}>
             <Route index element={<Landing />} />
             <Route path="*" element={<Landing />} />
+            <Route path="landing" element={<Landing />} />
             <Route path="about" element={<AboutManager />}>
               <Route path="introduction" element={<AboutManager />} />
               <Route path="skills" element={<AboutManager value="skills" />} />
