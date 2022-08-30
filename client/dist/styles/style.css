@@ -23,6 +23,61 @@ button {
     overflow: hidden;
   }
 
+  .card {
+    max-width: 400px;
+    margin: 0 12px 32px 12px;
+    border-radius: 16px;
+  }
+  .card .title-wrap {
+    display: flex;
+    align-items: center;
+  }
+  .card .title-wrap .star {
+    border-radius: 4px;
+    padding: 7.2px 12px;
+    font-size: 20.8px;
+  }
+  .card .title-wrap .card-title {
+    margin-left: 5.6px;
+    font-family: "Code";
+    font-size: 18.8px;
+  }
+  .card .body {
+    line-height: 1.45;
+    font-size: 13.6px;
+    padding: 12px 24px;
+    cursor: pointer;
+  }
+  .card .links-wrap {
+    padding: 24px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .card .links-wrap .octo-logo {
+    text-decoration: none;
+  }
+  .card .links-wrap .octo-logo img {
+    width: 56px;
+  }
+  .card .links-wrap .links {
+    display: flex;
+    flex-direction: column;
+  }
+  .card .links-wrap .links a {
+    text-decoration: none;
+    font-family: "Code";
+    font-size: 16px;
+    text-align: center;
+    padding: 2.4px 32px;
+    margin: 1.6px 0;
+    border-radius: 4px;
+    min-width: 100px;
+  }
+  .card .links-wrap .links a.disabled {
+    cursor: not-allowed;
+  }
+
   #app {
     height: 100%;
     background-size: cover;
@@ -131,6 +186,7 @@ button {
     position: relative;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap {
+    visibility: hidden;
     align-self: center;
     overflow: hidden;
     position: relative;
@@ -538,7 +594,7 @@ button {
     /* Handle */
     /* Handle on hover */
     background-color: black;
-    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 100%);
+    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 80%);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console * {
     z-index: 1001;
@@ -630,10 +686,86 @@ button {
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
     height: aut;
   }
+  #app .content-body-wrap .direct-links-card {
+    z-index: 2000;
+    position: fixed;
+    right: 0;
+    top: 35%;
+    margin: 0;
+    border-radius: 5.6px 0 0 5.6px;
+    width: 50vw;
+    transition: right ease-in 0.5s;
+  }
+  #app .content-body-wrap .direct-links-card .star {
+    font-size: 17.6px;
+    padding: 4px 8.8px;
+  }
+  #app .content-body-wrap .direct-links-card .card-title {
+    font-size: 16px;
+  }
+  #app .content-body-wrap .direct-links-card.hidden {
+    transition: right ease-in 0.5s;
+    right: -100vw;
+  }
 }
 @media (min-width: 850px) {
   html {
     overflow: hidden;
+  }
+
+  .card {
+    max-width: 400px;
+    margin: 0 15px 40px 15px;
+    border-radius: 20px;
+  }
+  .card .title-wrap {
+    display: flex;
+    align-items: center;
+  }
+  .card .title-wrap .star {
+    border-radius: 5px;
+    padding: 9px 15px;
+    font-size: 26px;
+  }
+  .card .title-wrap .card-title {
+    margin-left: 7px;
+    font-family: "Code";
+    font-size: 23.5px;
+  }
+  .card .body {
+    line-height: 1.45;
+    font-size: 17px;
+    padding: 15px 30px;
+    cursor: pointer;
+  }
+  .card .links-wrap {
+    padding: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .card .links-wrap .octo-logo {
+    text-decoration: none;
+  }
+  .card .links-wrap .octo-logo img {
+    width: 70px;
+  }
+  .card .links-wrap .links {
+    display: flex;
+    flex-direction: column;
+  }
+  .card .links-wrap .links a {
+    text-decoration: none;
+    font-family: "Code";
+    font-size: 20px;
+    text-align: center;
+    padding: 3px 40px;
+    margin: 2px 0;
+    border-radius: 5px;
+    min-width: 100px;
+  }
+  .card .links-wrap .links a.disabled {
+    cursor: not-allowed;
   }
 
   #app {
@@ -744,6 +876,7 @@ button {
     position: relative;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap {
+    visibility: hidden;
     align-self: center;
     overflow: hidden;
     position: relative;
@@ -1151,7 +1284,7 @@ button {
     /* Handle */
     /* Handle on hover */
     background-color: black;
-    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 100%);
+    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 80%);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console * {
     z-index: 1001;
@@ -1243,9 +1376,50 @@ button {
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
     height: aut;
   }
+  #app .content-body-wrap .direct-links-card {
+    z-index: 2000;
+    position: fixed;
+    right: 0;
+    top: 35%;
+    margin: 0;
+    border-radius: 7px 0 0 7px;
+    width: 50vw;
+    transition: right ease-in 0.5s;
+  }
+  #app .content-body-wrap .direct-links-card .star {
+    font-size: 22px;
+    padding: 5px 11px;
+  }
+  #app .content-body-wrap .direct-links-card .card-title {
+    font-size: 20px;
+  }
+  #app .content-body-wrap .direct-links-card.hidden {
+    transition: right ease-in 0.5s;
+    right: -100vw;
+  }
 
   html {
     overflow: hidden;
+  }
+
+  .card {
+    max-width: 600px;
+  }
+  .card .title-wrap .star {
+    padding: 7px 13px;
+    font-size: 22px;
+  }
+  .card .title-wrap .card-title {
+    font-size: 20px;
+  }
+  .card .body {
+    font-size: 14px;
+  }
+  .card .links-wrap {
+    padding: 24px;
+  }
+  .card .links-wrap .links a {
+    font-size: 17px;
   }
 
   #app header .time {
@@ -1301,6 +1475,7 @@ button {
     max-height: 43px !important;
   }
   #app .content .landing-wrap .photo-wrap {
+    visibility: visible !important;
     overflow: initial !important;
     overflow-y: visible !important;
     top: 0px !important;
@@ -1502,8 +1677,6 @@ button {
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card {
     max-width: 600px;
-    margin: 0 15px 40px 15px;
-    border-radius: 20px;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .title-wrap .star {
     padding: 7px 13px;
@@ -1513,24 +1686,13 @@ button {
     font-size: 20px;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .body {
-    line-height: 1.45;
     font-size: 14px;
-    padding: 15px 30px;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap {
     padding: 24px;
   }
-  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .octo-logo img {
-    width: 70px;
-  }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .links a {
     font-size: 17px;
-    padding: 3px 40px;
-    margin: 2px 0;
-    min-width: 100px;
-  }
-  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .links a.disabled {
-    cursor: not-allowed;
   }
   #app .content .reach-out-body-wrap .title {
     font-size: 45px !important;
@@ -1549,6 +1711,7 @@ button {
     display: initial !important;
     max-width: 900px;
     width: 80vw;
+    filter: brightness(0.6);
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console {
     z-index: 2000 !important;
@@ -1616,6 +1779,61 @@ button {
 @media (min-width: 1600px) {
   html {
     overflow: hidden;
+  }
+
+  .card {
+    max-width: 400px;
+    margin: 0 18px 48px 18px;
+    border-radius: 24px;
+  }
+  .card .title-wrap {
+    display: flex;
+    align-items: center;
+  }
+  .card .title-wrap .star {
+    border-radius: 6px;
+    padding: 10.8px 18px;
+    font-size: 31.2px;
+  }
+  .card .title-wrap .card-title {
+    margin-left: 8.4px;
+    font-family: "Code";
+    font-size: 28.2px;
+  }
+  .card .body {
+    line-height: 1.45;
+    font-size: 20.4px;
+    padding: 18px 36px;
+    cursor: pointer;
+  }
+  .card .links-wrap {
+    padding: 36px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .card .links-wrap .octo-logo {
+    text-decoration: none;
+  }
+  .card .links-wrap .octo-logo img {
+    width: 84px;
+  }
+  .card .links-wrap .links {
+    display: flex;
+    flex-direction: column;
+  }
+  .card .links-wrap .links a {
+    text-decoration: none;
+    font-family: "Code";
+    font-size: 24px;
+    text-align: center;
+    padding: 3.6px 48px;
+    margin: 2.4px 0;
+    border-radius: 6px;
+    min-width: 100px;
+  }
+  .card .links-wrap .links a.disabled {
+    cursor: not-allowed;
   }
 
   #app {
@@ -1726,6 +1944,7 @@ button {
     position: relative;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap {
+    visibility: hidden;
     align-self: center;
     overflow: hidden;
     position: relative;
@@ -2133,7 +2352,7 @@ button {
     /* Handle */
     /* Handle on hover */
     background-color: black;
-    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 100%);
+    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 80%);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console * {
     z-index: 1001;
@@ -2225,9 +2444,50 @@ button {
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
     height: aut;
   }
+  #app .content-body-wrap .direct-links-card {
+    z-index: 2000;
+    position: fixed;
+    right: 0;
+    top: 35%;
+    margin: 0;
+    border-radius: 8.4px 0 0 8.4px;
+    width: 50vw;
+    transition: right ease-in 0.5s;
+  }
+  #app .content-body-wrap .direct-links-card .star {
+    font-size: 26.4px;
+    padding: 6px 13.2px;
+  }
+  #app .content-body-wrap .direct-links-card .card-title {
+    font-size: 24px;
+  }
+  #app .content-body-wrap .direct-links-card.hidden {
+    transition: right ease-in 0.5s;
+    right: -100vw;
+  }
 
   html {
     overflow: hidden;
+  }
+
+  .card {
+    max-width: 600px;
+  }
+  .card .title-wrap .star {
+    padding: 8.4px 15.6px;
+    font-size: 26.4px;
+  }
+  .card .title-wrap .card-title {
+    font-size: 24px;
+  }
+  .card .body {
+    font-size: 16.8px;
+  }
+  .card .links-wrap {
+    padding: 28.8px;
+  }
+  .card .links-wrap .links a {
+    font-size: 20.4px;
   }
 
   #app header .time {
@@ -2283,6 +2543,7 @@ button {
     max-height: 51.6px !important;
   }
   #app .content .landing-wrap .photo-wrap {
+    visibility: visible !important;
     overflow: initial !important;
     overflow-y: visible !important;
     top: 0px !important;
@@ -2484,8 +2745,6 @@ button {
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card {
     max-width: 600px;
-    margin: 0 18px 48px 18px;
-    border-radius: 24px;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .title-wrap .star {
     padding: 8.4px 15.6px;
@@ -2495,24 +2754,13 @@ button {
     font-size: 24px;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .body {
-    line-height: 1.45;
     font-size: 16.8px;
-    padding: 18px 36px;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap {
     padding: 28.8px;
   }
-  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .octo-logo img {
-    width: 84px;
-  }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .links a {
     font-size: 20.4px;
-    padding: 3.6px 48px;
-    margin: 2.4px 0;
-    min-width: 100px;
-  }
-  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .links a.disabled {
-    cursor: not-allowed;
   }
   #app .content .reach-out-body-wrap .title {
     font-size: 54px !important;
@@ -2531,6 +2779,7 @@ button {
     display: initial !important;
     max-width: 1080px;
     width: 80vw;
+    filter: brightness(0.6);
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console {
     z-index: 2000 !important;

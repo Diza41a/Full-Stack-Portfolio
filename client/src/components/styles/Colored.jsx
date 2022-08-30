@@ -72,6 +72,32 @@ const Colored = {
       }
     }
   `,
+  Card: styled.div`
+    background-color: rgb(12, 12, 12);
+
+    .star {
+      color: #FFFFFF;
+      background-color: ${colors.resumeButton};
+    }
+    .card-title {
+    color: ${colors.mainText};
+    }
+    .body {
+      color: ${colors.mainText};
+    }
+    .links-wrap {
+      .links {
+        a {
+          color: ${colors.mainText};
+          background-color: ${colors.resumeButton};
+
+          &.disabled {
+            background-color: gray;
+          }
+        }
+      }
+    }
+  `,
   LandingWrap: styled.div`
     .landing-nav-lbl {
       color: ${colors.mainText};

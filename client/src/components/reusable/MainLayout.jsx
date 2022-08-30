@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
@@ -7,6 +9,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 // Component imports
 import Particle from './Particle';
 import Colored, { background } from '../styles/Colored';
+import DirectLinks from './DirectLinks';
 
 const { Toolbar, Nav } = Colored;
 
@@ -29,6 +32,20 @@ export default function MainLayout() {
   setInterval(() => {
     setTime(getCurrentTime());
   }, 1000);
+
+  // Toggle direct link visibility
+  const toggleDirectLinks = (e) => {
+    e.preventDefault();
+    const directLinks = document.querySelector('.direct-links-card');
+    if (!directLinks) {
+      return;
+    }
+    if (directLinks?.classList.contains('hidden')) {
+      directLinks.classList.remove('hidden');
+    } else {
+      directLinks.classList.add('hidden');
+    }
+  };
 
   return (
     <MainContext.Provider value={{ currentFileName, setCurrentFileName }}>
@@ -69,7 +86,7 @@ export default function MainLayout() {
               </NavLink>
             </div>
             <div className="second-nav">
-              <i className="fa-solid fa-user" />
+              <i className="fa-solid fa-user" onClick={toggleDirectLinks} />
               <i className="fa-solid fa-gear" />
             </div>
           </Nav>
@@ -78,6 +95,8 @@ export default function MainLayout() {
             <Particle />
             <Outlet />
           </div>
+
+          <DirectLinks />
 
         </div>
       </div>

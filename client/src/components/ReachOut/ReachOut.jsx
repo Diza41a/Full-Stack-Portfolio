@@ -5,6 +5,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useContext, useEffect } from 'react';
+import Typed from 'react-typed';
 
 // Subcomponent/Data imports
 import Colored from '../styles/Colored';
@@ -17,6 +18,7 @@ const { ReachOutBody } = Colored;
 export default function ReachOut() {
   const { setCurrentFileName } = useContext(MainContext);
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [firstSubmit, setFirstSubmit] = useState(true);
   const [sessionId, generateSessionId] = useState(Math.round(Math.random() * 10000 + 1));
 
   // ComponentDidMount
@@ -44,6 +46,13 @@ export default function ReachOut() {
           question.answer = null;
         }
         setQuestionIndex(0);
+        // Side effect fix
+        document.querySelectorAll('input').forEach((input) => {
+          // eslint-disable-next-line no-param-reassign
+          input.value = '';
+        });
+
+        setFirstSubmit(false);
         generateSessionId(Math.round(Math.random() * 10000 + 1));
       }
     }
@@ -63,7 +72,12 @@ export default function ReachOut() {
         } if (i === questionIndex) {
           return (
             <div className="question-wrap" key={i}>
-              <span>{question.question}</span>
+              <Typed
+                strings={[`${question.question}`]}
+                typeSpeed={20}
+                startDelay={questionIndex === 0 && firstSubmit ? 3100 : 0}
+                showCursor={false}
+              />
               <input type="text" className="active-question" autoFocus onKeyDown={submitAnswer} />
             </div>
           );
@@ -95,8 +109,23 @@ export default function ReachOut() {
             </div>
 
             <div className="questions">
-              <p>{`MacBook-Air: ~ session${sessionId}$ node form.js`}</p>
-              <p>Answer a series of question to submit your inquiry: </p>
+              <p>
+                $
+                {`MacBook-Air: ~ session${sessionId}$ `}
+                <Typed
+                  strings={['node form.js']}
+                  typeSpeed={40}
+                  showCursor={false}
+                />
+              </p>
+              <p>
+                <Typed
+                  strings={['Answer a series of question to submit your inquiry:']}
+                  typeSpeed={20}
+                  startDelay={1300}
+                  showCursor={false}
+                />
+              </p>
 
               {renderQuestions()}
             </div>
