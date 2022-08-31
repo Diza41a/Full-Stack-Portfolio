@@ -1,13 +1,21 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable import/no-cycle */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+
+// Carousel imports (https://openbase.com/js/react-responsive-carousel/documentation)
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 // Subcomponent/Data imports
 import { ProjectContext } from './PortfolioManager';
 import { projects } from './projects';
 
 export default function ProjectWrap() {
+  const [carouselMode, setCarouselMode] = useState('mobile');
   const { currentProject, setProject } = useContext(ProjectContext);
 
   // Helpers
@@ -43,6 +51,15 @@ export default function ProjectWrap() {
       setProject(projects[currentProjectIndex - 1]);
     }
   };
+  const hideLargeCarousel = (e) => {
+    const largeCarousel = document.querySelector('.carousel-wrap');
+    if (!largeCarousel
+      || e.target.closest('.carousel-root')) {
+      return;
+    }
+
+    largeCarousel.classList.remove('displayed');
+  };
 
   return (
     <section className="tab">
@@ -65,7 +82,16 @@ export default function ProjectWrap() {
         <h3 className="project-title">{currentProject.title}</h3>
         <div className="gallery">
           <section className="mobile">
-            <img src="./assets/images/projects/atelier/test.png" alt="" />
+            <Carousel
+              autoPlay={false}
+              emulateTouch
+            >
+              {currentProject.images.main.map((screenshotUrl, i) => (
+                <div key={i}>
+                  <img src={screenshotUrl} key={i} />
+                </div>
+              ))}
+            </Carousel>
           </section>
           <section className="large">
 
@@ -79,15 +105,37 @@ export default function ProjectWrap() {
             <div className="device-views">
               <div className="tablet-wrap">
                 <img src="./assets/images/projects/tablet-frame.png" alt="" className="tablet-img" />
-                <div className="tablet-content">
-                  <img src={currentProject.images.main[0]} alt="" />
+                <div
+                  className="tablet-content"
+                  onClick={() => {
+                    if (carouselMode !== 'mobile') {
+                      setCarouselMode('mobile');
+                    }
+                    document.querySelector('.carousel-wrap').classList.add('displayed');
+                  }}
+                >
+                  <img src={currentProject.images.mobile[0]} alt="" className="tablet-screenshot" />
+                  <div className="tablet-screenshot-desc">
+                    <span>Click...</span>
+                  </div>
                 </div>
               </div>
 
               <div className="laptop-wrap">
                 <img src="./assets/images/projects/laptop-frame.png" alt="" className="laptop-img" />
-                <div className="laptop-content">
-                  <img src={currentProject.images.mobile[0]} alt="" />
+                <div
+                  className="laptop-content"
+                  onClick={() => {
+                    if (carouselMode !== 'large') {
+                      setCarouselMode('large');
+                    }
+                    document.querySelector('.carousel-wrap').classList.add('displayed');
+                  }}
+                >
+                  <img src={currentProject.images.main[0]} alt="" />
+                  <div className="laptop-screenshot-desc">
+                    <span>Click to view screenshots...</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -100,6 +148,31 @@ export default function ProjectWrap() {
             />
 
           </section>
+          <div className="carousel-wrap" onClick={hideLargeCarousel}>
+            <button id="carousel-close" type="button" onClick={hideLargeCarousel}>X</button>
+            <Carousel
+              autoPlay={false}
+              emulateTouch
+              thumbWidth={200}
+            >
+              {(() => {
+                let imagesArr;
+                if (carouselMode === 'mobile') {
+                  imagesArr = [...currentProject.images.mobile];
+                } else {
+                  imagesArr = [...currentProject.images.main];
+                }
+
+                console.log(imagesArr, carouselMode);
+
+                return imagesArr.map((screenshotUrl, i) => (
+                  <div key={i}>
+                    <img src={screenshotUrl} key={i} />
+                  </div>
+                ));
+              })()}
+            </Carousel>
+          </div>
         </div>
         <div className="info-cards">
           {/*  */}
@@ -134,6 +207,7 @@ export default function ProjectWrap() {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

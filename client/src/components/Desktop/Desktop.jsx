@@ -1,14 +1,12 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { getCurrentTime } from '../reusable/MainLayout';
 
 export default function Desktop() {
-  const [time, setTime] = useState(getCurrentTime());
-
   const navigate = useNavigate();
   const hours = new Date().getHours();
 
@@ -16,7 +14,9 @@ export default function Desktop() {
   useEffect(() => {
     // Update the clock
     const clockInterval = setInterval(() => {
-      setTime(getCurrentTime());
+      // WARNING -> updating the state causes rerender every second... duh!🙃
+      // setTime(getCurrentTime());
+      document.querySelector('strong.time').innerText = getCurrentTime();
     }, 1000);
     // Cleanup after unmounting (side effect)
     return function cleanup() {
@@ -142,7 +142,7 @@ export default function Desktop() {
           <span className="app">Desktop</span>
         </p>
         <p className="os">MacOS - Catalina (0.75 Unstable)</p>
-        <strong className="time">{time}</strong>
+        <strong className="time">{getCurrentTime()}</strong>
       </div>
 
       <div

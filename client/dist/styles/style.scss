@@ -921,13 +921,28 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               .mobile {
                 margin: $fontSize $fontSize * 0.65;
                 text-align: center;
-                img {
+
+                div {
                   width: 100%;
+                  img {
+                    width: 100%;
+                  }
                 }
               }
 
               .large {
                 display: none;
+              }
+
+              .carousel-wrap {
+                display: none;
+              }
+
+              .slide {
+                cursor: grab;
+                &:active {
+                  cursor: grabbing;
+                }
               }
             }
 
@@ -1372,6 +1387,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           overflow-y: visible!important;
           top: $fontSize * 0!important;
           transform: scale(0.9);
+
           .robotic-hand {
             max-width: 900px!important;
           }
@@ -1509,6 +1525,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           flex-grow: 1;
 
           .project-wrap {
+            overflow-x: hidden;
+
             .project-nav-mobile {
               display: none!important;
             }
@@ -1535,13 +1553,75 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                   width: $fontSize * 2;
                   height: $fontSize * 3;
                   cursor: pointer;
+                  position: relative;
 
                   &.project-prev-btn {
                     transform: scaleX(-1);
+                    animation: shakeLeft 10s linear infinite;
+                    animation-delay: 12s;
+                  }
+
+                  &.project-next-btn {
+                    animation: shakeRight 10s linear infinite;
+                    animation-delay: 8s;
                   }
 
                   &.hidden {
                     visibility: hidden;
+                  }
+
+                  @keyframes shakeRight {
+                    from {
+                      // transform: rotate(5deg);
+                      right: 0;
+                    }
+                    3% {
+                      // transform: rotate(-5deg);
+                    }
+                    6% {
+                      // transform: rotate(5deg);
+                      right: $fontSize * 0.35;
+                    }
+                    9% {
+                      // transform: rotate(-5deg);
+                    }
+                    12% {
+                      // transform: rotate(5deg);
+                    }
+                    15% {
+                      // transform: rotate(-5deg);
+                      right: 0
+                    }
+                    18% {
+                      // transform: rotate(0);
+                    }
+                  }
+
+                  @keyframes shakeLeft {
+                    from {
+                      // transform: rotate(185deg);
+                      left: 0;
+                    }
+                    3% {
+                      // transform: rotate(175deg);
+                    }
+                    6% {
+                      // transform: rotate(5deg);
+                      left: $fontSize * 0.35;
+                    }
+                    9% {
+                      // transform: rotate(175deg);
+                    }
+                    12% {
+                      // transform: rotate(185deg);
+                    }
+                    15% {
+                      // transform: rotate(175deg);
+                      left: 0
+                    }
+                    18% {
+                      // transform: rotate(0);
+                    }
                   }
                 }
 
@@ -1550,6 +1630,43 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                   align-items: center;
                   justify-content: center;
                   flex-wrap: wrap-reverse;
+
+                  @keyframes breatheScreenshotDesc {
+                    from {
+                      width: 100%;
+                      height: 100%;
+                      margin: 0;
+                      opacity: 0;
+                      font-size: $fontSize * 1.1;
+                    }
+                    5% {
+                      width: 90%;
+                      height: 90%;
+                      margin: 2.5% 5%;
+                      opacity: 1;
+                      font-size: $fontSize;
+                    }
+                    10% {
+                      width: 100%;
+                      height: 100%;
+                      margin: 0;
+                      opacity: 0;
+                    }
+                    15% {
+                      width: 90%;
+                      height: 90%;
+                      margin: 2.5% 5%;
+                      opacity: 1;
+                      font-size: $fontSize;
+                    }
+                    20% {
+                      width: 100%;
+                      height: 100%;
+                      margin: 0;
+                      opacity: 0;
+                    }
+
+                  }
 
                   .tablet-wrap {
                     max-width: 500px;
@@ -1580,6 +1697,36 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                         height: 100%;
                         width: 100%;
                         object-fit: contain;
+                      }
+
+                      .tablet-screenshot-desc {
+                        height: 85%;
+                        width: 90%;
+                        background-color: rgba(0, 0, 0, 0.32);
+                        border: 2px solid rgb(248, 248, 248);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        margin: 8.5% 5% 0 3.5%;
+                        opacity: 0;
+                        transform: scale(1);
+                        transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        span {
+                          color: rgba(255, 255, 255, 0.836);
+                          font-size: $fontSize * 0.9;
+                        }
+
+                        &:hover {
+                          opacity: 1;
+                          transform: scale(1.05);
+                          margin-left: 3.5%;
+                          transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+                        }
                       }
                     }
 
@@ -1616,16 +1763,107 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                         width: 100%;
                         object-fit: contain;
                       }
+
+                      .laptop-screenshot-desc {
+                        height: 90%;
+                        width: 90%;
+                        background-color: rgba(0, 0, 0, 0.32);
+                        border: 2px solid rgb(172, 172, 172);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        margin: 2.5% 5%;
+                        opacity: 0;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        // animation: breatheScreenshotDesc 30s ease-in infinite;
+                        animation-delay: 3s;
+
+                        span {
+                          color: rgba(255, 255, 255, 0.836);
+                          // font-size: $fontSize;
+                        }
+
+                        transform: scale(1);
+                        transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+                        &:hover {
+                          animation: none;
+                          opacity: 1;
+                          transform: scale(1.1);
+                          transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+                        }
+                      }
                     }
 
                   }
                 }
               }
+
+              .carousel-wrap.displayed {
+                position: fixed;
+                z-index: 3000;
+                width: calc(100vw - $fontSize * 3.5);
+                height: 100vh;
+                top: calc(2.5vh + ($fontSize * 0.4) + 1px);
+                left: $fontSize * 3.5;
+                background-color: rgba(14, 14, 14, 0.815);
+
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .carousel-root {
+                  margin: 5%;
+                  z-index: 3001;
+                  width: 100%;
+                  max-width: 1100px;
+                  height: auto;
+
+                  .slide {
+                    img {
+                      max-height: 70vh;
+                      object-fit: contain;
+                    }
+                  }
+                }
+
+                .thumbs {
+                  text-align: center;
+                  cursor: pointer;
+                }
+
+                .thumb {
+                  max-width: 100px;
+                }
+
+                #carousel-close {
+                  border-bottom-left-radius: 50%;
+                  font-family: 'Code';
+                  font-size: $fontSize * 1.65;
+                  color: white;
+                  background-color: rgba(58, 58, 58, 0.649);
+                  border: none;
+                  outline: none;
+                  position: fixed;
+                  z-index: 3002;
+                  right: 0;
+                  top: 3%;
+                  padding: $fontSize * 0.35 $fontSize * 0.5 0 $fontSize * 0.7;
+
+                  &:hover {
+                    filter: brightness(1.25);
+                  }
+                }
+              }
+
             }
 
             .info-cards {
               margin: $fontSize * 3 $fontSize * 0.35 $fontSize * 2 $fontSize * 0.35;
-
               @include cardLarge($fontSize);
             }
 

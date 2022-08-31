@@ -15,6 +15,7 @@
     "nodemon": "^2.0.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "6",
     "react-tsparticles": "^2.2.4",
     "react-typed": "^1.2.0",

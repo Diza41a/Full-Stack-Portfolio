@@ -907,11 +907,23 @@ button {
     margin: 16px 10.4px;
     text-align: center;
   }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile img {
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile div {
+    width: 100%;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile div img {
     width: 100%;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .large {
     display: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .carousel-wrap {
+    display: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide {
+    cursor: grab;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide:active {
+    cursor: grabbing;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards {
     display: flex;
@@ -1758,11 +1770,23 @@ button {
     margin: 20px 13px;
     text-align: center;
   }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile img {
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile div {
+    width: 100%;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile div img {
     width: 100%;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .large {
     display: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .carousel-wrap {
+    display: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide {
+    cursor: grab;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide:active {
+    cursor: grabbing;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards {
     display: flex;
@@ -2296,6 +2320,9 @@ button {
   #app .content .portfolio-manager-wrap .tab {
     flex-grow: 1;
   }
+  #app .content .portfolio-manager-wrap .tab .project-wrap {
+    overflow-x: hidden;
+  }
   #app .content .portfolio-manager-wrap .tab .project-wrap .project-nav-mobile {
     display: none !important;
   }
@@ -2318,18 +2345,82 @@ button {
     width: 40px;
     height: 60px;
     cursor: pointer;
+    position: relative;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn.project-prev-btn, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn.project-prev-btn {
     transform: scaleX(-1);
+    animation: shakeLeft 10s linear infinite;
+    animation-delay: 12s;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn.project-next-btn, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn.project-next-btn {
+    animation: shakeRight 10s linear infinite;
+    animation-delay: 8s;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn.hidden, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn.hidden {
     visibility: hidden;
+  }
+  @keyframes shakeRight {
+    from {
+      right: 0;
+    }
+    6% {
+      right: 7px;
+    }
+    15% {
+      right: 0;
+    }
+  }
+  @keyframes shakeLeft {
+    from {
+      left: 0;
+    }
+    6% {
+      left: 7px;
+    }
+    15% {
+      left: 0;
+    }
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap-reverse;
+  }
+  @keyframes breatheScreenshotDesc {
+    from {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+      font-size: 22px;
+    }
+    5% {
+      width: 90%;
+      height: 90%;
+      margin: 2.5% 5%;
+      opacity: 1;
+      font-size: 20px;
+    }
+    10% {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+    }
+    15% {
+      width: 90%;
+      height: 90%;
+      margin: 2.5% 5%;
+      opacity: 1;
+      font-size: 20px;
+    }
+    20% {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+    }
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap {
     max-width: 500px;
@@ -2358,6 +2449,32 @@ button {
     width: 100%;
     object-fit: contain;
   }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content .tablet-screenshot-desc {
+    height: 85%;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.32);
+    border: 2px solid rgb(248, 248, 248);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 8.5% 5% 0 3.5%;
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content .tablet-screenshot-desc span {
+    color: rgba(255, 255, 255, 0.836);
+    font-size: 18px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content .tablet-screenshot-desc:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    margin-left: 3.5%;
+    transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+  }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap {
     flex-basis: 35%;
     max-width: 1200px;
@@ -2385,6 +2502,79 @@ button {
     height: 100%;
     width: 100%;
     object-fit: contain;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content .laptop-screenshot-desc {
+    height: 90%;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.32);
+    border: 2px solid rgb(172, 172, 172);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 2.5% 5%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-delay: 3s;
+    transform: scale(1);
+    transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content .laptop-screenshot-desc span {
+    color: rgba(255, 255, 255, 0.836);
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content .laptop-screenshot-desc:hover {
+    animation: none;
+    opacity: 1;
+    transform: scale(1.1);
+    transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed {
+    position: fixed;
+    z-index: 3000;
+    width: calc(100vw - 70px);
+    height: 100vh;
+    top: calc(2.5vh + 8px + 1px);
+    left: 70px;
+    background-color: rgba(14, 14, 14, 0.815);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed .carousel-root {
+    margin: 5%;
+    z-index: 3001;
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed .carousel-root .slide img {
+    max-height: 70vh;
+    object-fit: contain;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed .thumbs {
+    text-align: center;
+    cursor: pointer;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed .thumb {
+    max-width: 100px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed #carousel-close {
+    border-bottom-left-radius: 50%;
+    font-family: "Code";
+    font-size: 33px;
+    color: white;
+    background-color: rgba(58, 58, 58, 0.649);
+    border: none;
+    outline: none;
+    position: fixed;
+    z-index: 3002;
+    right: 0;
+    top: 3%;
+    padding: 7px 10px 0 14px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed #carousel-close:hover {
+    filter: brightness(1.25);
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards {
     margin: 60px 7px 40px 7px;
@@ -3004,11 +3194,23 @@ button {
     margin: 24px 15.6px;
     text-align: center;
   }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile img {
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile div {
+    width: 100%;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .mobile div img {
     width: 100%;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .large {
     display: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .carousel-wrap {
+    display: none;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide {
+    cursor: grab;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide:active {
+    cursor: grabbing;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards {
     display: flex;
@@ -3542,6 +3744,9 @@ button {
   #app .content .portfolio-manager-wrap .tab {
     flex-grow: 1;
   }
+  #app .content .portfolio-manager-wrap .tab .project-wrap {
+    overflow-x: hidden;
+  }
   #app .content .portfolio-manager-wrap .tab .project-wrap .project-nav-mobile {
     display: none !important;
   }
@@ -3564,18 +3769,82 @@ button {
     width: 48px;
     height: 72px;
     cursor: pointer;
+    position: relative;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn.project-prev-btn, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn.project-prev-btn {
     transform: scaleX(-1);
+    animation: shakeLeft 10s linear infinite;
+    animation-delay: 12s;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn.project-next-btn, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn.project-next-btn {
+    animation: shakeRight 10s linear infinite;
+    animation-delay: 8s;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-prev-btn.hidden, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .project-next-btn.hidden {
     visibility: hidden;
+  }
+  @keyframes shakeRight {
+    from {
+      right: 0;
+    }
+    6% {
+      right: 8.4px;
+    }
+    15% {
+      right: 0;
+    }
+  }
+  @keyframes shakeLeft {
+    from {
+      left: 0;
+    }
+    6% {
+      left: 8.4px;
+    }
+    15% {
+      left: 0;
+    }
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap-reverse;
+  }
+  @keyframes breatheScreenshotDesc {
+    from {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+      font-size: 26.4px;
+    }
+    5% {
+      width: 90%;
+      height: 90%;
+      margin: 2.5% 5%;
+      opacity: 1;
+      font-size: 24px;
+    }
+    10% {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+    }
+    15% {
+      width: 90%;
+      height: 90%;
+      margin: 2.5% 5%;
+      opacity: 1;
+      font-size: 24px;
+    }
+    20% {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+    }
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap {
     max-width: 500px;
@@ -3604,6 +3873,32 @@ button {
     width: 100%;
     object-fit: contain;
   }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content .tablet-screenshot-desc {
+    height: 85%;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.32);
+    border: 2px solid rgb(248, 248, 248);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 8.5% 5% 0 3.5%;
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content .tablet-screenshot-desc span {
+    color: rgba(255, 255, 255, 0.836);
+    font-size: 21.6px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content .tablet-screenshot-desc:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    margin-left: 3.5%;
+    transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+  }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap {
     flex-basis: 35%;
     max-width: 1200px;
@@ -3631,6 +3926,79 @@ button {
     height: 100%;
     width: 100%;
     object-fit: contain;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content .laptop-screenshot-desc {
+    height: 90%;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.32);
+    border: 2px solid rgb(172, 172, 172);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 2.5% 5%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-delay: 3s;
+    transform: scale(1);
+    transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content .laptop-screenshot-desc span {
+    color: rgba(255, 255, 255, 0.836);
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-content .laptop-screenshot-desc:hover {
+    animation: none;
+    opacity: 1;
+    transform: scale(1.1);
+    transition: opacity 0.75s ease-in, transform 0.75s ease-in;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed {
+    position: fixed;
+    z-index: 3000;
+    width: calc(100vw - 84px);
+    height: 100vh;
+    top: calc(2.5vh + 9.6px + 1px);
+    left: 84px;
+    background-color: rgba(14, 14, 14, 0.815);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed .carousel-root {
+    margin: 5%;
+    z-index: 3001;
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed .carousel-root .slide img {
+    max-height: 70vh;
+    object-fit: contain;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed .thumbs {
+    text-align: center;
+    cursor: pointer;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed .thumb {
+    max-width: 100px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed #carousel-close {
+    border-bottom-left-radius: 50%;
+    font-family: "Code";
+    font-size: 39.6px;
+    color: white;
+    background-color: rgba(58, 58, 58, 0.649);
+    border: none;
+    outline: none;
+    position: fixed;
+    z-index: 3002;
+    right: 0;
+    top: 3%;
+    padding: 8.4px 12px 0 16.8px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed #carousel-close:hover {
+    filter: brightness(1.25);
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards {
     margin: 72px 8.4px 48px 8.4px;

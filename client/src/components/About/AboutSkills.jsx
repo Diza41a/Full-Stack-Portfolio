@@ -14,7 +14,7 @@ export default function AboutSkills() {
       </div>
       <div className="skills-body">
         {skillsObj.skills.map((skill, i) => (
-          <div className="skill-wrap" key={i}>
+          <div className="skill-wrap" key={i} draggable>
             <div className="skill-title-wrap">
               <img src={skill.imagePath} alt="" className="logo" />
               <h5 className="skill-title">{skill.title}</h5>

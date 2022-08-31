@@ -12,9 +12,10 @@ const projects = [
     'github-link': 'https://github.com/Diza41a/ofkors-european-bakery',
     'deployed-link': 'http://ofkorseurobakery.com/',
     images: {
-      main: ['./assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png'],
-      mobile: ['./assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png'],
+      main: ['./assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png'],
+      mobile: ['./assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png'],
     },
+
   },
   {
     title: 'OfKors European Bakery',
@@ -29,8 +30,8 @@ const projects = [
     'github-link': 'https://github.com/Diza41a/ofkors-european-bakery',
     'deployed-link': 'http://ofkorseurobakery.com/',
     images: {
-      main: ['./assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png'],
-      mobile: ['./assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png'],
+      main: ['./assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png'],
+      mobile: ['./assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png'],
     },
   },
   {
@@ -46,8 +47,8 @@ const projects = [
     'github-link': 'https://github.com/Diza41a/ofkors-european-bakery',
     'deployed-link': 'http://ofkorseurobakery.com/',
     images: {
-      main: ['./assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png'],
-      mobile: ['./assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png'],
+      main: ['./assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png'],
+      mobile: ['./assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png'],
     },
   },
   {
@@ -63,8 +64,8 @@ const projects = [
     'github-link': 'https://github.com/Diza41a/ofkors-european-bakery',
     'deployed-link': 'http://ofkorseurobakery.com/',
     images: {
-      main: ['./assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png'],
-      mobile: ['./assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png'],
+      main: ['./assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png'],
+      mobile: ['./assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png'],
     },
   },
 ];

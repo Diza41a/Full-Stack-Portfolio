@@ -27,7 +27,6 @@ export default function MainLayout() {
   const navigate = useNavigate();
 
   const [globalTheme, setGlobalTheme] = useState('regular');
-  const [time, setTime] = useState(getCurrentTime());
   const [currentFileName, setCurrentFileName] = useState('Landing.jsx');
 
   // Temp
@@ -43,7 +42,9 @@ export default function MainLayout() {
   useEffect(() => {
     // Update the clock
     const clockInterval = setInterval(() => {
-      setTime(getCurrentTime());
+      // WARNING -> updating the state causes rerender every second... duh!🙃
+      // setTime(getCurrentTime());
+      document.querySelector('strong.time').innerText = getCurrentTime();
     }, 1000);
 
     // Temp
@@ -122,7 +123,7 @@ export default function MainLayout() {
 
           <p className="file-name">{`${currentFileName} - Davyd Zakorchennyi`}</p>
 
-          <strong className="time">{time}</strong>
+          <strong className="time">{getCurrentTime()}</strong>
         </header>
 
         <div className="content-body-wrap">
