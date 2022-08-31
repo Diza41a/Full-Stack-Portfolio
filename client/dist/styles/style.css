@@ -157,6 +157,35 @@ button {
   color: #D9D9D9;
   text-shadow: 0 0 5px #C8C2C2;
 }
+#root #app.regular .theme-selector-wrap {
+  background-color: #181924;
+  border: 1px solid #626262;
+  border-top: none;
+}
+#root #app.regular .theme-selector-wrap .title {
+  font-family: "Code";
+  color: #D9D9D9;
+  text-shadow: none;
+  background-color: #313244;
+  border: 1px solid #626262;
+}
+#root #app.regular .theme-selector-wrap .title::placeholder {
+  color: #C8C2C2;
+}
+#root #app.regular .theme-selector-wrap .theme-option {
+  font-family: "Code";
+  color: #D9D9D9;
+}
+#root #app.regular .theme-selector-wrap .theme-option.selected {
+  background-color: #575764;
+}
+#root #app.regular .theme-selector-wrap .theme-option.selected:hover {
+  filter: brightness(1);
+}
+#root #app.regular .theme-selector-wrap .theme-option:hover {
+  background-color: #575764;
+  filter: brightness(0.9);
+}
 #root #app.regular .direct-links-card {
   background-color: rgb(12, 12, 12);
 }
@@ -302,6 +331,35 @@ button {
 #root #app.matrix .console .questions * {
   color: #caf4ff;
   text-shadow: 0 0 5px #bfbfbf;
+}
+#root #app.matrix .theme-selector-wrap {
+  background-color: #0b0b0e;
+  border: 1px solid #858585;
+  border-top: none;
+}
+#root #app.matrix .theme-selector-wrap .title {
+  font-family: "Code";
+  color: #caf4ff;
+  text-shadow: none;
+  background-color: #303030;
+  border: 1px solid #858585;
+}
+#root #app.matrix .theme-selector-wrap .title::placeholder {
+  color: #bfbfbf;
+}
+#root #app.matrix .theme-selector-wrap .theme-option {
+  font-family: "Code";
+  color: #caf4ff;
+}
+#root #app.matrix .theme-selector-wrap .theme-option.selected {
+  background-color: #005052;
+}
+#root #app.matrix .theme-selector-wrap .theme-option.selected:hover {
+  filter: brightness(1);
+}
+#root #app.matrix .theme-selector-wrap .theme-option:hover {
+  background-color: #005052;
+  filter: brightness(0.9);
 }
 #root #app.matrix .direct-links-card {
   background-color: rgb(12, 12, 12);
@@ -1108,6 +1166,37 @@ button {
     opacity: 0;
     transition: opacity ease-out 0.5s, right ease-in 0.5s;
     right: -100vw;
+  }
+  #app .content-body-wrap .theme-selector-wrap {
+    position: fixed;
+    right: 0;
+    margin: auto;
+    top: calc(2.5vh + 6.4px + 1px);
+    width: 60vw;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    transition: top ease-in 0.5s;
+  }
+  #app .content-body-wrap .theme-selector-wrap .title {
+    font-size: 16px;
+    margin-bottom: 8px;
+    padding: 2.4px 2.4px 1.04px 2.4px;
+  }
+  #app .content-body-wrap .theme-selector-wrap .theme-option {
+    text-transform: capitalize;
+    font-size: 16px;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-bottom: 5.6px;
+    padding: 2.4px 2.4px 1.04px 7.2px;
+  }
+  #app .content-body-wrap .theme-selector-wrap.hidden {
+    transition: top ease-out 0.5s;
+    top: calc(-5 * (2.5vh + 6.4px + 1px));
   }
 
   .desktop-wrap {
@@ -1929,6 +2018,37 @@ button {
     transition: opacity ease-out 0.5s, right ease-in 0.5s;
     right: -100vw;
   }
+  #app .content-body-wrap .theme-selector-wrap {
+    position: fixed;
+    right: 0;
+    margin: auto;
+    top: calc(2.5vh + 8px + 1px);
+    width: 60vw;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    transition: top ease-in 0.5s;
+  }
+  #app .content-body-wrap .theme-selector-wrap .title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 3px 3px 1.3px 3px;
+  }
+  #app .content-body-wrap .theme-selector-wrap .theme-option {
+    text-transform: capitalize;
+    font-size: 20px;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-bottom: 7px;
+    padding: 3px 3px 1.3px 9px;
+  }
+  #app .content-body-wrap .theme-selector-wrap.hidden {
+    transition: top ease-out 0.5s;
+    top: calc(-5 * (2.5vh + 8px + 1px));
+  }
 
   .desktop-wrap {
     width: 100vw;
@@ -2364,6 +2484,9 @@ button {
   #app .content .reach-out-body-wrap .console-device-wrap .console .questions * {
     margin: 5px 0;
     font: 18px "Open Sans", sans-serif;
+  }
+  #app .theme-selector-wrap {
+    left: 0;
   }
 
   .desktop-wrap .toolkit .time {
@@ -3141,6 +3264,37 @@ button {
     transition: opacity ease-out 0.5s, right ease-in 0.5s;
     right: -100vw;
   }
+  #app .content-body-wrap .theme-selector-wrap {
+    position: fixed;
+    right: 0;
+    margin: auto;
+    top: calc(2.5vh + 9.6px + 1px);
+    width: 60vw;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    transition: top ease-in 0.5s;
+  }
+  #app .content-body-wrap .theme-selector-wrap .title {
+    font-size: 24px;
+    margin-bottom: 12px;
+    padding: 3.6px 3.6px 1.56px 3.6px;
+  }
+  #app .content-body-wrap .theme-selector-wrap .theme-option {
+    text-transform: capitalize;
+    font-size: 24px;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-bottom: 8.4px;
+    padding: 3.6px 3.6px 1.56px 10.8px;
+  }
+  #app .content-body-wrap .theme-selector-wrap.hidden {
+    transition: top ease-out 0.5s;
+    top: calc(-5 * (2.5vh + 9.6px + 1px));
+  }
 
   .desktop-wrap {
     width: 100vw;
@@ -3576,6 +3730,9 @@ button {
   #app .content .reach-out-body-wrap .console-device-wrap .console .questions * {
     margin: 6px 0;
     font: 21.6px "Open Sans", sans-serif;
+  }
+  #app .theme-selector-wrap {
+    left: 0;
   }
 
   .desktop-wrap .toolkit .time {

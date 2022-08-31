@@ -80,14 +80,14 @@ export default function ProjectWrap() {
               <div className="tablet-wrap">
                 <img src="./assets/images/projects/tablet-frame.png" alt="" className="tablet-img" />
                 <div className="tablet-content">
-                  <img src="./assets/images/projects/atelier/test-mobile.png" alt="" />
+                  <img src={currentProject.images.main[0]} alt="" />
                 </div>
               </div>
 
               <div className="laptop-wrap">
                 <img src="./assets/images/projects/laptop-frame.png" alt="" className="laptop-img" />
                 <div className="laptop-content">
-                  <img src="./assets/images/projects/atelier/test.png" alt="" />
+                  <img src={currentProject.images.mobile[0]} alt="" />
                 </div>
               </div>
             </div>
@@ -123,13 +123,13 @@ export default function ProjectWrap() {
               <h5 className="card-title">Links</h5>
             </div>
             <div className="links-wrap">
-              <a href="github.com" target="_blank" className="octo-logo">
+              <a href={currentProject['github-link']} rel="noreferrer" target="_blank" className="octo-logo">
                 <img src="./assets/images/about-skills/github.png" alt="" />
               </a>
 
               <div className="links">
-                <a href="github.com" target="_blank" className="disabled">View Code</a>
-                <a href="github.com" target="_blank">View Deployed</a>
+                <a href={currentProject['deployed-link']} rel="noreferrer" target="_blank" className="disabled">View Code</a>
+                <a href={currentProject['deployed-link']} rel="noreferrer" target="_blank">View Deployed</a>
               </div>
             </div>
           </div>

@@ -9,9 +9,10 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 // Component imports
 import Particle from './Particle';
 import startMatrixCanvas from './matrix';
+import ThemeSelector from './ThemeSelector';
 import DirectLinks from './DirectLinks';
 
-export const MainContext = createContext('default');
+export const MainContext = createContext('regular');
 
 export const getCurrentTime = () => {
   const dateTime = new Date();
@@ -25,7 +26,7 @@ export const getCurrentTime = () => {
 export default function MainLayout() {
   const navigate = useNavigate();
 
-  const [globalTheme, setGlobalTheme] = useState('matrix');
+  const [globalTheme, setGlobalTheme] = useState('regular');
   const [time, setTime] = useState(getCurrentTime());
   const [currentFileName, setCurrentFileName] = useState('Landing.jsx');
 
@@ -56,6 +57,13 @@ export default function MainLayout() {
     };
   }, []);
 
+  // ComponentDidUpdate: Restart theme vars if needed
+  useEffect(() => {
+    if (globalTheme === 'matrix') {
+      startMatrixCanvas();
+    }
+  }, [globalTheme]);
+
   // To desktop
   const toDesktop = (e) => {
     e.preventDefault();
@@ -76,13 +84,29 @@ export default function MainLayout() {
     }
   };
 
+  // Toggle theme selector visibility
+  const toggleThemeSelector = (e) => {
+    // theme-selector-wrap
+    e.preventDefault();
+    const themeSelector = document.querySelector('.theme-selector-wrap');
+    if (!themeSelector) {
+      return;
+    }
+    if (themeSelector?.classList.contains('hidden')) {
+      themeSelector.classList.remove('hidden');
+      document.querySelector('#theme-input').focus();
+    } else {
+      themeSelector.classList.add('hidden');
+    }
+  };
+
   return (
     <MainContext.Provider value={{
       currentFileName, setCurrentFileName, globalTheme, setGlobalTheme,
     }}
     >
       {/* // eslint-disable-next-line react/jsx-no-constructed-context-values */}
-      <div id="app" className="matrix" style={{ backgroundColor: background.color, backgroundImage: background.image }}>
+      <div id="app" className="regular" style={{ backgroundColor: background.color, backgroundImage: background.image }}>
         <header className="toolbar">
           <div className="buttons">
             <button type="button" style={{ color: 'white', backgroundColor: 'red' }} onClick={toDesktop}>
@@ -137,8 +161,8 @@ export default function MainLayout() {
               <span className="material-symbols-outlined" onClick={toggleDirectLinks}>
                 account_circle
               </span>
-              {/* <i className="fa-solid fa-gear" /> */}
-              <span className="material-symbols-outlined">
+              {/* <i className="fa-solid fa-gear" onClick={toggleThemeSelector} /> */}
+              <span className="material-symbols-outlined" onClick={toggleThemeSelector}>
                 settings
               </span>
             </div>
@@ -149,6 +173,7 @@ export default function MainLayout() {
             <Outlet />
           </div>
 
+          <ThemeSelector />
           <DirectLinks />
 
         </div>

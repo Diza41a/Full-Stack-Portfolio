@@ -148,6 +148,7 @@ export default function Desktop() {
       <div
         className="desktop-icon-wrap vscode-icon"
         onDoubleClick={openVsCode}
+        onTouchEnd={openVsCode}
         draggable
         onDragEnd={handleIconDrag}
         onMouseEnter={multiSelect}

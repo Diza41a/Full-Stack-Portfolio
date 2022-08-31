@@ -233,6 +233,42 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     }
   }
 
+  .theme-selector-wrap {
+    background-color: $mainDark;
+    border: 1px solid $border;
+    border-top: none;
+
+    .title {
+      font-family: 'Code';
+      color: $mainText;
+      text-shadow: none;
+      background-color: $mainMedium;
+      border: 1px solid $border;
+
+      &::placeholder {
+        color: $secondText;
+      }
+    }
+
+    .theme-option {
+      font-family: 'Code';
+      color: $mainText;
+
+      &.selected {
+        background-color: $subsectionSelector;
+
+        &:hover {
+          filter: brightness(1);
+        }
+      }
+
+      &:hover {
+        background-color: $subsectionSelector;
+        filter: brightness(0.9);
+      }
+    }
+  }
+
   .direct-links-card {
     background-color: rgb(12, 12, 12);
 
@@ -1152,6 +1188,46 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           right: -100vw;
         }
       }
+
+      .theme-selector-wrap {
+        //bookmark
+        position: fixed;
+        // left: 0;
+        right: 0;
+        margin: auto;
+        top: calc(2.5vh + ($fontSize * 0.4) + 1px);
+
+        width: 60vw;
+        max-width: 600px;
+
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          font-size: $fontSize;
+          margin-bottom: $fontSize * 0.5;
+          padding: $fontSize * 0.15 $fontSize * 0.15 $fontSize * 0.065 $fontSize * 0.15;
+        }
+
+        .theme-option {
+          text-transform: capitalize;
+          font-size: $fontSize;
+          text-align: left;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          margin-bottom: $fontSize * 0.35;
+          padding: $fontSize * 0.15 $fontSize * 0.15 $fontSize * 0.065 $fontSize * 0.45;
+        }
+
+        z-index: 999;
+        transition: top ease-in 0.5s;
+        &.hidden {
+          transition: top ease-out 0.5s;
+          top: calc(-5 * (2.5vh + ($fontSize * 0.4) + 1px));
+        }
+
+      }
     }
   }
 
@@ -1666,6 +1742,12 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
       }
 
+
+
+    }
+
+    .theme-selector-wrap {
+      left: 0;
     }
   }
 
@@ -1696,7 +1778,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
   #app.matrix {
     // $mainDark, $mainDarkTransparent, $mainMedium, $mainText, $secondText, $border,
     // $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, $resumeButton, $projectListItem
-    //bookmark
     @include colorTheme(#0b0b0e, #0b0b0ee4, #303030, #caf4ff, #bfbfbf, #858585,
     #252424be,#005052, #08aab5, #161c23, #3e86f9, #18afeb, #53B0FF);
 

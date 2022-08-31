@@ -1,3 +1,7 @@
-drag and drop skills/shake things up
+drag and drop skills to different columns/shake things up
 keep erasing added input on about me description
 arrow animations
+page transition effects
+loader animation
+
+tooltip -> click on image to open project gallery

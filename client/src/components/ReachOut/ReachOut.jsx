@@ -36,6 +36,7 @@ export default function ReachOut() {
     activeQuestion.focus();
   };
   const submitAnswer = (e) => {
+    // bookmark ▋
     if (e.key === 'Enter') {
       const answer = e.target.value.trim();
       questions[questionIndex].answer = answer;
