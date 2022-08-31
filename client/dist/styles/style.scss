@@ -10,10 +10,19 @@
   src: url(../assets/fonts/code_pro/Code\ Pro\ LC.otf);
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 * {
   margin: 0;
   padding: 0;
   font-family: 'Code-Bold';
+  z-index: 2;
 }
 
 button {
@@ -26,6 +35,229 @@ button {
   }
   to {
     transform: translateY(0);
+  }
+}
+
+@mixin colorTheme($mainDark, $mainDarkTransparent, $mainMedium, $mainText, $secondText, $border,
+$tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, $resumeButton, $projectListItem) {
+  header.toolbar {
+    background-color: $mainDark;
+    color: $secondText;
+    border-bottom: 1px solid $border;
+  }
+
+  nav.sidebar {
+    background-color: $mainMedium;
+    color: $mainText;
+    border-right: 1px solid $border;
+
+    a {
+      &.active {
+        border-left: 4px solid $navHighlight;
+      }
+    }
+  }
+
+  .landing-wrap {
+    .landing-nav-lbl {
+      color: $mainText;
+      background-color: $subsectionSelector;
+    }
+
+    .introduction {
+      background-color: $mainDarkTransparent;
+      border: 4px solid $border;
+
+      .static, .dynamic {
+        color: $mainText;
+      }
+    }
+  }
+
+  .about-section-selector {
+    background-color: $mainDarkTransparent;
+      color: $mainText;
+      border-right: 1px solid $border;
+
+      .about-section-selector-list {
+        a {
+          text-decoration: none;
+          .title {
+            color: $mainText;
+          }
+          .description {
+            color: $secondText;
+          }
+          &.active {
+            background-color: $subsectionSelector;
+          }
+        }
+      }
+
+      .selector-toggle {
+          background-color: $mainDark;
+      }
+  }
+
+  .about-subsection, .introduction, .tab-wrap, .tab, .skills {
+    .tab-title {
+      color: $secondText;
+      background-color: $tab;
+      border-top: 3px solid $navHighlight;
+    }
+
+    .about-subsection-body, .tab-body {
+      background-color: $tab;
+
+      .about-paragraph {
+        color: $mainText
+      }
+
+      .description {
+        #resume-btn {
+          color: white;
+          background-color: $resumeButton;
+        }
+      }
+    }
+  }
+
+  .skill-section {
+    .title-wrap {
+      .title {
+        color: $mainText;
+      }
+    }
+
+    .skills-body {
+      .skill-wrap {
+        .skill-title-wrap {
+          .skill-title {
+            color: $mainText;
+          }
+        }
+        .subskill-list {
+          li {
+            color: $secondText;
+          }
+        }
+      }
+    }
+  }
+
+  .project-selector {
+    background-color: $mainDark;
+       border-right: 1px solid $border;
+       color: $secondText;
+
+       .title {
+         color: #FFFFFF;
+       }
+
+       ul {
+         li {
+           color: $projectListItem;
+           cursor: pointer;
+
+           &.selected {
+            background-color: $border;
+           }
+         }
+
+         &.disabled {
+           li {
+             color: $secondText;
+             cursor: not-allowed;
+           }
+         }
+       }
+  }
+
+  .project-wrap, .tab-body {
+    .project-nav-mobile {
+      /* background-color: ${colors.mainDark}; */
+      border-top: 1px solid $border;
+      border-bottom: 1px solid $border;
+    }
+
+    .project-title {
+      color: $mainText;
+    }
+
+    .info-cards {
+
+      .card {
+         background-color: rgb(12, 12, 12);
+
+        .star {
+          color: #FFFFFF;
+          background-color: $resumeButton;
+        }
+        .card-title {
+         color: $mainText;
+        }
+        .body {
+          color: $mainText;
+        }
+        .links-wrap {
+          .links {
+            a {
+              color: $mainText;
+              background-color: $resumeButton;
+
+              &.disabled {
+                background-color: gray;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .reach-out-body-wrap {
+    .title {
+      color: $mainText;
+    }
+  }
+
+  .console {
+    background-color: black;
+    background-image: linear-gradient(to bottom, #3c3e41 1%,#161616 80%);
+
+    .questions {
+      * {
+        color: $mainText;
+        text-shadow: 0 0 5px $secondText;
+      }
+    }
+  }
+
+  .direct-links-card {
+    background-color: rgb(12, 12, 12);
+
+    .star {
+      color: #FFFFFF;
+      background-color: $resumeButton;
+    }
+    .card-title {
+    color: $mainText;
+    }
+    .body {
+      color: $mainText;
+    }
+    .links-wrap {
+      .links {
+        a {
+          color: $mainText;
+          background-color: $resumeButton;
+
+          &.disabled {
+            background-color: gray;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -164,6 +396,16 @@ button {
 
   @include cardMobile($fontSize);
 
+  .matrix-canvas {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.8;
+  }
+
   #app {
     height: 100%;
     background-size: cover;
@@ -185,13 +427,13 @@ button {
       .buttons {
         button {
           border-radius: 50%;
-          width: $fontSize * 0.95;
-          height: $fontSize * 0.95;
+          width: $fontSize * 0.65;
+          height: $fontSize * 0.65;
           border: none;
           margin: 0 $fontSize * 0.15;
 
           i {
-            font-size: $fontSize * 0.65;
+            font-size: $fontSize * 0.35;
             position: absolute;
             display: flex;
             justify-content: center;
@@ -236,17 +478,25 @@ button {
           display: flex;
           flex-direction: column;
 
-          a, i {
+          a, i, span {
             text-align: center;
-            font-size: $fontSize * 1.75;
-            margin: $fontSize * 0.5 0;
+            font-size: $fontSize * 2.25;
+            margin: $fontSize * 0.15 0;
             color: inherit;
             cursor: pointer;
+
+            &.info, &.flag {
+              font-size: $fontSize * 2.5;
+            }
+
+            &.flag {
+              transform: rotate(15deg);
+            }
           }
 
           &.second-nav {
-            i {
-              margin: $fontSize * 0.75 0;
+            i, span {
+              margin: $fontSize * 0.45 0;
             }
           }
         }
@@ -697,12 +947,6 @@ button {
               overflow-y: auto;
               @include scrollbar($fontSize);
 
-              background-color: black;
-              // background-image: radial-gradient(
-              //   rgba(0, 150, 0, 0.75), black 120%
-              // );
-              background-image: linear-gradient(to bottom, #3c3e41 1%,#161616 80%);
-
               &::after {
                 content: "";
                 position: absolute;
@@ -735,7 +979,7 @@ button {
                   position: relative;
                   cursor: pointer;
 
-                  i {
+                  i, span {
                     width: 100%;
                     height: 100%;
                     position: absolute;
@@ -744,8 +988,8 @@ button {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    font-size: $fontSize * 1.5;
-                    color: rgb(153, 153, 153);
+                    font-size: $fontSize * 1.85;
+                    color: rgb(221, 220, 220);
                   }
 
                   &.active {
@@ -1345,11 +1589,9 @@ button {
             max-width: $fontSize * 35.4!important;
             width: 62.75vw!important;
             height: 87%!important;
-            background-color: black;
             // background-image: radial-gradient(
             //   rgba(0, 150, 0, 0.75), black 120%
             // );
-            background-image: linear-gradient(to bottom, #3c3e41 1%,#161616 100%);
 
             &::after {
               content: "";
@@ -1391,7 +1633,7 @@ button {
                   justify-content: center;
                   align-items: center;
                   font-size: $fontSize * 1.5;
-                  color: rgb(153, 153, 153);
+                  color: rgb(194, 194, 194);
                 }
 
                 &.active {
@@ -1414,10 +1656,8 @@ button {
                 // font-size: $fontSize * 0.9;
                 // color: #C8C2C2;
                 margin: $fontSize * 0.25 0;
-                color: white;
                 // font: $fontSize * 0.9 Inconsolata, monospace;
                 font: $fontSize * 0.9 'Open Sans', sans-serif;
-                text-shadow: 0 0 5px #C8C8C8;
               }
             }
 
@@ -1447,6 +1687,73 @@ button {
   }
 }
 
+#root {
+  #app.regular {
+    @include colorTheme(#181924, rgba(24, 25, 36, 0.9), #313244, #D9D9D9, #C8C2C2, #626262, rgba(52, 47, 48, 0.8),
+    #575764, #F8B172, #0D1116, #6B727D, #188AEB, #53B0FF);
+  }
+
+  #app.matrix {
+    // $mainDark, $mainDarkTransparent, $mainMedium, $mainText, $secondText, $border,
+    // $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, $resumeButton, $projectListItem
+    //bookmark
+    @include colorTheme(#0b0b0e, #0b0b0ee4, #303030, #caf4ff, #bfbfbf, #858585,
+    #252424be,#005052, #08aab5, #161c23, #3e86f9, #18afeb, #53B0FF);
+
+    // Global
+    h1, h2, h3, h4, h5, h6 {
+      text-shadow: 0 0 0.24em rgb(100, 146, 255);
+    }
+
+    .title, .static {
+      text-shadow: 0 0 0.24em rgb(237, 242, 255);
+    }
+
+    a.active {
+      .material-symbols-outlined {
+        text-shadow: 0 0 0.24em rgb(237, 242, 255);
+      }
+    }
+
+
+    // Rest
+    .console {
+      background-color: black;
+      // background-image: linear-gradient(to left, rgb(11, 110, 164) 1%,#2a69b1 80%);
+      // background-image: radial-gradient(
+      //   rgba(0, 150, 0, 0.75), black 120%
+      // );
+      background-image: radial-gradient(
+        rgba(79, 79, 79, 0.75), rgb(13, 13, 13) 120%
+      );
+
+      .format-btn {
+        i, span {
+          color: rgb(100, 198, 255);
+          border-radius: 50%;
+          // box-shadow: 0 0 1vw 0.01vw rgb(100, 146, 255);
+          text-shadow: 0 0 0.51vw rgb(100, 146, 255);
+        }
+
+        &.active {
+          background-color: #24242499;
+          border: 1px solid rgb(100, 146, 255);
+        }
+
+        &:hover {
+          background-color: #24242499;
+        }
+      }
+
+      .questions {
+        font-family: monospace!important;
+      }
+    }
+  }
+}
+
+
+
 @media (max-width: 850px) {
   @include mainView(16px);
 }
@@ -1454,6 +1761,15 @@ button {
 @media (min-width: 850px) {
   @include mainView(20px);
   @include largeScreens(20px);
+}
+
+@media (min-width: 1400px) {
+  .direct-links-card {
+    &.persisting {
+      opacity: 1!important;
+      right: 0!important;
+    }
+  }
 }
 
 @media (min-width: 1600px) {

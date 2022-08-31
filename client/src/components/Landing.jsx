@@ -1,13 +1,9 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useContext } from 'react';
-// import { Outlet } from 'react-router-dom';
 
 // Subcomponent imports
-import Colored from './styles/Colored';
 import { MainContext } from './reusable/MainLayout';
-
-const { LandingWrap } = Colored;
 
 export default function Landing() {
   const { setCurrentFileName } = useContext(MainContext);
@@ -50,7 +46,7 @@ export default function Landing() {
   }, []);
 
   return (
-    <LandingWrap className="landing-wrap">
+    <div className="landing-wrap">
       <p className="landing-nav-lbl">
         <i className="fa-solid fa-arrow-left" />
         {' Nav Options'}
@@ -73,6 +69,6 @@ export default function Landing() {
         <img src="./assets/images/about-me/corporate.jpg" alt="" className="photo" />
       </div>
 
-    </LandingWrap>
+    </div>
   );
 }

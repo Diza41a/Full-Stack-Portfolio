@@ -4,12 +4,8 @@
 import React, { useContext } from 'react';
 
 // Subcomponent/Data imports
-import Colored from '../styles/Colored';
 import { ProjectContext } from './PortfolioManager';
 import { projects } from './projects';
-
-const { Wrap } = Colored.Portfolio;
-const { Subsection } = Colored.About;
 
 export default function ProjectWrap() {
   const { currentProject, setProject } = useContext(ProjectContext);
@@ -49,9 +45,9 @@ export default function ProjectWrap() {
   };
 
   return (
-    <Subsection className="tab">
+    <section className="tab">
       <p className="tab-title">Portfolio</p>
-      <Wrap className="project-wrap tab-body">
+      <div className="project-wrap tab-body">
         <div className="project-nav-mobile">
           <img
             src="./assets/images/arrow-white.svg"
@@ -138,7 +134,7 @@ export default function ProjectWrap() {
             </div>
           </div>
         </div>
-      </Wrap>
-    </Subsection>
+      </div>
+    </section>
   );
 }

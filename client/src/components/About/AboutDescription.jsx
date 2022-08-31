@@ -5,9 +5,7 @@ import { EditorView } from '@codemirror/view';
 import axios from 'axios';
 
 // Subcomponent imports
-import Colored, { codeMirrorTxtTheme } from '../styles/Colored';
-
-const { Subsection } = Colored.About;
+import { codeMirrorTxtTheme } from '../styles/Colored';
 
 export default function AboutDescription() {
   const [aboutText, setAboutText] = useState('');
@@ -20,7 +18,7 @@ export default function AboutDescription() {
   }, []);
 
   return (
-    <Subsection className="about-subsection introduction tab-wrap">
+    <section className="about-subsection introduction tab-wrap">
       <p className="tab-title">About me.txt</p>
       <div className="about-subsection-body introduction tab-body">
         <div className="description">
@@ -39,6 +37,6 @@ export default function AboutDescription() {
           <img src="./assets/images/about-me/about-me-2.jpeg" alt="" />
         </div>
       </div>
-    </Subsection>
+    </section>
   );
 }

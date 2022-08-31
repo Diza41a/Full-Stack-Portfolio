@@ -8,12 +8,8 @@ import React, { useState, useContext, useEffect } from 'react';
 import Typed from 'react-typed';
 
 // Subcomponent/Data imports
-import Colored from '../styles/Colored';
 import questions from './questions';
 import { MainContext } from '../reusable/MainLayout';
-
-const { Subsection } = Colored.About;
-const { ReachOutBody } = Colored;
 
 export default function ReachOut() {
   const { setCurrentFileName } = useContext(MainContext);
@@ -23,7 +19,12 @@ export default function ReachOut() {
 
   // ComponentDidMount
   useEffect(() => {
+    document.querySelector('.direct-links-card')?.classList.add('persisting');
     setCurrentFileName('ReachOut.jsx');
+
+    return function cleanup() {
+      document.querySelector('.direct-links-card')?.classList.remove('persisting');
+    };
   }, []);
 
   // Helpers
@@ -89,9 +90,9 @@ export default function ReachOut() {
   );
 
   return (
-    <Subsection className="tab">
+    <section className="tab">
       <p className="tab-title">Contact</p>
-      <ReachOutBody className="tab-body reach-out-body-wrap">
+      <div className="tab-body reach-out-body-wrap">
         <h3 className="title">Reach Out</h3>
 
         <div className="console-device-wrap" onClick={activeLatestQuestion}>
@@ -101,10 +102,16 @@ export default function ReachOut() {
           <div className="console">
             <div className="format-btns">
               <button type="button" id="email-format" className="format-btn active">
-                <i className="fa-solid fa-envelope" />
+                {/* <i className="fa-solid fa-envelope" /> */}
+                <span className="material-symbols-outlined">
+                  mail
+                </span>
               </button>
               <button type="button" id="phone-format" className="format-btn">
-                <i className="fa-solid fa-phone" />
+                {/* <i className="fa-solid fa-phone" /> */}
+                <span className="material-symbols-outlined">
+                  phone
+                </span>
               </button>
             </div>
 
@@ -133,7 +140,7 @@ export default function ReachOut() {
           </div>
         </div>
 
-      </ReachOutBody>
-    </Subsection>
+      </div>
+    </section>
   );
 }

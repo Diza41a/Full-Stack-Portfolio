@@ -8,10 +8,8 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 
 // Component imports
 import Particle from './Particle';
-import Colored, { background } from '../styles/Colored';
+import startMatrixCanvas from './matrix';
 import DirectLinks from './DirectLinks';
-
-const { Toolbar, Nav } = Colored;
 
 export const MainContext = createContext('default');
 
@@ -27,9 +25,18 @@ export const getCurrentTime = () => {
 export default function MainLayout() {
   const navigate = useNavigate();
 
-  const [globalTheme, setGlobalTheme] = useState('default');
+  const [globalTheme, setGlobalTheme] = useState('matrix');
   const [time, setTime] = useState(getCurrentTime());
   const [currentFileName, setCurrentFileName] = useState('Landing.jsx');
+
+  // Temp
+  const background = {
+    image: 'url("assets/images/background-curves.png")',
+    color: '#181924',
+  };
+  if (globalTheme === 'matrix') {
+    background.image = 'url("./assets/images/background-matrix.png")';
+  }
 
   // ComponentDidMount
   useEffect(() => {
@@ -37,6 +44,12 @@ export default function MainLayout() {
     const clockInterval = setInterval(() => {
       setTime(getCurrentTime());
     }, 1000);
+
+    // Temp
+    if (globalTheme === 'matrix') {
+      startMatrixCanvas();
+    }
+
     // Cleanup after unmounting (side effect)
     return function cleanup() {
       clearInterval(clockInterval);
@@ -69,8 +82,8 @@ export default function MainLayout() {
     }}
     >
       {/* // eslint-disable-next-line react/jsx-no-constructed-context-values */}
-      <div id="app" style={{ backgroundColor: background.color, backgroundImage: background.image }}>
-        <Toolbar>
+      <div id="app" className="matrix" style={{ backgroundColor: background.color, backgroundImage: background.image }}>
+        <header className="toolbar">
           <div className="buttons">
             <button type="button" style={{ color: 'white', backgroundColor: 'red' }} onClick={toDesktop}>
               <i className="fa-solid fa-x" />
@@ -86,32 +99,53 @@ export default function MainLayout() {
           <p className="file-name">{`${currentFileName} - Davyd Zakorchennyi`}</p>
 
           <strong className="time">{time}</strong>
-        </Toolbar>
+        </header>
 
         <div className="content-body-wrap">
-          <Nav>
+          <nav className="sidebar">
             <div className="main-nav">
               <NavLink to="landing">
-                <i className="fa-solid fa-flag-checkered" style={{ transform: 'rotate(20deg)' }} />
+                {
+                  // eslint-disable-next-line max-len
+                /* <i className="fa-solid fa-flag-checkered" style={{ transform: 'rotate(20deg)' }} /> */
+                }
+                <span className="material-symbols-outlined flag">
+                  flag
+                </span>
               </NavLink>
               <NavLink to="about">
-                <i className="fa-solid fa-circle-info" />
+                {/* <i className="fa-solid fa-circle-info" /> */}
+                <span className="material-symbols-outlined info">
+                  contact_support
+                </span>
               </NavLink>
               <NavLink to="portfolio">
-                <i className="fa-solid fa-briefcase" />
+                {/* <i className="fa-solid fa-briefcase" /> */}
+                <span className="material-symbols-outlined">
+                  cases
+                </span>
               </NavLink>
               <NavLink to="contact">
-                <i className="fa-solid fa-phone" />
+                {/* <i className="fa-solid fa-phone" /> */}
+                <span className="material-symbols-outlined">
+                  call
+                </span>
               </NavLink>
             </div>
             <div className="second-nav">
-              <i className="fa-solid fa-user" onClick={toggleDirectLinks} />
-              <i className="fa-solid fa-gear" />
+              {/* <i className="fa-solid fa-user" onClick={toggleDirectLinks} /> */}
+              <span className="material-symbols-outlined" onClick={toggleDirectLinks}>
+                account_circle
+              </span>
+              {/* <i className="fa-solid fa-gear" /> */}
+              <span className="material-symbols-outlined">
+                settings
+              </span>
             </div>
-          </Nav>
+          </nav>
 
           <div className="content">
-            <Particle />
+            {globalTheme !== 'matrix' ? <Particle /> : <canvas id="c" className="matrix-canvas" />}
             <Outlet />
           </div>
 

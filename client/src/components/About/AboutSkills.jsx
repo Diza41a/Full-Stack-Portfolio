@@ -2,15 +2,12 @@
 import React from 'react';
 
 // Subcomponent/Data imports
-import Colored from '../styles/Colored';
 import { frontEndSkills, backEndSkills, devOpsSkills } from './skills';
-
-const { Subsection, SkillSection } = Colored.About;
 
 export default function AboutSkills() {
   // Rendering
   const renderSkills = (skillsObj) => (
-    <SkillSection className="skill-section">
+    <section className="skill-section">
       <div className="title-wrap">
         <img src={skillsObj.area.imagePath} alt="" className="logo" />
         <h3 className="title">{skillsObj.area.title}</h3>
@@ -30,11 +27,11 @@ export default function AboutSkills() {
           </div>
         ))}
       </div>
-    </SkillSection>
+    </section>
   );
 
   return (
-    <Subsection className="about-subsection skills">
+    <section className="about-subsection skills">
       <p className="tab-title">Dev Toolkit</p>
       <div className="about-subsection-body skills">
         <div className="skill-container">
@@ -43,6 +40,6 @@ export default function AboutSkills() {
           {renderSkills(devOpsSkills)}
         </div>
       </div>
-    </Subsection>
+    </section>
   );
 }

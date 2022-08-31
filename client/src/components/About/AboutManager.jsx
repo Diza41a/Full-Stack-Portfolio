@@ -6,10 +6,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 // Subcomponent imports
 import AboutDescription from './AboutDescription';
 import AboutSkills from './AboutSkills';
-import Colored from '../styles/Colored';
 import { MainContext } from '../reusable/MainLayout';
-
-const { SubsectionSelector } = Colored.About;
 
 export default function AboutManager() {
   const { setCurrentFileName } = useContext(MainContext);
@@ -39,7 +36,7 @@ export default function AboutManager() {
 
   return (
     <>
-      <SubsectionSelector className="about-section-selector">
+      <div className="about-section-selector">
         <div className="about-section-selector-list shrinked">
           <NavLink
             to="introduction"
@@ -63,7 +60,7 @@ export default function AboutManager() {
           </NavLink>
         </div>
         <i className="fa-solid fa-angle-down selector-toggle" onClick={toggleSubsectionList} />
-      </SubsectionSelector>
+      </div>
 
       { subsection === 'skills' ? <AboutSkills /> : <AboutDescription />}
     </>

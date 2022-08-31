@@ -8,10 +8,15 @@
   font-family: "Code-Bold";
   src: url(../assets/fonts/code_pro/Code\ Pro\ LC.otf);
 }
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 48;
+}
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Code-Bold";
+  z-index: 2;
 }
 
 button {
@@ -26,6 +31,327 @@ button {
     transform: translateY(0);
   }
 }
+#root #app.regular header.toolbar {
+  background-color: #181924;
+  color: #C8C2C2;
+  border-bottom: 1px solid #626262;
+}
+#root #app.regular nav.sidebar {
+  background-color: #313244;
+  color: #D9D9D9;
+  border-right: 1px solid #626262;
+}
+#root #app.regular nav.sidebar a.active {
+  border-left: 4px solid #F8B172;
+}
+#root #app.regular .landing-wrap .landing-nav-lbl {
+  color: #D9D9D9;
+  background-color: #575764;
+}
+#root #app.regular .landing-wrap .introduction {
+  background-color: rgba(24, 25, 36, 0.9);
+  border: 4px solid #626262;
+}
+#root #app.regular .landing-wrap .introduction .static, #root #app.regular .landing-wrap .introduction .dynamic {
+  color: #D9D9D9;
+}
+#root #app.regular .about-section-selector {
+  background-color: rgba(24, 25, 36, 0.9);
+  color: #D9D9D9;
+  border-right: 1px solid #626262;
+}
+#root #app.regular .about-section-selector .about-section-selector-list a {
+  text-decoration: none;
+}
+#root #app.regular .about-section-selector .about-section-selector-list a .title {
+  color: #D9D9D9;
+}
+#root #app.regular .about-section-selector .about-section-selector-list a .description {
+  color: #C8C2C2;
+}
+#root #app.regular .about-section-selector .about-section-selector-list a.active {
+  background-color: #575764;
+}
+#root #app.regular .about-section-selector .selector-toggle {
+  background-color: #181924;
+}
+#root #app.regular .about-subsection .tab-title, #root #app.regular .introduction .tab-title, #root #app.regular .tab-wrap .tab-title, #root #app.regular .tab .tab-title, #root #app.regular .skills .tab-title {
+  color: #C8C2C2;
+  background-color: rgba(52, 47, 48, 0.8);
+  border-top: 3px solid #F8B172;
+}
+#root #app.regular .about-subsection .about-subsection-body, #root #app.regular .about-subsection .tab-body, #root #app.regular .introduction .about-subsection-body, #root #app.regular .introduction .tab-body, #root #app.regular .tab-wrap .about-subsection-body, #root #app.regular .tab-wrap .tab-body, #root #app.regular .tab .about-subsection-body, #root #app.regular .tab .tab-body, #root #app.regular .skills .about-subsection-body, #root #app.regular .skills .tab-body {
+  background-color: rgba(52, 47, 48, 0.8);
+}
+#root #app.regular .about-subsection .about-subsection-body .about-paragraph, #root #app.regular .about-subsection .tab-body .about-paragraph, #root #app.regular .introduction .about-subsection-body .about-paragraph, #root #app.regular .introduction .tab-body .about-paragraph, #root #app.regular .tab-wrap .about-subsection-body .about-paragraph, #root #app.regular .tab-wrap .tab-body .about-paragraph, #root #app.regular .tab .about-subsection-body .about-paragraph, #root #app.regular .tab .tab-body .about-paragraph, #root #app.regular .skills .about-subsection-body .about-paragraph, #root #app.regular .skills .tab-body .about-paragraph {
+  color: #D9D9D9;
+}
+#root #app.regular .about-subsection .about-subsection-body .description #resume-btn, #root #app.regular .about-subsection .tab-body .description #resume-btn, #root #app.regular .introduction .about-subsection-body .description #resume-btn, #root #app.regular .introduction .tab-body .description #resume-btn, #root #app.regular .tab-wrap .about-subsection-body .description #resume-btn, #root #app.regular .tab-wrap .tab-body .description #resume-btn, #root #app.regular .tab .about-subsection-body .description #resume-btn, #root #app.regular .tab .tab-body .description #resume-btn, #root #app.regular .skills .about-subsection-body .description #resume-btn, #root #app.regular .skills .tab-body .description #resume-btn {
+  color: white;
+  background-color: #188AEB;
+}
+#root #app.regular .skill-section .title-wrap .title {
+  color: #D9D9D9;
+}
+#root #app.regular .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
+  color: #D9D9D9;
+}
+#root #app.regular .skill-section .skills-body .skill-wrap .subskill-list li {
+  color: #C8C2C2;
+}
+#root #app.regular .project-selector {
+  background-color: #181924;
+  border-right: 1px solid #626262;
+  color: #C8C2C2;
+}
+#root #app.regular .project-selector .title {
+  color: #FFFFFF;
+}
+#root #app.regular .project-selector ul li {
+  color: #53B0FF;
+  cursor: pointer;
+}
+#root #app.regular .project-selector ul li.selected {
+  background-color: #626262;
+}
+#root #app.regular .project-selector ul.disabled li {
+  color: #C8C2C2;
+  cursor: not-allowed;
+}
+#root #app.regular .project-wrap .project-nav-mobile, #root #app.regular .tab-body .project-nav-mobile {
+  /* background-color: ${colors.mainDark}; */
+  border-top: 1px solid #626262;
+  border-bottom: 1px solid #626262;
+}
+#root #app.regular .project-wrap .project-title, #root #app.regular .tab-body .project-title {
+  color: #D9D9D9;
+}
+#root #app.regular .project-wrap .info-cards .card, #root #app.regular .tab-body .info-cards .card {
+  background-color: rgb(12, 12, 12);
+}
+#root #app.regular .project-wrap .info-cards .card .star, #root #app.regular .tab-body .info-cards .card .star {
+  color: #FFFFFF;
+  background-color: #188AEB;
+}
+#root #app.regular .project-wrap .info-cards .card .card-title, #root #app.regular .tab-body .info-cards .card .card-title {
+  color: #D9D9D9;
+}
+#root #app.regular .project-wrap .info-cards .card .body, #root #app.regular .tab-body .info-cards .card .body {
+  color: #D9D9D9;
+}
+#root #app.regular .project-wrap .info-cards .card .links-wrap .links a, #root #app.regular .tab-body .info-cards .card .links-wrap .links a {
+  color: #D9D9D9;
+  background-color: #188AEB;
+}
+#root #app.regular .project-wrap .info-cards .card .links-wrap .links a.disabled, #root #app.regular .tab-body .info-cards .card .links-wrap .links a.disabled {
+  background-color: gray;
+}
+#root #app.regular .reach-out-body-wrap .title {
+  color: #D9D9D9;
+}
+#root #app.regular .console {
+  background-color: black;
+  background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 80%);
+}
+#root #app.regular .console .questions * {
+  color: #D9D9D9;
+  text-shadow: 0 0 5px #C8C2C2;
+}
+#root #app.regular .direct-links-card {
+  background-color: rgb(12, 12, 12);
+}
+#root #app.regular .direct-links-card .star {
+  color: #FFFFFF;
+  background-color: #188AEB;
+}
+#root #app.regular .direct-links-card .card-title {
+  color: #D9D9D9;
+}
+#root #app.regular .direct-links-card .body {
+  color: #D9D9D9;
+}
+#root #app.regular .direct-links-card .links-wrap .links a {
+  color: #D9D9D9;
+  background-color: #188AEB;
+}
+#root #app.regular .direct-links-card .links-wrap .links a.disabled {
+  background-color: gray;
+}
+#root #app.matrix header.toolbar {
+  background-color: #0b0b0e;
+  color: #bfbfbf;
+  border-bottom: 1px solid #858585;
+}
+#root #app.matrix nav.sidebar {
+  background-color: #303030;
+  color: #caf4ff;
+  border-right: 1px solid #858585;
+}
+#root #app.matrix nav.sidebar a.active {
+  border-left: 4px solid #08aab5;
+}
+#root #app.matrix .landing-wrap .landing-nav-lbl {
+  color: #caf4ff;
+  background-color: #005052;
+}
+#root #app.matrix .landing-wrap .introduction {
+  background-color: rgba(11, 11, 14, 0.8941176471);
+  border: 4px solid #858585;
+}
+#root #app.matrix .landing-wrap .introduction .static, #root #app.matrix .landing-wrap .introduction .dynamic {
+  color: #caf4ff;
+}
+#root #app.matrix .about-section-selector {
+  background-color: rgba(11, 11, 14, 0.8941176471);
+  color: #caf4ff;
+  border-right: 1px solid #858585;
+}
+#root #app.matrix .about-section-selector .about-section-selector-list a {
+  text-decoration: none;
+}
+#root #app.matrix .about-section-selector .about-section-selector-list a .title {
+  color: #caf4ff;
+}
+#root #app.matrix .about-section-selector .about-section-selector-list a .description {
+  color: #bfbfbf;
+}
+#root #app.matrix .about-section-selector .about-section-selector-list a.active {
+  background-color: #005052;
+}
+#root #app.matrix .about-section-selector .selector-toggle {
+  background-color: #0b0b0e;
+}
+#root #app.matrix .about-subsection .tab-title, #root #app.matrix .introduction .tab-title, #root #app.matrix .tab-wrap .tab-title, #root #app.matrix .tab .tab-title, #root #app.matrix .skills .tab-title {
+  color: #bfbfbf;
+  background-color: rgba(37, 36, 36, 0.7450980392);
+  border-top: 3px solid #08aab5;
+}
+#root #app.matrix .about-subsection .about-subsection-body, #root #app.matrix .about-subsection .tab-body, #root #app.matrix .introduction .about-subsection-body, #root #app.matrix .introduction .tab-body, #root #app.matrix .tab-wrap .about-subsection-body, #root #app.matrix .tab-wrap .tab-body, #root #app.matrix .tab .about-subsection-body, #root #app.matrix .tab .tab-body, #root #app.matrix .skills .about-subsection-body, #root #app.matrix .skills .tab-body {
+  background-color: rgba(37, 36, 36, 0.7450980392);
+}
+#root #app.matrix .about-subsection .about-subsection-body .about-paragraph, #root #app.matrix .about-subsection .tab-body .about-paragraph, #root #app.matrix .introduction .about-subsection-body .about-paragraph, #root #app.matrix .introduction .tab-body .about-paragraph, #root #app.matrix .tab-wrap .about-subsection-body .about-paragraph, #root #app.matrix .tab-wrap .tab-body .about-paragraph, #root #app.matrix .tab .about-subsection-body .about-paragraph, #root #app.matrix .tab .tab-body .about-paragraph, #root #app.matrix .skills .about-subsection-body .about-paragraph, #root #app.matrix .skills .tab-body .about-paragraph {
+  color: #caf4ff;
+}
+#root #app.matrix .about-subsection .about-subsection-body .description #resume-btn, #root #app.matrix .about-subsection .tab-body .description #resume-btn, #root #app.matrix .introduction .about-subsection-body .description #resume-btn, #root #app.matrix .introduction .tab-body .description #resume-btn, #root #app.matrix .tab-wrap .about-subsection-body .description #resume-btn, #root #app.matrix .tab-wrap .tab-body .description #resume-btn, #root #app.matrix .tab .about-subsection-body .description #resume-btn, #root #app.matrix .tab .tab-body .description #resume-btn, #root #app.matrix .skills .about-subsection-body .description #resume-btn, #root #app.matrix .skills .tab-body .description #resume-btn {
+  color: white;
+  background-color: #18afeb;
+}
+#root #app.matrix .skill-section .title-wrap .title {
+  color: #caf4ff;
+}
+#root #app.matrix .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
+  color: #caf4ff;
+}
+#root #app.matrix .skill-section .skills-body .skill-wrap .subskill-list li {
+  color: #bfbfbf;
+}
+#root #app.matrix .project-selector {
+  background-color: #0b0b0e;
+  border-right: 1px solid #858585;
+  color: #bfbfbf;
+}
+#root #app.matrix .project-selector .title {
+  color: #FFFFFF;
+}
+#root #app.matrix .project-selector ul li {
+  color: #53B0FF;
+  cursor: pointer;
+}
+#root #app.matrix .project-selector ul li.selected {
+  background-color: #858585;
+}
+#root #app.matrix .project-selector ul.disabled li {
+  color: #bfbfbf;
+  cursor: not-allowed;
+}
+#root #app.matrix .project-wrap .project-nav-mobile, #root #app.matrix .tab-body .project-nav-mobile {
+  /* background-color: ${colors.mainDark}; */
+  border-top: 1px solid #858585;
+  border-bottom: 1px solid #858585;
+}
+#root #app.matrix .project-wrap .project-title, #root #app.matrix .tab-body .project-title {
+  color: #caf4ff;
+}
+#root #app.matrix .project-wrap .info-cards .card, #root #app.matrix .tab-body .info-cards .card {
+  background-color: rgb(12, 12, 12);
+}
+#root #app.matrix .project-wrap .info-cards .card .star, #root #app.matrix .tab-body .info-cards .card .star {
+  color: #FFFFFF;
+  background-color: #18afeb;
+}
+#root #app.matrix .project-wrap .info-cards .card .card-title, #root #app.matrix .tab-body .info-cards .card .card-title {
+  color: #caf4ff;
+}
+#root #app.matrix .project-wrap .info-cards .card .body, #root #app.matrix .tab-body .info-cards .card .body {
+  color: #caf4ff;
+}
+#root #app.matrix .project-wrap .info-cards .card .links-wrap .links a, #root #app.matrix .tab-body .info-cards .card .links-wrap .links a {
+  color: #caf4ff;
+  background-color: #18afeb;
+}
+#root #app.matrix .project-wrap .info-cards .card .links-wrap .links a.disabled, #root #app.matrix .tab-body .info-cards .card .links-wrap .links a.disabled {
+  background-color: gray;
+}
+#root #app.matrix .reach-out-body-wrap .title {
+  color: #caf4ff;
+}
+#root #app.matrix .console {
+  background-color: black;
+  background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 80%);
+}
+#root #app.matrix .console .questions * {
+  color: #caf4ff;
+  text-shadow: 0 0 5px #bfbfbf;
+}
+#root #app.matrix .direct-links-card {
+  background-color: rgb(12, 12, 12);
+}
+#root #app.matrix .direct-links-card .star {
+  color: #FFFFFF;
+  background-color: #18afeb;
+}
+#root #app.matrix .direct-links-card .card-title {
+  color: #caf4ff;
+}
+#root #app.matrix .direct-links-card .body {
+  color: #caf4ff;
+}
+#root #app.matrix .direct-links-card .links-wrap .links a {
+  color: #caf4ff;
+  background-color: #18afeb;
+}
+#root #app.matrix .direct-links-card .links-wrap .links a.disabled {
+  background-color: gray;
+}
+#root #app.matrix h1, #root #app.matrix h2, #root #app.matrix h3, #root #app.matrix h4, #root #app.matrix h5, #root #app.matrix h6 {
+  text-shadow: 0 0 0.24em rgb(100, 146, 255);
+}
+#root #app.matrix .title, #root #app.matrix .static {
+  text-shadow: 0 0 0.24em rgb(237, 242, 255);
+}
+#root #app.matrix a.active .material-symbols-outlined {
+  text-shadow: 0 0 0.24em rgb(237, 242, 255);
+}
+#root #app.matrix .console {
+  background-color: black;
+  background-image: radial-gradient(rgba(79, 79, 79, 0.75), rgb(13, 13, 13) 120%);
+}
+#root #app.matrix .console .format-btn i, #root #app.matrix .console .format-btn span {
+  color: rgb(100, 198, 255);
+  border-radius: 50%;
+  text-shadow: 0 0 0.51vw rgb(100, 146, 255);
+}
+#root #app.matrix .console .format-btn.active {
+  background-color: rgba(36, 36, 36, 0.6);
+  border: 1px solid rgb(100, 146, 255);
+}
+#root #app.matrix .console .format-btn:hover {
+  background-color: rgba(36, 36, 36, 0.6);
+}
+#root #app.matrix .console .questions {
+  font-family: monospace !important;
+}
+
 @media (max-width: 850px) {
   html {
     overflow: hidden;
@@ -86,6 +412,16 @@ button {
     cursor: not-allowed;
   }
 
+  .matrix-canvas {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.8;
+  }
+
   #app {
     height: 100%;
     background-size: cover;
@@ -105,13 +441,13 @@ button {
   }
   #app header .buttons button {
     border-radius: 50%;
-    width: 15.2px;
-    height: 15.2px;
+    width: 10.4px;
+    height: 10.4px;
     border: none;
     margin: 0 2.4px;
   }
   #app header .buttons button i {
-    font-size: 10.4px;
+    font-size: 5.6px;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -149,15 +485,21 @@ button {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap nav div a, #app .content-body-wrap nav div i {
+  #app .content-body-wrap nav div a, #app .content-body-wrap nav div i, #app .content-body-wrap nav div span {
     text-align: center;
-    font-size: 28px;
-    margin: 8px 0;
+    font-size: 36px;
+    margin: 2.4px 0;
     color: inherit;
     cursor: pointer;
   }
-  #app .content-body-wrap nav div.second-nav i {
-    margin: 12px 0;
+  #app .content-body-wrap nav div a.info, #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.info, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.info, #app .content-body-wrap nav div span.flag {
+    font-size: 40px;
+  }
+  #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.flag {
+    transform: rotate(15deg);
+  }
+  #app .content-body-wrap nav div.second-nav i, #app .content-body-wrap nav div.second-nav span {
+    margin: 7.2px 0;
   }
   #app .content-body-wrap .content {
     width: calc(100% - 56px);
@@ -606,8 +948,6 @@ button {
     /* Track */
     /* Handle */
     /* Handle on hover */
-    background-color: black;
-    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 80%);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console * {
     z-index: 1001;
@@ -648,7 +988,7 @@ button {
     position: relative;
     cursor: pointer;
   }
-  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn i {
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn i, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn span {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -657,8 +997,8 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
-    color: rgb(153, 153, 153);
+    font-size: 29.6px;
+    color: rgb(221, 220, 220);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn.active {
     background-color: #242424;
@@ -892,6 +1232,16 @@ button {
     cursor: not-allowed;
   }
 
+  .matrix-canvas {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.8;
+  }
+
   #app {
     height: 100%;
     background-size: cover;
@@ -911,13 +1261,13 @@ button {
   }
   #app header .buttons button {
     border-radius: 50%;
-    width: 19px;
-    height: 19px;
+    width: 13px;
+    height: 13px;
     border: none;
     margin: 0 3px;
   }
   #app header .buttons button i {
-    font-size: 13px;
+    font-size: 7px;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -955,15 +1305,21 @@ button {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap nav div a, #app .content-body-wrap nav div i {
+  #app .content-body-wrap nav div a, #app .content-body-wrap nav div i, #app .content-body-wrap nav div span {
     text-align: center;
-    font-size: 35px;
-    margin: 10px 0;
+    font-size: 45px;
+    margin: 3px 0;
     color: inherit;
     cursor: pointer;
   }
-  #app .content-body-wrap nav div.second-nav i {
-    margin: 15px 0;
+  #app .content-body-wrap nav div a.info, #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.info, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.info, #app .content-body-wrap nav div span.flag {
+    font-size: 50px;
+  }
+  #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.flag {
+    transform: rotate(15deg);
+  }
+  #app .content-body-wrap nav div.second-nav i, #app .content-body-wrap nav div.second-nav span {
+    margin: 9px 0;
   }
   #app .content-body-wrap .content {
     width: calc(100% - 70px);
@@ -1412,8 +1768,6 @@ button {
     /* Track */
     /* Handle */
     /* Handle on hover */
-    background-color: black;
-    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 80%);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console * {
     z-index: 1001;
@@ -1454,7 +1808,7 @@ button {
     position: relative;
     cursor: pointer;
   }
-  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn i {
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn i, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn span {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1463,8 +1817,8 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
-    color: rgb(153, 153, 153);
+    font-size: 37px;
+    color: rgb(221, 220, 220);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn.active {
     background-color: #242424;
@@ -1961,8 +2315,6 @@ button {
     max-width: 708px !important;
     width: 62.75vw !important;
     height: 87% !important;
-    background-color: black;
-    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 100%);
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console::after {
     content: "";
@@ -1996,7 +2348,7 @@ button {
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    color: rgb(153, 153, 153);
+    color: rgb(194, 194, 194);
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn.active {
     background-color: #242424;
@@ -2011,9 +2363,7 @@ button {
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console .questions * {
     margin: 5px 0;
-    color: white;
     font: 18px "Open Sans", sans-serif;
-    text-shadow: 0 0 5px #C8C8C8;
   }
 
   .desktop-wrap .toolkit .time {
@@ -2026,6 +2376,12 @@ button {
     left: 0;
     right: 0;
     text-align: center;
+  }
+}
+@media (min-width: 1400px) {
+  .direct-links-card.persisting {
+    opacity: 1 !important;
+    right: 0 !important;
   }
 }
 @media (min-width: 1600px) {
@@ -2088,6 +2444,16 @@ button {
     cursor: not-allowed;
   }
 
+  .matrix-canvas {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.8;
+  }
+
   #app {
     height: 100%;
     background-size: cover;
@@ -2107,13 +2473,13 @@ button {
   }
   #app header .buttons button {
     border-radius: 50%;
-    width: 22.8px;
-    height: 22.8px;
+    width: 15.6px;
+    height: 15.6px;
     border: none;
     margin: 0 3.6px;
   }
   #app header .buttons button i {
-    font-size: 15.6px;
+    font-size: 8.4px;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -2151,15 +2517,21 @@ button {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap nav div a, #app .content-body-wrap nav div i {
+  #app .content-body-wrap nav div a, #app .content-body-wrap nav div i, #app .content-body-wrap nav div span {
     text-align: center;
-    font-size: 42px;
-    margin: 12px 0;
+    font-size: 54px;
+    margin: 3.6px 0;
     color: inherit;
     cursor: pointer;
   }
-  #app .content-body-wrap nav div.second-nav i {
-    margin: 18px 0;
+  #app .content-body-wrap nav div a.info, #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.info, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.info, #app .content-body-wrap nav div span.flag {
+    font-size: 60px;
+  }
+  #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.flag {
+    transform: rotate(15deg);
+  }
+  #app .content-body-wrap nav div.second-nav i, #app .content-body-wrap nav div.second-nav span {
+    margin: 10.8px 0;
   }
   #app .content-body-wrap .content {
     width: calc(100% - 84px);
@@ -2608,8 +2980,6 @@ button {
     /* Track */
     /* Handle */
     /* Handle on hover */
-    background-color: black;
-    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 80%);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console * {
     z-index: 1001;
@@ -2650,7 +3020,7 @@ button {
     position: relative;
     cursor: pointer;
   }
-  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn i {
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn i, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn span {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -2659,8 +3029,8 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 36px;
-    color: rgb(153, 153, 153);
+    font-size: 44.4px;
+    color: rgb(221, 220, 220);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn.active {
     background-color: #242424;
@@ -3157,8 +3527,6 @@ button {
     max-width: 849.6px !important;
     width: 62.75vw !important;
     height: 87% !important;
-    background-color: black;
-    background-image: linear-gradient(to bottom, #3c3e41 1%, #161616 100%);
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console::after {
     content: "";
@@ -3192,7 +3560,7 @@ button {
     justify-content: center;
     align-items: center;
     font-size: 36px;
-    color: rgb(153, 153, 153);
+    color: rgb(194, 194, 194);
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn.active {
     background-color: #242424;
@@ -3207,9 +3575,7 @@ button {
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console .questions * {
     margin: 6px 0;
-    color: white;
     font: 21.6px "Open Sans", sans-serif;
-    text-shadow: 0 0 5px #C8C8C8;
   }
 
   .desktop-wrap .toolkit .time {

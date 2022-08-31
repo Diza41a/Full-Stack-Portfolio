@@ -5,11 +5,8 @@
 import React, { useContext } from 'react';
 
 // Subcomponent/Data imports
-import Colored from '../styles/Colored';
 import { projects, inProgress } from './projects';
 import { ProjectContext } from './PortfolioManager';
-
-const { Portfolio } = Colored;
 
 export default function ProjectSelector() {
   const { currentProject, setProject } = useContext(ProjectContext);
@@ -55,7 +52,7 @@ export default function ProjectSelector() {
   );
 
   return (
-    <Portfolio.Selector className="project-selector">
+    <div className="project-selector">
       <div className="project-selector-list shrinked">
         {renderProjects(projects, false, 'Projects')}
         <section className="project-selector-section">
@@ -68,6 +65,6 @@ export default function ProjectSelector() {
       </div>
 
       <i className="fa-solid fa-angle-down selector-toggle" onClick={toggleProjectList} />
-    </Portfolio.Selector>
+    </div>
   );
 }
