@@ -43,6 +43,7 @@
     "client-dev": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
     "server-dev": "nodemon ./server/index.js",
-    "sass-dev": "sass client/dist/styles/style.scss client/dist/styles/style.css --watch"
+    "sass-dev": "sass client/dist/styles/style.scss client/dist/styles/style.css --watch",
+    "css-prefixed": "postcss client/dist/styles/style.css --use autoprefixer -d client/dist/styles/style-prefixed.css"
   }
 }

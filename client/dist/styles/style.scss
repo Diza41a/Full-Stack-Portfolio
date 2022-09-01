@@ -116,6 +116,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
   .skill-section {
     .title-wrap {
+      user-select: none;
       .title {
         color: $mainText;
       }
@@ -883,6 +884,14 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               max-height: 100vh;
               transition: max-height 1s;
               .project-selector-section {
+                &.recent {
+                  ul {
+                    li.selected {
+                      background-color: transparent!important;
+                    }
+                  }
+                }
+
                 .title {
                   font-family: 'Code';
                   font-size: $fontSize * 1.7;

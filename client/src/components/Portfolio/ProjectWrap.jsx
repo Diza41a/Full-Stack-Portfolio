@@ -163,8 +163,6 @@ export default function ProjectWrap() {
                   imagesArr = [...currentProject.images.main];
                 }
 
-                console.log(imagesArr, carouselMode);
-
                 return imagesArr.map((screenshotUrl, i) => (
                   <div key={i}>
                     <img src={screenshotUrl} key={i} />

@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable import/no-cycle */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -18,6 +19,24 @@ export default function ProjectSelector() {
       for (let i = 0; i < projects.length; i += 1) {
         if (projects[i].title === selected) {
           setProject(projects[i]);
+
+          const rightNow = new Date();
+          const toLocalStorage = { title: projects[i].title, lastAccessed: rightNow };
+          const recentProjects = JSON.parse(localStorage.getItem('dz_recent_projects')) || [toLocalStorage];
+          let projectExists = false;
+          recentProjects.forEach((item) => {
+            if (item.title === projects[i].title) {
+              // eslint-disable-next-line no-param-reassign
+              item.lastAccessed = rightNow;
+              projectExists = true;
+            }
+          });
+
+          if (!projectExists) {
+            recentProjects.push(toLocalStorage);
+          }
+
+          localStorage.setItem('dz_recent_projects', JSON.stringify(recentProjects));
         }
       }
     }
@@ -32,9 +51,26 @@ export default function ProjectSelector() {
     }
   };
 
+  const updateRecentProjectList = (arr) => {
+    const upToDate = [];
+    const rightNow = new Date();
+    for (const project of arr) {
+      // If project wasn't accessed for 6+ hours, remove from recents
+      if (Math.abs(rightNow - new Date(project.lastAccessed)) / 36e5 < 6) {
+        upToDate.push(project);
+      }
+    }
+
+    localStorage.setItem('dz_recent_projects', JSON.stringify(upToDate));
+    return upToDate.sort((curr, next) => (
+      // Turn your strings into dates, and then subtract them
+      // to get a value that is either negative, positive, or zero.
+      new Date(next.lastAccessed) - new Date(curr.lastAccessed)));
+  };
+
   // Rendering
   const renderProjects = (arr, disabled, listName) => (
-    <section className="project-selector-section">
+    <section className={`project-selector-section ${listName === 'Recent' ? 'recent' : null}`}>
       <h3 className="title">{listName}</h3>
       <ul className={disabled ? 'disabled' : ''} onClick={!disabled ? switchProject : null}>
         {arr.map((item, i) => (
@@ -55,12 +91,27 @@ export default function ProjectSelector() {
     <div className="project-selector">
       <div className="project-selector-list shrinked">
         {renderProjects(projects, false, 'Projects')}
-        <section className="project-selector-section">
-          <h3 className="title">Recent</h3>
-          <ul>
-            <li>Atelier Clothing Platform</li>
-          </ul>
-        </section>
+        {(() => {
+          let recentProjects = localStorage.getItem('dz_recent_projects');
+          if (!recentProjects || JSON.parse(recentProjects).length === 0) {
+            const initializeRecentProjects = [
+              { title: currentProject.title, lastAccessed: new Date() },
+            ];
+            localStorage.setItem('dz_recent_projects', JSON.stringify(initializeRecentProjects));
+            recentProjects = localStorage.getItem('dz_recent_projects');
+          }
+
+          recentProjects = JSON.parse(recentProjects);
+          // Current project is time updated for being a default choice
+          for (const project of recentProjects) {
+            if (currentProject.title === project.title) {
+              project.lastAccessed = new Date();
+            }
+          }
+          recentProjects = updateRecentProjectList(recentProjects);
+
+          return renderProjects(recentProjects, false, 'Recent');
+        })()}
         {renderProjects(inProgress, true, 'In Progress')}
       </div>
 

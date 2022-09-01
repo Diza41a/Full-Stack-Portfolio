@@ -82,6 +82,9 @@ button {
   color: white;
   background-color: #188AEB;
 }
+#root #app.regular .skill-section .title-wrap {
+  user-select: none;
+}
 #root #app.regular .skill-section .title-wrap .title {
   color: #D9D9D9;
 }
@@ -259,6 +262,9 @@ button {
 #root #app.matrix .about-subsection .about-subsection-body .description #resume-btn, #root #app.matrix .about-subsection .tab-body .description #resume-btn, #root #app.matrix .introduction .about-subsection-body .description #resume-btn, #root #app.matrix .introduction .tab-body .description #resume-btn, #root #app.matrix .tab-wrap .about-subsection-body .description #resume-btn, #root #app.matrix .tab-wrap .tab-body .description #resume-btn, #root #app.matrix .tab .about-subsection-body .description #resume-btn, #root #app.matrix .tab .tab-body .description #resume-btn, #root #app.matrix .skills .about-subsection-body .description #resume-btn, #root #app.matrix .skills .tab-body .description #resume-btn {
   color: white;
   background-color: #18afeb;
+}
+#root #app.matrix .skill-section .title-wrap {
+  user-select: none;
 }
 #root #app.matrix .skill-section .title-wrap .title {
   color: #caf4ff;
@@ -875,6 +881,9 @@ button {
     overflow: hidden;
     max-height: 100vh;
     transition: max-height 1s;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section.recent ul li.selected {
+    background-color: transparent !important;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
     font-family: "Code";
@@ -1777,6 +1786,9 @@ button {
     overflow: hidden;
     max-height: 100vh;
     transition: max-height 1s;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section.recent ul li.selected {
+    background-color: transparent !important;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
     font-family: "Code";
@@ -3261,6 +3273,9 @@ button {
     overflow: hidden;
     max-height: 100vh;
     transition: max-height 1s;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section.recent ul li.selected {
+    background-color: transparent !important;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
     font-family: "Code";
