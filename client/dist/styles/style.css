@@ -93,6 +93,9 @@ button {
 #root #app.regular .skill-section .title-wrap .title {
   color: #D9D9D9;
 }
+#root #app.regular .skill-section .skills-body {
+  min-height: 20vh;
+}
 #root #app.regular .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
   color: #D9D9D9;
 }
@@ -267,6 +270,9 @@ button {
 }
 #root #app.matrix .skill-section .title-wrap .title {
   color: #caf4ff;
+}
+#root #app.matrix .skill-section .skills-body {
+  min-height: 20vh;
 }
 #root #app.matrix .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
   color: #caf4ff;
@@ -783,7 +789,9 @@ button {
     margin-left: 32px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap {
+    position: relative;
     margin-bottom: 12px;
+    transition: top 0.25s ease-in;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
     display: flex;
@@ -812,6 +820,16 @@ button {
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
     content: "- ";
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
+    cursor: grab;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
+    cursor: grabbing;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden {
+    transition: 0.01s;
+    transform: translateX(-9999px);
   }
   #app .content-body-wrap .content .portfolio-manager-wrap {
     display: flex;
@@ -1223,6 +1241,7 @@ button {
     cursor: pointer;
     text-align: center;
     max-width: 80px;
+    transition: top 0.25s ease-in, left 0.25s ease-in;
   }
   .desktop-wrap .desktop-icon-wrap.vscode-icon {
     top: 5%;
@@ -1254,6 +1273,8 @@ button {
     display: none;
   }
   .desktop-wrap .toolkit {
+    position: relative;
+    z-index: 1000;
     user-select: none;
     padding: 1.6px 4px;
     display: flex;
@@ -1646,7 +1667,9 @@ button {
     margin-left: 40px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap {
+    position: relative;
     margin-bottom: 15px;
+    transition: top 0.25s ease-in;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
     display: flex;
@@ -1675,6 +1698,16 @@ button {
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
     content: "- ";
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
+    cursor: grab;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
+    cursor: grabbing;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden {
+    transition: 0.01s;
+    transform: translateX(-9999px);
   }
   #app .content-body-wrap .content .portfolio-manager-wrap {
     display: flex;
@@ -2086,6 +2119,7 @@ button {
     cursor: pointer;
     text-align: center;
     max-width: 100px;
+    transition: top 0.25s ease-in, left 0.25s ease-in;
   }
   .desktop-wrap .desktop-icon-wrap.vscode-icon {
     top: 5%;
@@ -2117,6 +2151,8 @@ button {
     display: none;
   }
   .desktop-wrap .toolkit {
+    position: relative;
+    z-index: 1000;
     user-select: none;
     padding: 2px 5px;
     display: flex;
@@ -3070,7 +3106,9 @@ button {
     margin-left: 48px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap {
+    position: relative;
     margin-bottom: 18px;
+    transition: top 0.25s ease-in;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
     display: flex;
@@ -3099,6 +3137,16 @@ button {
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
     content: "- ";
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
+    cursor: grab;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
+    cursor: grabbing;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden {
+    transition: 0.01s;
+    transform: translateX(-9999px);
   }
   #app .content-body-wrap .content .portfolio-manager-wrap {
     display: flex;
@@ -3510,6 +3558,7 @@ button {
     cursor: pointer;
     text-align: center;
     max-width: 120px;
+    transition: top 0.25s ease-in, left 0.25s ease-in;
   }
   .desktop-wrap .desktop-icon-wrap.vscode-icon {
     top: 5%;
@@ -3541,6 +3590,8 @@ button {
     display: none;
   }
   .desktop-wrap .toolkit {
+    position: relative;
+    z-index: 1000;
     user-select: none;
     padding: 2.4px 6px;
     display: flex;

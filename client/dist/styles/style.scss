@@ -130,6 +130,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     }
 
     .skills-body {
+      min-height: 20vh;
+
       .skill-wrap {
         .skill-title-wrap {
           .skill-title {
@@ -780,7 +782,10 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                     margin-left: $fontSize * 2;
 
                     .skill-wrap {
+                      position: relative;
                       margin-bottom: $fontSize * 0.75;
+
+                      transition: top 0.25s ease-in;
 
                       .skill-title-wrap {
                         display: flex;
@@ -816,6 +821,21 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                           }
                         }
                       }
+
+                      &.grabbable {
+                        // cursor: move; /* fallback if grab cursor is unsupported */
+                        cursor: grab;
+
+                        &:active {
+                          cursor: grabbing;
+                        }
+                      }
+
+                      &.hidden {
+                          transition: 0.01s;
+                          transform: translateX(-9999px);
+                      }
+
                     }
                   }
 
@@ -1259,6 +1279,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
       text-align: center;
       max-width: $fontSize * 5;
 
+      transition: top 0.25s ease-in, left 0.25s ease-in;
+
       &.vscode-icon {
         top: 5%;
         left: 5%;
@@ -1300,6 +1322,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     }
 
     .toolkit {
+      position: relative;
+      z-index: 1000;
       user-select: none;
 
       .os, .time {

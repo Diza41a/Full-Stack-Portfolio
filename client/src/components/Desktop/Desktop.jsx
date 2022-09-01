@@ -30,8 +30,8 @@ export default function Desktop() {
   };
 
   const handleIconDrag = (e) => {
-    const x = `${((e.clientX - e.target.offsetWidth / 2) / window.innerWidth) * 100}%`;
-    const y = `${((e.clientY - e.target.offsetHeight / 2) / window.innerHeight) * 100}%`;
+    const x = `${((e.clientX - e.target.offsetWidth / 2) / window.innerWidth) * 100}vw`;
+    const y = `${((e.clientY - e.target.offsetHeight / 2) / window.innerHeight) * 100}vh`;
     e.target.style.top = y;
     e.target.style.left = x;
   };
