@@ -24,6 +24,7 @@ export default function ThemeSelector() {
       themeOptionEl.style.display = 'initial';
     });
     setGlobalTheme(theme);
+    localStorage.setItem('dz_portfolio_theme', theme);
   };
   const searchThemes = (e) => {
     const searchVal = e.target.value.trim().toLowerCase();

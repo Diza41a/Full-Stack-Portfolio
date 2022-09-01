@@ -26,7 +26,8 @@ export const getCurrentTime = () => {
 export default function MainLayout() {
   const navigate = useNavigate();
 
-  const [globalTheme, setGlobalTheme] = useState('regular');
+  const storedTheme = localStorage.getItem('dz_portfolio_theme') || 'regular';
+  const [globalTheme, setGlobalTheme] = useState(storedTheme);
   const [currentFileName, setCurrentFileName] = useState('Landing.jsx');
 
   // Temp
@@ -107,7 +108,7 @@ export default function MainLayout() {
     }}
     >
       {/* // eslint-disable-next-line react/jsx-no-constructed-context-values */}
-      <div id="app" className="regular" style={{ backgroundColor: background.color, backgroundImage: background.image }}>
+      <div id="app" className={globalTheme} style={{ backgroundColor: background.color, backgroundImage: background.image }}>
         <header className="toolbar">
           <div className="buttons">
             <button type="button" style={{ color: 'white', backgroundColor: 'red' }} onClick={toDesktop}>

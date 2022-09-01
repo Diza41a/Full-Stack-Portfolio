@@ -29,14 +29,6 @@ button {
   cursor: pointer;
 }
 
-@keyframes slideInFromBottom {
-  from{
-    transform: translateY(100vh);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
 
 @mixin colorTheme($mainDark, $mainDarkTransparent, $mainMedium, $mainText, $secondText, $border,
 $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, $resumeButton, $projectListItem) {
@@ -545,7 +537,24 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         // margin-left: $fontSize * 3.5;
 
         .landing-wrap {
-          overflow: hidden;
+          overflow: hidden!important;
+          animation: slideInFromLeft 0.5s ease-in;
+
+          @keyframes slideInFromLeft {
+            from {
+              border: 1px solid gray;
+              // transform: scale(0.5);
+              left: -100vw;
+              opacity: 0;
+            }
+            to {
+              border: 0 solid transparent;
+              // transform: scale(1);
+              left: 0;
+              opacity: 1;
+            }
+          }
+
           flex-grow: 1;
           height: 100%;
           display: flex;
@@ -595,6 +604,19 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             left: $fontSize * 1.25;
 
             animation: slideInFromBottom 1s ease-in;
+
+            @keyframes slideInFromBottom {
+              from{
+                overflow-y: hidden;
+                transform: translateY(100vh) scale(1);
+                left: 0;
+              }
+              to {
+                transform: translateY(0) scale(0.9);
+                left: $fontSize * 1.25;
+              }
+            }
+
             .robotic-hand {
               position: relative;
               z-index: 1000;
@@ -1375,11 +1397,14 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     .content {
       display: flex;
 
+
       .tab {
         flex-grow: 1;
       }
 
       .landing-wrap {
+        position: relative;
+
         // height: 100vh!important;
         height: calc(110vh - (2.5vh + ($fontSize * 0.4) + 1px))!important;
         overflow-y: auto!important;
@@ -1411,6 +1436,10 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           overflow-y: visible!important;
           top: $fontSize * 0!important;
           transform: scale(0.9);
+          // animation: scaleRoboticHand 1s ease-in;
+          // @keyframes scaleRoboticHand {
+          //   from {}
+          // }
 
           .robotic-hand {
             max-width: 900px!important;
@@ -1840,6 +1869,23 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 justify-content: center;
                 align-items: center;
 
+                animation: scaleIn 0.25s ease-in;
+
+                @keyframes scaleIn {
+                  from {
+                    border: 1px solid gray;
+                    transform: scale(0.1);
+                    // left: -100vw;
+                    opacity: 0;
+                  }
+                  to {
+                    border: 0 solid transparent;
+                    transform: scale(1);
+                    // left: 0;
+                    opacity: 1;
+                  }
+                }
+
                 .carousel-root {
                   margin: 5%;
                   z-index: 3001;
@@ -2060,6 +2106,30 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
 
     // Rest
+    // .sidebar {
+    //   // background-color: #1f1f1fb7!important;
+    // }
+
+    .landing-wrap {
+      .introduction {
+        box-shadow: 0 0 1vw 0.1vw #caf4ff;
+
+        animation: breatheIntroduction 4s ease-in-out infinite;
+
+        @keyframes breatheIntroduction {
+          from {
+            box-shadow: 0 0 0.5vw 0.1vw #caf4ff;
+          }
+          50% {
+            box-shadow: 0 0 0.5vw 0.2vw white;
+          }
+          to {
+            box-shadow: 0 0 0.5vw 0.1vw #caf4ff;
+          }
+        }
+      }
+    }
+
     .console {
       background-color: black;
       // background-image: linear-gradient(to left, rgb(11, 110, 164) 1%,#2a69b1 80%);
@@ -2104,6 +2174,17 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 @media (min-width: 850px) {
   @include mainView(20px);
   @include largeScreens(20px);
+
+  #app.matrix {
+    .landing-wrap {
+      .landing-nav-lbl {
+        transform: skewY(-0.5deg);
+      }
+      .introduction {
+        transform: skewY(-0.5deg);
+      }
+    }
+  }
 }
 
 @media (min-width: 1400px) {

@@ -23,14 +23,6 @@ button {
   cursor: pointer;
 }
 
-@keyframes slideInFromBottom {
-  from {
-    transform: translateY(100vh);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
 #root #app.regular header.toolbar {
   background-color: #181924;
   color: #C8C2C2;
@@ -396,6 +388,21 @@ button {
 #root #app.matrix a.active .material-symbols-outlined {
   text-shadow: 0 0 0.24em rgb(237, 242, 255);
 }
+#root #app.matrix .landing-wrap .introduction {
+  box-shadow: 0 0 1vw 0.1vw #caf4ff;
+  animation: breatheIntroduction 4s ease-in-out infinite;
+}
+@keyframes breatheIntroduction {
+  from {
+    box-shadow: 0 0 0.5vw 0.1vw #caf4ff;
+  }
+  50% {
+    box-shadow: 0 0 0.5vw 0.2vw white;
+  }
+  to {
+    box-shadow: 0 0 0.5vw 0.1vw #caf4ff;
+  }
+}
 #root #app.matrix .console {
   background-color: black;
   background-image: radial-gradient(rgba(79, 79, 79, 0.75), rgb(13, 13, 13) 120%);
@@ -569,12 +576,25 @@ button {
     width: calc(100% - 56px);
   }
   #app .content-body-wrap .content .landing-wrap {
-    overflow: hidden;
+    overflow: hidden !important;
+    animation: slideInFromLeft 0.5s ease-in;
     flex-grow: 1;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  @keyframes slideInFromLeft {
+    from {
+      border: 1px solid gray;
+      left: -100vw;
+      opacity: 0;
+    }
+    to {
+      border: 0 solid transparent;
+      left: 0;
+      opacity: 1;
+    }
   }
   #app .content-body-wrap .content .landing-wrap .landing-nav-lbl {
     font-family: "Code";
@@ -611,6 +631,17 @@ button {
     top: 16px;
     left: 20px;
     animation: slideInFromBottom 1s ease-in;
+  }
+  @keyframes slideInFromBottom {
+    from {
+      overflow-y: hidden;
+      transform: translateY(100vh) scale(1);
+      left: 0;
+    }
+    to {
+      transform: translateY(0) scale(0.9);
+      left: 20px;
+    }
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .robotic-hand {
     position: relative;
@@ -1447,12 +1478,25 @@ button {
     width: calc(100% - 70px);
   }
   #app .content-body-wrap .content .landing-wrap {
-    overflow: hidden;
+    overflow: hidden !important;
+    animation: slideInFromLeft 0.5s ease-in;
     flex-grow: 1;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  @keyframes slideInFromLeft {
+    from {
+      border: 1px solid gray;
+      left: -100vw;
+      opacity: 0;
+    }
+    to {
+      border: 0 solid transparent;
+      left: 0;
+      opacity: 1;
+    }
   }
   #app .content-body-wrap .content .landing-wrap .landing-nav-lbl {
     font-family: "Code";
@@ -1489,6 +1533,17 @@ button {
     top: 20px;
     left: 25px;
     animation: slideInFromBottom 1s ease-in;
+  }
+  @keyframes slideInFromBottom {
+    from {
+      overflow-y: hidden;
+      transform: translateY(100vh) scale(1);
+      left: 0;
+    }
+    to {
+      transform: translateY(0) scale(0.9);
+      left: 25px;
+    }
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .robotic-hand {
     position: relative;
@@ -2212,6 +2267,7 @@ button {
     flex-grow: 1;
   }
   #app .content .landing-wrap {
+    position: relative;
     height: calc(110vh - (2.5vh + 8px + 1px)) !important;
     overflow-y: auto !important;
     /* width */
@@ -2576,6 +2632,19 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: scaleIn 0.25s ease-in;
+  }
+  @keyframes scaleIn {
+    from {
+      border: 1px solid gray;
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    to {
+      border: 0 solid transparent;
+      transform: scale(1);
+      opacity: 1;
+    }
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed .carousel-root {
     margin: 5%;
@@ -2725,6 +2794,13 @@ button {
     left: 0;
     right: 0;
     text-align: center;
+  }
+
+  #app.matrix .landing-wrap .landing-nav-lbl {
+    transform: skewY(-0.5deg);
+  }
+  #app.matrix .landing-wrap .introduction {
+    transform: skewY(-0.5deg);
   }
 }
 @media (min-width: 1400px) {
@@ -2886,12 +2962,25 @@ button {
     width: calc(100% - 84px);
   }
   #app .content-body-wrap .content .landing-wrap {
-    overflow: hidden;
+    overflow: hidden !important;
+    animation: slideInFromLeft 0.5s ease-in;
     flex-grow: 1;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  @keyframes slideInFromLeft {
+    from {
+      border: 1px solid gray;
+      left: -100vw;
+      opacity: 0;
+    }
+    to {
+      border: 0 solid transparent;
+      left: 0;
+      opacity: 1;
+    }
   }
   #app .content-body-wrap .content .landing-wrap .landing-nav-lbl {
     font-family: "Code";
@@ -2928,6 +3017,17 @@ button {
     top: 24px;
     left: 30px;
     animation: slideInFromBottom 1s ease-in;
+  }
+  @keyframes slideInFromBottom {
+    from {
+      overflow-y: hidden;
+      transform: translateY(100vh) scale(1);
+      left: 0;
+    }
+    to {
+      transform: translateY(0) scale(0.9);
+      left: 30px;
+    }
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .robotic-hand {
     position: relative;
@@ -3651,6 +3751,7 @@ button {
     flex-grow: 1;
   }
   #app .content .landing-wrap {
+    position: relative;
     height: calc(110vh - (2.5vh + 9.6px + 1px)) !important;
     overflow-y: auto !important;
     /* width */
@@ -4015,6 +4116,19 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: scaleIn 0.25s ease-in;
+  }
+  @keyframes scaleIn {
+    from {
+      border: 1px solid gray;
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    to {
+      border: 0 solid transparent;
+      transform: scale(1);
+      opacity: 1;
+    }
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed .carousel-root {
     margin: 5%;
