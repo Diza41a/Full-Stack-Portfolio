@@ -1336,6 +1336,10 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         width: 50vw;
         max-width: 400px;
 
+        &:hover {
+          transform: none;
+        }
+
         .star {
           font-size: $fontSize * 1.1;
           padding: $fontSize * 0.25 $fontSize * 0.55;
@@ -1355,6 +1359,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             list-style: none;
             li {
               margin: $fontSize * 1.5 0;
+
               a {
                 display: flex;
                 align-items: center;
@@ -1400,6 +1405,12 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                   background-color: #37AEE2;
                 }
               }
+
+              transition: transform 0.25s ease-out;
+              &:hover {
+                transform: scale(1.05);
+              }
+
             }
           }
         }
@@ -2248,6 +2259,12 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
                 &:hover {
                   background-color: #272727;
+                }
+
+                .disabled {
+                  &:hover {
+                    cursor: not-allowed;
+                  }
                 }
               }
             }

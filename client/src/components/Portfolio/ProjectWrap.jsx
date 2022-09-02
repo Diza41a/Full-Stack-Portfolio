@@ -65,6 +65,9 @@ export default function ProjectWrap() {
       for (const className of animatedElClasses) {
         document.querySelector(`.${className}`)?.classList.add('leaving-left');
       }
+      for (const className of singleAnimationElClasses) {
+        document.querySelector(`.${className}`)?.classList.add('leaving');
+      }
       setTimeout((() => {
         setProject(projects[currentProjectIndex - 1]);
       }), 500);

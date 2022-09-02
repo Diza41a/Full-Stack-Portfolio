@@ -15,7 +15,7 @@ const questions = [
     question: 'Submit The question (Y/N)?: ', fieldType: 'submit', error: 'Error: Y/N - yes/no expected', answer: null,
   },
   {
-    question: 'Your Inquiry has been recorder, start over (Y/N)?: ', fieldType: 'restart', error: 'Error: Y/N - yes/no expected', answer: null,
+    question: 'Your Inquiry has been recorded, start over (Y/N)?: ', fieldType: 'restart', error: 'Error: Y/N - yes/no expected', answer: null,
   },
 ];
 

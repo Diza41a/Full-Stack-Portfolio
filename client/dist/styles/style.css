@@ -1407,6 +1407,9 @@ button {
     max-width: 400px;
     transition: opacity ease-out 1.5s, right ease-in 0.5s;
   }
+  #app .content-body-wrap .direct-links-card:hover {
+    transform: none;
+  }
   #app .content-body-wrap .direct-links-card .star {
     font-size: 17.6px;
     padding: 4px 8.8px;
@@ -1425,6 +1428,7 @@ button {
   }
   #app .content-body-wrap .direct-links-card .card-body ul.direct-links li {
     margin: 24px 0;
+    transition: transform 0.25s ease-out;
   }
   #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a {
     display: flex;
@@ -1459,6 +1463,9 @@ button {
   }
   #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.telegram {
     background-color: #37AEE2;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li:hover {
+    transform: scale(1.05);
   }
   #app .content-body-wrap .direct-links-card.hidden {
     opacity: 0;
@@ -2418,6 +2425,9 @@ button {
     max-width: 400px;
     transition: opacity ease-out 1.5s, right ease-in 0.5s;
   }
+  #app .content-body-wrap .direct-links-card:hover {
+    transform: none;
+  }
   #app .content-body-wrap .direct-links-card .star {
     font-size: 22px;
     padding: 5px 11px;
@@ -2436,6 +2446,7 @@ button {
   }
   #app .content-body-wrap .direct-links-card .card-body ul.direct-links li {
     margin: 30px 0;
+    transition: transform 0.25s ease-out;
   }
   #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a {
     display: flex;
@@ -2470,6 +2481,9 @@ button {
   }
   #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.telegram {
     background-color: #37AEE2;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li:hover {
+    transform: scale(1.05);
   }
   #app .content-body-wrap .direct-links-card.hidden {
     opacity: 0;
@@ -3160,6 +3174,9 @@ button {
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn:hover {
     background-color: #272727;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn .disabled:hover {
+    cursor: not-allowed;
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console .questions {
     margin-top: 5px;
@@ -4055,6 +4072,9 @@ button {
     max-width: 400px;
     transition: opacity ease-out 1.5s, right ease-in 0.5s;
   }
+  #app .content-body-wrap .direct-links-card:hover {
+    transform: none;
+  }
   #app .content-body-wrap .direct-links-card .star {
     font-size: 26.4px;
     padding: 6px 13.2px;
@@ -4073,6 +4093,7 @@ button {
   }
   #app .content-body-wrap .direct-links-card .card-body ul.direct-links li {
     margin: 36px 0;
+    transition: transform 0.25s ease-out;
   }
   #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a {
     display: flex;
@@ -4107,6 +4128,9 @@ button {
   }
   #app .content-body-wrap .direct-links-card .card-body ul.direct-links li a.telegram {
     background-color: #37AEE2;
+  }
+  #app .content-body-wrap .direct-links-card .card-body ul.direct-links li:hover {
+    transform: scale(1.05);
   }
   #app .content-body-wrap .direct-links-card.hidden {
     opacity: 0;
@@ -4797,6 +4821,9 @@ button {
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn:hover {
     background-color: #272727;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn .disabled:hover {
+    cursor: not-allowed;
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console .questions {
     margin-top: 6px;

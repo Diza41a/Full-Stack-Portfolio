@@ -9,6 +9,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Typed from 'react-typed';
 import validate from 'validate.js';
+import axios from 'axios';
 
 // Subcomponent/Data imports
 import questions from './questions';
@@ -105,6 +106,35 @@ export default function ReachOut() {
           e.target.placeholder = questions[questionIndex].error;
           e.target.value = '';
           return;
+        } if (fieldType === 'submit') {
+          const answers = {};
+          for (const question of questions) {
+            answers[question.fieldType] = question.answer;
+          }
+          axios.post('message', answers)
+            .catch(() => {
+              e.target.placeholder = 'Error submitting question, try again please...';
+              e.target.value = '';
+            });
+          if (answer === 'n' || answer === 'no') {
+            for (const question of questions) {
+              question.answer = null;
+              setQuestionIndex(0);
+              setFirstSubmit(false);
+            }
+            return;
+          }
+        }
+        if (fieldType === 'restart') {
+          if (answer === 'n' || answer === 'no') {
+            questions[questionIndex].answer = answer;
+            const questionEl = document.querySelector('.active-question');
+            questionEl.disabled = true;
+            questionEl.value = '';
+            questionEl.rows = 1;
+            questionEl.placeholder = 'Message submitted. Good day!';
+            return;
+          }
         }
       }
 
@@ -152,7 +182,6 @@ export default function ReachOut() {
 
               <div className="active-question-wrap">
                 <span className="blinking-caret">{'>'}</span>
-                {/* <input type="text" className="active-question" autoFocus autoComplete="off" onKeyDown={submitAnswer} /> */}
                 <textarea type="text" rows="10" spellCheck={false} className="active-question" autoFocus autoComplete="off" onKeyDown={submitAnswer} />
               </div>
             </div>
@@ -184,7 +213,7 @@ export default function ReachOut() {
               </button>
               <button type="button" id="phone-format" className="format-btn">
                 {/* <i className="fa-solid fa-phone" /> */}
-                <span className="material-symbols-outlined">
+                <span className="material-symbols-outlined disabled">
                   phone
                 </span>
               </button>
