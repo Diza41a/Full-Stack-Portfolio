@@ -1,3 +1,5 @@
+/* eslint-disable prefer-regex-literals */
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable array-callback-return */
@@ -6,6 +8,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useContext, useEffect } from 'react';
 import Typed from 'react-typed';
+import validate from 'validate.js';
 
 // Subcomponent/Data imports
 import questions from './questions';
@@ -16,6 +19,11 @@ export default function ReachOut() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [firstSubmit, setFirstSubmit] = useState(true);
   const [sessionId, generateSessionId] = useState(Math.round(Math.random() * 10000 + 1));
+  const constraints = {
+    from: {
+      email: true,
+    },
+  };
 
   // ComponentDidMount
   useEffect(() => {
@@ -35,10 +43,71 @@ export default function ReachOut() {
     }
     activeQuestion.focus();
   };
+
   const submitAnswer = (e) => {
     // bookmark ▋
     if (e.key === 'Enter') {
-      const answer = e.target.value.trim();
+      e.preventDefault();
+      let answer = e.target.value.trim();
+      // Answer validation
+      const { fieldType } = questions[questionIndex];
+      if (fieldType === 'name') {
+        const answerArr = answer.split(' ');
+        let invalid = false;
+        if (answerArr.length === 0 || answerArr.length > 4) {
+          invalid = true;
+        }
+        if (!invalid) {
+          for (const subName of answerArr) {
+            if (!subName.match(/^[a-zA-Z]+$/) || subName.length < 1) {
+              invalid = true;
+              break;
+            }
+          }
+        }
+        if (invalid) {
+          e.target.placeholder = questions[questionIndex].error;
+          e.target.value = '';
+          console.log('here', e.target.placeholder);
+          return;
+        }
+        answer = answerArr.map((subName) => subName.charAt(0).toUpperCase() + subName.slice(1)).join(' ');
+      } else if (fieldType === 'email') {
+        if (validate({ from: answer }, constraints) || !answer.length) {
+          e.target.placeholder = questions[questionIndex].error;
+          e.target.value = '';
+          return;
+        }
+      } else if (fieldType === 'phone') {
+        // eslint-disable-next-line no-useless-escape
+        if (!answer.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im) || answer.length < 9) {
+          e.target.placeholder = questions[questionIndex].error;
+          e.target.value = '';
+          return;
+        }
+      } else if (fieldType === 'message') {
+        if (answer.length < 20) {
+          e.target.placeholder = questions[questionIndex].error;
+          e.target.value = '';
+          return;
+        }
+      } else if (fieldType === 'submit' || fieldType === 'restart') {
+        const options = ['yes', 'no', 'y', 'n'];
+        let valid = false;
+        answer = answer.toLowerCase();
+        for (const option of options) {
+          if (answer === option) {
+            valid = true;
+            break;
+          }
+        }
+        if (!valid) {
+          e.target.placeholder = questions[questionIndex].error;
+          e.target.value = '';
+          return;
+        }
+      }
+
       questions[questionIndex].answer = answer;
       if (questionIndex + 1 < questions.length) {
         setQuestionIndex(questionIndex + 1);
@@ -80,7 +149,12 @@ export default function ReachOut() {
                 startDelay={questionIndex === 0 && firstSubmit ? 3100 : 0}
                 showCursor={false}
               />
-              <input type="text" className="active-question" autoFocus onKeyDown={submitAnswer} />
+
+              <div className="active-question-wrap">
+                <span className="blinking-caret">{'>'}</span>
+                {/* <input type="text" className="active-question" autoFocus autoComplete="off" onKeyDown={submitAnswer} /> */}
+                <textarea type="text" rows="10" spellCheck={false} className="active-question" autoFocus autoComplete="off" onKeyDown={submitAnswer} />
+              </div>
             </div>
           );
         } if (i < questionIndex && question.answer === null) {

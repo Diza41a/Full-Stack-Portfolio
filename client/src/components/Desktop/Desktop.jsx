@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Draggable from 'react-draggable';
 
 import { getCurrentTime } from '../reusable/MainLayout';
 
@@ -27,13 +28,6 @@ export default function Desktop() {
   // Navigate to url
   const openVsCode = () => {
     navigate('/vscode/landing');
-  };
-
-  const handleIconDrag = (e) => {
-    const x = `${((e.clientX - e.target.offsetWidth / 2) / window.innerWidth) * 100}vw`;
-    const y = `${((e.clientY - e.target.offsetHeight / 2) / window.innerHeight) * 100}vh`;
-    e.target.style.top = y;
-    e.target.style.left = x;
   };
 
   // Icon selection
@@ -145,7 +139,22 @@ export default function Desktop() {
         <strong className="time">{getCurrentTime()}</strong>
       </div>
 
-      <div
+      <Draggable>
+        <div
+          className="desktop-icon-wrap vscode-icon"
+          onDoubleClick={openVsCode}
+          onTouchEnd={openVsCode}
+          // onTouchEnd={openVsCode}
+          // draggable
+          // onDragEnd={handleIconDrag}
+          // onMouseEnter={multiSelect}
+        >
+          <img src="./assets/images/desktop/vs-code.png" alt="" className="desktop-icon" draggable={false} />
+          <p className="icon-title">Open Portfolio</p>
+        </div>
+      </Draggable>
+
+      {/* <div
         className="desktop-icon-wrap vscode-icon"
         onDoubleClick={openVsCode}
         onTouchEnd={openVsCode}
@@ -155,7 +164,7 @@ export default function Desktop() {
       >
         <img src="./assets/images/desktop/vs-code.png" alt="" className="desktop-icon" draggable={false} />
         <p className="icon-title">Open Portfolio</p>
-      </div>
+      </div> */}
 
       <div className="selection-area hidden" />
 

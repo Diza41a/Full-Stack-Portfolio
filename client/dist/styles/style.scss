@@ -166,6 +166,27 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
            }
          }
        }
+
+       .project-selector-section {
+         &.recent {
+          ul {
+            li {
+              &:hover {
+                background-color: $border;
+              }
+
+              &.selected {
+                background-color: transparent;
+
+                &:hover {
+                  background-color: transparent;
+                  filter: brightness(0.8);
+                }
+              }
+            }
+          }
+         }
+       }
   }
 
   .project-wrap, .tab-body {
@@ -191,8 +212,37 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         .card-title {
          color: $mainText;
         }
+
+        // Text blur animations
+        @keyframes unBlurCard {
+          from {
+            text-shadow: 0 0 1em $mainText;
+            color: transparent;
+          }
+          to {
+            text-shadow: none;
+            color: $mainText;
+          }
+        }
+
+        @keyframes blurCard {
+          from {
+            text-shadow: none;
+            color: $mainText;
+          }
+          to {
+            text-shadow: 0 0 1em $mainText;
+            color: transparent;
+          }
+        }
         .body {
           color: $mainText;
+          &.card-body-project-desc {
+            animation: unBlurCard ease-in 0.75s;
+            &.leaving {
+              animation: blurCard ease-out 0.5s;
+            }
+          }
         }
         .links-wrap {
           .links {
@@ -225,6 +275,38 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         color: $mainText;
         text-shadow: 0 0 5px $secondText;
       }
+
+      .active-question-wrap {
+        input, textarea {
+          position: relative;
+          &::placeholder {
+            color: rgb(149, 149, 149);
+            text-shadow: 0 0 5px rgb(99, 99, 99);
+          }
+        }
+      }
+
+      .blinking-caret {
+        // animation: blink 1s infinite;
+        // animation-timing-function: steps(1, end);
+        animation: blink 1.5s infinite;
+        animation-timing-function: linear;
+        @keyframes blink {
+          from {
+            color: $mainText;
+            text-shadow: none;
+          }
+          50% {
+            color: transparent;
+            text-shadow: none;
+          }
+          to {
+            color: $mainText;
+            text-shadow: none;
+          }
+        }
+      }
+
     }
   }
 
@@ -323,12 +405,18 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     margin: 0 $fontSize * 0.75 $fontSize * 2 $fontSize * 0.75;
     border-radius: $fontSize;
 
+    transition: transform 0.25s ease-out;
+    &:hover {
+      transform: scale(1.025);
+      transition: transform 0.25s ease-in;
+    }
+
     .title-wrap {
       display: flex;
       align-items: center;
 
       .star {
-        border-radius: $fontSize * 0.25;
+        border-radius: $fontSize * 0.25 0 $fontSize * 0.25 0;
         padding: $fontSize * 0.45 $fontSize * 0.75;
         font-size: $fontSize * 1.3;
       }
@@ -357,8 +445,38 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
       .octo-logo {
         text-decoration: none;
 
+        @keyframes rotateOctoIcon {
+          from {
+            transform: rotateY(0deg);
+          }
+          5% {
+            transform: rotateY(180deg);
+          }
+          10% {
+            transform: rotateY(0deg);
+          }
+        }
+
+        animation: rotateOctoIcon 15s linear infinite;
+
         img {
           width: $fontSize * 3.5;
+
+          @keyframes jumpOctoIcon {
+            from {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-1vh);
+            }
+            to {
+              transform: translateY(0);
+            }
+          }
+
+          &:hover {
+            animation: jumpOctoIcon 1s ease-in-out infinite;
+          }
         }
       }
 
@@ -379,6 +497,10 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
           &.disabled {
             cursor: not-allowed;
+          }
+
+          &:hover {
+            filter: brightness(0.95);
           }
         }
 
@@ -537,24 +659,23 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         width: calc(100% - $fontSize * 3.5);
         // margin-left: $fontSize * 3.5;
 
-        .landing-wrap {
-          overflow: hidden!important;
-          animation: slideInFromLeft 0.5s ease-in;
-
-          @keyframes slideInFromLeft {
-            from {
-              border: 1px solid gray;
-              // transform: scale(0.5);
-              left: -100vw;
-              opacity: 0;
-            }
-            to {
-              border: 0 solid transparent;
-              // transform: scale(1);
-              left: 0;
-              opacity: 1;
-            }
+        @keyframes slideInFromLeft {
+          from {
+            border: 1px solid gray;
+            // transform: scale(0.5);
+            left: -100vw;
+            opacity: 0;
           }
+          to {
+            border: 0 solid transparent;
+            // transform: scale(1);
+            left: 0;
+            opacity: 1;
+          }
+        }
+        .landing-wrap {
+          // overflow: hidden!important;
+          animation: slideInFromLeft 0.5s ease-in;
 
           flex-grow: 1;
           height: 100%;
@@ -859,6 +980,11 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                           transform: translateX(-9999px);
                       }
 
+                      &.transitioned {
+                        transition: initial;
+                        transform: none!important;
+                      }
+
                     }
                   }
 
@@ -884,13 +1010,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               max-height: 100vh;
               transition: max-height 1s;
               .project-selector-section {
-                &.recent {
-                  ul {
-                    li.selected {
-                      background-color: transparent!important;
-                    }
-                  }
-                }
 
                 .title {
                   font-family: 'Code';
@@ -994,6 +1113,33 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 &:active {
                   cursor: grabbing;
                 }
+                img {
+                  max-height: 50vh;
+                  object-fit: contain;
+                }
+              }
+
+              .thumbs-wrapper {
+                margin: $fontSize 0;
+
+                .thumbs {
+                  display: flex;
+                  justify-content: center;
+                  position: relative;
+                  // right: $fontSize * 0.5;
+
+                  li {
+                    img {
+                      max-height: 7.5vh;
+                      object-fit: cover;
+                    }
+                    cursor: pointer;
+                  }
+                }
+              }
+
+              .carousel-status {
+                display: none;
               }
             }
 
@@ -1013,6 +1159,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         }
 
         .reach-out-body-wrap {
+
           .title {
             font-family: 'Code';
             font-size: $fontSize * 1.75;
@@ -1122,11 +1269,21 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
                 .question-wrap {
 
-                  .answered {
-                    color: #c1c1c1!important;
+                  .answered::placeholder {
+                    color: #aeaeae!important;
+                  }
+
+                  .active-question-wrap {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .blinking-caret {
+                      margin-right: $fontSize * 0.35;
+                    }
                   }
 
                   input, textarea {
+                    resize: none;
                     cursor: pointer!important;
                     border: none;
                     background-color: transparent;
@@ -1134,30 +1291,30 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                     position: relative;
                     width: 100%;
 
-                    // &:focus {
-                    //   &::after {
-                    //     content: '_';
-                    //     position: absolute;
-                    //     bottom: 0;
-                    //     right: 0;
-                    //     // animation: blink 1s step-end infinite;
-                    //     color: white;
-                    //   }
-                    // }
-                    @keyframes blink {
-                      from,
-                      to {
-                        color: transparent;
-                      }
-                      50% {
-                        color: #fff;
-                      }
-                    }
+                    caret-color: transparent;
 
-                  }
+                     /* width */
+                      &::-webkit-scrollbar {
+                        width: 0;
+                      }
 
-                  textarea {
-                    height: aut;
+                      /* Track */
+                      &::-webkit-scrollbar-track {
+                        box-shadow: none;
+                        border-radius: 1vw;
+                      }
+
+                      /* Handle */
+                      &::-webkit-scrollbar-thumb {
+                        background: none;
+                        border-radius: 1vw;
+                      }
+
+                      /* Handle on hover */
+                      &::-webkit-scrollbar-thumb:hover {
+                        background: none;
+                      }
+
                   }
                 }
               }
@@ -1329,9 +1486,9 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         max-width: $fontSize * 5;
       }
 
-      &.selected {
+      &.selected, &:active {
         .desktop-icon {
-          border: 2px solid rgba(190, 189, 189, 0.705);
+          border: 0.5px dashed rgba(190, 189, 189, 0.705);
         }
 
         .icon-title {
@@ -1730,7 +1887,52 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
                   }
 
+                  @keyframes slideInFromLeftProjects {
+                    from {
+                      opacity: 0;
+                      left: -100vw;
+                    }
+                    to {
+                      opacity: 1;
+                      left: 0;
+                    }
+                  }
+
+                  @keyframes slideOutToRightProjects {
+                    from {
+                      opacity: 1;
+                      left: 0;
+                    }
+                    to {
+                      opacity: 0;
+                      left: 100vw;
+                    }
+                  }
+
+                  @keyframes slideOutToLeftProjects {
+                    from {
+                      opacity: 1;
+                      // left: 0;
+                      // transform: scale(1);
+                      top: 0;
+                    }
+                    to {
+                      opacity: 0;
+                      // left: -100vw;
+                      // transform: scale(0.5);
+                      top: -50vh;
+                    }
+                  }
+
                   .tablet-wrap {
+                    animation: slideInFromLeftProjects ease-in-out 0.5s;
+                    &.leaving-right {
+                      animation: slideOutToRightProjects linear 0.75s;
+                    }
+                    &.leaving-left {
+                      animation: slideOutToLeftProjects linear 0.5s;
+                    }
+
                     max-width: 500px;
                     width: 12.5vw;
                     position: relative;
@@ -1795,6 +1997,15 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                   }
 
                   .laptop-wrap {
+                    // animation-delay: 2s;
+                    animation: slideInFromLeftProjects ease-in-out 1s;
+                    &.leaving-right {
+                      animation: slideOutToRightProjects ease-out 1s;
+                    }
+                    &.leaving-left {
+                      animation: slideOutToLeftProjects ease-out 0.75s;
+                    }
+
                     flex-basis: 35%;
                     max-width: 1200px;
                     width: 35vw;
@@ -1861,6 +2072,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                     }
 
                   }
+
+
                 }
               }
 

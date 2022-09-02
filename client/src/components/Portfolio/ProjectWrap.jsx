@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/alt-text */
@@ -5,6 +6,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable import/no-cycle */
 import React, { useContext, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 // Carousel imports (https://openbase.com/js/react-responsive-carousel/documentation)
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
@@ -18,6 +20,8 @@ export default function ProjectWrap() {
   const [carouselMode, setCarouselMode] = useState('mobile');
   const { currentProject, setProject } = useContext(ProjectContext);
 
+  const animatedElClasses = ['laptop-wrap', 'tablet-wrap', 'card-body-project'];
+  const singleAnimationElClasses = ['card-body-project-desc'];
   // Helpers
   const expandCard = () => {
     const infoCard = document.querySelector('p.card-body');
@@ -41,14 +45,29 @@ export default function ProjectWrap() {
     e.preventDefault();
     const currentProjectIndex = getProjectIndex(currentProject.title);
     if (currentProjectIndex < projects.length - 1) {
-      setProject(projects[currentProjectIndex + 1]);
+      // Animate transitions
+      for (const className of animatedElClasses) {
+        document.querySelector(`.${className}`)?.classList.add('leaving-right');
+      }
+      for (const className of singleAnimationElClasses) {
+        document.querySelector(`.${className}`)?.classList.add('leaving');
+      }
+      setTimeout((() => {
+        setProject(projects[currentProjectIndex + 1]);
+      }), 500);
+      // setProject(projects[currentProjectIndex + 1]);
     }
   };
   const prevProject = (e) => {
     e.preventDefault();
     const currentProjectIndex = getProjectIndex(currentProject.title);
     if (currentProjectIndex > 0) {
-      setProject(projects[currentProjectIndex - 1]);
+      for (const className of animatedElClasses) {
+        document.querySelector(`.${className}`)?.classList.add('leaving-left');
+      }
+      setTimeout((() => {
+        setProject(projects[currentProjectIndex - 1]);
+      }), 500);
     }
   };
   const hideLargeCarousel = (e) => {
@@ -86,7 +105,7 @@ export default function ProjectWrap() {
               autoPlay={false}
               emulateTouch
             >
-              {currentProject.images.main.map((screenshotUrl, i) => (
+              {currentProject.images.mobile.map((screenshotUrl, i) => (
                 <div key={i}>
                   <img src={screenshotUrl} key={i} />
                 </div>
@@ -103,7 +122,7 @@ export default function ProjectWrap() {
             />
 
             <div className="device-views">
-              <div className="tablet-wrap">
+              <div className="tablet-wrap" key={uuidv4()}>
                 <img src="./assets/images/projects/tablet-frame.png" alt="" className="tablet-img" />
                 <div
                   className="tablet-content"
@@ -121,7 +140,7 @@ export default function ProjectWrap() {
                 </div>
               </div>
 
-              <div className="laptop-wrap">
+              <div className="laptop-wrap" key={uuidv4()}>
                 <img src="./assets/images/projects/laptop-frame.png" alt="" className="laptop-img" />
                 <div
                   className="laptop-content"
@@ -179,7 +198,7 @@ export default function ProjectWrap() {
               <i className="fa-solid fa-star star" />
               <h5 className="card-title">App Overview</h5>
             </div>
-            <p className="body card-body shrinked" onClick={expandCard}>
+            <p className="body card-body card-body-project-desc shrinked" key={uuidv4()} onClick={expandCard}>
               {(() => {
                 if (currentProject.description.length > 350) {
                   return `${currentProject.description.slice(0, 347)}...`;
@@ -194,12 +213,12 @@ export default function ProjectWrap() {
               <h5 className="card-title">Links</h5>
             </div>
             <div className="links-wrap">
-              <a href={currentProject['github-link']} rel="noreferrer" target="_blank" className="octo-logo">
+              <a href={currentProject['github-link']} rel="noreferrer" target="_blank" key={uuidv4()} className="octo-logo">
                 <img src="./assets/images/about-skills/github.png" alt="" />
               </a>
 
               <div className="links">
-                <a href={currentProject['deployed-link']} rel="noreferrer" target="_blank" className="disabled">View Code</a>
+                <a href={currentProject['deployed-link']} rel="noreferrer" target="_blank" className="disabled" onClick={((e) => { e.preventDefault(); })}>View Code</a>
                 <a href={currentProject['deployed-link']} rel="noreferrer" target="_blank">View Deployed</a>
               </div>
             </div>

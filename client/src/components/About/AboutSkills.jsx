@@ -25,6 +25,7 @@ export default function AboutSkills() {
         for (const skillWrap of document.querySelectorAll('.skill-wrap')) {
           skillWrap.classList.remove('hidden');
           skillWrap.style.top = '0';
+          skillWrap.classList.remove('transitioned');
         }
       }
       return;
@@ -36,6 +37,7 @@ export default function AboutSkills() {
       for (const skillWrap of document.querySelectorAll('.skill-wrap')) {
         skillWrap.classList.remove('hidden');
         skillWrap.style.top = '0';
+        skillWrap.classList.remove('transitioned');
       }
     }
 
@@ -45,6 +47,7 @@ export default function AboutSkills() {
     for (const skillWrap of document.querySelectorAll('.skill-wrap')) {
       skillWrap.classList.remove('hidden');
       skillWrap.style.top = '0';
+      skillWrap.classList.remove('transitioned');
     }
     for (const skillWrap of closestSkillBody.children) {
       if (skillWrap.getAttribute('data-skill-id') >= closestDataId) {
@@ -58,6 +61,7 @@ export default function AboutSkills() {
     for (const skillWrap of document.querySelectorAll('.skill-wrap')) {
       skillWrap.classList.remove('hidden');
       skillWrap.style.top = '0';
+      skillWrap.classList.add('transitioned');
     }
 
     const skill = e.dataTransfer.getData('text/plain');
@@ -85,7 +89,7 @@ export default function AboutSkills() {
   const renderSkills = (skillsObj, className) => (
     <section className={`skill-section ${className}`} onDragOver={skillSectionDragOver} onDrop={skillSectionDragDrop}>
       <div className="title-wrap">
-        <img src={skillsObj.area.imagePath} alt="" className="logo" />
+        <img src={skillsObj.area.imagePath} alt="" className="logo" draggable={false} />
         <h3 className="title">{skillsObj.area.title}</h3>
       </div>
       <div className="skills-body">

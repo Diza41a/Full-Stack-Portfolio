@@ -116,6 +116,16 @@ button {
   color: #C8C2C2;
   cursor: not-allowed;
 }
+#root #app.regular .project-selector .project-selector-section.recent ul li:hover {
+  background-color: #626262;
+}
+#root #app.regular .project-selector .project-selector-section.recent ul li.selected {
+  background-color: transparent;
+}
+#root #app.regular .project-selector .project-selector-section.recent ul li.selected:hover {
+  background-color: transparent;
+  filter: brightness(0.8);
+}
 #root #app.regular .project-wrap .project-nav-mobile, #root #app.regular .tab-body .project-nav-mobile {
   /* background-color: ${colors.mainDark}; */
   border-top: 1px solid #626262;
@@ -134,8 +144,34 @@ button {
 #root #app.regular .project-wrap .info-cards .card .card-title, #root #app.regular .tab-body .info-cards .card .card-title {
   color: #D9D9D9;
 }
+@keyframes unBlurCard {
+  from {
+    text-shadow: 0 0 1em #D9D9D9;
+    color: transparent;
+  }
+  to {
+    text-shadow: none;
+    color: #D9D9D9;
+  }
+}
+@keyframes blurCard {
+  from {
+    text-shadow: none;
+    color: #D9D9D9;
+  }
+  to {
+    text-shadow: 0 0 1em #D9D9D9;
+    color: transparent;
+  }
+}
 #root #app.regular .project-wrap .info-cards .card .body, #root #app.regular .tab-body .info-cards .card .body {
   color: #D9D9D9;
+}
+#root #app.regular .project-wrap .info-cards .card .body.card-body-project-desc, #root #app.regular .tab-body .info-cards .card .body.card-body-project-desc {
+  animation: unBlurCard ease-in 0.75s;
+}
+#root #app.regular .project-wrap .info-cards .card .body.card-body-project-desc.leaving, #root #app.regular .tab-body .info-cards .card .body.card-body-project-desc.leaving {
+  animation: blurCard ease-out 0.5s;
 }
 #root #app.regular .project-wrap .info-cards .card .links-wrap .links a, #root #app.regular .tab-body .info-cards .card .links-wrap .links a {
   color: #D9D9D9;
@@ -154,6 +190,31 @@ button {
 #root #app.regular .console .questions * {
   color: #D9D9D9;
   text-shadow: 0 0 5px #C8C2C2;
+}
+#root #app.regular .console .questions .active-question-wrap input, #root #app.regular .console .questions .active-question-wrap textarea {
+  position: relative;
+}
+#root #app.regular .console .questions .active-question-wrap input::placeholder, #root #app.regular .console .questions .active-question-wrap textarea::placeholder {
+  color: rgb(149, 149, 149);
+  text-shadow: 0 0 5px rgb(99, 99, 99);
+}
+#root #app.regular .console .questions .blinking-caret {
+  animation: blink 1.5s infinite;
+  animation-timing-function: linear;
+}
+@keyframes blink {
+  from {
+    color: #D9D9D9;
+    text-shadow: none;
+  }
+  50% {
+    color: transparent;
+    text-shadow: none;
+  }
+  to {
+    color: #D9D9D9;
+    text-shadow: none;
+  }
 }
 #root #app.regular .theme-selector-wrap {
   background-color: #181924;
@@ -297,6 +358,16 @@ button {
   color: #bfbfbf;
   cursor: not-allowed;
 }
+#root #app.matrix .project-selector .project-selector-section.recent ul li:hover {
+  background-color: #858585;
+}
+#root #app.matrix .project-selector .project-selector-section.recent ul li.selected {
+  background-color: transparent;
+}
+#root #app.matrix .project-selector .project-selector-section.recent ul li.selected:hover {
+  background-color: transparent;
+  filter: brightness(0.8);
+}
 #root #app.matrix .project-wrap .project-nav-mobile, #root #app.matrix .tab-body .project-nav-mobile {
   /* background-color: ${colors.mainDark}; */
   border-top: 1px solid #858585;
@@ -315,8 +386,34 @@ button {
 #root #app.matrix .project-wrap .info-cards .card .card-title, #root #app.matrix .tab-body .info-cards .card .card-title {
   color: #caf4ff;
 }
+@keyframes unBlurCard {
+  from {
+    text-shadow: 0 0 1em #caf4ff;
+    color: transparent;
+  }
+  to {
+    text-shadow: none;
+    color: #caf4ff;
+  }
+}
+@keyframes blurCard {
+  from {
+    text-shadow: none;
+    color: #caf4ff;
+  }
+  to {
+    text-shadow: 0 0 1em #caf4ff;
+    color: transparent;
+  }
+}
 #root #app.matrix .project-wrap .info-cards .card .body, #root #app.matrix .tab-body .info-cards .card .body {
   color: #caf4ff;
+}
+#root #app.matrix .project-wrap .info-cards .card .body.card-body-project-desc, #root #app.matrix .tab-body .info-cards .card .body.card-body-project-desc {
+  animation: unBlurCard ease-in 0.75s;
+}
+#root #app.matrix .project-wrap .info-cards .card .body.card-body-project-desc.leaving, #root #app.matrix .tab-body .info-cards .card .body.card-body-project-desc.leaving {
+  animation: blurCard ease-out 0.5s;
 }
 #root #app.matrix .project-wrap .info-cards .card .links-wrap .links a, #root #app.matrix .tab-body .info-cards .card .links-wrap .links a {
   color: #caf4ff;
@@ -335,6 +432,31 @@ button {
 #root #app.matrix .console .questions * {
   color: #caf4ff;
   text-shadow: 0 0 5px #bfbfbf;
+}
+#root #app.matrix .console .questions .active-question-wrap input, #root #app.matrix .console .questions .active-question-wrap textarea {
+  position: relative;
+}
+#root #app.matrix .console .questions .active-question-wrap input::placeholder, #root #app.matrix .console .questions .active-question-wrap textarea::placeholder {
+  color: rgb(149, 149, 149);
+  text-shadow: 0 0 5px rgb(99, 99, 99);
+}
+#root #app.matrix .console .questions .blinking-caret {
+  animation: blink 1.5s infinite;
+  animation-timing-function: linear;
+}
+@keyframes blink {
+  from {
+    color: #caf4ff;
+    text-shadow: none;
+  }
+  50% {
+    color: transparent;
+    text-shadow: none;
+  }
+  to {
+    color: #caf4ff;
+    text-shadow: none;
+  }
 }
 #root #app.matrix .theme-selector-wrap {
   background-color: #0b0b0e;
@@ -438,13 +560,18 @@ button {
     max-width: 400px;
     margin: 0 12px 32px 12px;
     border-radius: 16px;
+    transition: transform 0.25s ease-out;
+  }
+  .card:hover {
+    transform: scale(1.025);
+    transition: transform 0.25s ease-in;
   }
   .card .title-wrap {
     display: flex;
     align-items: center;
   }
   .card .title-wrap .star {
-    border-radius: 4px;
+    border-radius: 4px 0 4px 0;
     padding: 7.2px 12px;
     font-size: 20.8px;
   }
@@ -467,9 +594,35 @@ button {
   }
   .card .links-wrap .octo-logo {
     text-decoration: none;
+    animation: rotateOctoIcon 15s linear infinite;
+  }
+  @keyframes rotateOctoIcon {
+    from {
+      transform: rotateY(0deg);
+    }
+    5% {
+      transform: rotateY(180deg);
+    }
+    10% {
+      transform: rotateY(0deg);
+    }
   }
   .card .links-wrap .octo-logo img {
     width: 56px;
+  }
+  @keyframes jumpOctoIcon {
+    from {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  .card .links-wrap .octo-logo img:hover {
+    animation: jumpOctoIcon 1s ease-in-out infinite;
   }
   .card .links-wrap .links {
     display: flex;
@@ -487,6 +640,9 @@ button {
   }
   .card .links-wrap .links a.disabled {
     cursor: not-allowed;
+  }
+  .card .links-wrap .links a:hover {
+    filter: brightness(0.95);
   }
 
   .matrix-canvas {
@@ -581,15 +737,6 @@ button {
   #app .content-body-wrap .content {
     width: calc(100% - 56px);
   }
-  #app .content-body-wrap .content .landing-wrap {
-    overflow: hidden !important;
-    animation: slideInFromLeft 0.5s ease-in;
-    flex-grow: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
   @keyframes slideInFromLeft {
     from {
       border: 1px solid gray;
@@ -601,6 +748,14 @@ button {
       left: 0;
       opacity: 1;
     }
+  }
+  #app .content-body-wrap .content .landing-wrap {
+    animation: slideInFromLeft 0.5s ease-in;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   #app .content-body-wrap .content .landing-wrap .landing-nav-lbl {
     font-family: "Code";
@@ -868,6 +1023,10 @@ button {
     transition: 0.01s;
     transform: translateX(-9999px);
   }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned {
+    transition: initial;
+    transform: none !important;
+  }
   #app .content-body-wrap .content .portfolio-manager-wrap {
     display: flex;
     flex-direction: column;
@@ -881,9 +1040,6 @@ button {
     overflow: hidden;
     max-height: 100vh;
     transition: max-height 1s;
-  }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section.recent ul li.selected {
-    background-color: transparent !important;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
     font-family: "Code";
@@ -983,6 +1139,28 @@ button {
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide:active {
     cursor: grabbing;
   }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide img {
+    max-height: 50vh;
+    object-fit: contain;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper {
+    margin: 16px 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper .thumbs {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper .thumbs li {
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper .thumbs li img {
+    max-height: 7.5vh;
+    object-fit: cover;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .carousel-status {
+    display: none;
+  }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards {
     display: flex;
     flex-wrap: wrap;
@@ -994,13 +1172,18 @@ button {
     max-width: 400px;
     margin: 0 12px 32px 12px;
     border-radius: 16px;
+    transition: transform 0.25s ease-out;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card:hover {
+    transform: scale(1.025);
+    transition: transform 0.25s ease-in;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap {
     display: flex;
     align-items: center;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap .star {
-    border-radius: 4px;
+    border-radius: 4px 0 4px 0;
     padding: 7.2px 12px;
     font-size: 20.8px;
   }
@@ -1023,9 +1206,35 @@ button {
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo {
     text-decoration: none;
+    animation: rotateOctoIcon 15s linear infinite;
+  }
+  @keyframes rotateOctoIcon {
+    from {
+      transform: rotateY(0deg);
+    }
+    5% {
+      transform: rotateY(180deg);
+    }
+    10% {
+      transform: rotateY(0deg);
+    }
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img {
     width: 56px;
+  }
+  @keyframes jumpOctoIcon {
+    from {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img:hover {
+    animation: jumpOctoIcon 1s ease-in-out infinite;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links {
     display: flex;
@@ -1043,6 +1252,9 @@ button {
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a.disabled {
     cursor: not-allowed;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a:hover {
+    filter: brightness(0.95);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .title {
     font-family: "Code";
@@ -1145,27 +1357,43 @@ button {
     font: 14.4px "Open Sans", sans-serif;
     text-shadow: 0 0 5px #C8C8C8;
   }
-  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .answered {
-    color: #c1c1c1 !important;
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .answered::placeholder {
+    color: #aeaeae !important;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .active-question-wrap {
+    display: flex;
+    justify-content: flex-start;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .active-question-wrap .blinking-caret {
+    margin-right: 5.6px;
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
+    resize: none;
     cursor: pointer !important;
     border: none;
     background-color: transparent;
     outline: none;
     position: relative;
     width: 100%;
+    caret-color: transparent;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
   }
-  @keyframes blink {
-    from, to {
-      color: transparent;
-    }
-    50% {
-      color: #fff;
-    }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar {
+    width: 0;
   }
-  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
-    height: aut;
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-track, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-track {
+    box-shadow: none;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-thumb, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-thumb {
+    background: none;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-thumb:hover {
+    background: none;
   }
   #app .content-body-wrap .direct-links-card {
     z-index: 2000;
@@ -1297,10 +1525,10 @@ button {
     color: white;
     max-width: 80px;
   }
-  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon {
-    border: 2px solid rgba(190, 189, 189, 0.705);
+  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon, .desktop-wrap .desktop-icon-wrap:active .desktop-icon {
+    border: 0.5px dashed rgba(190, 189, 189, 0.705);
   }
-  .desktop-wrap .desktop-icon-wrap.selected .icon-title {
+  .desktop-wrap .desktop-icon-wrap.selected .icon-title, .desktop-wrap .desktop-icon-wrap:active .icon-title {
     background-color: rgba(103, 103, 103, 0.603);
   }
   .desktop-wrap .selection-area {
@@ -1343,13 +1571,18 @@ button {
     max-width: 400px;
     margin: 0 15px 40px 15px;
     border-radius: 20px;
+    transition: transform 0.25s ease-out;
+  }
+  .card:hover {
+    transform: scale(1.025);
+    transition: transform 0.25s ease-in;
   }
   .card .title-wrap {
     display: flex;
     align-items: center;
   }
   .card .title-wrap .star {
-    border-radius: 5px;
+    border-radius: 5px 0 5px 0;
     padding: 9px 15px;
     font-size: 26px;
   }
@@ -1372,9 +1605,35 @@ button {
   }
   .card .links-wrap .octo-logo {
     text-decoration: none;
+    animation: rotateOctoIcon 15s linear infinite;
+  }
+  @keyframes rotateOctoIcon {
+    from {
+      transform: rotateY(0deg);
+    }
+    5% {
+      transform: rotateY(180deg);
+    }
+    10% {
+      transform: rotateY(0deg);
+    }
   }
   .card .links-wrap .octo-logo img {
     width: 70px;
+  }
+  @keyframes jumpOctoIcon {
+    from {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  .card .links-wrap .octo-logo img:hover {
+    animation: jumpOctoIcon 1s ease-in-out infinite;
   }
   .card .links-wrap .links {
     display: flex;
@@ -1392,6 +1651,9 @@ button {
   }
   .card .links-wrap .links a.disabled {
     cursor: not-allowed;
+  }
+  .card .links-wrap .links a:hover {
+    filter: brightness(0.95);
   }
 
   .matrix-canvas {
@@ -1486,15 +1748,6 @@ button {
   #app .content-body-wrap .content {
     width: calc(100% - 70px);
   }
-  #app .content-body-wrap .content .landing-wrap {
-    overflow: hidden !important;
-    animation: slideInFromLeft 0.5s ease-in;
-    flex-grow: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
   @keyframes slideInFromLeft {
     from {
       border: 1px solid gray;
@@ -1506,6 +1759,14 @@ button {
       left: 0;
       opacity: 1;
     }
+  }
+  #app .content-body-wrap .content .landing-wrap {
+    animation: slideInFromLeft 0.5s ease-in;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   #app .content-body-wrap .content .landing-wrap .landing-nav-lbl {
     font-family: "Code";
@@ -1773,6 +2034,10 @@ button {
     transition: 0.01s;
     transform: translateX(-9999px);
   }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned {
+    transition: initial;
+    transform: none !important;
+  }
   #app .content-body-wrap .content .portfolio-manager-wrap {
     display: flex;
     flex-direction: column;
@@ -1786,9 +2051,6 @@ button {
     overflow: hidden;
     max-height: 100vh;
     transition: max-height 1s;
-  }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section.recent ul li.selected {
-    background-color: transparent !important;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
     font-family: "Code";
@@ -1888,6 +2150,28 @@ button {
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide:active {
     cursor: grabbing;
   }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide img {
+    max-height: 50vh;
+    object-fit: contain;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper {
+    margin: 20px 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper .thumbs {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper .thumbs li {
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper .thumbs li img {
+    max-height: 7.5vh;
+    object-fit: cover;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .carousel-status {
+    display: none;
+  }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards {
     display: flex;
     flex-wrap: wrap;
@@ -1899,13 +2183,18 @@ button {
     max-width: 400px;
     margin: 0 15px 40px 15px;
     border-radius: 20px;
+    transition: transform 0.25s ease-out;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card:hover {
+    transform: scale(1.025);
+    transition: transform 0.25s ease-in;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap {
     display: flex;
     align-items: center;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap .star {
-    border-radius: 5px;
+    border-radius: 5px 0 5px 0;
     padding: 9px 15px;
     font-size: 26px;
   }
@@ -1928,9 +2217,35 @@ button {
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo {
     text-decoration: none;
+    animation: rotateOctoIcon 15s linear infinite;
+  }
+  @keyframes rotateOctoIcon {
+    from {
+      transform: rotateY(0deg);
+    }
+    5% {
+      transform: rotateY(180deg);
+    }
+    10% {
+      transform: rotateY(0deg);
+    }
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img {
     width: 70px;
+  }
+  @keyframes jumpOctoIcon {
+    from {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img:hover {
+    animation: jumpOctoIcon 1s ease-in-out infinite;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links {
     display: flex;
@@ -1948,6 +2263,9 @@ button {
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a.disabled {
     cursor: not-allowed;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a:hover {
+    filter: brightness(0.95);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .title {
     font-family: "Code";
@@ -2050,27 +2368,43 @@ button {
     font: 18px "Open Sans", sans-serif;
     text-shadow: 0 0 5px #C8C8C8;
   }
-  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .answered {
-    color: #c1c1c1 !important;
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .answered::placeholder {
+    color: #aeaeae !important;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .active-question-wrap {
+    display: flex;
+    justify-content: flex-start;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .active-question-wrap .blinking-caret {
+    margin-right: 7px;
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
+    resize: none;
     cursor: pointer !important;
     border: none;
     background-color: transparent;
     outline: none;
     position: relative;
     width: 100%;
+    caret-color: transparent;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
   }
-  @keyframes blink {
-    from, to {
-      color: transparent;
-    }
-    50% {
-      color: #fff;
-    }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar {
+    width: 0;
   }
-  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
-    height: aut;
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-track, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-track {
+    box-shadow: none;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-thumb, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-thumb {
+    background: none;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-thumb:hover {
+    background: none;
   }
   #app .content-body-wrap .direct-links-card {
     z-index: 2000;
@@ -2202,10 +2536,10 @@ button {
     color: white;
     max-width: 100px;
   }
-  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon {
-    border: 2px solid rgba(190, 189, 189, 0.705);
+  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon, .desktop-wrap .desktop-icon-wrap:active .desktop-icon {
+    border: 0.5px dashed rgba(190, 189, 189, 0.705);
   }
-  .desktop-wrap .desktop-icon-wrap.selected .icon-title {
+  .desktop-wrap .desktop-icon-wrap.selected .icon-title, .desktop-wrap .desktop-icon-wrap:active .icon-title {
     background-color: rgba(103, 103, 103, 0.603);
   }
   .desktop-wrap .selection-area {
@@ -2526,10 +2860,47 @@ button {
       opacity: 0;
     }
   }
+  @keyframes slideInFromLeftProjects {
+    from {
+      opacity: 0;
+      left: -100vw;
+    }
+    to {
+      opacity: 1;
+      left: 0;
+    }
+  }
+  @keyframes slideOutToRightProjects {
+    from {
+      opacity: 1;
+      left: 0;
+    }
+    to {
+      opacity: 0;
+      left: 100vw;
+    }
+  }
+  @keyframes slideOutToLeftProjects {
+    from {
+      opacity: 1;
+      top: 0;
+    }
+    to {
+      opacity: 0;
+      top: -50vh;
+    }
+  }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap {
+    animation: slideInFromLeftProjects ease-in-out 0.5s;
     max-width: 500px;
     width: 12.5vw;
     position: relative;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap.leaving-right {
+    animation: slideOutToRightProjects linear 0.75s;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap.leaving-left {
+    animation: slideOutToLeftProjects linear 0.5s;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-img {
     max-width: 500px;
@@ -2580,10 +2951,17 @@ button {
     transition: opacity 0.75s ease-in, transform 0.75s ease-in;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap {
+    animation: slideInFromLeftProjects ease-in-out 1s;
     flex-basis: 35%;
     max-width: 1200px;
     width: 35vw;
     position: relative;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap.leaving-right {
+    animation: slideOutToRightProjects ease-out 1s;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap.leaving-left {
+    animation: slideOutToLeftProjects ease-out 0.75s;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-img {
     max-width: 1200px;
@@ -2830,13 +3208,18 @@ button {
     max-width: 400px;
     margin: 0 18px 48px 18px;
     border-radius: 24px;
+    transition: transform 0.25s ease-out;
+  }
+  .card:hover {
+    transform: scale(1.025);
+    transition: transform 0.25s ease-in;
   }
   .card .title-wrap {
     display: flex;
     align-items: center;
   }
   .card .title-wrap .star {
-    border-radius: 6px;
+    border-radius: 6px 0 6px 0;
     padding: 10.8px 18px;
     font-size: 31.2px;
   }
@@ -2859,9 +3242,35 @@ button {
   }
   .card .links-wrap .octo-logo {
     text-decoration: none;
+    animation: rotateOctoIcon 15s linear infinite;
+  }
+  @keyframes rotateOctoIcon {
+    from {
+      transform: rotateY(0deg);
+    }
+    5% {
+      transform: rotateY(180deg);
+    }
+    10% {
+      transform: rotateY(0deg);
+    }
   }
   .card .links-wrap .octo-logo img {
     width: 84px;
+  }
+  @keyframes jumpOctoIcon {
+    from {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  .card .links-wrap .octo-logo img:hover {
+    animation: jumpOctoIcon 1s ease-in-out infinite;
   }
   .card .links-wrap .links {
     display: flex;
@@ -2879,6 +3288,9 @@ button {
   }
   .card .links-wrap .links a.disabled {
     cursor: not-allowed;
+  }
+  .card .links-wrap .links a:hover {
+    filter: brightness(0.95);
   }
 
   .matrix-canvas {
@@ -2973,15 +3385,6 @@ button {
   #app .content-body-wrap .content {
     width: calc(100% - 84px);
   }
-  #app .content-body-wrap .content .landing-wrap {
-    overflow: hidden !important;
-    animation: slideInFromLeft 0.5s ease-in;
-    flex-grow: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
   @keyframes slideInFromLeft {
     from {
       border: 1px solid gray;
@@ -2993,6 +3396,14 @@ button {
       left: 0;
       opacity: 1;
     }
+  }
+  #app .content-body-wrap .content .landing-wrap {
+    animation: slideInFromLeft 0.5s ease-in;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   #app .content-body-wrap .content .landing-wrap .landing-nav-lbl {
     font-family: "Code";
@@ -3260,6 +3671,10 @@ button {
     transition: 0.01s;
     transform: translateX(-9999px);
   }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned {
+    transition: initial;
+    transform: none !important;
+  }
   #app .content-body-wrap .content .portfolio-manager-wrap {
     display: flex;
     flex-direction: column;
@@ -3273,9 +3688,6 @@ button {
     overflow: hidden;
     max-height: 100vh;
     transition: max-height 1s;
-  }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section.recent ul li.selected {
-    background-color: transparent !important;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-selector .project-selector-list .project-selector-section .title {
     font-family: "Code";
@@ -3375,6 +3787,28 @@ button {
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide:active {
     cursor: grabbing;
   }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .slide img {
+    max-height: 50vh;
+    object-fit: contain;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper {
+    margin: 24px 0;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper .thumbs {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper .thumbs li {
+    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .thumbs-wrapper .thumbs li img {
+    max-height: 7.5vh;
+    object-fit: cover;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .gallery .carousel-status {
+    display: none;
+  }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards {
     display: flex;
     flex-wrap: wrap;
@@ -3386,13 +3820,18 @@ button {
     max-width: 400px;
     margin: 0 18px 48px 18px;
     border-radius: 24px;
+    transition: transform 0.25s ease-out;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card:hover {
+    transform: scale(1.025);
+    transition: transform 0.25s ease-in;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap {
     display: flex;
     align-items: center;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .title-wrap .star {
-    border-radius: 6px;
+    border-radius: 6px 0 6px 0;
     padding: 10.8px 18px;
     font-size: 31.2px;
   }
@@ -3415,9 +3854,35 @@ button {
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo {
     text-decoration: none;
+    animation: rotateOctoIcon 15s linear infinite;
+  }
+  @keyframes rotateOctoIcon {
+    from {
+      transform: rotateY(0deg);
+    }
+    5% {
+      transform: rotateY(180deg);
+    }
+    10% {
+      transform: rotateY(0deg);
+    }
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img {
     width: 84px;
+  }
+  @keyframes jumpOctoIcon {
+    from {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img:hover {
+    animation: jumpOctoIcon 1s ease-in-out infinite;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links {
     display: flex;
@@ -3435,6 +3900,9 @@ button {
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a.disabled {
     cursor: not-allowed;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a:hover {
+    filter: brightness(0.95);
   }
   #app .content-body-wrap .content .reach-out-body-wrap .title {
     font-family: "Code";
@@ -3537,27 +4005,43 @@ button {
     font: 21.6px "Open Sans", sans-serif;
     text-shadow: 0 0 5px #C8C8C8;
   }
-  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .answered {
-    color: #c1c1c1 !important;
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .answered::placeholder {
+    color: #aeaeae !important;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .active-question-wrap {
+    display: flex;
+    justify-content: flex-start;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap .active-question-wrap .blinking-caret {
+    margin-right: 8.4px;
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
+    resize: none;
     cursor: pointer !important;
     border: none;
     background-color: transparent;
     outline: none;
     position: relative;
     width: 100%;
+    caret-color: transparent;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
   }
-  @keyframes blink {
-    from, to {
-      color: transparent;
-    }
-    50% {
-      color: #fff;
-    }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar {
+    width: 0;
   }
-  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea {
-    height: aut;
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-track, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-track {
+    box-shadow: none;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-thumb, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-thumb {
+    background: none;
+    border-radius: 1vw;
+  }
+  #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-thumb:hover {
+    background: none;
   }
   #app .content-body-wrap .direct-links-card {
     z-index: 2000;
@@ -3689,10 +4173,10 @@ button {
     color: white;
     max-width: 120px;
   }
-  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon {
-    border: 2px solid rgba(190, 189, 189, 0.705);
+  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon, .desktop-wrap .desktop-icon-wrap:active .desktop-icon {
+    border: 0.5px dashed rgba(190, 189, 189, 0.705);
   }
-  .desktop-wrap .desktop-icon-wrap.selected .icon-title {
+  .desktop-wrap .desktop-icon-wrap.selected .icon-title, .desktop-wrap .desktop-icon-wrap:active .icon-title {
     background-color: rgba(103, 103, 103, 0.603);
   }
   .desktop-wrap .selection-area {
@@ -4013,10 +4497,47 @@ button {
       opacity: 0;
     }
   }
+  @keyframes slideInFromLeftProjects {
+    from {
+      opacity: 0;
+      left: -100vw;
+    }
+    to {
+      opacity: 1;
+      left: 0;
+    }
+  }
+  @keyframes slideOutToRightProjects {
+    from {
+      opacity: 1;
+      left: 0;
+    }
+    to {
+      opacity: 0;
+      left: 100vw;
+    }
+  }
+  @keyframes slideOutToLeftProjects {
+    from {
+      opacity: 1;
+      top: 0;
+    }
+    to {
+      opacity: 0;
+      top: -50vh;
+    }
+  }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap {
+    animation: slideInFromLeftProjects ease-in-out 0.5s;
     max-width: 500px;
     width: 12.5vw;
     position: relative;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap.leaving-right {
+    animation: slideOutToRightProjects linear 0.75s;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap.leaving-left {
+    animation: slideOutToLeftProjects linear 0.5s;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-img {
     max-width: 500px;
@@ -4067,10 +4588,17 @@ button {
     transition: opacity 0.75s ease-in, transform 0.75s ease-in;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap {
+    animation: slideInFromLeftProjects ease-in-out 1s;
     flex-basis: 35%;
     max-width: 1200px;
     width: 35vw;
     position: relative;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap.leaving-right {
+    animation: slideOutToRightProjects ease-out 1s;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap.leaving-left {
+    animation: slideOutToLeftProjects ease-out 0.75s;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .laptop-wrap .laptop-img {
     max-width: 1200px;
