@@ -2936,7 +2936,7 @@ button {
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content img, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content video {
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content .tablet-screenshot-desc {
     height: 85%;
@@ -4583,7 +4583,7 @@ button {
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content img, #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content video {
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .large .device-views .tablet-wrap .tablet-content .tablet-screenshot-desc {
     height: 85%;
