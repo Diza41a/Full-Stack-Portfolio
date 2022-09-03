@@ -82,6 +82,31 @@ button {
   color: white;
   background-color: #188AEB;
 }
+#root #app.regular .about-subsection .shuffle-btns, #root #app.regular .introduction .shuffle-btns, #root #app.regular .tab-wrap .shuffle-btns, #root #app.regular .tab .shuffle-btns, #root #app.regular .skills .shuffle-btns {
+  background-color: rgba(49, 50, 68, 0.7);
+  border: 1px solid gray;
+  border-top: 0.5px solid gray;
+  box-shadow: -0.5vw 0.45vh 0.5vw 0.2vw black;
+}
+#root #app.regular .about-subsection .shuffle-btns button, #root #app.regular .introduction .shuffle-btns button, #root #app.regular .tab-wrap .shuffle-btns button, #root #app.regular .tab .shuffle-btns button, #root #app.regular .skills .shuffle-btns button {
+  color: #D9D9D9;
+  background-color: transparent;
+  border: none;
+}
+#root #app.regular .about-subsection .shuffle-btns button.disabled-skill-tool, #root #app.regular .introduction .shuffle-btns button.disabled-skill-tool, #root #app.regular .tab-wrap .shuffle-btns button.disabled-skill-tool, #root #app.regular .tab .shuffle-btns button.disabled-skill-tool, #root #app.regular .skills .shuffle-btns button.disabled-skill-tool {
+  filter: brightness(0.5);
+  cursor: not-allowed;
+}
+#root #app.regular .about-subsection .shuffle-btns button[data-task=confirm], #root #app.regular .introduction .shuffle-btns button[data-task=confirm], #root #app.regular .tab-wrap .shuffle-btns button[data-task=confirm], #root #app.regular .tab .shuffle-btns button[data-task=confirm], #root #app.regular .skills .shuffle-btns button[data-task=confirm] {
+  display: none;
+}
+#root #app.regular .about-subsection .shuffle-btns .tooltip, #root #app.regular .introduction .shuffle-btns .tooltip, #root #app.regular .tab-wrap .shuffle-btns .tooltip, #root #app.regular .tab .shuffle-btns .tooltip, #root #app.regular .skills .shuffle-btns .tooltip {
+  color: #D9D9D9;
+  background-color: #181924;
+}
+#root #app.regular .about-subsection .shuffle-btns .tooltip.wrong, #root #app.regular .introduction .shuffle-btns .tooltip.wrong, #root #app.regular .tab-wrap .shuffle-btns .tooltip.wrong, #root #app.regular .tab .shuffle-btns .tooltip.wrong, #root #app.regular .skills .shuffle-btns .tooltip.wrong {
+  background-color: #313244;
+}
 #root #app.regular .skill-section .title-wrap {
   user-select: none;
 }
@@ -324,6 +349,31 @@ button {
   color: white;
   background-color: #18afeb;
 }
+#root #app.matrix .about-subsection .shuffle-btns, #root #app.matrix .introduction .shuffle-btns, #root #app.matrix .tab-wrap .shuffle-btns, #root #app.matrix .tab .shuffle-btns, #root #app.matrix .skills .shuffle-btns {
+  background-color: rgba(48, 48, 48, 0.7);
+  border: 1px solid gray;
+  border-top: 0.5px solid gray;
+  box-shadow: -0.5vw 0.45vh 0.5vw 0.2vw black;
+}
+#root #app.matrix .about-subsection .shuffle-btns button, #root #app.matrix .introduction .shuffle-btns button, #root #app.matrix .tab-wrap .shuffle-btns button, #root #app.matrix .tab .shuffle-btns button, #root #app.matrix .skills .shuffle-btns button {
+  color: #caf4ff;
+  background-color: transparent;
+  border: none;
+}
+#root #app.matrix .about-subsection .shuffle-btns button.disabled-skill-tool, #root #app.matrix .introduction .shuffle-btns button.disabled-skill-tool, #root #app.matrix .tab-wrap .shuffle-btns button.disabled-skill-tool, #root #app.matrix .tab .shuffle-btns button.disabled-skill-tool, #root #app.matrix .skills .shuffle-btns button.disabled-skill-tool {
+  filter: brightness(0.5);
+  cursor: not-allowed;
+}
+#root #app.matrix .about-subsection .shuffle-btns button[data-task=confirm], #root #app.matrix .introduction .shuffle-btns button[data-task=confirm], #root #app.matrix .tab-wrap .shuffle-btns button[data-task=confirm], #root #app.matrix .tab .shuffle-btns button[data-task=confirm], #root #app.matrix .skills .shuffle-btns button[data-task=confirm] {
+  display: none;
+}
+#root #app.matrix .about-subsection .shuffle-btns .tooltip, #root #app.matrix .introduction .shuffle-btns .tooltip, #root #app.matrix .tab-wrap .shuffle-btns .tooltip, #root #app.matrix .tab .shuffle-btns .tooltip, #root #app.matrix .skills .shuffle-btns .tooltip {
+  color: #caf4ff;
+  background-color: #0b0b0e;
+}
+#root #app.matrix .about-subsection .shuffle-btns .tooltip.wrong, #root #app.matrix .introduction .shuffle-btns .tooltip.wrong, #root #app.matrix .tab-wrap .shuffle-btns .tooltip.wrong, #root #app.matrix .tab .shuffle-btns .tooltip.wrong, #root #app.matrix .skills .shuffle-btns .tooltip.wrong {
+  background-color: #303030;
+}
 #root #app.matrix .skill-section .title-wrap {
   user-select: none;
 }
@@ -530,6 +580,9 @@ button {
   to {
     box-shadow: 0 0 0.5vw 0.1vw #caf4ff;
   }
+}
+#root #app.matrix .shuffle-btns button > span, #root #app.matrix .shuffle-btns .tooltip {
+  text-shadow: 0 0 0.24em rgb(237, 242, 255);
 }
 #root #app.matrix .console {
   background-color: black;
@@ -954,10 +1007,34 @@ button {
     transform: rotate(5deg);
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .tab .tab-body.skills .skill-container {
+    animation: blurIn 0.75s ease-in;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 24px 32px;
+  }
+  @keyframes blurIn {
+    from {
+      opacity: 0;
+      filter: blur(50px);
+    }
+    to {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .tab-body.skills .skill-container.shuffling {
+    animation: blurOut 0.75s ease-out;
+  }
+  @keyframes blurOut {
+    from {
+      opacity: 1;
+      filter: blur(0);
+    }
+    to {
+      opacity: 0;
+      filter: blur(50px);
+    }
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section {
     margin: 0 12px 32px 12px;
@@ -1014,6 +1091,8 @@ button {
     content: "- ";
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
+    cursor: move;
+    /* fallback if grab cursor is unsupported */
     cursor: grab;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
@@ -1026,6 +1105,63 @@ button {
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned {
     transition: initial;
     transform: none !important;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns {
+    position: sticky;
+    z-index: 1000;
+    right: 2.5vw;
+    top: calc(0.75vh - 1px);
+    border-radius: 5px;
+    max-width: fit-content;
+    margin-top: 0.75vh;
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding: 4px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button {
+    margin: 0 5.6px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button span, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button span {
+    font-size: 23.2px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button.shuffle-btn {
+    margin-left: 24px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16.8px;
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    visibility: hidden;
+    user-select: none;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip.display {
+    visibility: visible;
+    animation: fadeInOut 4s ease-in-out;
+  }
+  @keyframes fadeInOut {
+    from {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
   }
   #app .content-body-wrap .content .portfolio-manager-wrap {
     display: flex;
@@ -1972,10 +2108,34 @@ button {
     transform: rotate(5deg);
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .tab .tab-body.skills .skill-container {
+    animation: blurIn 0.75s ease-in;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 30px 40px;
+  }
+  @keyframes blurIn {
+    from {
+      opacity: 0;
+      filter: blur(50px);
+    }
+    to {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .tab-body.skills .skill-container.shuffling {
+    animation: blurOut 0.75s ease-out;
+  }
+  @keyframes blurOut {
+    from {
+      opacity: 1;
+      filter: blur(0);
+    }
+    to {
+      opacity: 0;
+      filter: blur(50px);
+    }
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section {
     margin: 0 15px 40px 15px;
@@ -2032,6 +2192,8 @@ button {
     content: "- ";
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
+    cursor: move;
+    /* fallback if grab cursor is unsupported */
     cursor: grab;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
@@ -2044,6 +2206,63 @@ button {
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned {
     transition: initial;
     transform: none !important;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns {
+    position: sticky;
+    z-index: 1000;
+    right: 2.5vw;
+    top: calc(0.75vh - 1px);
+    border-radius: 5px;
+    max-width: fit-content;
+    margin-top: 0.75vh;
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button {
+    margin: 0 7px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button span, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button span {
+    font-size: 29px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button.shuffle-btn {
+    margin-left: 30px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    visibility: hidden;
+    user-select: none;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip.display {
+    visibility: visible;
+    animation: fadeInOut 4s ease-in-out;
+  }
+  @keyframes fadeInOut {
+    from {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
   }
   #app .content-body-wrap .content .portfolio-manager-wrap {
     display: flex;
@@ -2740,6 +2959,9 @@ button {
   #app .content .about-subsection .about-subsection-body.skills .skill-container .skill-section {
     margin-left: 3vw !important;
     margin-right: 3vw !important;
+  }
+  #app .content .about-subsection .shuffle-btns button[data-task=confirm] {
+    display: initial !important;
   }
   #app .content .portfolio-manager-wrap {
     flex-direction: row !important;
@@ -3619,10 +3841,34 @@ button {
     transform: rotate(5deg);
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .tab .tab-body.skills .skill-container {
+    animation: blurIn 0.75s ease-in;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 36px 48px;
+  }
+  @keyframes blurIn {
+    from {
+      opacity: 0;
+      filter: blur(50px);
+    }
+    to {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .tab-body.skills .skill-container.shuffling {
+    animation: blurOut 0.75s ease-out;
+  }
+  @keyframes blurOut {
+    from {
+      opacity: 1;
+      filter: blur(0);
+    }
+    to {
+      opacity: 0;
+      filter: blur(50px);
+    }
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section {
     margin: 0 18px 48px 18px;
@@ -3679,6 +3925,8 @@ button {
     content: "- ";
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
+    cursor: move;
+    /* fallback if grab cursor is unsupported */
     cursor: grab;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
@@ -3691,6 +3939,63 @@ button {
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned {
     transition: initial;
     transform: none !important;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns {
+    position: sticky;
+    z-index: 1000;
+    right: 2.5vw;
+    top: calc(0.75vh - 1px);
+    border-radius: 5px;
+    max-width: fit-content;
+    margin-top: 0.75vh;
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding: 6px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button {
+    margin: 0 8.4px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button span, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button span {
+    font-size: 34.8px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button.shuffle-btn {
+    margin-left: 36px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25.2px;
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    visibility: hidden;
+    user-select: none;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip.display {
+    visibility: visible;
+    animation: fadeInOut 4s ease-in-out;
+  }
+  @keyframes fadeInOut {
+    from {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
   }
   #app .content-body-wrap .content .portfolio-manager-wrap {
     display: flex;
@@ -4387,6 +4692,9 @@ button {
   #app .content .about-subsection .about-subsection-body.skills .skill-container .skill-section {
     margin-left: 3vw !important;
     margin-right: 3vw !important;
+  }
+  #app .content .about-subsection .shuffle-btns button[data-task=confirm] {
+    display: initial !important;
   }
   #app .content .portfolio-manager-wrap {
     flex-direction: row !important;

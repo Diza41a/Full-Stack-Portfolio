@@ -112,6 +112,37 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         }
       }
     }
+
+    .shuffle-btns {
+      background-color: rgba($mainMedium, 0.7);
+      border: 1px solid gray;
+      border-top: 0.5px solid gray;
+      box-shadow: -0.5vw 0.45vh 0.5vw 0.2vw black;
+
+      button {
+        color: $mainText;
+        background-color: transparent;
+        border: none;
+
+        &.disabled-skill-tool {
+          filter: brightness(0.5);
+          cursor: not-allowed;
+        }
+
+        &[data-task="confirm"] {
+          display: none;
+        }
+      }
+
+      .tooltip {
+        color: $mainText;
+        background-color: $mainDark;
+
+        &.wrong {
+          background-color: $mainMedium;
+        }
+      }
+    }
   }
 
   .skill-section {
@@ -895,6 +926,32 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
             &.skills {
               .skill-container {
+                animation: blurIn 0.75s ease-in;
+                @keyframes blurIn {
+                  from {
+                    opacity: 0;
+                    filter: blur(50px);
+                  }
+                  to {
+                    filter: blur(0);
+                    opacity: 1;
+                  }
+                }
+
+                &.shuffling {
+                  animation: blurOut 0.75s ease-out;
+                  @keyframes blurOut {
+                    from {
+                      opacity: 1;
+                      filter: blur(0);
+                    }
+                    to {
+                      opacity: 0;
+                      filter: blur(50px);
+                    }
+                  }
+                }
+
                 display: flex;
                 flex-wrap: wrap;
                 // justify-content: space-between;
@@ -967,7 +1024,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                       }
 
                       &.grabbable {
-                        // cursor: move; /* fallback if grab cursor is unsupported */
+                        cursor: move; /* fallback if grab cursor is unsupported */
                         cursor: grab;
 
                         &:active {
@@ -991,6 +1048,69 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 }
               }
 
+              .shuffle-btns {
+                position: sticky;
+                z-index: 1000;
+                right: 2.5vw;
+                top: calc(0.75vh - 1px);
+                border-radius: 5px;
+
+                max-width: fit-content;
+                margin-top: 0.75vh;
+                margin-left: auto;
+                display: flex;
+                justify-content: flex-end;
+                padding: $fontSize * 0.25;
+
+                button {
+                  margin: 0 $fontSize * 0.35;
+
+                  span {
+                    font-size: $fontSize * 1.45;
+                  }
+
+                  &.shuffle-btn {
+                    margin-left: $fontSize * 1.5;
+                  }
+                }
+
+                .tooltip {
+                  font-size: $fontSize;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: $fontSize * 1.05;
+                  text-align: center;
+                  z-index: 1000;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  border-radius: 5px;
+                  visibility: hidden;
+                  user-select: none;
+
+                  &.display {
+                    visibility: visible;
+                    animation: fadeInOut 4s ease-in-out;
+                    @keyframes fadeInOut {
+                      from {
+                        opacity: 0;
+                      }
+                      25% {
+                        opacity: 1;
+                      }
+                      75% {
+                        opacity: 0;
+                      }
+                      100% {
+                        opacity: 0;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -1140,6 +1260,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
               .carousel-status {
                 display: none;
+                // bookmark page num
               }
             }
 
@@ -1712,6 +1833,14 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             }
           }
 
+        }
+
+        .shuffle-btns {
+          button {
+            &[data-task="confirm"] {
+              display: initial!important;
+            }
+          }
         }
       }
 
@@ -2367,6 +2496,12 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             box-shadow: 0 0 0.5vw 0.1vw #caf4ff;
           }
         }
+      }
+    }
+
+    .shuffle-btns {
+      button > span, .tooltip {
+          text-shadow: 0 0 0.24em rgb(237, 242, 255);
       }
     }
 

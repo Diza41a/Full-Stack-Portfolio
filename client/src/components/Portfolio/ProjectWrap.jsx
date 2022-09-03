@@ -17,7 +17,7 @@ import { ProjectContext } from './PortfolioManager';
 import { projects } from './projects';
 
 export default function ProjectWrap() {
-  const [carouselMode, setCarouselMode] = useState('mobile');
+  const [carouselMode, setCarouselMode] = useState('large');
   const { currentProject, setProject } = useContext(ProjectContext);
 
   const animatedElClasses = ['laptop-wrap', 'tablet-wrap', 'card-body-project'];
@@ -173,6 +173,7 @@ export default function ProjectWrap() {
           <div className="carousel-wrap" onClick={hideLargeCarousel}>
             <button id="carousel-close" type="button" onClick={hideLargeCarousel}>X</button>
             <Carousel
+              key={uuidv4()}
               autoPlay={false}
               emulateTouch
               thumbWidth={200}
