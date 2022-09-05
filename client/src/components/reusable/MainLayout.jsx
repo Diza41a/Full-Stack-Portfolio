@@ -104,7 +104,7 @@ export default function MainLayout() {
 
   return (
     <MainContext.Provider value={{
-      currentFileName, setCurrentFileName, globalTheme, setGlobalTheme,
+      currentFileName, setCurrentFileName, globalTheme, setGlobalTheme, lastLink: 'vscode/landing',
     }}
     >
       {/* // eslint-disable-next-line react/jsx-no-constructed-context-values */}
@@ -114,10 +114,20 @@ export default function MainLayout() {
             <button type="button" style={{ color: 'white', backgroundColor: 'red' }} onClick={toDesktop}>
               <i className="fa-solid fa-x" />
             </button>
-            <button type="button" style={{ color: 'black', backgroundColor: '#FFDE59' }}>
+            <button
+              type="button"
+              style={{
+                color: 'black', backgroundColor: '#FFDE59', cursor: 'not-allowed', filter: 'brightness(0.8)',
+              }}
+            >
               <i className="fa-solid fa-compress" />
             </button>
-            <button type="button" style={{ color: 'white', backgroundColor: '#7ED957' }}>
+            <button
+              type="button"
+              style={{
+                color: 'white', backgroundColor: '#7ED957', cursor: 'not-allowed', filter: 'brightness(0.8)',
+              }}
+            >
               <i className="fa-solid fa-minus" />
             </button>
           </div>

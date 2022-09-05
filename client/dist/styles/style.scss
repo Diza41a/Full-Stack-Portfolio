@@ -29,6 +29,27 @@ button {
   cursor: pointer;
 }
 
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(50px);
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
+
 
 @mixin colorTheme($mainDark, $mainDarkTransparent, $mainMedium, $mainText, $secondText, $border,
 $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, $resumeButton, $projectListItem) {
@@ -705,7 +726,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           }
         }
         .landing-wrap {
-          // overflow: hidden!important;
+          overflow: hidden;
           animation: slideInFromLeft 0.5s ease-in;
 
           flex-grow: 1;
@@ -723,6 +744,31 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             max-width: 400px;
             margin-top: $fontSize * 3.5;
             padding: $fontSize * 0.1 0;
+
+            i {
+              animation: rotateLandingArrow 8s ease-in-out infinite;
+
+              @keyframes rotateLandingArrow {
+                from {
+                  transform: rotate(0);
+                }
+                5% {
+                  transform: rotate(45deg);
+                }
+                10% {
+                  transform: rotate(-45deg);
+                }
+                15% {
+                  transform: rotate(45deg);
+                }
+                20% {
+                  transform: rotate(-45deg);
+                }
+                25% {
+                  transform: rotate(0);
+                }
+              }
+            }
           }
 
           .introduction {
@@ -733,6 +779,33 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               font-family: 'Code';
               // font-size: $fontSize * 1.85;
               font-size: 6vw;
+
+              &.landing-letter {
+                cursor: default;
+                display: inline-block;
+                transform: scale(1);
+                transition: transform 0.1s ease-out;
+                &:hover {
+                  transform: scale(1.6);
+                  transition: transform 0.25s ease-out;
+                }
+
+                &.enlarging {
+                  animation: enlargeLetter 0.5s ease-in-out;
+
+                  @keyframes enlargeLetter {
+                    from {
+                      transform: scale(1);
+                    }
+                    50% {
+                      transform: scale(1.6);
+                    }
+                    to {
+                      transform: scale(1);
+                    }
+                  }
+                }
+              }
             }
 
             .dynamic {
@@ -866,6 +939,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               flex-direction: column;
 
               .description {
+                animation: fadeIn 0.75s ease-in;
                 display: flex;
                 flex-direction: column;
 
@@ -893,6 +967,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               }
 
               .about-me-pics {
+                //bookmark
+                animation: fadeIn 0.75s ease-in;
                 margin: 5vh 0;
                 align-self: center;
                 width: calc(100% - $fontSize * 3.5);
@@ -925,18 +1001,9 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             }
 
             &.skills {
+
               .skill-container {
                 animation: blurIn 0.75s ease-in;
-                @keyframes blurIn {
-                  from {
-                    opacity: 0;
-                    filter: blur(50px);
-                  }
-                  to {
-                    filter: blur(0);
-                    opacity: 1;
-                  }
-                }
 
                 &.shuffling {
                   animation: blurOut 0.75s ease-out;
@@ -1049,6 +1116,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               }
 
               .shuffle-btns {
+                animation: blurIn 0.75s ease-in;
                 position: sticky;
                 z-index: 1000;
                 right: 2.5vw;
@@ -1260,7 +1328,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
               .carousel-status {
                 display: none;
-                // bookmark page num
               }
             }
 
@@ -1441,6 +1508,22 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               }
 
             }
+
+            animation: rotateIn 2.5s linear;
+            @keyframes rotateIn {
+              from {
+                opacity: 0.5;
+                transform: translateX(-50vw) rotateY(0deg);
+              }
+              50% {
+                opacity: 0.75;
+                transform: rotateY(180deg);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0) rotateY(360deg);
+              }
+            }
           }
 
         }
@@ -1545,7 +1628,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
       }
 
       .theme-selector-wrap {
-        //bookmark
         position: fixed;
         // left: 0;
         right: 0;
@@ -1601,11 +1683,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
       transition: top 0.25s ease-in, left 0.25s ease-in;
 
-      &.vscode-icon {
-        top: 5%;
-        left: 5%;
-      }
-
       .desktop-icon {
         user-select: none;
         width: $fontSize * 4;
@@ -1627,6 +1704,33 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           background-color: rgba(103, 103, 103, 0.603);
         }
       }
+
+      &.vscode-icon {
+        top: 5%;
+        left: 5%;
+      }
+
+      &.checkers-icon {
+        bottom: 5%;
+        left: 5%;
+        .desktop-icon {
+          width: $fontSize * 3.35;
+          border-radius: $fontSize;
+          object-fit: contain;
+        }
+
+      }
+    }
+
+    #checkers-iframe {
+      width: 200vw;
+      height: 200vh;
+      position: absolute;
+      top: -50vh;
+      left: -50vw;
+      transform: scale(0.5);
+      margin: auto;
+      display: none;
     }
 
     .selection-area {
@@ -1655,7 +1759,14 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           font-size: 0.9em;
           padding-left: $fontSize * 0.5;
         }
+
+        cursor: pointer;
       }
+
+      #back-to-desktop-btn {
+        z-index: 11000;
+      }
+
 
       padding: $fontSize * 0.1 $fontSize * 0.25;
       display: flex;
@@ -1666,6 +1777,50 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
       .time {
         display: none;
+      }
+    }
+
+    .clock {
+      border-radius: 50%;
+      background-color: white;
+      border: 5px solid white;
+      box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
+      width: 60vw;
+      height: 60vw;
+      max-height: 200px;
+      max-width: 200px;
+      position: relative;
+
+      .dot {
+        position: absolute;
+        top: 46.5%;
+        right: 46.5%;
+        height: 3.5%;
+        width: 3.5%;
+        border-radius: 50%;
+        border: 1.5px solid black;
+      }
+
+      .hour {
+        position: absolute;
+        top: 15%;
+        left: 50.25%;
+        height: 35%;
+        width: 2%;
+        background-color: black;
+        box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 10px 10px;
+      }
+
+      .minute {
+        position: absolute;
+        top: 5%;
+        left: 50.5%;
+        height: 45%;
+        width: 1.5%;
+        background-color: black;
+        box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 10px 10px;
       }
     }
   }
@@ -2392,6 +2547,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 }
 
                 .disabled {
+                  filter: brightness(0.5);
+
                   &:hover {
                     cursor: not-allowed;
                   }

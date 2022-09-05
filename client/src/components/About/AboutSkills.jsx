@@ -195,7 +195,12 @@ export default function AboutSkills() {
     skill.getAttribute('data-skill-title')
   )).sort();
   const getSortedSkillAnswers = (skillsObj) => skillsObj.skills.map((skill) => skill.title).sort();
-  const skillsQuiz = () => {
+  const skillsQuiz = (e) => {
+    const skillToolBtn = e.target.closest('.skill-tool');
+    if (!skillToolBtn || skillToolBtn.classList.contains('disabled-skill-tool')) {
+      return;
+    }
+
     const tooltipEl = document.querySelector('.tooltip');
 
     const submission = {

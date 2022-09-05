@@ -77,7 +77,7 @@ const projects = [
     + 'to select different styles , colors, sizes and quantities '
     + 'from a selection menu.',
     'github-link': 'https://github.com/Diza41a/ofkors-european-bakery',
-    'deployed-link': 'http://ofkorseurobakery.com/',
+    'deployed-link': 'http://ec2-54-226-169-13.compute-1.amazonaws.com:3000/',
     images: {
       main: [
         './assets/images/projects/checkers/main/1.png',

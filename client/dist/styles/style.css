@@ -23,6 +23,24 @@ button {
   cursor: pointer;
 }
 
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(50px);
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+  }
+}
 #root #app.regular header.toolbar {
   background-color: #181924;
   color: #C8C2C2;
@@ -803,6 +821,7 @@ button {
     }
   }
   #app .content-body-wrap .content .landing-wrap {
+    overflow: hidden;
     animation: slideInFromLeft 0.5s ease-in;
     flex-grow: 1;
     height: 100%;
@@ -819,6 +838,29 @@ button {
     margin-top: 56px;
     padding: 1.6px 0;
   }
+  #app .content-body-wrap .content .landing-wrap .landing-nav-lbl i {
+    animation: rotateLandingArrow 8s ease-in-out infinite;
+  }
+  @keyframes rotateLandingArrow {
+    from {
+      transform: rotate(0);
+    }
+    5% {
+      transform: rotate(45deg);
+    }
+    10% {
+      transform: rotate(-45deg);
+    }
+    15% {
+      transform: rotate(45deg);
+    }
+    20% {
+      transform: rotate(-45deg);
+    }
+    25% {
+      transform: rotate(0);
+    }
+  }
   #app .content-body-wrap .content .landing-wrap .introduction {
     max-width: 640px;
     margin: 0 4px;
@@ -827,6 +869,30 @@ button {
   #app .content-body-wrap .content .landing-wrap .introduction .static, #app .content-body-wrap .content .landing-wrap .introduction .dynamic {
     font-family: "Code";
     font-size: 6vw;
+  }
+  #app .content-body-wrap .content .landing-wrap .introduction .static.landing-letter, #app .content-body-wrap .content .landing-wrap .introduction .dynamic.landing-letter {
+    cursor: default;
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.1s ease-out;
+  }
+  #app .content-body-wrap .content .landing-wrap .introduction .static.landing-letter:hover, #app .content-body-wrap .content .landing-wrap .introduction .dynamic.landing-letter:hover {
+    transform: scale(1.6);
+    transition: transform 0.25s ease-out;
+  }
+  #app .content-body-wrap .content .landing-wrap .introduction .static.landing-letter.enlarging, #app .content-body-wrap .content .landing-wrap .introduction .dynamic.landing-letter.enlarging {
+    animation: enlargeLetter 0.5s ease-in-out;
+  }
+  @keyframes enlargeLetter {
+    from {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.6);
+    }
+    to {
+      transform: scale(1);
+    }
   }
   #app .content-body-wrap .content .landing-wrap .introduction .dynamic {
     text-transform: uppercase;
@@ -958,6 +1024,7 @@ button {
     flex-direction: column;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description, #app .content-body-wrap .content .tab .tab-body.introduction .description {
+    animation: fadeIn 0.75s ease-in;
     display: flex;
     flex-direction: column;
   }
@@ -981,6 +1048,7 @@ button {
     filter: brightness(90%);
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics {
+    animation: fadeIn 0.75s ease-in;
     margin: 5vh 0;
     align-self: center;
     width: calc(100% - 56px);
@@ -1012,16 +1080,6 @@ button {
     flex-wrap: wrap;
     justify-content: center;
     padding: 24px 32px;
-  }
-  @keyframes blurIn {
-    from {
-      opacity: 0;
-      filter: blur(50px);
-    }
-    to {
-      filter: blur(0);
-      opacity: 1;
-    }
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .tab-body.skills .skill-container.shuffling {
     animation: blurOut 0.75s ease-out;
@@ -1107,6 +1165,7 @@ button {
     transform: none !important;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns {
+    animation: blurIn 0.75s ease-in;
     position: sticky;
     z-index: 1000;
     right: 2.5vw;
@@ -1403,6 +1462,7 @@ button {
     display: flex;
     justify-content: center;
     margin: 0 8px;
+    animation: rotateIn 2.5s linear;
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .smartphone {
     z-index: 1000;
@@ -1531,6 +1591,20 @@ button {
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-thumb:hover {
     background: none;
   }
+  @keyframes rotateIn {
+    from {
+      opacity: 0.5;
+      transform: translateX(-50vw) rotateY(0deg);
+    }
+    50% {
+      opacity: 0.75;
+      transform: rotateY(180deg);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) rotateY(360deg);
+    }
+  }
   #app .content-body-wrap .direct-links-card {
     z-index: 2000;
     opacity: 1;
@@ -1654,10 +1728,6 @@ button {
     max-width: 80px;
     transition: top 0.25s ease-in, left 0.25s ease-in;
   }
-  .desktop-wrap .desktop-icon-wrap.vscode-icon {
-    top: 5%;
-    left: 5%;
-  }
   .desktop-wrap .desktop-icon-wrap .desktop-icon {
     user-select: none;
     width: 64px;
@@ -1673,6 +1743,29 @@ button {
   }
   .desktop-wrap .desktop-icon-wrap.selected .icon-title, .desktop-wrap .desktop-icon-wrap:active .icon-title {
     background-color: rgba(103, 103, 103, 0.603);
+  }
+  .desktop-wrap .desktop-icon-wrap.vscode-icon {
+    top: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap.checkers-icon {
+    bottom: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap.checkers-icon .desktop-icon {
+    width: 53.6px;
+    border-radius: 16px;
+    object-fit: contain;
+  }
+  .desktop-wrap #checkers-iframe {
+    width: 200vw;
+    height: 200vh;
+    position: absolute;
+    top: -50vh;
+    left: -50vw;
+    transform: scale(0.5);
+    margin: auto;
+    display: none;
   }
   .desktop-wrap .selection-area {
     background-color: rgba(165, 165, 165, 0.531);
@@ -1697,12 +1790,58 @@ button {
   .desktop-wrap .toolkit .os, .desktop-wrap .toolkit .time {
     font-family: "Code";
   }
+  .desktop-wrap .toolkit p {
+    cursor: pointer;
+  }
   .desktop-wrap .toolkit p .app {
     font-size: 0.9em;
     padding-left: 8px;
   }
+  .desktop-wrap .toolkit #back-to-desktop-btn {
+    z-index: 11000;
+  }
   .desktop-wrap .toolkit .time {
     display: none;
+  }
+  .desktop-wrap .clock {
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid white;
+    box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
+    width: 60vw;
+    height: 60vw;
+    max-height: 200px;
+    max-width: 200px;
+    position: relative;
+  }
+  .desktop-wrap .clock .dot {
+    position: absolute;
+    top: 46.5%;
+    right: 46.5%;
+    height: 3.5%;
+    width: 3.5%;
+    border-radius: 50%;
+    border: 1.5px solid black;
+  }
+  .desktop-wrap .clock .hour {
+    position: absolute;
+    top: 15%;
+    left: 50.25%;
+    height: 35%;
+    width: 2%;
+    background-color: black;
+    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+  }
+  .desktop-wrap .clock .minute {
+    position: absolute;
+    top: 5%;
+    left: 50.5%;
+    height: 45%;
+    width: 1.5%;
+    background-color: black;
+    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
   }
 }
 @media (min-width: 850px) {
@@ -1904,6 +2043,7 @@ button {
     }
   }
   #app .content-body-wrap .content .landing-wrap {
+    overflow: hidden;
     animation: slideInFromLeft 0.5s ease-in;
     flex-grow: 1;
     height: 100%;
@@ -1920,6 +2060,29 @@ button {
     margin-top: 70px;
     padding: 2px 0;
   }
+  #app .content-body-wrap .content .landing-wrap .landing-nav-lbl i {
+    animation: rotateLandingArrow 8s ease-in-out infinite;
+  }
+  @keyframes rotateLandingArrow {
+    from {
+      transform: rotate(0);
+    }
+    5% {
+      transform: rotate(45deg);
+    }
+    10% {
+      transform: rotate(-45deg);
+    }
+    15% {
+      transform: rotate(45deg);
+    }
+    20% {
+      transform: rotate(-45deg);
+    }
+    25% {
+      transform: rotate(0);
+    }
+  }
   #app .content-body-wrap .content .landing-wrap .introduction {
     max-width: 800px;
     margin: 0 5px;
@@ -1928,6 +2091,30 @@ button {
   #app .content-body-wrap .content .landing-wrap .introduction .static, #app .content-body-wrap .content .landing-wrap .introduction .dynamic {
     font-family: "Code";
     font-size: 6vw;
+  }
+  #app .content-body-wrap .content .landing-wrap .introduction .static.landing-letter, #app .content-body-wrap .content .landing-wrap .introduction .dynamic.landing-letter {
+    cursor: default;
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.1s ease-out;
+  }
+  #app .content-body-wrap .content .landing-wrap .introduction .static.landing-letter:hover, #app .content-body-wrap .content .landing-wrap .introduction .dynamic.landing-letter:hover {
+    transform: scale(1.6);
+    transition: transform 0.25s ease-out;
+  }
+  #app .content-body-wrap .content .landing-wrap .introduction .static.landing-letter.enlarging, #app .content-body-wrap .content .landing-wrap .introduction .dynamic.landing-letter.enlarging {
+    animation: enlargeLetter 0.5s ease-in-out;
+  }
+  @keyframes enlargeLetter {
+    from {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.6);
+    }
+    to {
+      transform: scale(1);
+    }
   }
   #app .content-body-wrap .content .landing-wrap .introduction .dynamic {
     text-transform: uppercase;
@@ -2059,6 +2246,7 @@ button {
     flex-direction: column;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description, #app .content-body-wrap .content .tab .tab-body.introduction .description {
+    animation: fadeIn 0.75s ease-in;
     display: flex;
     flex-direction: column;
   }
@@ -2082,6 +2270,7 @@ button {
     filter: brightness(90%);
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics {
+    animation: fadeIn 0.75s ease-in;
     margin: 5vh 0;
     align-self: center;
     width: calc(100% - 70px);
@@ -2113,16 +2302,6 @@ button {
     flex-wrap: wrap;
     justify-content: center;
     padding: 30px 40px;
-  }
-  @keyframes blurIn {
-    from {
-      opacity: 0;
-      filter: blur(50px);
-    }
-    to {
-      filter: blur(0);
-      opacity: 1;
-    }
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .tab-body.skills .skill-container.shuffling {
     animation: blurOut 0.75s ease-out;
@@ -2208,6 +2387,7 @@ button {
     transform: none !important;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns {
+    animation: blurIn 0.75s ease-in;
     position: sticky;
     z-index: 1000;
     right: 2.5vw;
@@ -2504,6 +2684,7 @@ button {
     display: flex;
     justify-content: center;
     margin: 0 10px;
+    animation: rotateIn 2.5s linear;
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .smartphone {
     z-index: 1000;
@@ -2632,6 +2813,20 @@ button {
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-thumb:hover {
     background: none;
   }
+  @keyframes rotateIn {
+    from {
+      opacity: 0.5;
+      transform: translateX(-50vw) rotateY(0deg);
+    }
+    50% {
+      opacity: 0.75;
+      transform: rotateY(180deg);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) rotateY(360deg);
+    }
+  }
   #app .content-body-wrap .direct-links-card {
     z-index: 2000;
     opacity: 1;
@@ -2755,10 +2950,6 @@ button {
     max-width: 100px;
     transition: top 0.25s ease-in, left 0.25s ease-in;
   }
-  .desktop-wrap .desktop-icon-wrap.vscode-icon {
-    top: 5%;
-    left: 5%;
-  }
   .desktop-wrap .desktop-icon-wrap .desktop-icon {
     user-select: none;
     width: 80px;
@@ -2774,6 +2965,29 @@ button {
   }
   .desktop-wrap .desktop-icon-wrap.selected .icon-title, .desktop-wrap .desktop-icon-wrap:active .icon-title {
     background-color: rgba(103, 103, 103, 0.603);
+  }
+  .desktop-wrap .desktop-icon-wrap.vscode-icon {
+    top: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap.checkers-icon {
+    bottom: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap.checkers-icon .desktop-icon {
+    width: 67px;
+    border-radius: 20px;
+    object-fit: contain;
+  }
+  .desktop-wrap #checkers-iframe {
+    width: 200vw;
+    height: 200vh;
+    position: absolute;
+    top: -50vh;
+    left: -50vw;
+    transform: scale(0.5);
+    margin: auto;
+    display: none;
   }
   .desktop-wrap .selection-area {
     background-color: rgba(165, 165, 165, 0.531);
@@ -2798,12 +3012,58 @@ button {
   .desktop-wrap .toolkit .os, .desktop-wrap .toolkit .time {
     font-family: "Code";
   }
+  .desktop-wrap .toolkit p {
+    cursor: pointer;
+  }
   .desktop-wrap .toolkit p .app {
     font-size: 0.9em;
     padding-left: 10px;
   }
+  .desktop-wrap .toolkit #back-to-desktop-btn {
+    z-index: 11000;
+  }
   .desktop-wrap .toolkit .time {
     display: none;
+  }
+  .desktop-wrap .clock {
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid white;
+    box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
+    width: 60vw;
+    height: 60vw;
+    max-height: 200px;
+    max-width: 200px;
+    position: relative;
+  }
+  .desktop-wrap .clock .dot {
+    position: absolute;
+    top: 46.5%;
+    right: 46.5%;
+    height: 3.5%;
+    width: 3.5%;
+    border-radius: 50%;
+    border: 1.5px solid black;
+  }
+  .desktop-wrap .clock .hour {
+    position: absolute;
+    top: 15%;
+    left: 50.25%;
+    height: 35%;
+    width: 2%;
+    background-color: black;
+    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+  }
+  .desktop-wrap .clock .minute {
+    position: absolute;
+    top: 5%;
+    left: 50.5%;
+    height: 45%;
+    width: 1.5%;
+    background-color: black;
+    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
   }
 
   html {
@@ -3397,6 +3657,9 @@ button {
   #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn:hover {
     background-color: #272727;
   }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn .disabled {
+    filter: brightness(0.5);
+  }
   #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn .disabled:hover {
     cursor: not-allowed;
   }
@@ -3637,6 +3900,7 @@ button {
     }
   }
   #app .content-body-wrap .content .landing-wrap {
+    overflow: hidden;
     animation: slideInFromLeft 0.5s ease-in;
     flex-grow: 1;
     height: 100%;
@@ -3653,6 +3917,29 @@ button {
     margin-top: 84px;
     padding: 2.4px 0;
   }
+  #app .content-body-wrap .content .landing-wrap .landing-nav-lbl i {
+    animation: rotateLandingArrow 8s ease-in-out infinite;
+  }
+  @keyframes rotateLandingArrow {
+    from {
+      transform: rotate(0);
+    }
+    5% {
+      transform: rotate(45deg);
+    }
+    10% {
+      transform: rotate(-45deg);
+    }
+    15% {
+      transform: rotate(45deg);
+    }
+    20% {
+      transform: rotate(-45deg);
+    }
+    25% {
+      transform: rotate(0);
+    }
+  }
   #app .content-body-wrap .content .landing-wrap .introduction {
     max-width: 960px;
     margin: 0 6px;
@@ -3661,6 +3948,30 @@ button {
   #app .content-body-wrap .content .landing-wrap .introduction .static, #app .content-body-wrap .content .landing-wrap .introduction .dynamic {
     font-family: "Code";
     font-size: 6vw;
+  }
+  #app .content-body-wrap .content .landing-wrap .introduction .static.landing-letter, #app .content-body-wrap .content .landing-wrap .introduction .dynamic.landing-letter {
+    cursor: default;
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.1s ease-out;
+  }
+  #app .content-body-wrap .content .landing-wrap .introduction .static.landing-letter:hover, #app .content-body-wrap .content .landing-wrap .introduction .dynamic.landing-letter:hover {
+    transform: scale(1.6);
+    transition: transform 0.25s ease-out;
+  }
+  #app .content-body-wrap .content .landing-wrap .introduction .static.landing-letter.enlarging, #app .content-body-wrap .content .landing-wrap .introduction .dynamic.landing-letter.enlarging {
+    animation: enlargeLetter 0.5s ease-in-out;
+  }
+  @keyframes enlargeLetter {
+    from {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.6);
+    }
+    to {
+      transform: scale(1);
+    }
   }
   #app .content-body-wrap .content .landing-wrap .introduction .dynamic {
     text-transform: uppercase;
@@ -3792,6 +4103,7 @@ button {
     flex-direction: column;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description, #app .content-body-wrap .content .tab .tab-body.introduction .description {
+    animation: fadeIn 0.75s ease-in;
     display: flex;
     flex-direction: column;
   }
@@ -3815,6 +4127,7 @@ button {
     filter: brightness(90%);
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics {
+    animation: fadeIn 0.75s ease-in;
     margin: 5vh 0;
     align-self: center;
     width: calc(100% - 84px);
@@ -3846,16 +4159,6 @@ button {
     flex-wrap: wrap;
     justify-content: center;
     padding: 36px 48px;
-  }
-  @keyframes blurIn {
-    from {
-      opacity: 0;
-      filter: blur(50px);
-    }
-    to {
-      filter: blur(0);
-      opacity: 1;
-    }
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .tab-body.skills .skill-container.shuffling {
     animation: blurOut 0.75s ease-out;
@@ -3941,6 +4244,7 @@ button {
     transform: none !important;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns {
+    animation: blurIn 0.75s ease-in;
     position: sticky;
     z-index: 1000;
     right: 2.5vw;
@@ -4237,6 +4541,7 @@ button {
     display: flex;
     justify-content: center;
     margin: 0 12px;
+    animation: rotateIn 2.5s linear;
   }
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .smartphone {
     z-index: 1000;
@@ -4365,6 +4670,20 @@ button {
   #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap input::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .reach-out-body-wrap .console-device-wrap .console .questions .question-wrap textarea::-webkit-scrollbar-thumb:hover {
     background: none;
   }
+  @keyframes rotateIn {
+    from {
+      opacity: 0.5;
+      transform: translateX(-50vw) rotateY(0deg);
+    }
+    50% {
+      opacity: 0.75;
+      transform: rotateY(180deg);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) rotateY(360deg);
+    }
+  }
   #app .content-body-wrap .direct-links-card {
     z-index: 2000;
     opacity: 1;
@@ -4488,10 +4807,6 @@ button {
     max-width: 120px;
     transition: top 0.25s ease-in, left 0.25s ease-in;
   }
-  .desktop-wrap .desktop-icon-wrap.vscode-icon {
-    top: 5%;
-    left: 5%;
-  }
   .desktop-wrap .desktop-icon-wrap .desktop-icon {
     user-select: none;
     width: 96px;
@@ -4507,6 +4822,29 @@ button {
   }
   .desktop-wrap .desktop-icon-wrap.selected .icon-title, .desktop-wrap .desktop-icon-wrap:active .icon-title {
     background-color: rgba(103, 103, 103, 0.603);
+  }
+  .desktop-wrap .desktop-icon-wrap.vscode-icon {
+    top: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap.checkers-icon {
+    bottom: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap.checkers-icon .desktop-icon {
+    width: 80.4px;
+    border-radius: 24px;
+    object-fit: contain;
+  }
+  .desktop-wrap #checkers-iframe {
+    width: 200vw;
+    height: 200vh;
+    position: absolute;
+    top: -50vh;
+    left: -50vw;
+    transform: scale(0.5);
+    margin: auto;
+    display: none;
   }
   .desktop-wrap .selection-area {
     background-color: rgba(165, 165, 165, 0.531);
@@ -4531,12 +4869,58 @@ button {
   .desktop-wrap .toolkit .os, .desktop-wrap .toolkit .time {
     font-family: "Code";
   }
+  .desktop-wrap .toolkit p {
+    cursor: pointer;
+  }
   .desktop-wrap .toolkit p .app {
     font-size: 0.9em;
     padding-left: 12px;
   }
+  .desktop-wrap .toolkit #back-to-desktop-btn {
+    z-index: 11000;
+  }
   .desktop-wrap .toolkit .time {
     display: none;
+  }
+  .desktop-wrap .clock {
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid white;
+    box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
+    width: 60vw;
+    height: 60vw;
+    max-height: 200px;
+    max-width: 200px;
+    position: relative;
+  }
+  .desktop-wrap .clock .dot {
+    position: absolute;
+    top: 46.5%;
+    right: 46.5%;
+    height: 3.5%;
+    width: 3.5%;
+    border-radius: 50%;
+    border: 1.5px solid black;
+  }
+  .desktop-wrap .clock .hour {
+    position: absolute;
+    top: 15%;
+    left: 50.25%;
+    height: 35%;
+    width: 2%;
+    background-color: black;
+    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+  }
+  .desktop-wrap .clock .minute {
+    position: absolute;
+    top: 5%;
+    left: 50.5%;
+    height: 45%;
+    width: 1.5%;
+    background-color: black;
+    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
   }
 
   html {
@@ -5129,6 +5513,9 @@ button {
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn:hover {
     background-color: #272727;
+  }
+  #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn .disabled {
+    filter: brightness(0.5);
   }
   #app .content .reach-out-body-wrap .console-device-wrap .console .format-btns .format-btn .disabled:hover {
     cursor: not-allowed;

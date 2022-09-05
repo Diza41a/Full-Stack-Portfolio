@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useContext } from 'react';
@@ -7,11 +9,6 @@ import { MainContext } from './reusable/MainLayout';
 
 export default function Landing() {
   const { setCurrentFileName } = useContext(MainContext);
-
-  // ComponentDidMount
-  useEffect(() => {
-    setCurrentFileName('Landing.jsx');
-  }, []);
 
   // Helpers
   const descriptionSlideshow = () => {
@@ -38,8 +35,31 @@ export default function Landing() {
     };
     window.addEventListener('resize', sliderFunction);
 
+    setCurrentFileName('Landing.jsx');
+
+    const letterEls = document.querySelectorAll('.landing-letter');
+    let iterationCount = 0;
+    const letterInterval = setInterval(() => {
+      if (iterationCount >= 3) {
+        iterationCount = 0;
+      } else {
+        const randomIndex = Math.floor(Math.random() * letterEls.length);
+        letterEls[randomIndex].classList.add('enlarging');
+        setTimeout(() => {
+          letterEls[randomIndex].classList.remove('enlarging');
+        }, 500);
+      }
+    }, 3000);
+    // let delay = 0.1;
+    // letterEls.forEach((letterEl) => {
+    //   letterEl.classList.add('enlarging');
+    //   letterEl.style.animationDelay = `${delay}s`;
+    //   delay += 0.1;
+    // });
+
     // Cleanup after unmounting (side effect)
     return function cleanup() {
+      clearInterval(letterInterval);
       clearInterval(sliderInterval);
       window.removeEventListener('resize', sliderFunction);
     };
@@ -53,8 +73,20 @@ export default function Landing() {
       </p>
 
       <div className="introduction">
-        <p className="static">Hello There!</p>
-        <p className="static">{'I\'m Davyd, and I\'m a'}</p>
+        <p className="static">
+          {
+          [...'Hello There!'].map((letter, i) => (
+            <span key={i} className="static landing-letter">{letter !== ' ' ? letter : '\u00A0'}</span>
+          ))
+        }
+        </p>
+        <p className="static">
+          {
+          [...'I\'m Davyd, and I\'m a'].map((letter, i) => (
+            <span key={i} className="static landing-letter">{letter !== ' ' ? letter : '\u00A0'}</span>
+          ))
+        }
+        </p>
         <div className="dynamic">
           <p>Immigrant</p>
           <p>Philanthropist</p>
