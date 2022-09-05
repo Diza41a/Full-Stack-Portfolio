@@ -178,7 +178,7 @@ export default function Desktop() {
         </div>
       </Draggable>
 
-      <Draggable>
+      {/* <Draggable>
         <div
           className="desktop-icon-wrap checkers-icon"
           onDoubleClick={openCheckers}
@@ -192,7 +192,7 @@ export default function Desktop() {
           <img src="./assets/images/desktop/checkers.png" alt="" className="desktop-icon" draggable={false} />
           <p className="icon-title">Checkers.io</p>
         </div>
-      </Draggable>
+      </Draggable> */}
 
       <iframe src="http://ec2-54-226-169-13.compute-1.amazonaws.com:3000/" frameBorder={0} title="Checkers.io" id="checkers-iframe" />
 
