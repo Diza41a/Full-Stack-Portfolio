@@ -1,0 +1,31 @@
+Welcome in, my name is Davyd Zakorchennyi, I'm a full-stack engineer
+based in Florida. Me and my family moved to the
+states🇺🇸 around 7 years ago from Ukraine🇺🇦,
+and have been operating two local bakeries here in Sarasota.
+
+Although being a part of a family business taught me
+responsibility and integrity, as well as taught me
+to listen to customers to get to the bottom of their
+individual needs, my vision for the future was to grow
+in a computer science area. In my opinion, it requires
+constant sharpness of mind, creative thinking, and continuous
+self-improvement, all while offering freedom and flexibility that
+other careers lack.
+
+After finishing school, I briefly attended New College of Florida,
+but having had programming experience, I've elected on attending
+HackReactor software engineering immersive, where I've had an
+amazing opportunity to fill in the gaps in my education
+and solidify knowledge I've already had.
+I've had an opportunity to work with fellow minded
+engineers in building out several frontend and backend projects,
+including a shopping platform with the data API to connect to,
+an online library, multiplayer checkers experience, as well as
+a website for our family business.
+
+In my work, I take priority in building out interfaces that do not
+stray away from the vision of client's brand, continuously optimizing
+components of the web application and making them scalable, as well as
+implement features that enhance user experience, making it more intuitive
+and maybe a little fun. If you'd like to connect, please reach me through
+the 📞contact section, on click on the 👤user icon for direct links. Welcome in!😉

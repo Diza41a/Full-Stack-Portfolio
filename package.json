@@ -5,12 +5,26 @@
   "author": "Davyd Zakorchennyi <Diza41a@mail.com>",
   "license": "MIT",
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.0.2",
+    "@codemirror/view": "^6.2.0",
+    "@lezer/highlight": "^1.0.0",
+    "@uiw/codemirror-themes": "^4.11.5",
+    "@uiw/react-codemirror": "^4.11.5",
+    "axios": "^0.27.2",
     "express": "^4.18.1",
+    "nodemailer": "^6.7.8",
     "nodemon": "^2.0.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.5",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "6",
-    "styled-components": "^5.3.5"
+    "react-tsparticles": "^2.2.4",
+    "react-typed": "^1.2.0",
+    "styled-components": "^5.3.5",
+    "tsparticles": "^2.2.4",
+    "uuid": "^8.3.2",
+    "validate.js": "^0.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
@@ -33,6 +47,7 @@
     "client-dev": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
     "server-dev": "nodemon ./server/index.js",
-    "sass-dev": "sass client/dist/styles/style.scss client/dist/styles/style.css --watch"
+    "sass-dev": "sass client/dist/styles/style.scss client/dist/styles/style.css --watch",
+    "css-prefixed": "postcss client/dist/styles/style.css --use autoprefixer -d client/dist/styles/style-prefixed.css"
   }
 }
