@@ -599,6 +599,9 @@ button {
     box-shadow: 0 0 0.5vw 0.1vw #caf4ff;
   }
 }
+#root #app.matrix .landing-wrap .photo {
+  filter: grayscale(1) contrast(1.45);
+}
 #root #app.matrix .shuffle-btns button > span, #root #app.matrix .shuffle-btns .tooltip {
   text-shadow: 0 0 0.24em rgb(237, 242, 255);
 }
@@ -620,6 +623,9 @@ button {
 }
 #root #app.matrix .console .questions {
   font-family: monospace !important;
+}
+#root #app.matrix .about-me-pics img {
+  filter: grayscale(0.85);
 }
 
 @media (max-width: 850px) {
@@ -930,6 +936,8 @@ button {
     max-width: 800px;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .photo {
+    filter: grayscale(1) contrast(1.45);
+    background: rgba(24, 24, 24, 0.6392156863);
     border-radius: 16px;
     position: absolute;
     top: 11.25%;
@@ -2152,6 +2160,8 @@ button {
     max-width: 800px;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .photo {
+    filter: grayscale(1) contrast(1.45);
+    background: rgba(24, 24, 24, 0.6392156863);
     border-radius: 20px;
     position: absolute;
     top: 11.25%;
@@ -4009,6 +4019,8 @@ button {
     max-width: 800px;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .photo {
+    filter: grayscale(1) contrast(1.45);
+    background: rgba(24, 24, 24, 0.6392156863);
     border-radius: 24px;
     position: absolute;
     top: 11.25%;

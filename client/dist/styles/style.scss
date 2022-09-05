@@ -851,6 +851,9 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             }
 
             .photo {
+              filter: grayscale(1) contrast(1.45);
+              // filter: grayscale(0.3) contrast(1.35);
+              background: #181818a3;
               border-radius: $fontSize;
               // opacity: 0.35;
               position: absolute;
@@ -2654,6 +2657,10 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           }
         }
       }
+
+      .photo {
+        filter: grayscale(1) contrast(1.45);
+      }
     }
 
     .shuffle-btns {
@@ -2692,6 +2699,12 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
       .questions {
         font-family: monospace!important;
+      }
+    }
+
+    .about-me-pics {
+      img {
+        filter: grayscale(0.85);
       }
     }
   }
