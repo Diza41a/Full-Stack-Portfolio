@@ -8,6 +8,10 @@
   font-family: "Code-Bold";
   src: url(../assets/fonts/code_pro/Code\ Pro\ LC.otf);
 }
+@font-face {
+  font-family: "Material Icons";
+  font-display: block;
+}
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 48;
 }
@@ -936,7 +940,7 @@ button {
     max-width: 800px;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .photo {
-    filter: grayscale(1) contrast(1.45);
+    filter: grayscale(0.3) contrast(1.45);
     background: rgba(24, 24, 24, 0.6392156863);
     border-radius: 16px;
     position: absolute;
@@ -2160,7 +2164,7 @@ button {
     max-width: 800px;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .photo {
-    filter: grayscale(1) contrast(1.45);
+    filter: grayscale(0.3) contrast(1.45);
     background: rgba(24, 24, 24, 0.6392156863);
     border-radius: 20px;
     position: absolute;
@@ -4019,7 +4023,7 @@ button {
     max-width: 800px;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .photo {
-    filter: grayscale(1) contrast(1.45);
+    filter: grayscale(0.3) contrast(1.45);
     background: rgba(24, 24, 24, 0.6392156863);
     border-radius: 24px;
     position: absolute;
