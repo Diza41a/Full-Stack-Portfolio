@@ -155,9 +155,9 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           cursor: not-allowed;
         }
 
-        &[data-task="confirm"] {
-          display: none;
-        }
+        // &[data-task="confirm"] {
+        //   display: none;
+        // }
       }
 
       .tooltip {
@@ -1285,8 +1285,26 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
             .gallery {
               .mobile {
+                @keyframes mobileGalleryFade {
+                  from {
+                    opacity: 0;
+                  }
+                  to {
+                    opacity: 1;
+                  }
+                }
+
                 margin: $fontSize $fontSize * 0.65;
                 text-align: center;
+
+                &.leaving {
+                  animation: mobileGalleryFade 0.5s ease-out;
+                  animation-direction: reverse;
+                }
+
+                .carousel-root {
+                  animation: mobileGalleryFade 0.5s ease-in;
+                }
 
                 div {
                   width: 100%;

@@ -57,11 +57,14 @@ export default function Landing() {
     //   delay += 0.1;
     // });
 
+    document.querySelector('.main-nav').children[0].classList.add('active');
+
     // Cleanup after unmounting (side effect)
     return function cleanup() {
       clearInterval(letterInterval);
       clearInterval(sliderInterval);
       window.removeEventListener('resize', sliderFunction);
+      document.querySelector('.main-nav').children[0].classList.remove('active');
     };
   }, []);
 
@@ -88,11 +91,11 @@ export default function Landing() {
         }
         </p>
         <div className="dynamic">
-          <p>Immigrant</p>
-          <p>Philanthropist</p>
-          <p>Sweet Crepe</p>
           <p>Software Engineer</p>
-          <p>Im going home</p>
+          <p>Problem Solver</p>
+          <p>UI Enthusiast</p>
+          <p>Life Long Learner</p>
+          <p>First Gen Immigrant</p>
         </div>
       </div>
 

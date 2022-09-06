@@ -81,10 +81,14 @@ export default function ReachOut() {
         }
       } else if (fieldType === 'phone') {
         // eslint-disable-next-line no-useless-escape
-        if (!answer.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im) || answer.length < 9) {
+        if ((!answer.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im) || answer.length < 9)
+        && answer.length > 0) {
           e.target.placeholder = questions[questionIndex].error;
           e.target.value = '';
           return;
+        }
+        if (answer.length === 0) {
+          answer = '__Left blank__';
         }
       } else if (fieldType === 'message') {
         if (answer.length < 20) {

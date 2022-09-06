@@ -4,7 +4,8 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
 import React, { useState, createContext, useEffect } from 'react';
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+// import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 
 // Component imports
 import Particle from './Particle';
@@ -24,7 +25,7 @@ export const getCurrentTime = () => {
 };
 
 export default function MainLayout() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const storedTheme = localStorage.getItem('dz_portfolio_theme') || 'regular';
   const [globalTheme, setGlobalTheme] = useState(storedTheme);
@@ -67,10 +68,10 @@ export default function MainLayout() {
   }, [globalTheme]);
 
   // To desktop
-  const toDesktop = (e) => {
-    e.preventDefault();
-    navigate('/');
-  };
+  // const toDesktop = (e) => {
+  //   e.preventDefault();
+  //   navigate('/');
+  // };
 
   // Toggle direct link visibility
   const toggleDirectLinks = (e) => {
@@ -111,7 +112,13 @@ export default function MainLayout() {
       <div id="app" className={globalTheme} style={{ backgroundColor: background.color, backgroundImage: background.image }}>
         <header className="toolbar">
           <div className="buttons">
-            <button type="button" style={{ color: 'white', backgroundColor: 'red' }} onClick={toDesktop}>
+            {/* onClick={toDesktop} */}
+            <button
+              type="button"
+              style={{
+                color: 'white', backgroundColor: 'red', cursor: 'not-allowed', filter: 'brightness(0.8)',
+              }}
+            >
               <i className="fa-solid fa-x" />
             </button>
             <button

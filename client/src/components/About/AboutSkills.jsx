@@ -21,6 +21,16 @@ export default function AboutSkills() {
   const skillSectionDragOver = (e) => {
     e.preventDefault();
 
+    // Scroll top/down
+    const percentage = ((e.clientY / window.innerHeight) * 100);
+    const skillsBody = document.querySelector('.about-subsection-body.skills');
+    if (percentage < 25) {
+      skillsBody.scrollTop -= 2.5;
+    }
+    if (percentage >= 90) {
+      skillsBody.scrollTop += 2.5;
+    }
+
     const closestSkillBody = e.target.closest('.skills-body');
     const closestSkillWrap = e.target.closest('.skill-wrap');
     if (!closestSkillWrap || !closestSkillBody) {

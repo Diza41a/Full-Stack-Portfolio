@@ -52,6 +52,7 @@ export default function ProjectWrap() {
       for (const className of singleAnimationElClasses) {
         document.querySelector(`.${className}`)?.classList.add('leaving');
       }
+      document.querySelector('section.mobile')?.classList.add('leaving');
       setTimeout((() => {
         setProject(projects[currentProjectIndex + 1]);
       }), 500);
@@ -68,6 +69,8 @@ export default function ProjectWrap() {
       for (const className of singleAnimationElClasses) {
         document.querySelector(`.${className}`)?.classList.add('leaving');
       }
+      console.log(document.querySelector('section.mobile'));
+      document.querySelector('section.mobile')?.classList.add('leaving');
       setTimeout((() => {
         setProject(projects[currentProjectIndex - 1]);
       }), 500);
@@ -103,7 +106,7 @@ export default function ProjectWrap() {
         </div>
         <h3 className="project-title">{currentProject.title}</h3>
         <div className="gallery">
-          <section className="mobile">
+          <section className="mobile" key={uuidv4()}>
             <Carousel
               autoPlay={false}
               emulateTouch
