@@ -1,3 +1,5 @@
+const IMG_FOLDER_PATH = './assets/images/projects';
+
 const projects = [
   {
     title: 'OfKors European Bakery',
@@ -17,20 +19,20 @@ const projects = [
     'deployed-link': 'http://ofkorseurobakery.com/',
     images: {
       main: [
-        './assets/images/projects/bakery/main/1.png',
-        './assets/images/projects/bakery/main/2.png',
-        './assets/images/projects/bakery/main/3.png',
-        './assets/images/projects/bakery/main/4.png',
-        './assets/images/projects/bakery/main/5.png',
-        './assets/images/projects/bakery/main/6.png',
-        './assets/images/projects/bakery/main/7.png',
+        `${IMG_FOLDER_PATH}/bakery/main/1.png`,
+        `${IMG_FOLDER_PATH}/bakery/main/2.png`,
+        `${IMG_FOLDER_PATH}/bakery/main/3.png`,
+        `${IMG_FOLDER_PATH}/bakery/main/4.png`,
+        `${IMG_FOLDER_PATH}/bakery/main/5.png`,
+        `${IMG_FOLDER_PATH}/bakery/main/6.png`,
+        `${IMG_FOLDER_PATH}/bakery/main/7.png`,
       ],
       mobile: [
-        './assets/images/projects/bakery/mobile/1.png',
-        './assets/images/projects/bakery/mobile/2.png',
-        './assets/images/projects/bakery/mobile/3.png',
-        './assets/images/projects/bakery/mobile/4.png',
-        './assets/images/projects/bakery/mobile/5.png',
+        `${IMG_FOLDER_PATH}/bakery/mobile/1.png`,
+        `${IMG_FOLDER_PATH}/bakery/mobile/2.png`,
+        `${IMG_FOLDER_PATH}/bakery/mobile/3.png`,
+        `${IMG_FOLDER_PATH}/bakery/mobile/4.png`,
+        `${IMG_FOLDER_PATH}/bakery/mobile/5.png`,
       ],
     },
   },
@@ -46,18 +48,50 @@ const projects = [
     Sass, babel, webpack, node.js, express.js, mongodb
     `,
     'github-link': 'https://github.com/Diza41a/MVP-Checkers',
-    'deployed-link': 'http://ec2-54-226-169-13.compute-1.amazonaws.com:3000/',
+    'deployed-link': 'https://nickabramov.com/',
     images: {
       main: [
-        './assets/images/projects/checkers/main/1.png',
-        './assets/images/projects/checkers/main/2.png',
-        './assets/images/projects/checkers/main/3.png',
-        './assets/images/projects/checkers/main/4.png',
+        `${IMG_FOLDER_PATH}/checkers/main/1.png`,
+        `${IMG_FOLDER_PATH}/checkers/main/2.png`,
+        `${IMG_FOLDER_PATH}/checkers/main/3.png`,
+        `${IMG_FOLDER_PATH}/checkers/main/4.png`,
       ],
       mobile: [
-        './assets/images/projects/checkers/mobile/1.png',
-        './assets/images/projects/checkers/mobile/2.png',
-        './assets/images/projects/checkers/mobile/3.png',
+        `${IMG_FOLDER_PATH}/checkers/mobile/1.png`,
+        `${IMG_FOLDER_PATH}/checkers/mobile/2.png`,
+        `${IMG_FOLDER_PATH}/checkers/mobile/3.png`,
+      ],
+    },
+  },
+  {
+    title: 'Nick Abramov Portfolio',
+    description: `A personal portfolio website created for, and by the UI design of, Nick Abramov.
+    Includes landing page with sortable projects, as well as 'about', 'contact', and 'faq' pages. 
+    The admin has access to a custom-build admin panel for adding/editing/deleting the projects.
+
+    Frontend: Typescript, React (hooks), React Query, MUI (styled components).
+    Backend: Nest.js, MongoDB Atlas + Mongoose ODM.
+    Deployment: Vercel.
+    `,
+    'github-link': 'https://github.com/Diza41a/ChatterBox',
+    'deployed-link': 'http://chatterbox.herokuapp.com/',
+    images: {
+      main: [
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_projects(main).png`,
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_project_image(main).png`,
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_project_description(main).png`,
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_nav(main).png`,
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_faq(main).png`,
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_contact(main).png`,
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_admin(main).png`,
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_admin_form(main).png`,
+      ],
+      mobile: [
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/mobile/nap_projects(mobile).png`,
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/mobile/nap_project_description(mobile).png`,
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/mobile/nap_nav(mobile).png`,
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/mobile/nap_contact(mobile).png`,
+        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/mobile/nap_admin(mobile).png`,
       ],
     },
   },
@@ -65,44 +99,7 @@ const projects = [
 
 const inProgress = [
   { title: 'Chatterbox' },
-  { title: 'Atelier Clothing Platform ' },
+  { title: 'Atelier Clothing Platform' },
 ];
-
-/* {
-  title: 'Atelier Clothing Platform',
-  description: 'The opening widget on the application provides detailed '
-  + 'information on the current product displayed. '
-  + 'User is able to select different styles , '
-  + 'colors, sizes and quantities from a selection menu. '
-  + 'The opening widget on the application provides detailed '
-  + 'information on the current product displayed.User is able '
-  + 'to select different styles , colors, sizes and quantities '
-  + 'from a selection menu.',
-  'github-link': 'https://github.com/Diza41a/ofkors-european-bakery',
-  'deployed-link': 'http://ofkorseurobakery.com/',
-  images: {
-    main: [
-      './assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png',
-    ],
-    mobile: ['./assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png'],
-  },
-},
-{
-  title: 'ChatterBox',
-  description: 'The opening widget on the application provides detailed '
-  + 'information on the current product displayed. '
-  + 'User is able to select different styles , '
-  + 'colors, sizes and quantities from a selection menu. '
-  + 'The opening widget on the application provides detailed '
-  + 'information on the current product displayed.User is able '
-  + 'to select different styles , colors, sizes and quantities '
-  + 'from a selection menu.',
-  'github-link': 'https://github.com/Diza41a/ofkors-european-bakery',
-  'deployed-link': 'http://ofkorseurobakery.com/',
-  images: {
-    main: ['./assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png', './assets/images/projects/atelier/test.png'],
-    mobile: ['./assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png', './assets/images/projects/atelier/test-mobile.png'],
-  },
-}, */
 
 export { projects, inProgress };

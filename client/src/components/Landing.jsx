@@ -85,17 +85,17 @@ export default function Landing() {
         </p>
         <p className="static">
           {
-          [...'I\'m Davyd, and I\'m a'].map((letter, i) => (
+          [...'I\'m Davyd, and I\'m a(n)'].map((letter, i) => (
             <span key={i} className="static landing-letter">{letter !== ' ' ? letter : '\u00A0'}</span>
           ))
         }
         </p>
         <div className="dynamic">
-          <p>Software Engineer</p>
-          <p>Problem Solver</p>
+          <p>Full Stack Engineer</p>
+          <p>Analytical Thinker</p>
           <p>UI Enthusiast</p>
-          <p>Life Long Learner</p>
-          <p>First Gen Immigrant</p>
+          <p>Agile Practitioner</p>
+          <p>Continuous Learner</p>
         </div>
       </div>
 
