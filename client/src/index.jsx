@@ -1,9 +1,6 @@
-/* eslint-disable import/no-cycle */
-/* eslint-disable react/jsx-no-constructed-context-values */
-/* eslint-disable import/extensions */
 import React, { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 // Component imports
 // import Desktop from './components/Desktop/Desktop';
@@ -19,7 +16,7 @@ const root = createRoot(document.getElementById('root'));
 function App() {
   return (
     <Suspense fallback="loading">
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<Desktop />} /> */}
           <Route path="/" element={<MainLayout />}>
@@ -34,7 +31,7 @@ function App() {
             <Route path="contact" element={<ReachOut />} />
           </Route>
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </Suspense>
 
   );
