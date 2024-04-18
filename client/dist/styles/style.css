@@ -630,7 +630,6 @@ button {
   html {
     overflow: hidden;
   }
-
   .card {
     max-width: 400px;
     margin: 0 12px 32px 12px;
@@ -719,7 +718,6 @@ button {
   .card .links-wrap .links a:hover {
     filter: brightness(0.95);
   }
-
   .matrix-canvas {
     z-index: 1;
     position: fixed;
@@ -729,7 +727,6 @@ button {
     height: 100vh;
     opacity: 0.8;
   }
-
   #app {
     height: 100%;
     background-size: cover;
@@ -1155,8 +1152,7 @@ button {
     content: "- ";
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
-    cursor: move;
-    /* fallback if grab cursor is unsupported */
+    cursor: move; /* fallback if grab cursor is unsupported */
     cursor: grab;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
@@ -1734,7 +1730,6 @@ button {
     transition: top ease-out 0.5s;
     top: calc(-5 * (2.5vh + 6.4px + 1px));
   }
-
   .desktop-wrap {
     width: 100vw;
     height: 100vh;
@@ -1869,7 +1864,6 @@ button {
   html {
     overflow: hidden;
   }
-
   .card {
     max-width: 400px;
     margin: 0 15px 40px 15px;
@@ -1958,7 +1952,6 @@ button {
   .card .links-wrap .links a:hover {
     filter: brightness(0.95);
   }
-
   .matrix-canvas {
     z-index: 1;
     position: fixed;
@@ -1968,7 +1961,6 @@ button {
     height: 100vh;
     opacity: 0.8;
   }
-
   #app {
     height: 100%;
     background-size: cover;
@@ -2394,8 +2386,7 @@ button {
     content: "- ";
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
-    cursor: move;
-    /* fallback if grab cursor is unsupported */
+    cursor: move; /* fallback if grab cursor is unsupported */
     cursor: grab;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
@@ -2973,7 +2964,6 @@ button {
     transition: top ease-out 0.5s;
     top: calc(-5 * (2.5vh + 8px + 1px));
   }
-
   .desktop-wrap {
     width: 100vw;
     height: 100vh;
@@ -3103,11 +3093,9 @@ button {
     box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 10px 10px;
   }
-
   html {
     overflow: hidden;
   }
-
   .card {
     max-width: 600px;
   }
@@ -3127,7 +3115,6 @@ button {
   .card .links-wrap .links a {
     font-size: 17px;
   }
-
   #app header .time {
     display: initial;
   }
@@ -3713,7 +3700,6 @@ button {
   #app .theme-selector-wrap {
     left: 0;
   }
-
   .desktop-wrap .toolkit .time {
     display: initial !important;
     position: absolute;
@@ -3725,7 +3711,6 @@ button {
     right: 0;
     text-align: center;
   }
-
   #app.matrix .landing-wrap .landing-nav-lbl {
     transform: skewY(-0.5deg);
   }
@@ -3743,7 +3728,6 @@ button {
   html {
     overflow: hidden;
   }
-
   .card {
     max-width: 400px;
     margin: 0 18px 48px 18px;
@@ -3832,7 +3816,6 @@ button {
   .card .links-wrap .links a:hover {
     filter: brightness(0.95);
   }
-
   .matrix-canvas {
     z-index: 1;
     position: fixed;
@@ -3842,7 +3825,6 @@ button {
     height: 100vh;
     opacity: 0.8;
   }
-
   #app {
     height: 100%;
     background-size: cover;
@@ -4268,8 +4250,7 @@ button {
     content: "- ";
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
-    cursor: move;
-    /* fallback if grab cursor is unsupported */
+    cursor: move; /* fallback if grab cursor is unsupported */
     cursor: grab;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
@@ -4847,7 +4828,6 @@ button {
     transition: top ease-out 0.5s;
     top: calc(-5 * (2.5vh + 9.6px + 1px));
   }
-
   .desktop-wrap {
     width: 100vw;
     height: 100vh;
@@ -4977,11 +4957,9 @@ button {
     box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 10px 10px;
   }
-
   html {
     overflow: hidden;
   }
-
   .card {
     max-width: 600px;
   }
@@ -5001,7 +4979,6 @@ button {
   .card .links-wrap .links a {
     font-size: 20.4px;
   }
-
   #app header .time {
     display: initial;
   }
@@ -5587,7 +5564,6 @@ button {
   #app .theme-selector-wrap {
     left: 0;
   }
-
   .desktop-wrap .toolkit .time {
     display: initial !important;
     position: absolute;
@@ -5599,7 +5575,6 @@ button {
     right: 0;
     text-align: center;
   }
-
   .photo-wrap {
     align-self: flex-end !important;
   }
