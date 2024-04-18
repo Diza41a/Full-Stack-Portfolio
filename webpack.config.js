@@ -1,10 +1,12 @@
 const path = require('path');
 
+const PORT = 3000;
+
 module.exports = {
   mode: 'development',
-  entry: './client/src/index.jsx',
+  entry: '/src/index.jsx',
   output: {
-    path: path.join(__dirname, 'client/dist'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   module: {
@@ -23,13 +25,11 @@ module.exports = {
   devtool: 'eval-cheap-module-source-map',
   // [devServer] configuration for the live server including port
   devServer: {
-    // [static] config for how what to serve
-    static: {
-      directory: path.join(__dirname, 'client/dist'),
-    },
+    // [static] what to serve
+    static: path.join(__dirname, 'dist'),
     compress: true,
     // [port] what port on our local machine to run the dev server
-    port: 3000,
+    port: PORT,
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx'],

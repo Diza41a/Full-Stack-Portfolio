@@ -9,9 +9,8 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Typed from 'react-typed';
 import validate from 'validate.js';
-import axios from 'axios';
+import api from '../../api';
 
-// Subcomponent/Data imports
 import questions from './questions';
 import { MainContext } from '../reusable/MainLayout';
 
@@ -115,7 +114,7 @@ export default function ReachOut() {
           for (const question of questions) {
             answers[question.fieldType] = question.answer;
           }
-          axios.post('message', answers)
+          api.post('/message', answers)
             .catch(() => {
               e.target.placeholder = 'Error submitting question, try again please...';
               e.target.value = '';
@@ -210,13 +209,11 @@ export default function ReachOut() {
           <div className="console">
             <div className="format-btns">
               <button type="button" id="email-format" className="format-btn active">
-                {/* <i className="fa-solid fa-envelope" /> */}
                 <span className="material-symbols-outlined">
                   mail
                 </span>
               </button>
               <button type="button" id="phone-format" className="format-btn">
-                {/* <i className="fa-solid fa-phone" /> */}
                 <span className="material-symbols-outlined disabled">
                   phone
                 </span>

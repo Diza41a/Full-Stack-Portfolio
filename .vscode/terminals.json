@@ -2,12 +2,6 @@
   "autorun": true,
   "terminals": [
     {
-      "name": "server-dev",
-      "focus": true,
-      "icon": "server",
-      "color": "terminal.ansiGreen"
-    },
-    {
       "name": "client-dev",
       "color": "terminal.ansiCyan"
     },

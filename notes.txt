@@ -1,8 +1,0 @@
-keep erasing added input on about me description
-page transition effects
-loader animation
-button ripple effect
-congratulations, you've unlocked matrix theme 
-
-tooltip -> click on image to open project gallery
-carousel slide counter absolute position

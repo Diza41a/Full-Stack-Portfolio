@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { EditorView } from '@codemirror/view';
-import axios from 'axios';
+import api from '../../api';
 
 // Subcomponent imports
 import { codeMirrorTxtTheme } from '../styles/Colored';
@@ -12,8 +12,8 @@ export default function AboutDescription() {
 
   // ComponentDidMount
   useEffect(() => {
-    axios.get('/test')
-      .then(({ data }) => setAboutText(data))
+    api.get('/bio')
+      .then(({ data: bio }) => setAboutText(bio))
       .catch((err) => console.log(err));
   }, []);
 

@@ -12,9 +12,6 @@
     "@uiw/react-codemirror": "^4.11.5",
     "axios": "^0.27.2",
     "dotenv": "^16.4.5",
-    "express": "^4.18.1",
-    "nodemailer": "^6.7.8",
-    "nodemon": "^2.0.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.5",
@@ -45,10 +42,10 @@
     "webpack-dev-server": "^4.10.0"
   },
   "scripts": {
-    "client-dev": "webpack --mode=development --watch",
+    "start": "webpack serve --open",
+    "dev": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
-    "server-dev": "nodemon ./server/index.js",
-    "sass-dev": "sass client/dist/styles/style.scss client/dist/styles/style.css --watch",
-    "css-prefixed": "postcss client/dist/styles/style.css --use autoprefixer -d client/dist/styles/style-prefixed.css"
+    "sass-dev": "sass dist/styles/style.scss dist/styles/style.css --watch",
+    "css-prefixed": "postcss dist/styles/style.css --use autoprefixer -d dist/styles/style-prefixed.css"
   }
 }
