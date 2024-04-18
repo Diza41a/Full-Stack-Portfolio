@@ -2,9 +2,10 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const app = express();
-const { EMAIL, EMAIL_PASS, EMAIL_TO } = require('../config');
+const { EMAIL, EMAIL_PASSWORD, EMAIL_TO } = process.env;
 
 // Middleware
 app.use(express.json());
@@ -23,7 +24,7 @@ app.post('/message', (req, res) => {
     secure: true, // use SSL
     auth: {
       user: EMAIL,
-      pass: EMAIL_PASS,
+      pass: EMAIL_PASSWORD,
     },
     tls: {
       rejectUnauthorized: false,
