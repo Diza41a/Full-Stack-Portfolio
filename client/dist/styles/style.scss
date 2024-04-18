@@ -54,8 +54,6 @@ button {
   }
 }
 
-
-
 @mixin colorTheme($mainDark, $mainDarkTransparent, $mainMedium, $mainText, $secondText, $border,
 $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, $resumeButton, $projectListItem) {
   header.toolbar {
@@ -1896,8 +1894,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         .introduction {
           position: relative;
           right: 5vw;
-          // width: 70vw;
-          max-width: none!important;
+          max-width: 1750px!important;
           padding: $fontSize * 1.25 $fontSize * 0.25 $fontSize * 1.25 10vw !important;
           .static, .dynamic {
             font-size: $fontSize * 2.05!important;
@@ -2733,8 +2730,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
   }
 }
 
-
-
 @media (max-width: 850px) {
   @include mainView(16px);
 }
@@ -2765,8 +2760,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 }
 
 @media (min-width: 1600px) {
-  @include mainView(24px);
-  @include largeScreens(24px);
+  // @include mainView(24px);
+  // @include largeScreens(24px);
 
   .photo-wrap {
     align-self: flex-end!important;
