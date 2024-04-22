@@ -103,7 +103,7 @@ export default function ThemeSelector() {
   return (
     <div className="theme-selector-wrap hidden" onClick={manageThemeSelection} onKeyUp={manageThemeKeyScroll}>
       <input type="text" id="theme-input" className="title" placeholder="Enter theme name..." autoComplete="off" onKeyUp={searchThemes} />
-      {renderThemeOptions(['matrix', 'regular'])}
+      {renderThemeOptions(['regular', 'matrix'])}
     </div>
   );
 }
