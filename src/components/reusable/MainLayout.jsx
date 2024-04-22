@@ -25,9 +25,7 @@ export const getCurrentTime = () => {
 };
 
 export default function MainLayout() {
-  // const navigate = useNavigate();
-
-  const storedTheme = localStorage.getItem('dz_portfolio_theme') || 'regular';
+  const storedTheme = localStorage.getItem('dz_portfolio_theme') || 'matrix';
   const [globalTheme, setGlobalTheme] = useState(storedTheme);
   const [currentFileName, setCurrentFileName] = useState('Landing.jsx');
 
