@@ -30,7 +30,7 @@ export default function AboutDescription() {
             theme={codeMirrorTxtTheme}
             extensions={[javascript({ jsx: true }), EditorView.lineWrapping]}
           />
-          <a href="./assets/resume.docx" download="Davyd Zakorchennyi Resume" id="resume-btn">Download Resume</a>
+          <a href="./assets/resume.pdf" download="Resume - Davyd Zakorchennyi" id="resume-btn">Download Resume</a>
         </div>
         <div className="about-me-pics">
           <img src="./assets/images/about-me/about-me-1.jpeg" alt="" />
