@@ -630,6 +630,7 @@ button {
   html {
     overflow: hidden;
   }
+
   .card {
     max-width: 400px;
     margin: 0 12px 32px 12px;
@@ -718,6 +719,7 @@ button {
   .card .links-wrap .links a:hover {
     filter: brightness(0.95);
   }
+
   .matrix-canvas {
     z-index: 1;
     position: fixed;
@@ -727,6 +729,7 @@ button {
     height: 100vh;
     opacity: 0.8;
   }
+
   #app {
     height: 100%;
     background-size: cover;
@@ -1032,8 +1035,14 @@ button {
     flex-direction: column;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor {
-    padding-top: 2vh;
     font-size: 14.4px;
+    margin-left: 0;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-content {
+    padding-top: 10px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-line {
+    padding-left: 10px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn {
     display: inline-block;
@@ -1152,7 +1161,8 @@ button {
     content: "- ";
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
-    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: move;
+    /* fallback if grab cursor is unsupported */
     cursor: grab;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
@@ -1730,11 +1740,142 @@ button {
     transition: top ease-out 0.5s;
     top: calc(-5 * (2.5vh + 6.4px + 1px));
   }
+
+  .desktop-wrap {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+  .desktop-wrap .desktop-icon-wrap {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    max-width: 80px;
+    transition: top 0.25s ease-in, left 0.25s ease-in;
+  }
+  .desktop-wrap .desktop-icon-wrap .desktop-icon {
+    user-select: none;
+    width: 64px;
+  }
+  .desktop-wrap .desktop-icon-wrap .icon-title {
+    user-select: none;
+    font-size: 12px;
+    color: white;
+    max-width: 80px;
+  }
+  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon, .desktop-wrap .desktop-icon-wrap:active .desktop-icon {
+    border: 0.5px dashed rgba(190, 189, 189, 0.705);
+  }
+  .desktop-wrap .desktop-icon-wrap.selected .icon-title, .desktop-wrap .desktop-icon-wrap:active .icon-title {
+    background-color: rgba(103, 103, 103, 0.603);
+  }
+  .desktop-wrap .desktop-icon-wrap.vscode-icon {
+    top: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap.checkers-icon {
+    bottom: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap.checkers-icon .desktop-icon {
+    width: 53.6px;
+    border-radius: 16px;
+    object-fit: contain;
+  }
+  .desktop-wrap #checkers-iframe {
+    width: 200vw;
+    height: 200vh;
+    position: absolute;
+    top: -50vh;
+    left: -50vw;
+    transform: scale(0.5);
+    margin: auto;
+    display: none;
+  }
+  .desktop-wrap .selection-area {
+    background-color: rgba(165, 165, 165, 0.531);
+    border: 1px solid rgb(211, 211, 211);
+    position: absolute;
+    z-index: 10;
+  }
+  .desktop-wrap .selection-area.hidden {
+    display: none;
+  }
+  .desktop-wrap .toolkit {
+    position: relative;
+    z-index: 1000;
+    user-select: none;
+    padding: 1.6px 4px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.8px;
+    background-color: rgba(71, 70, 70, 0.734);
+    color: white;
+  }
+  .desktop-wrap .toolkit .os, .desktop-wrap .toolkit .time {
+    font-family: "Code";
+  }
+  .desktop-wrap .toolkit p {
+    cursor: pointer;
+  }
+  .desktop-wrap .toolkit p .app {
+    font-size: 0.9em;
+    padding-left: 8px;
+  }
+  .desktop-wrap .toolkit #back-to-desktop-btn {
+    z-index: 11000;
+  }
+  .desktop-wrap .toolkit .time {
+    display: none;
+  }
+  .desktop-wrap .clock {
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid white;
+    box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
+    width: 60vw;
+    height: 60vw;
+    max-height: 200px;
+    max-width: 200px;
+    position: relative;
+  }
+  .desktop-wrap .clock .dot {
+    position: absolute;
+    top: 46.5%;
+    right: 46.5%;
+    height: 3.5%;
+    width: 3.5%;
+    border-radius: 50%;
+    border: 1.5px solid black;
+  }
+  .desktop-wrap .clock .hour {
+    position: absolute;
+    top: 15%;
+    left: 50.25%;
+    height: 35%;
+    width: 2%;
+    background-color: black;
+    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+  }
+  .desktop-wrap .clock .minute {
+    position: absolute;
+    top: 5%;
+    left: 50.5%;
+    height: 45%;
+    width: 1.5%;
+    background-color: black;
+    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+  }
 }
 @media (min-width: 850px) {
   html {
     overflow: hidden;
   }
+
   .card {
     max-width: 400px;
     margin: 0 15px 40px 15px;
@@ -1823,6 +1964,7 @@ button {
   .card .links-wrap .links a:hover {
     filter: brightness(0.95);
   }
+
   .matrix-canvas {
     z-index: 1;
     position: fixed;
@@ -1832,6 +1974,7 @@ button {
     height: 100vh;
     opacity: 0.8;
   }
+
   #app {
     height: 100%;
     background-size: cover;
@@ -2137,8 +2280,14 @@ button {
     flex-direction: column;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor {
-    padding-top: 2vh;
     font-size: 18px;
+    margin-left: 0;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-content {
+    padding-top: 10px;
+  }
+  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-line {
+    padding-left: 10px;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn {
     display: inline-block;
@@ -2257,7 +2406,8 @@ button {
     content: "- ";
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
-    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: move;
+    /* fallback if grab cursor is unsupported */
     cursor: grab;
   }
   #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
@@ -2835,9 +2985,141 @@ button {
     transition: top ease-out 0.5s;
     top: calc(-5 * (2.5vh + 8px + 1px));
   }
+
+  .desktop-wrap {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+  .desktop-wrap .desktop-icon-wrap {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    max-width: 100px;
+    transition: top 0.25s ease-in, left 0.25s ease-in;
+  }
+  .desktop-wrap .desktop-icon-wrap .desktop-icon {
+    user-select: none;
+    width: 80px;
+  }
+  .desktop-wrap .desktop-icon-wrap .icon-title {
+    user-select: none;
+    font-size: 15px;
+    color: white;
+    max-width: 100px;
+  }
+  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon, .desktop-wrap .desktop-icon-wrap:active .desktop-icon {
+    border: 0.5px dashed rgba(190, 189, 189, 0.705);
+  }
+  .desktop-wrap .desktop-icon-wrap.selected .icon-title, .desktop-wrap .desktop-icon-wrap:active .icon-title {
+    background-color: rgba(103, 103, 103, 0.603);
+  }
+  .desktop-wrap .desktop-icon-wrap.vscode-icon {
+    top: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap.checkers-icon {
+    bottom: 5%;
+    left: 5%;
+  }
+  .desktop-wrap .desktop-icon-wrap.checkers-icon .desktop-icon {
+    width: 67px;
+    border-radius: 20px;
+    object-fit: contain;
+  }
+  .desktop-wrap #checkers-iframe {
+    width: 200vw;
+    height: 200vh;
+    position: absolute;
+    top: -50vh;
+    left: -50vw;
+    transform: scale(0.5);
+    margin: auto;
+    display: none;
+  }
+  .desktop-wrap .selection-area {
+    background-color: rgba(165, 165, 165, 0.531);
+    border: 1px solid rgb(211, 211, 211);
+    position: absolute;
+    z-index: 10;
+  }
+  .desktop-wrap .selection-area.hidden {
+    display: none;
+  }
+  .desktop-wrap .toolkit {
+    position: relative;
+    z-index: 1000;
+    user-select: none;
+    padding: 2px 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    background-color: rgba(71, 70, 70, 0.734);
+    color: white;
+  }
+  .desktop-wrap .toolkit .os, .desktop-wrap .toolkit .time {
+    font-family: "Code";
+  }
+  .desktop-wrap .toolkit p {
+    cursor: pointer;
+  }
+  .desktop-wrap .toolkit p .app {
+    font-size: 0.9em;
+    padding-left: 10px;
+  }
+  .desktop-wrap .toolkit #back-to-desktop-btn {
+    z-index: 11000;
+  }
+  .desktop-wrap .toolkit .time {
+    display: none;
+  }
+  .desktop-wrap .clock {
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid white;
+    box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
+    width: 60vw;
+    height: 60vw;
+    max-height: 200px;
+    max-width: 200px;
+    position: relative;
+  }
+  .desktop-wrap .clock .dot {
+    position: absolute;
+    top: 46.5%;
+    right: 46.5%;
+    height: 3.5%;
+    width: 3.5%;
+    border-radius: 50%;
+    border: 1.5px solid black;
+  }
+  .desktop-wrap .clock .hour {
+    position: absolute;
+    top: 15%;
+    left: 50.25%;
+    height: 35%;
+    width: 2%;
+    background-color: black;
+    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+  }
+  .desktop-wrap .clock .minute {
+    position: absolute;
+    top: 5%;
+    left: 50.5%;
+    height: 45%;
+    width: 1.5%;
+    background-color: black;
+    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+  }
+
   html {
     overflow: hidden;
   }
+
   .card {
     max-width: 600px;
   }
@@ -2857,6 +3139,7 @@ button {
   .card .links-wrap .links a {
     font-size: 17px;
   }
+
   #app header .time {
     display: initial;
   }
@@ -2959,7 +3242,6 @@ button {
     display: block !important;
   }
   #app .content .about-subsection .about-subsection-body .description .code-editor {
-    margin-left: 1.25vw;
     font-size: 15px !important;
     max-width: 44.5vw;
   }
@@ -3442,6 +3724,19 @@ button {
   #app .theme-selector-wrap {
     left: 0;
   }
+
+  .desktop-wrap .toolkit .time {
+    display: initial !important;
+    position: absolute;
+    right: 0;
+  }
+  .desktop-wrap .toolkit .os {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
   #app.matrix .landing-wrap .landing-nav-lbl {
     transform: skewY(-0.5deg);
   }

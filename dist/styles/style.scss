@@ -950,8 +950,16 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 flex-direction: column;
 
                 .code-editor {
-                  padding-top: 2vh;
                   font-size: $fontSize * 0.9;
+                  margin-left: 0;
+
+                  .cm-content {
+                    padding-top: 10px;
+                  }
+
+                  .cm-line {
+                    padding-left: 10px;
+                  }
                 }
 
                 #resume-btn {
@@ -1973,7 +1981,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             display: block!important;
 
             .code-editor {
-              margin-left: 1.25vw;
               font-size: $fontSize * 0.75!important;
               max-width: 44.5vw;
             }
