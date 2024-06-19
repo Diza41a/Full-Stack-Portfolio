@@ -806,7 +806,7 @@ button {
   #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.flag {
     transform: rotate(15deg);
   }
-  #app .content-body-wrap nav div.second-nav i, #app .content-body-wrap nav div.second-nav span {
+  #app .content-body-wrap nav div.lower-nav i, #app .content-body-wrap nav div.lower-nav span {
     margin: 7.2px 0;
   }
   #app .content-body-wrap .content {
@@ -2051,7 +2051,7 @@ button {
   #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.flag {
     transform: rotate(15deg);
   }
-  #app .content-body-wrap nav div.second-nav i, #app .content-body-wrap nav div.second-nav span {
+  #app .content-body-wrap nav div.lower-nav i, #app .content-body-wrap nav div.lower-nav span {
     margin: 9px 0;
   }
   #app .content-body-wrap .content {

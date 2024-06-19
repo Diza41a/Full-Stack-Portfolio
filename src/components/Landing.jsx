@@ -57,14 +57,14 @@ export default function Landing() {
     //   delay += 0.1;
     // });
 
-    document.querySelector('.main-nav').children[0].classList.add('active');
+    document.querySelector('.upper-nav').children[0].classList.add('active');
 
     // Cleanup after unmounting (side effect)
     return function cleanup() {
       clearInterval(letterInterval);
       clearInterval(sliderInterval);
       window.removeEventListener('resize', sliderFunction);
-      document.querySelector('.main-nav').children[0].classList.remove('active');
+      document.querySelector('.upper-nav').children[0].classList.remove('active');
     };
   }, []);
 

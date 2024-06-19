@@ -4,14 +4,14 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
 import React, { useState, createContext, useEffect } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
-// import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 // Component imports
 import Particle from './Particle';
 import startMatrixCanvas from './matrix';
 import ThemeSelector from './ThemeSelector';
 import DirectLinks from './DirectLinks';
+import Sidebar from './Sidebar';
 
 export const MainContext = createContext('regular');
 
@@ -48,9 +48,7 @@ export default function MainLayout() {
     }, 1000);
 
     // Temp
-    if (globalTheme === 'matrix') {
-      startMatrixCanvas();
-    }
+    if (globalTheme === 'matrix') startMatrixCanvas();
 
     // Cleanup after unmounting (side effect)
     return function cleanup() {
@@ -70,36 +68,6 @@ export default function MainLayout() {
   //   e.preventDefault();
   //   navigate('/');
   // };
-
-  // Toggle direct link visibility
-  const toggleDirectLinks = (e) => {
-    e.preventDefault();
-    const directLinks = document.querySelector('.direct-links-card');
-    if (!directLinks) {
-      return;
-    }
-    if (directLinks?.classList.contains('hidden')) {
-      directLinks.classList.remove('hidden');
-    } else {
-      directLinks.classList.add('hidden');
-    }
-  };
-
-  // Toggle theme selector visibility
-  const toggleThemeSelector = (e) => {
-    // theme-selector-wrap
-    e.preventDefault();
-    const themeSelector = document.querySelector('.theme-selector-wrap');
-    if (!themeSelector) {
-      return;
-    }
-    if (themeSelector?.classList.contains('hidden')) {
-      themeSelector.classList.remove('hidden');
-      document.querySelector('#theme-input').focus();
-    } else {
-      themeSelector.classList.add('hidden');
-    }
-  };
 
   return (
     <MainContext.Provider value={{
@@ -143,47 +111,7 @@ export default function MainLayout() {
         </header>
 
         <div className="content-body-wrap">
-          <nav className="sidebar">
-            <div className="main-nav">
-              <NavLink to="landing">
-                {
-                  // eslint-disable-next-line max-len
-                /* <i className="fa-solid fa-flag-checkered" style={{ transform: 'rotate(20deg)' }} /> */
-                }
-                <span className="material-symbols-outlined flag">
-                  flag
-                </span>
-              </NavLink>
-              <NavLink to="about">
-                {/* <i className="fa-solid fa-circle-info" /> */}
-                <span className="material-symbols-outlined info">
-                  contact_support
-                </span>
-              </NavLink>
-              <NavLink to="portfolio">
-                {/* <i className="fa-solid fa-briefcase" /> */}
-                <span className="material-symbols-outlined">
-                  cases
-                </span>
-              </NavLink>
-              <NavLink to="contact">
-                {/* <i className="fa-solid fa-phone" /> */}
-                <span className="material-symbols-outlined">
-                  call
-                </span>
-              </NavLink>
-            </div>
-            <div className="second-nav">
-              {/* <i className="fa-solid fa-user" onClick={toggleDirectLinks} /> */}
-              <span className="material-symbols-outlined" onClick={toggleDirectLinks}>
-                account_circle
-              </span>
-              {/* <i className="fa-solid fa-gear" onClick={toggleThemeSelector} /> */}
-              <span className="material-symbols-outlined" onClick={toggleThemeSelector}>
-                settings
-              </span>
-            </div>
-          </nav>
+          <Sidebar />
 
           <div className="content">
             {globalTheme !== 'matrix' ? <Particle /> : <canvas id="c" className="matrix-canvas" />}
