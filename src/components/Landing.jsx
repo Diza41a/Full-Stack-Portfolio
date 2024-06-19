@@ -92,9 +92,9 @@ export default function Landing() {
         </p>
         <div className="dynamic">
           <p>Full Stack Engineer</p>
-          <p>Analytical Thinker</p>
-          <p>UI Enthusiast</p>
+          <p>MERN Developer</p>
           <p>Agile Practitioner</p>
+          <p>UI Enthusiast</p>
           <p>Continuous Learner</p>
         </div>
       </div>
