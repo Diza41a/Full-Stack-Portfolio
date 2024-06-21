@@ -24,15 +24,16 @@
 }
 @media (min-width: 850px) {
   #root nav {
-    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: calc(97.5vh - 8px - 40px - 1px);
+    flex-shrink: 0;
     width: 70px;
     padding: 20px 0;
     position: sticky;
     top: calc(2.5vh + 8px + 1px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    z-index: 999;
   }
   #root nav div {
     display: flex;
@@ -90,15 +91,16 @@
 }
 @media (max-width: 850px) {
   #root nav {
-    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: calc(97.5vh - 6.4px - 32px - 1px);
+    flex-shrink: 0;
     width: 56px;
     padding: 16px 0;
     position: sticky;
     top: calc(2.5vh + 6.4px + 1px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    z-index: 999;
   }
   #root nav div {
     display: flex;
@@ -154,6 +156,20 @@
     display: none;
   }
 }
+@media (max-width: 650px) {
+  #root nav.expanded {
+    width: 56px;
+  }
+  #root nav.expanded a, #root nav.expanded button {
+    justify-content: center;
+  }
+  #root nav.expanded .nav-link-text {
+    display: none;
+  }
+  #root nav.expanded div.lower-nav button.btn-toggle-sidebar {
+    display: none;
+  }
+}
 
 @font-face {
   font-weight: normal;
@@ -206,10 +222,6 @@ button {
   background-color: #181924;
   color: #C8C2C2;
   border-bottom: 1px solid #626262;
-}
-#root #app.regular .landing-wrap .landing-nav-lbl {
-  color: #D9D9D9;
-  background-color: #575764;
 }
 #root #app.regular .landing-wrap .introduction {
   background-color: rgba(24, 25, 36, 0.9);
@@ -462,10 +474,6 @@ button {
   background-color: #0b0b0e;
   color: #bfbfbf;
   border-bottom: 1px solid #858585;
-}
-#root #app.matrix .landing-wrap .landing-nav-lbl {
-  color: #caf4ff;
-  background-color: #005052;
 }
 #root #app.matrix .landing-wrap .introduction {
   background-color: rgba(11, 11, 14, 0.8941176471);
@@ -943,46 +951,14 @@ button {
     flex-direction: column;
     justify-content: space-between;
   }
-  #app .content-body-wrap .content .landing-wrap .landing-nav-lbl {
-    font-family: "Code";
-    font-size: 24px;
-    text-align: center;
-    width: 60vw;
-    max-width: 400px;
-    margin-top: 56px;
-    padding: 1.6px 0;
-  }
-  #app .content-body-wrap .content .landing-wrap .landing-nav-lbl i {
-    animation: rotateLandingArrow 8s ease-in-out infinite;
-  }
-  @keyframes rotateLandingArrow {
-    from {
-      transform: rotate(0);
-    }
-    5% {
-      transform: rotate(45deg);
-    }
-    10% {
-      transform: rotate(-45deg);
-    }
-    15% {
-      transform: rotate(45deg);
-    }
-    20% {
-      transform: rotate(-45deg);
-    }
-    25% {
-      transform: rotate(0);
-    }
-  }
   #app .content-body-wrap .content .landing-wrap .introduction {
     max-width: 640px;
-    margin: 0 4px;
+    margin: 10vh 4px 0 4px;
     padding: 20px 4px;
   }
   #app .content-body-wrap .content .landing-wrap .introduction .static, #app .content-body-wrap .content .landing-wrap .introduction .dynamic {
     font-family: "Code";
-    font-size: 6vw;
+    font-size: 24px;
   }
   #app .content-body-wrap .content .landing-wrap .introduction .static.landing-letter, #app .content-body-wrap .content .landing-wrap .introduction .dynamic.landing-letter {
     cursor: default;
@@ -1026,21 +1002,10 @@ button {
     left: 20px;
     animation: slideInFromBottom 1s ease-in;
   }
-  @keyframes slideInFromBottom {
-    from {
-      overflow-y: hidden;
-      transform: translateY(100vh) scale(1);
-      left: 0;
-    }
-    to {
-      transform: translateY(0) scale(0.9);
-      left: 20px;
-    }
-  }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .robotic-hand {
     position: relative;
     z-index: 1000;
-    width: 90vw;
+    width: calc(90vw - 160px);
     max-width: 800px;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .photo {
@@ -1051,9 +1016,20 @@ button {
     top: 11.25%;
     left: 6%;
     height: 62%;
-    width: 67vw;
+    width: calc(73vw - 160px);
     max-width: 600px;
     object-fit: cover;
+  }
+  @keyframes slideInFromBottom {
+    from {
+      overflow-y: hidden;
+      transform: translateY(100vh) scale(1);
+      left: 0;
+    }
+    to {
+      transform: translateY(0) scale(0.9);
+      left: 20px;
+    }
   }
   #app .content-body-wrap .content .about-section-selector {
     z-index: 1000;
@@ -1980,6 +1956,22 @@ button {
     box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 10px 10px;
   }
+
+  #app .content-body-wrap .content .landing-wrap {
+    justify-content: center;
+  }
+  #app .content-body-wrap .content .landing-wrap .introduction {
+    border-width: 1px;
+    border-left: none !important;
+    border-right: none !important;
+    margin: 0 !important;
+  }
+  #app .content-body-wrap .content .landing-wrap .introduction .dynamic {
+    max-height: 24px;
+  }
+  #app .content-body-wrap .content .landing-wrap .photo-wrap {
+    display: none;
+  }
 }
 @media (min-width: 850px) {
   html {
@@ -2157,46 +2149,14 @@ button {
     flex-direction: column;
     justify-content: space-between;
   }
-  #app .content-body-wrap .content .landing-wrap .landing-nav-lbl {
-    font-family: "Code";
-    font-size: 30px;
-    text-align: center;
-    width: 60vw;
-    max-width: 400px;
-    margin-top: 70px;
-    padding: 2px 0;
-  }
-  #app .content-body-wrap .content .landing-wrap .landing-nav-lbl i {
-    animation: rotateLandingArrow 8s ease-in-out infinite;
-  }
-  @keyframes rotateLandingArrow {
-    from {
-      transform: rotate(0);
-    }
-    5% {
-      transform: rotate(45deg);
-    }
-    10% {
-      transform: rotate(-45deg);
-    }
-    15% {
-      transform: rotate(45deg);
-    }
-    20% {
-      transform: rotate(-45deg);
-    }
-    25% {
-      transform: rotate(0);
-    }
-  }
   #app .content-body-wrap .content .landing-wrap .introduction {
     max-width: 800px;
-    margin: 0 5px;
+    margin: 10vh 5px 0 5px;
     padding: 25px 5px;
   }
   #app .content-body-wrap .content .landing-wrap .introduction .static, #app .content-body-wrap .content .landing-wrap .introduction .dynamic {
     font-family: "Code";
-    font-size: 6vw;
+    font-size: 30px;
   }
   #app .content-body-wrap .content .landing-wrap .introduction .static.landing-letter, #app .content-body-wrap .content .landing-wrap .introduction .dynamic.landing-letter {
     cursor: default;
@@ -2240,21 +2200,10 @@ button {
     left: 25px;
     animation: slideInFromBottom 1s ease-in;
   }
-  @keyframes slideInFromBottom {
-    from {
-      overflow-y: hidden;
-      transform: translateY(100vh) scale(1);
-      left: 0;
-    }
-    to {
-      transform: translateY(0) scale(0.9);
-      left: 25px;
-    }
-  }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .robotic-hand {
     position: relative;
     z-index: 1000;
-    width: 90vw;
+    width: calc(90vw - 200px);
     max-width: 800px;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .photo {
@@ -2265,9 +2214,20 @@ button {
     top: 11.25%;
     left: 6%;
     height: 62%;
-    width: 67vw;
+    width: calc(73vw - 200px);
     max-width: 600px;
     object-fit: cover;
+  }
+  @keyframes slideInFromBottom {
+    from {
+      overflow-y: hidden;
+      transform: translateY(100vh) scale(1);
+      left: 0;
+    }
+    to {
+      transform: translateY(0) scale(0.9);
+      left: 25px;
+    }
   }
   #app .content-body-wrap .content .about-section-selector {
     z-index: 1000;
@@ -3257,9 +3217,6 @@ button {
   #app .content .landing-wrap::-webkit-scrollbar-thumb:hover {
     background: rgba(92, 92, 92, 0.779);
   }
-  #app .content .landing-wrap .landing-nav-lbl {
-    margin-bottom: 30px;
-  }
   #app .content .landing-wrap .introduction {
     position: relative;
     right: 5vw;
@@ -3280,10 +3237,10 @@ button {
     transform: scale(0.9);
   }
   #app .content .landing-wrap .photo-wrap .robotic-hand {
-    max-width: 900px !important;
+    max-width: 1000px !important;
   }
   #app .content .landing-wrap .photo-wrap .photo {
-    max-width: 700px !important;
+    max-width: 742px !important;
   }
   #app .content .about-section-selector {
     position: sticky;
@@ -3815,23 +3772,11 @@ button {
     right: 0;
     text-align: center;
   }
-
-  #app.matrix .landing-wrap .landing-nav-lbl {
-    transform: skewY(-0.5deg);
-  }
-  #app.matrix .landing-wrap .introduction {
-    transform: skewY(-0.5deg);
-  }
 }
 @media (min-width: 1400px) {
   .direct-links-card.persisting {
     opacity: 1 !important;
     right: 0 !important;
-  }
-}
-@media (min-width: 1600px) {
-  .photo-wrap {
-    align-self: flex-end !important;
   }
 }
 

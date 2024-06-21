@@ -70,11 +70,6 @@ export default function Landing() {
 
   return (
     <div className="landing-wrap">
-      <p className="landing-nav-lbl">
-        <i className="fa-solid fa-arrow-left" />
-        {' Nav Options'}
-      </p>
-
       <div className="introduction">
         <p className="static">
           {

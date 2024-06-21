@@ -65,11 +65,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
   }
 
   .landing-wrap {
-    .landing-nav-lbl {
-      color: $mainText;
-      background-color: $subsectionSelector;
-    }
-
     .introduction {
       background-color: $mainDarkTransparent;
       border: 4px solid $border;
@@ -689,50 +684,14 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           flex-direction: column;
           justify-content: space-between;
 
-          .landing-nav-lbl {
-            // user-select: none;
-            font-family: 'Code';
-            font-size: $fontSize * 1.5;
-            text-align: center;
-            width: 60vw;
-            max-width: 400px;
-            margin-top: $fontSize * 3.5;
-            padding: $fontSize * 0.1 0;
-
-            i {
-              animation: rotateLandingArrow 8s ease-in-out infinite;
-
-              @keyframes rotateLandingArrow {
-                from {
-                  transform: rotate(0);
-                }
-                5% {
-                  transform: rotate(45deg);
-                }
-                10% {
-                  transform: rotate(-45deg);
-                }
-                15% {
-                  transform: rotate(45deg);
-                }
-                20% {
-                  transform: rotate(-45deg);
-                }
-                25% {
-                  transform: rotate(0);
-                }
-              }
-            }
-          }
-
           .introduction {
             max-width: $fontSize * 40;
-            margin: 0 $fontSize * 0.25;
+            margin: 10vh $fontSize * 0.25 0 $fontSize * 0.25;
             padding: $fontSize * 1.25 $fontSize * 0.25;
+
             .static, .dynamic {
               font-family: 'Code';
-              // font-size: $fontSize * 1.85;
-              font-size: 6vw;
+              font-size: $fontSize * 1.5;
 
               &.landing-letter {
                 cursor: default;
@@ -783,8 +742,28 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             top: $fontSize;
             left: $fontSize * 1.25;
 
-            animation: slideInFromBottom 1s ease-in;
+            $sidebarWidth: ($fontSize * 13.5 - $fontSize * 3.5);
+            .robotic-hand {
+              position: relative;
+              z-index: 1000;
+              width: calc(90vw - $sidebarWidth);
+              max-width: 800px;
+            }
 
+            .photo {
+              filter: grayscale(0.3) contrast(1.45);
+              background: #181818a3;
+              border-radius: $fontSize;
+              position: absolute;
+              top: 11.25%;
+              left: 6%;
+              height: 62%;
+              width: calc(73vw - $sidebarWidth);
+              max-width: 600px;
+              object-fit: cover;
+            }
+
+            animation: slideInFromBottom 1s ease-in;
             @keyframes slideInFromBottom {
               from{
                 overflow-y: hidden;
@@ -796,29 +775,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 left: $fontSize * 1.25;
               }
             }
-
-            .robotic-hand {
-              position: relative;
-              z-index: 1000;
-              width: 90vw;
-              max-width: 800px;
-            }
-
-            .photo {
-              // filter: grayscale(1) contrast(1.45);
-              filter: grayscale(0.3) contrast(1.45);
-              background: #181818a3;
-              border-radius: $fontSize;
-              // opacity: 0.35;
-              position: absolute;
-              top: 11.25%;
-              left: 6%;
-              height: 62%;
-              width: 67vw;
-              max-width: 600px;
-              object-fit: cover;
-            }
-
           }
         }
 
@@ -1840,14 +1796,9 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
       .landing-wrap {
         position: relative;
 
-        // height: 100vh!important;
         height: calc(110vh - (2.5vh + ($fontSize * 0.4) + 1px))!important;
         overflow-y: auto!important;
         @include scrollbar($fontSize);
-
-        .landing-nav-lbl {
-          margin-bottom: $fontSize * 1.5;
-        }
 
         .introduction {
           position: relative;
@@ -1856,7 +1807,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           padding: $fontSize * 1.25 $fontSize * 0.25 $fontSize * 1.25 10vw !important;
           .static, .dynamic {
             font-size: $fontSize * 2.05!important;
-            // font-size: 6vw;
           }
 
           .dynamic {
@@ -1870,17 +1820,13 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           overflow-y: visible!important;
           top: $fontSize * 0!important;
           transform: scale(0.9);
-          // animation: scaleRoboticHand 1s ease-in;
-          // @keyframes scaleRoboticHand {
-          //   from {}
-          // }
 
           .robotic-hand {
-            max-width: 900px!important;
+            max-width: 1000px!important;
           }
 
           .photo {
-            max-width: 700px!important;
+            max-width: 742px!important;
           }
 
         }
@@ -2583,6 +2529,33 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
   }
 }
 
+@mixin mobileViewOverwrites($fontSize) {
+  #app {
+    .content-body-wrap {
+      .content {
+        .landing-wrap {
+          justify-content : center;
+
+          .introduction {
+            border-width: 1px;
+            border-left: none!important;
+            border-right: none!important;
+            margin: 0!important;
+
+            .dynamic {
+              max-height: $fontSize * 1.5;
+            }
+          }
+
+          .photo-wrap {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 #root {
   #app.regular {
     // $mainDark, $mainDarkTransparent, $mainMedium, $mainText, $secondText, $border,
@@ -2685,22 +2658,12 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
 @media (max-width: 850px) {
   @include mainView(16px);
+  @include mobileViewOverwrites(16px);
 }
 
 @media (min-width: 850px) {
   @include mainView(20px);
   @include largeScreens(20px);
-
-  #app.matrix {
-    .landing-wrap {
-      .landing-nav-lbl {
-        transform: skewY(-0.5deg);
-      }
-      .introduction {
-        transform: skewY(-0.5deg);
-      }
-    }
-  }
 }
 
 @media (min-width: 1400px) {
@@ -2709,11 +2672,5 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
       opacity: 1!important;
       right: 0!important;
     }
-  }
-}
-
-@media (min-width: 1600px) {
-  .photo-wrap {
-    align-self: flex-end!important;
   }
 }

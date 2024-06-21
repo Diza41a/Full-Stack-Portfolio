@@ -64,7 +64,7 @@ export default function Sidebar() {
           <span className="material-symbols-outlined">
             call
           </span>
-          <p className="nav-link-text">React out</p>
+          <p className="nav-link-text">Reach out</p>
         </NavLink>
       </div>
 
