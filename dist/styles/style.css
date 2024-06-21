@@ -254,26 +254,6 @@ button {
 #root #app.regular .landing-wrap .introduction .static, #root #app.regular .landing-wrap .introduction .dynamic {
   color: #D9D9D9;
 }
-#root #app.regular .about-section-selector {
-  background-color: rgba(24, 25, 36, 0.9);
-  color: #D9D9D9;
-  border-right: 1px solid #626262;
-}
-#root #app.regular .about-section-selector .about-section-selector-list a {
-  text-decoration: none;
-}
-#root #app.regular .about-section-selector .about-section-selector-list a .title {
-  color: #D9D9D9;
-}
-#root #app.regular .about-section-selector .about-section-selector-list a .description {
-  color: #C8C2C2;
-}
-#root #app.regular .about-section-selector .about-section-selector-list a.active {
-  background-color: #575764;
-}
-#root #app.regular .about-section-selector .selector-toggle {
-  background-color: #181924;
-}
 #root #app.regular .about-subsection .tab-title, #root #app.regular .introduction .tab-title, #root #app.regular .tab-wrap .tab-title, #root #app.regular .tab .tab-title, #root #app.regular .skills .tab-title {
   color: #C8C2C2;
   background-color: rgba(52, 47, 48, 0.8);
@@ -505,26 +485,6 @@ button {
 }
 #root #app.matrix .landing-wrap .introduction .static, #root #app.matrix .landing-wrap .introduction .dynamic {
   color: #caf4ff;
-}
-#root #app.matrix .about-section-selector {
-  background-color: rgba(11, 11, 14, 0.8941176471);
-  color: #caf4ff;
-  border-right: 1px solid #858585;
-}
-#root #app.matrix .about-section-selector .about-section-selector-list a {
-  text-decoration: none;
-}
-#root #app.matrix .about-section-selector .about-section-selector-list a .title {
-  color: #caf4ff;
-}
-#root #app.matrix .about-section-selector .about-section-selector-list a .description {
-  color: #bfbfbf;
-}
-#root #app.matrix .about-section-selector .about-section-selector-list a.active {
-  background-color: #005052;
-}
-#root #app.matrix .about-section-selector .selector-toggle {
-  background-color: #0b0b0e;
 }
 #root #app.matrix .about-subsection .tab-title, #root #app.matrix .introduction .tab-title, #root #app.matrix .tab-wrap .tab-title, #root #app.matrix .tab .tab-title, #root #app.matrix .skills .tab-title {
   color: #bfbfbf;
@@ -1054,52 +1014,6 @@ button {
       transform: translateY(0) scale(0.9);
       left: 20px;
     }
-  }
-  #app .content-body-wrap .content .about-section-selector {
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    top: calc(2.5vh + 6.4px + 1px);
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list {
-    overflow: hidden;
-    max-height: 100vh;
-    transition: max-height 1s;
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a {
-    margin: 5.6px 0;
-    padding: 6.4px;
-    display: flex;
-    flex-direction: column;
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a.active {
-    transition: background-color 0.25s;
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a .title {
-    font-size: 20.8px;
-    font-family: "Code";
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a .description {
-    font-size: 17.6px;
-    font-family: "Code-Bold";
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list + .selector-toggle {
-    transform: rotate(180deg);
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list.shrinked {
-    transition: max-height 0.25s;
-    max-height: 0;
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list.shrinked + .selector-toggle {
-    transform: rotate(0deg);
-  }
-  #app .content-body-wrap .content .about-section-selector .selector-toggle {
-    width: 100%;
-    color: inherit;
-    text-align: center;
-    font-size: 24px;
-    cursor: pointer;
   }
   #app .content-body-wrap .content .about-subsection, #app .content-body-wrap .content .tab {
     display: flex;
@@ -2253,52 +2167,6 @@ button {
       left: 25px;
     }
   }
-  #app .content-body-wrap .content .about-section-selector {
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    top: calc(2.5vh + 8px + 1px);
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list {
-    overflow: hidden;
-    max-height: 100vh;
-    transition: max-height 1s;
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a {
-    margin: 7px 0;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a.active {
-    transition: background-color 0.25s;
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a .title {
-    font-size: 26px;
-    font-family: "Code";
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list a .description {
-    font-size: 22px;
-    font-family: "Code-Bold";
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list + .selector-toggle {
-    transform: rotate(180deg);
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list.shrinked {
-    transition: max-height 0.25s;
-    max-height: 0;
-  }
-  #app .content-body-wrap .content .about-section-selector .about-section-selector-list.shrinked + .selector-toggle {
-    transform: rotate(0deg);
-  }
-  #app .content-body-wrap .content .about-section-selector .selector-toggle {
-    width: 100%;
-    color: inherit;
-    text-align: center;
-    font-size: 30px;
-    cursor: pointer;
-  }
   #app .content-body-wrap .content .about-subsection, #app .content-body-wrap .content .tab {
     display: flex;
     flex-direction: column;
@@ -3265,29 +3133,6 @@ button {
   }
   #app .content .landing-wrap .photo-wrap .photo {
     max-width: 742px !important;
-  }
-  #app .content .about-section-selector {
-    position: sticky;
-    top: calc(2.5vh + 8px + 1px);
-    height: calc(100vh - (2.5vh + 8px + 1px));
-    flex-basis: 27.5%;
-    max-width: 275px;
-  }
-  #app .content .about-section-selector .about-section-selector-list {
-    padding-top: 20px;
-    max-height: 100vh;
-  }
-  #app .content .about-section-selector .about-section-selector-list a .title {
-    font-size: 22px !important;
-  }
-  #app .content .about-section-selector .about-section-selector-list a .description {
-    font-size: 18px !important;
-  }
-  #app .content .about-section-selector .about-section-selector-list.shrinked {
-    max-height: 100vh !important;
-  }
-  #app .content .about-section-selector .selector-toggle {
-    display: none;
   }
   #app .content .about-subsection {
     flex-basis: 60%;

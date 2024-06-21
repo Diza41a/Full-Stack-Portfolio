@@ -75,31 +75,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     }
   }
 
-  .about-section-selector {
-    background-color: $mainDarkTransparent;
-      color: $mainText;
-      border-right: 1px solid $border;
-
-      .about-section-selector-list {
-        a {
-          text-decoration: none;
-          .title {
-            color: $mainText;
-          }
-          .description {
-            color: $secondText;
-          }
-          &.active {
-            background-color: $subsectionSelector;
-          }
-        }
-      }
-
-      .selector-toggle {
-          background-color: $mainDark;
-      }
-  }
-
   .about-subsection, .introduction, .tab-wrap, .tab, .skills {
     .tab-title {
       color: $secondText;
@@ -774,57 +749,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 left: $fontSize * 1.25;
               }
             }
-          }
-        }
-
-        .about-section-selector {
-          z-index: 1000;
-          display: flex;
-          flex-direction: column;
-          position: sticky;
-          top: calc(2.5vh + ($fontSize * 0.4) + 1px);
-
-          .about-section-selector-list {
-            overflow: hidden;
-            a {
-              margin: $fontSize * 0.35 0;
-              padding: $fontSize * 0.4;
-              display: flex;
-              flex-direction: column;
-
-              &.active {
-                transition: background-color 0.25s;
-              }
-
-              .title {
-                font-size: $fontSize * 1.3;
-                font-family: 'Code';
-              }
-              .description {
-                font-size: $fontSize * 1.1;
-                font-family: 'Code-Bold';
-              }
-            }
-
-            max-height: 100vh;
-            transition: max-height 1s;
-            +.selector-toggle {
-              transform: rotate(180deg);
-            }
-            &.shrinked {
-              transition: max-height 0.25s;
-              max-height: 0;
-              +.selector-toggle {
-                transform: rotate(0deg);
-              }
-            }
-          }
-          .selector-toggle {
-            width: 100%;
-            color: inherit;
-            text-align: center;
-            font-size: $fontSize * 1.5;
-            cursor: pointer;
           }
         }
 
@@ -1828,38 +1752,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             max-width: 742px!important;
           }
 
-        }
-      }
-
-      .about-section-selector {
-        position: sticky;
-        top: calc(2.5vh + ($fontSize * 0.4) + 1px);
-        height: calc( 100vh - (2.5vh + ($fontSize * 0.4) + 1px));
-        flex-basis: 27.5%;
-        max-width: $fontSize * 13.75;
-
-        .about-section-selector-list {
-          padding-top: $fontSize;
-
-          a {
-
-            .title {
-              font-size: $fontSize * 1.1!important;
-            }
-
-            .description {
-              font-size: $fontSize * 0.9!important;
-            }
-          }
-
-          max-height: 100vh;
-          &.shrinked {
-            max-height: 100vh!important;
-          }
-        }
-
-        .selector-toggle {
-          display: none;
         }
       }
 

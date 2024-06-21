@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 // Subcomponent/Data imports
-import { frontEndSkills, backEndSkills, devOpsSkills } from './skills';
+import { frontEndSkills, backEndSkills, devOpsSkills } from './devSkills';
 
-export default function AboutSkills() {
+export default function Skills() {
   const [skills, setSkills] = useState({ frontEndSkills, backEndSkills, devOpsSkills });
 
   // Draggable skills

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { EditorView } from '@codemirror/view';
-import api from '../../api';
+import api from '../api';
 
 // Subcomponent imports
-import { codeMirrorTxtTheme } from '../styles/Colored';
+import { codeMirrorTxtTheme } from './styles/Colored';
 
-export default function AboutDescription() {
+export default function Resume() {
   const [aboutText, setAboutText] = useState('');
 
   // ComponentDidMount
