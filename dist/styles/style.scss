@@ -75,14 +75,14 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     }
   }
 
-  .about-subsection, .introduction, .tab-wrap, .tab, .skills {
+  .vs-code-tab-section, .introduction, .tab-wrap, .tab, .skills {
     .tab-title {
       color: $secondText;
       background-color: $tab;
       border-top: 3px solid $navHighlight;
     }
 
-    .about-subsection-body, .tab-body {
+    .vs-code-tab-section-body, .tab-body {
       background-color: $tab;
 
       .about-paragraph {
@@ -752,7 +752,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           }
         }
 
-        .about-subsection, .tab {
+        .vs-code-tab-section, .tab {
           display: flex;
           flex-direction: column;
 
@@ -764,7 +764,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             width: 150px;
           }
 
-          .about-subsection-body, .tab-body {
+          .vs-code-tab-section-body, .tab-body {
             height: calc(100vh - ($fontSize * 3.1) - 3px);
             flex-grow: 1;
             overflow-y: auto;
@@ -1755,11 +1755,11 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         }
       }
 
-      .about-subsection {
+      .vs-code-tab-section {
         flex-basis: 60%;
         flex-grow: 1;
 
-        .about-subsection-body {
+        .vs-code-tab-section-body {
           flex-direction: row!important;
           flex-wrap: wrap;
           align-items: center;

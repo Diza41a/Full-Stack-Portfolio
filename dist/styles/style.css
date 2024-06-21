@@ -254,41 +254,41 @@ button {
 #root #app.regular .landing-wrap .introduction .static, #root #app.regular .landing-wrap .introduction .dynamic {
   color: #D9D9D9;
 }
-#root #app.regular .about-subsection .tab-title, #root #app.regular .introduction .tab-title, #root #app.regular .tab-wrap .tab-title, #root #app.regular .tab .tab-title, #root #app.regular .skills .tab-title {
+#root #app.regular .vs-code-tab-section .tab-title, #root #app.regular .introduction .tab-title, #root #app.regular .tab-wrap .tab-title, #root #app.regular .tab .tab-title, #root #app.regular .skills .tab-title {
   color: #C8C2C2;
   background-color: rgba(52, 47, 48, 0.8);
   border-top: 3px solid #F8B172;
 }
-#root #app.regular .about-subsection .about-subsection-body, #root #app.regular .about-subsection .tab-body, #root #app.regular .introduction .about-subsection-body, #root #app.regular .introduction .tab-body, #root #app.regular .tab-wrap .about-subsection-body, #root #app.regular .tab-wrap .tab-body, #root #app.regular .tab .about-subsection-body, #root #app.regular .tab .tab-body, #root #app.regular .skills .about-subsection-body, #root #app.regular .skills .tab-body {
+#root #app.regular .vs-code-tab-section .vs-code-tab-section-body, #root #app.regular .vs-code-tab-section .tab-body, #root #app.regular .introduction .vs-code-tab-section-body, #root #app.regular .introduction .tab-body, #root #app.regular .tab-wrap .vs-code-tab-section-body, #root #app.regular .tab-wrap .tab-body, #root #app.regular .tab .vs-code-tab-section-body, #root #app.regular .tab .tab-body, #root #app.regular .skills .vs-code-tab-section-body, #root #app.regular .skills .tab-body {
   background-color: rgba(52, 47, 48, 0.8);
 }
-#root #app.regular .about-subsection .about-subsection-body .about-paragraph, #root #app.regular .about-subsection .tab-body .about-paragraph, #root #app.regular .introduction .about-subsection-body .about-paragraph, #root #app.regular .introduction .tab-body .about-paragraph, #root #app.regular .tab-wrap .about-subsection-body .about-paragraph, #root #app.regular .tab-wrap .tab-body .about-paragraph, #root #app.regular .tab .about-subsection-body .about-paragraph, #root #app.regular .tab .tab-body .about-paragraph, #root #app.regular .skills .about-subsection-body .about-paragraph, #root #app.regular .skills .tab-body .about-paragraph {
+#root #app.regular .vs-code-tab-section .vs-code-tab-section-body .about-paragraph, #root #app.regular .vs-code-tab-section .tab-body .about-paragraph, #root #app.regular .introduction .vs-code-tab-section-body .about-paragraph, #root #app.regular .introduction .tab-body .about-paragraph, #root #app.regular .tab-wrap .vs-code-tab-section-body .about-paragraph, #root #app.regular .tab-wrap .tab-body .about-paragraph, #root #app.regular .tab .vs-code-tab-section-body .about-paragraph, #root #app.regular .tab .tab-body .about-paragraph, #root #app.regular .skills .vs-code-tab-section-body .about-paragraph, #root #app.regular .skills .tab-body .about-paragraph {
   color: #D9D9D9;
 }
-#root #app.regular .about-subsection .about-subsection-body .description #resume-btn, #root #app.regular .about-subsection .tab-body .description #resume-btn, #root #app.regular .introduction .about-subsection-body .description #resume-btn, #root #app.regular .introduction .tab-body .description #resume-btn, #root #app.regular .tab-wrap .about-subsection-body .description #resume-btn, #root #app.regular .tab-wrap .tab-body .description #resume-btn, #root #app.regular .tab .about-subsection-body .description #resume-btn, #root #app.regular .tab .tab-body .description #resume-btn, #root #app.regular .skills .about-subsection-body .description #resume-btn, #root #app.regular .skills .tab-body .description #resume-btn {
+#root #app.regular .vs-code-tab-section .vs-code-tab-section-body .description #resume-btn, #root #app.regular .vs-code-tab-section .tab-body .description #resume-btn, #root #app.regular .introduction .vs-code-tab-section-body .description #resume-btn, #root #app.regular .introduction .tab-body .description #resume-btn, #root #app.regular .tab-wrap .vs-code-tab-section-body .description #resume-btn, #root #app.regular .tab-wrap .tab-body .description #resume-btn, #root #app.regular .tab .vs-code-tab-section-body .description #resume-btn, #root #app.regular .tab .tab-body .description #resume-btn, #root #app.regular .skills .vs-code-tab-section-body .description #resume-btn, #root #app.regular .skills .tab-body .description #resume-btn {
   color: white;
   background-color: #188AEB;
 }
-#root #app.regular .about-subsection .shuffle-btns, #root #app.regular .introduction .shuffle-btns, #root #app.regular .tab-wrap .shuffle-btns, #root #app.regular .tab .shuffle-btns, #root #app.regular .skills .shuffle-btns {
+#root #app.regular .vs-code-tab-section .shuffle-btns, #root #app.regular .introduction .shuffle-btns, #root #app.regular .tab-wrap .shuffle-btns, #root #app.regular .tab .shuffle-btns, #root #app.regular .skills .shuffle-btns {
   background-color: rgba(49, 50, 68, 0.7);
   border: 1px solid gray;
   border-top: 0.5px solid gray;
   box-shadow: -0.5vw 0.45vh 0.5vw 0.2vw black;
 }
-#root #app.regular .about-subsection .shuffle-btns button, #root #app.regular .introduction .shuffle-btns button, #root #app.regular .tab-wrap .shuffle-btns button, #root #app.regular .tab .shuffle-btns button, #root #app.regular .skills .shuffle-btns button {
+#root #app.regular .vs-code-tab-section .shuffle-btns button, #root #app.regular .introduction .shuffle-btns button, #root #app.regular .tab-wrap .shuffle-btns button, #root #app.regular .tab .shuffle-btns button, #root #app.regular .skills .shuffle-btns button {
   color: #D9D9D9;
   background-color: transparent;
   border: none;
 }
-#root #app.regular .about-subsection .shuffle-btns button.disabled-skill-tool, #root #app.regular .introduction .shuffle-btns button.disabled-skill-tool, #root #app.regular .tab-wrap .shuffle-btns button.disabled-skill-tool, #root #app.regular .tab .shuffle-btns button.disabled-skill-tool, #root #app.regular .skills .shuffle-btns button.disabled-skill-tool {
+#root #app.regular .vs-code-tab-section .shuffle-btns button.disabled-skill-tool, #root #app.regular .introduction .shuffle-btns button.disabled-skill-tool, #root #app.regular .tab-wrap .shuffle-btns button.disabled-skill-tool, #root #app.regular .tab .shuffle-btns button.disabled-skill-tool, #root #app.regular .skills .shuffle-btns button.disabled-skill-tool {
   filter: brightness(0.5);
   cursor: not-allowed;
 }
-#root #app.regular .about-subsection .shuffle-btns .tooltip, #root #app.regular .introduction .shuffle-btns .tooltip, #root #app.regular .tab-wrap .shuffle-btns .tooltip, #root #app.regular .tab .shuffle-btns .tooltip, #root #app.regular .skills .shuffle-btns .tooltip {
+#root #app.regular .vs-code-tab-section .shuffle-btns .tooltip, #root #app.regular .introduction .shuffle-btns .tooltip, #root #app.regular .tab-wrap .shuffle-btns .tooltip, #root #app.regular .tab .shuffle-btns .tooltip, #root #app.regular .skills .shuffle-btns .tooltip {
   color: #D9D9D9;
   background-color: #181924;
 }
-#root #app.regular .about-subsection .shuffle-btns .tooltip.wrong, #root #app.regular .introduction .shuffle-btns .tooltip.wrong, #root #app.regular .tab-wrap .shuffle-btns .tooltip.wrong, #root #app.regular .tab .shuffle-btns .tooltip.wrong, #root #app.regular .skills .shuffle-btns .tooltip.wrong {
+#root #app.regular .vs-code-tab-section .shuffle-btns .tooltip.wrong, #root #app.regular .introduction .shuffle-btns .tooltip.wrong, #root #app.regular .tab-wrap .shuffle-btns .tooltip.wrong, #root #app.regular .tab .shuffle-btns .tooltip.wrong, #root #app.regular .skills .shuffle-btns .tooltip.wrong {
   background-color: #313244;
 }
 #root #app.regular .skill-section .title-wrap {
@@ -486,41 +486,41 @@ button {
 #root #app.matrix .landing-wrap .introduction .static, #root #app.matrix .landing-wrap .introduction .dynamic {
   color: #caf4ff;
 }
-#root #app.matrix .about-subsection .tab-title, #root #app.matrix .introduction .tab-title, #root #app.matrix .tab-wrap .tab-title, #root #app.matrix .tab .tab-title, #root #app.matrix .skills .tab-title {
+#root #app.matrix .vs-code-tab-section .tab-title, #root #app.matrix .introduction .tab-title, #root #app.matrix .tab-wrap .tab-title, #root #app.matrix .tab .tab-title, #root #app.matrix .skills .tab-title {
   color: #bfbfbf;
   background-color: rgba(37, 36, 36, 0.7450980392);
   border-top: 3px solid #08aab5;
 }
-#root #app.matrix .about-subsection .about-subsection-body, #root #app.matrix .about-subsection .tab-body, #root #app.matrix .introduction .about-subsection-body, #root #app.matrix .introduction .tab-body, #root #app.matrix .tab-wrap .about-subsection-body, #root #app.matrix .tab-wrap .tab-body, #root #app.matrix .tab .about-subsection-body, #root #app.matrix .tab .tab-body, #root #app.matrix .skills .about-subsection-body, #root #app.matrix .skills .tab-body {
+#root #app.matrix .vs-code-tab-section .vs-code-tab-section-body, #root #app.matrix .vs-code-tab-section .tab-body, #root #app.matrix .introduction .vs-code-tab-section-body, #root #app.matrix .introduction .tab-body, #root #app.matrix .tab-wrap .vs-code-tab-section-body, #root #app.matrix .tab-wrap .tab-body, #root #app.matrix .tab .vs-code-tab-section-body, #root #app.matrix .tab .tab-body, #root #app.matrix .skills .vs-code-tab-section-body, #root #app.matrix .skills .tab-body {
   background-color: rgba(37, 36, 36, 0.7450980392);
 }
-#root #app.matrix .about-subsection .about-subsection-body .about-paragraph, #root #app.matrix .about-subsection .tab-body .about-paragraph, #root #app.matrix .introduction .about-subsection-body .about-paragraph, #root #app.matrix .introduction .tab-body .about-paragraph, #root #app.matrix .tab-wrap .about-subsection-body .about-paragraph, #root #app.matrix .tab-wrap .tab-body .about-paragraph, #root #app.matrix .tab .about-subsection-body .about-paragraph, #root #app.matrix .tab .tab-body .about-paragraph, #root #app.matrix .skills .about-subsection-body .about-paragraph, #root #app.matrix .skills .tab-body .about-paragraph {
+#root #app.matrix .vs-code-tab-section .vs-code-tab-section-body .about-paragraph, #root #app.matrix .vs-code-tab-section .tab-body .about-paragraph, #root #app.matrix .introduction .vs-code-tab-section-body .about-paragraph, #root #app.matrix .introduction .tab-body .about-paragraph, #root #app.matrix .tab-wrap .vs-code-tab-section-body .about-paragraph, #root #app.matrix .tab-wrap .tab-body .about-paragraph, #root #app.matrix .tab .vs-code-tab-section-body .about-paragraph, #root #app.matrix .tab .tab-body .about-paragraph, #root #app.matrix .skills .vs-code-tab-section-body .about-paragraph, #root #app.matrix .skills .tab-body .about-paragraph {
   color: #caf4ff;
 }
-#root #app.matrix .about-subsection .about-subsection-body .description #resume-btn, #root #app.matrix .about-subsection .tab-body .description #resume-btn, #root #app.matrix .introduction .about-subsection-body .description #resume-btn, #root #app.matrix .introduction .tab-body .description #resume-btn, #root #app.matrix .tab-wrap .about-subsection-body .description #resume-btn, #root #app.matrix .tab-wrap .tab-body .description #resume-btn, #root #app.matrix .tab .about-subsection-body .description #resume-btn, #root #app.matrix .tab .tab-body .description #resume-btn, #root #app.matrix .skills .about-subsection-body .description #resume-btn, #root #app.matrix .skills .tab-body .description #resume-btn {
+#root #app.matrix .vs-code-tab-section .vs-code-tab-section-body .description #resume-btn, #root #app.matrix .vs-code-tab-section .tab-body .description #resume-btn, #root #app.matrix .introduction .vs-code-tab-section-body .description #resume-btn, #root #app.matrix .introduction .tab-body .description #resume-btn, #root #app.matrix .tab-wrap .vs-code-tab-section-body .description #resume-btn, #root #app.matrix .tab-wrap .tab-body .description #resume-btn, #root #app.matrix .tab .vs-code-tab-section-body .description #resume-btn, #root #app.matrix .tab .tab-body .description #resume-btn, #root #app.matrix .skills .vs-code-tab-section-body .description #resume-btn, #root #app.matrix .skills .tab-body .description #resume-btn {
   color: white;
   background-color: #18afeb;
 }
-#root #app.matrix .about-subsection .shuffle-btns, #root #app.matrix .introduction .shuffle-btns, #root #app.matrix .tab-wrap .shuffle-btns, #root #app.matrix .tab .shuffle-btns, #root #app.matrix .skills .shuffle-btns {
+#root #app.matrix .vs-code-tab-section .shuffle-btns, #root #app.matrix .introduction .shuffle-btns, #root #app.matrix .tab-wrap .shuffle-btns, #root #app.matrix .tab .shuffle-btns, #root #app.matrix .skills .shuffle-btns {
   background-color: rgba(48, 48, 48, 0.7);
   border: 1px solid gray;
   border-top: 0.5px solid gray;
   box-shadow: -0.5vw 0.45vh 0.5vw 0.2vw black;
 }
-#root #app.matrix .about-subsection .shuffle-btns button, #root #app.matrix .introduction .shuffle-btns button, #root #app.matrix .tab-wrap .shuffle-btns button, #root #app.matrix .tab .shuffle-btns button, #root #app.matrix .skills .shuffle-btns button {
+#root #app.matrix .vs-code-tab-section .shuffle-btns button, #root #app.matrix .introduction .shuffle-btns button, #root #app.matrix .tab-wrap .shuffle-btns button, #root #app.matrix .tab .shuffle-btns button, #root #app.matrix .skills .shuffle-btns button {
   color: #caf4ff;
   background-color: transparent;
   border: none;
 }
-#root #app.matrix .about-subsection .shuffle-btns button.disabled-skill-tool, #root #app.matrix .introduction .shuffle-btns button.disabled-skill-tool, #root #app.matrix .tab-wrap .shuffle-btns button.disabled-skill-tool, #root #app.matrix .tab .shuffle-btns button.disabled-skill-tool, #root #app.matrix .skills .shuffle-btns button.disabled-skill-tool {
+#root #app.matrix .vs-code-tab-section .shuffle-btns button.disabled-skill-tool, #root #app.matrix .introduction .shuffle-btns button.disabled-skill-tool, #root #app.matrix .tab-wrap .shuffle-btns button.disabled-skill-tool, #root #app.matrix .tab .shuffle-btns button.disabled-skill-tool, #root #app.matrix .skills .shuffle-btns button.disabled-skill-tool {
   filter: brightness(0.5);
   cursor: not-allowed;
 }
-#root #app.matrix .about-subsection .shuffle-btns .tooltip, #root #app.matrix .introduction .shuffle-btns .tooltip, #root #app.matrix .tab-wrap .shuffle-btns .tooltip, #root #app.matrix .tab .shuffle-btns .tooltip, #root #app.matrix .skills .shuffle-btns .tooltip {
+#root #app.matrix .vs-code-tab-section .shuffle-btns .tooltip, #root #app.matrix .introduction .shuffle-btns .tooltip, #root #app.matrix .tab-wrap .shuffle-btns .tooltip, #root #app.matrix .tab .shuffle-btns .tooltip, #root #app.matrix .skills .shuffle-btns .tooltip {
   color: #caf4ff;
   background-color: #0b0b0e;
 }
-#root #app.matrix .about-subsection .shuffle-btns .tooltip.wrong, #root #app.matrix .introduction .shuffle-btns .tooltip.wrong, #root #app.matrix .tab-wrap .shuffle-btns .tooltip.wrong, #root #app.matrix .tab .shuffle-btns .tooltip.wrong, #root #app.matrix .skills .shuffle-btns .tooltip.wrong {
+#root #app.matrix .vs-code-tab-section .shuffle-btns .tooltip.wrong, #root #app.matrix .introduction .shuffle-btns .tooltip.wrong, #root #app.matrix .tab-wrap .shuffle-btns .tooltip.wrong, #root #app.matrix .tab .shuffle-btns .tooltip.wrong, #root #app.matrix .skills .shuffle-btns .tooltip.wrong {
   background-color: #303030;
 }
 #root #app.matrix .skill-section .title-wrap {
@@ -1015,18 +1015,18 @@ button {
       left: 20px;
     }
   }
-  #app .content-body-wrap .content .about-subsection, #app .content-body-wrap .content .tab {
+  #app .content-body-wrap .content .vs-code-tab-section, #app .content-body-wrap .content .tab {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .tab-title, #app .content-body-wrap .content .tab .tab-title {
+  #app .content-body-wrap .content .vs-code-tab-section .tab-title, #app .content-body-wrap .content .tab .tab-title {
     font-size: 13.2px;
     padding: 4px;
     font-family: "Open Sans";
     text-align: center;
     width: 150px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body, #app .content-body-wrap .content .about-subsection .tab-body, #app .content-body-wrap .content .tab .about-subsection-body, #app .content-body-wrap .content .tab .tab-body {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body, #app .content-body-wrap .content .vs-code-tab-section .tab-body, #app .content-body-wrap .content .tab .vs-code-tab-section-body, #app .content-body-wrap .content .tab .tab-body {
     height: calc(100vh - 49.6px - 3px);
     flex-grow: 1;
     overflow-y: auto;
@@ -1035,40 +1035,40 @@ button {
     /* Handle */
     /* Handle on hover */
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body::-webkit-scrollbar, #app .content-body-wrap .content .vs-code-tab-section .tab-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .vs-code-tab-section-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar {
     width: 8px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-track, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-track {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body::-webkit-scrollbar-track, #app .content-body-wrap .content .vs-code-tab-section .tab-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .vs-code-tab-section-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 1vw;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .vs-code-tab-section .tab-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .vs-code-tab-section-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb {
     background: rgba(68, 68, 68, 0.656);
     border-radius: 1vw;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb:hover {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .vs-code-tab-section .tab-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .vs-code-tab-section-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb:hover {
     background: rgba(92, 92, 92, 0.779);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction, #app .content-body-wrap .content .about-subsection .tab-body.introduction, #app .content-body-wrap .content .tab .about-subsection-body.introduction, #app .content-body-wrap .content .tab .tab-body.introduction {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction, #app .content-body-wrap .content .tab .tab-body.introduction {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description, #app .content-body-wrap .content .tab .tab-body.introduction .description {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description, #app .content-body-wrap .content .tab .tab-body.introduction .description {
     animation: fadeIn 0.75s ease-in;
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description .code-editor, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor {
     font-size: 14.4px;
     margin-left: 0;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-content {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-content {
     padding-top: 10px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-line {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-line {
     padding-left: 10px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description #resume-btn, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn {
     display: inline-block;
     text-align: center;
     text-decoration: none;
@@ -1080,10 +1080,10 @@ button {
     border: none;
     border-radius: 3.2px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn:hover {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn:hover {
     filter: brightness(90%);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .about-me-pics, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics {
     animation: fadeIn 0.75s ease-in;
     margin: 5vh 0;
     align-self: center;
@@ -1093,7 +1093,7 @@ button {
     flex-direction: column;
     align-items: center;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .about-me-pics img, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img {
     width: 50vw;
     height: 25vh;
     max-width: 272px;
@@ -1101,23 +1101,23 @@ button {
     object-fit: cover;
     box-shadow: 0.5vw 0.5vh 0 0 black;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(1) {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(1) {
     align-self: flex-start;
     margin-bottom: 4vh;
     transform: rotate(-5deg);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(2) {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(2) {
     align-self: flex-end;
     transform: rotate(5deg);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .tab .tab-body.skills .skill-container {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container, #app .content-body-wrap .content .tab .tab-body.skills .skill-container {
     animation: blurIn 0.75s ease-in;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 24px 32px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .tab-body.skills .skill-container.shuffling {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container.shuffling, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .tab-body.skills .skill-container.shuffling {
     animation: blurOut 0.75s ease-out;
   }
   @keyframes blurOut {
@@ -1130,77 +1130,77 @@ button {
       filter: blur(50px);
     }
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section {
     margin: 0 12px 32px 12px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap {
     display: flex;
     align-items: center;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .logo {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .logo {
     width: 64px;
     height: 76px;
     object-fit: contain;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .title {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .title {
     font-family: "Code";
     font-size: 27.2px;
     padding-left: 16px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body {
     margin-top: 20px;
     margin-left: 32px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap {
     position: relative;
     margin-bottom: 12px;
     transition: top 0.25s ease-in;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
     width: 24px;
     height: auto;
     object-fit: contain;
     margin-right: 8px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
     font-size: 16px;
     position: relative;
     top: 2.4px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
     margin-left: 32px;
     list-style: none;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
     margin: 1.6px 0;
     padding-left: 4px;
     font-size: 16px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
     content: "- ";
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
     cursor: move;
     /* fallback if grab cursor is unsupported */
     cursor: grab;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
     cursor: grabbing;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden {
     transition: 0.01s;
     transform: translateX(-9999px);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned {
     transition: initial;
     transform: none !important;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns {
     animation: blurIn 0.75s ease-in;
     position: sticky;
     z-index: 1000;
@@ -1214,16 +1214,16 @@ button {
     justify-content: flex-end;
     padding: 4px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button {
     margin: 0 5.6px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button span, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button span {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button span, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button span {
     font-size: 23.2px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button.shuffle-btn {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button.shuffle-btn {
     margin-left: 24px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip {
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -1240,7 +1240,7 @@ button {
     visibility: hidden;
     user-select: none;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip.display {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip.display {
     visibility: visible;
     animation: fadeInOut 4s ease-in-out;
   }
@@ -2167,18 +2167,18 @@ button {
       left: 25px;
     }
   }
-  #app .content-body-wrap .content .about-subsection, #app .content-body-wrap .content .tab {
+  #app .content-body-wrap .content .vs-code-tab-section, #app .content-body-wrap .content .tab {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .tab-title, #app .content-body-wrap .content .tab .tab-title {
+  #app .content-body-wrap .content .vs-code-tab-section .tab-title, #app .content-body-wrap .content .tab .tab-title {
     font-size: 16.5px;
     padding: 5px;
     font-family: "Open Sans";
     text-align: center;
     width: 150px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body, #app .content-body-wrap .content .about-subsection .tab-body, #app .content-body-wrap .content .tab .about-subsection-body, #app .content-body-wrap .content .tab .tab-body {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body, #app .content-body-wrap .content .vs-code-tab-section .tab-body, #app .content-body-wrap .content .tab .vs-code-tab-section-body, #app .content-body-wrap .content .tab .tab-body {
     height: calc(100vh - 62px - 3px);
     flex-grow: 1;
     overflow-y: auto;
@@ -2187,40 +2187,40 @@ button {
     /* Handle */
     /* Handle on hover */
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body::-webkit-scrollbar, #app .content-body-wrap .content .vs-code-tab-section .tab-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .vs-code-tab-section-body::-webkit-scrollbar, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar {
     width: 10px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-track, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-track {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body::-webkit-scrollbar-track, #app .content-body-wrap .content .vs-code-tab-section .tab-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .vs-code-tab-section-body::-webkit-scrollbar-track, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 1vw;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .vs-code-tab-section .tab-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .vs-code-tab-section-body::-webkit-scrollbar-thumb, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb {
     background: rgba(68, 68, 68, 0.656);
     border-radius: 1vw;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .about-subsection .tab-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .about-subsection-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb:hover {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .vs-code-tab-section .tab-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .vs-code-tab-section-body::-webkit-scrollbar-thumb:hover, #app .content-body-wrap .content .tab .tab-body::-webkit-scrollbar-thumb:hover {
     background: rgba(92, 92, 92, 0.779);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction, #app .content-body-wrap .content .about-subsection .tab-body.introduction, #app .content-body-wrap .content .tab .about-subsection-body.introduction, #app .content-body-wrap .content .tab .tab-body.introduction {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction, #app .content-body-wrap .content .tab .tab-body.introduction {
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description, #app .content-body-wrap .content .tab .tab-body.introduction .description {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description, #app .content-body-wrap .content .tab .tab-body.introduction .description {
     animation: fadeIn 0.75s ease-in;
     display: flex;
     flex-direction: column;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description .code-editor, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description .code-editor, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor {
     font-size: 18px;
     margin-left: 0;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-content {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description .code-editor .cm-content, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-content {
     padding-top: 10px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-line {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description .code-editor .cm-line, #app .content-body-wrap .content .tab .tab-body.introduction .description .code-editor .cm-line {
     padding-left: 10px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description #resume-btn, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description #resume-btn, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn {
     display: inline-block;
     text-align: center;
     text-decoration: none;
@@ -2232,10 +2232,10 @@ button {
     border: none;
     border-radius: 4px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .about-subsection .tab-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .about-subsection-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn:hover {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .description #resume-btn:hover, #app .content-body-wrap .content .tab .tab-body.introduction .description #resume-btn:hover {
     filter: brightness(90%);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .about-me-pics, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .about-me-pics, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics {
     animation: fadeIn 0.75s ease-in;
     margin: 5vh 0;
     align-self: center;
@@ -2245,7 +2245,7 @@ button {
     flex-direction: column;
     align-items: center;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img, #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .about-me-pics img, #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .about-me-pics img, #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img {
     width: 50vw;
     height: 25vh;
     max-width: 340px;
@@ -2253,23 +2253,23 @@ button {
     object-fit: cover;
     box-shadow: 0.5vw 0.5vh 0 0 black;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(1) {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .about-me-pics img:nth-child(1), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(1) {
     align-self: flex-start;
     margin-bottom: 4vh;
     transform: rotate(-5deg);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .about-subsection .tab-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .about-subsection-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(2) {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .vs-code-tab-section .tab-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .vs-code-tab-section-body.introduction .about-me-pics img:nth-child(2), #app .content-body-wrap .content .tab .tab-body.introduction .about-me-pics img:nth-child(2) {
     align-self: flex-end;
     transform: rotate(5deg);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container, #app .content-body-wrap .content .tab .tab-body.skills .skill-container {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container, #app .content-body-wrap .content .tab .tab-body.skills .skill-container {
     animation: blurIn 0.75s ease-in;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 30px 40px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .tab-body.skills .skill-container.shuffling {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container.shuffling, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container.shuffling, #app .content-body-wrap .content .tab .tab-body.skills .skill-container.shuffling {
     animation: blurOut 0.75s ease-out;
   }
   @keyframes blurOut {
@@ -2282,77 +2282,77 @@ button {
       filter: blur(50px);
     }
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section {
     margin: 0 15px 40px 15px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap {
     display: flex;
     align-items: center;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .logo {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .logo {
     width: 80px;
     height: 95px;
     object-fit: contain;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .title {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .title-wrap .title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .title-wrap .title {
     font-family: "Code";
     font-size: 34px;
     padding-left: 20px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body {
     margin-top: 25px;
     margin-left: 40px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap {
     position: relative;
     margin-bottom: 15px;
     transition: top 0.25s ease-in;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .logo {
     width: 30px;
     height: auto;
     object-fit: contain;
     margin-right: 10px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .skill-title-wrap .skill-title {
     font-size: 20px;
     position: relative;
     top: 3px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list {
     margin-left: 40px;
     list-style: none;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li {
     margin: 2px 0;
     padding-left: 5px;
     font-size: 20px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap .subskill-list li::before {
     content: "- ";
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable {
     cursor: move;
     /* fallback if grab cursor is unsupported */
     cursor: grab;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.grabbable:active {
     cursor: grabbing;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.hidden {
     transition: 0.01s;
     transform: translateX(-9999px);
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .about-subsection .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .about-subsection-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned, #app .content-body-wrap .content .tab .tab-body.skills .skill-container .skill-section .skills-body .skill-wrap.transitioned {
     transition: initial;
     transform: none !important;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns {
     animation: blurIn 0.75s ease-in;
     position: sticky;
     z-index: 1000;
@@ -2366,16 +2366,16 @@ button {
     justify-content: flex-end;
     padding: 5px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button {
     margin: 0 7px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button span, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button span {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button span, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button span {
     font-size: 29px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button.shuffle-btn {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button.shuffle-btn {
     margin-left: 30px;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns .tooltip, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip {
     font-size: 20px;
     display: flex;
     align-items: center;
@@ -2392,7 +2392,7 @@ button {
     visibility: hidden;
     user-select: none;
   }
-  #app .content-body-wrap .content .about-subsection .about-subsection-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .about-subsection .tab-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .about-subsection-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip.display {
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns .tooltip.display, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns .tooltip.display {
     visibility: visible;
     animation: fadeInOut 4s ease-in-out;
   }
@@ -3134,47 +3134,47 @@ button {
   #app .content .landing-wrap .photo-wrap .photo {
     max-width: 742px !important;
   }
-  #app .content .about-subsection {
+  #app .content .vs-code-tab-section {
     flex-basis: 60%;
     flex-grow: 1;
   }
-  #app .content .about-subsection .about-subsection-body {
+  #app .content .vs-code-tab-section .vs-code-tab-section-body {
     flex-direction: row !important;
     flex-wrap: wrap;
     align-items: center;
   }
-  #app .content .about-subsection .about-subsection-body .description {
+  #app .content .vs-code-tab-section .vs-code-tab-section-body .description {
     display: block !important;
   }
-  #app .content .about-subsection .about-subsection-body .description .code-editor {
+  #app .content .vs-code-tab-section .vs-code-tab-section-body .description .code-editor {
     font-size: 15px !important;
     max-width: 44.5vw;
   }
-  #app .content .about-subsection .about-subsection-body .about-me-pics {
+  #app .content .vs-code-tab-section .vs-code-tab-section-body .about-me-pics {
     margin-left: 2.25vw !important;
     min-width: 300px;
   }
-  #app .content .about-subsection .about-subsection-body .about-me-pics img {
+  #app .content .vs-code-tab-section .vs-code-tab-section-body .about-me-pics img {
     width: 30vw;
     height: 25vh;
   }
-  #app .content .about-subsection .about-subsection-body .about-me-pics img:nth-child(1) {
+  #app .content .vs-code-tab-section .vs-code-tab-section-body .about-me-pics img:nth-child(1) {
     align-self: flex-start;
     transform: rotate(-5deg);
   }
-  #app .content .about-subsection .about-subsection-body .about-me-pics img:nth-child(2) {
+  #app .content .vs-code-tab-section .vs-code-tab-section-body .about-me-pics img:nth-child(2) {
     align-self: flex-end;
     transform: rotate(5deg);
   }
-  #app .content .about-subsection .about-subsection-body.skills .skill-container {
+  #app .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
-  #app .content .about-subsection .about-subsection-body.skills .skill-container .skill-section {
+  #app .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section {
     margin-left: 3vw !important;
     margin-right: 3vw !important;
   }
-  #app .content .about-subsection .shuffle-btns button[data-task=confirm] {
+  #app .content .vs-code-tab-section .shuffle-btns button[data-task=confirm] {
     display: initial !important;
   }
   #app .content .portfolio-manager-wrap {

@@ -42,11 +42,11 @@ export default function Sidebar() {
           </span>
           <p className="nav-link-text">Home</p>
         </NavLink>
-        <NavLink to="resume">
+        <NavLink to="about-me">
           <span className="material-symbols-outlined info">
             description
           </span>
-          <p className="nav-link-text">Resume</p>
+          <p className="nav-link-text">About me & Resume</p>
         </NavLink>
         <NavLink to="skills">
           <span className="material-symbols-outlined">

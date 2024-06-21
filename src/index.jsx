@@ -4,7 +4,7 @@ import { Routes, Route, HashRouter } from 'react-router-dom';
 
 import MainLayout from './components/reusable/MainLayout';
 import Landing from './components/Landing';
-import Resume from './components/Resume';
+import AboutMe from './components/AboutMe';
 import Skills from './components/Skills/Skills';
 import PortfolioManager from './components/Portfolio/PortfolioManager';
 import ReachOut from './components/ReachOut/ReachOut';
@@ -20,7 +20,7 @@ function App() {
             <Route index element={<Landing />} />
             <Route path="*" element={<Landing />} />
             <Route path="landing" element={<Landing />} />
-            <Route path="resume" element={<Resume />} />
+            <Route path="about-me" element={<AboutMe />} />
             <Route path="skills" element={<Skills />} />
             <Route path="portfolio" element={<PortfolioManager />} />
             <Route path="contact" element={<ReachOut />} />

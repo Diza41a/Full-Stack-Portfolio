@@ -7,7 +7,7 @@ import api from '../api';
 // Subcomponent imports
 import { codeMirrorTxtTheme } from './styles/Colored';
 
-export default function Resume() {
+export default function AboutMe() {
   const [aboutText, setAboutText] = useState('');
 
   // ComponentDidMount
@@ -18,9 +18,9 @@ export default function Resume() {
   }, []);
 
   return (
-    <section className="about-subsection introduction tab-wrap">
+    <section className="vs-code-tab-section introduction tab-wrap">
       <p className="tab-title">About me.txt</p>
-      <div className="about-subsection-body introduction tab-body">
+      <div className="vs-code-tab-section-body introduction tab-body">
         <div className="description">
           <CodeMirror
             className="code-editor"

@@ -12,7 +12,7 @@ export default function Skills() {
   // Draggable skills
   let draggableHeight = 0;
   const skillDragStart = (e) => {
-    draggableHeight = (e.target.offsetHeight / document.querySelector('.about-subsection-body').offsetHeight) * 100;
+    draggableHeight = (e.target.offsetHeight / document.querySelector('.vs-code-tab-section-body').offsetHeight) * 100;
     e.dataTransfer.setData('text/plain', e.target.getAttribute('data-skill-title'));
     e.target.classList.add('hidden');
   };
@@ -23,7 +23,7 @@ export default function Skills() {
 
     // Scroll top/down
     const percentage = ((e.clientY / window.innerHeight) * 100);
-    const skillsBody = document.querySelector('.about-subsection-body.skills');
+    const skillsBody = document.querySelector('.vs-code-tab-section-body.skills');
     if (percentage < 25) {
       skillsBody.scrollTop -= 2.5;
     }
@@ -68,7 +68,6 @@ export default function Skills() {
       }
     }
   };
-
   const skillSectionDragDrop = (e) => {
     e.preventDefault();
     for (const skillWrap of document.querySelectorAll('.skill-wrap')) {
@@ -98,7 +97,6 @@ export default function Skills() {
     }
   };
 
-  // Rendering
   const renderSkills = (skillsObj, className) => (
     <section className={`skill-section ${className}`} onDragOver={skillSectionDragOver} onDrop={skillSectionDragDrop}>
       <div className="title-wrap">
@@ -125,7 +123,6 @@ export default function Skills() {
 
   // Shuffle minigame
   const getRandomIndex = (upperFloor) => Math.floor(Math.random() * upperFloor);
-
   const shuffleSkills = () => {
     const unified = [
       ...skills.frontEndSkills.skills,
@@ -169,9 +166,6 @@ export default function Skills() {
       randomSections.splice(randomIndex, 1);
     }
 
-    // document.querySelectorAll('.skills-body').forEach((skillBodyEl) => {
-    //   skillBodyEl.classList.add('shuffling');
-    // });
     document.querySelector('.skill-container').classList.add('shuffling');
     document.querySelectorAll('.disabled-skill-tool').forEach((skillTool) => skillTool.classList.remove('disabled-skill-tool'));
     setTimeout(() => {
@@ -187,7 +181,6 @@ export default function Skills() {
       }
     });
   };
-
   const resetSkills = (e) => {
     const skillToolBtn = e.target.closest('.skill-tool');
     if (!skillToolBtn || skillToolBtn.classList.contains('disabled-skill-tool')) {
@@ -200,7 +193,6 @@ export default function Skills() {
       setSkills({ frontEndSkills, backEndSkills, devOpsSkills });
     }, 750);
   };
-
   const getSubmittedTitles = (section) => [...document.querySelector(`.skill-section.${section}`).children[1].children].map((skill) => (
     skill.getAttribute('data-skill-title')
   )).sort();
@@ -265,9 +257,9 @@ export default function Skills() {
   };
 
   return (
-    <section className="about-subsection skills">
+    <section className="vs-code-tab-section skills">
       <p className="tab-title">Dev Toolkit</p>
-      <div className="about-subsection-body skills">
+      <div className="vs-code-tab-section-body skills">
 
         <div className="shuffle-btns">
           <button type="button" className="skill-tool disabled-skill-tool" data-task="confirm" onClick={skillsQuiz}>
