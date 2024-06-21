@@ -1,0 +1,80 @@
+@import './colors.scss';
+
+@mixin sidebarMainView($fontSize) {
+  nav {
+    z-index: 1000;
+    width: $fontSize * 3.5;
+    height: calc(97.5vh - ($fontSize * 0.4) - ($fontSize * 2) - 1px);
+    padding: $fontSize 0;
+    position: sticky;
+    top: calc(2.5vh + ($fontSize * 0.4) + 1px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      a, i, span {
+        text-align: center;
+        font-size: $fontSize * 2.25;
+        margin: $fontSize * 0.15 0;
+        color: inherit;
+        cursor: pointer;
+
+        &.info {
+          font-size: $fontSize * 2.5;
+        }
+      }
+
+      &.lower-nav {
+        i, span {
+          margin: $fontSize * 0.45 0;
+        }
+      }
+    }
+  }
+}
+
+@mixin sidebarColorTheme($mainText, $mainMedium, $navHighlight, $border) {
+  nav.sidebar {
+    background-color: $mainMedium;
+    color: $mainText;
+    border-right: 1px solid $border;
+
+    a {
+      &.active {
+        border-left: 4px solid $navHighlight;
+      }
+    }
+  }
+}
+
+#root {
+  #app.regular {
+    @include sidebarColorTheme(
+      $mainTextRegular,
+      $mainMediumRegular,
+      $navHighlightRegular,
+      $borderRegular
+    );
+  }
+
+  #app.matrix {
+    @include sidebarColorTheme(
+      $mainTextMatrix,
+      $mainMediumMatrix,
+      $navHighlightMatrix,
+      $borderMatrix
+    );
+  }
+
+  @media (min-width: 850px) {
+    @include sidebarMainView(20px);
+  }
+
+  @media (max-width: 850px) {
+    @include sidebarMainView(16px);
+  }
+}

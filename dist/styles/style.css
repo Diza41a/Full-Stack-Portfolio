@@ -1,3 +1,80 @@
+#root #app.regular nav.sidebar {
+  background-color: #313244;
+  color: #D9D9D9;
+  border-right: 1px solid #626262;
+}
+#root #app.regular nav.sidebar a.active {
+  border-left: 4px solid #F8B172;
+}
+#root #app.matrix nav.sidebar {
+  background-color: #303030;
+  color: #caf4ff;
+  border-right: 1px solid #858585;
+}
+#root #app.matrix nav.sidebar a.active {
+  border-left: 4px solid #08aab5;
+}
+@media (min-width: 850px) {
+  #root nav {
+    z-index: 1000;
+    width: 70px;
+    height: calc(97.5vh - 8px - 40px - 1px);
+    padding: 20px 0;
+    position: sticky;
+    top: calc(2.5vh + 8px + 1px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #root nav div {
+    display: flex;
+    flex-direction: column;
+  }
+  #root nav div a, #root nav div i, #root nav div span {
+    text-align: center;
+    font-size: 45px;
+    margin: 3px 0;
+    color: inherit;
+    cursor: pointer;
+  }
+  #root nav div a.info, #root nav div i.info, #root nav div span.info {
+    font-size: 50px;
+  }
+  #root nav div.lower-nav i, #root nav div.lower-nav span {
+    margin: 9px 0;
+  }
+}
+@media (max-width: 850px) {
+  #root nav {
+    z-index: 1000;
+    width: 56px;
+    height: calc(97.5vh - 6.4px - 32px - 1px);
+    padding: 16px 0;
+    position: sticky;
+    top: calc(2.5vh + 6.4px + 1px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #root nav div {
+    display: flex;
+    flex-direction: column;
+  }
+  #root nav div a, #root nav div i, #root nav div span {
+    text-align: center;
+    font-size: 36px;
+    margin: 2.4px 0;
+    color: inherit;
+    cursor: pointer;
+  }
+  #root nav div a.info, #root nav div i.info, #root nav div span.info {
+    font-size: 40px;
+  }
+  #root nav div.lower-nav i, #root nav div.lower-nav span {
+    margin: 7.2px 0;
+  }
+}
+
 @font-face {
   font-weight: normal;
   font-family: "Code";
@@ -49,14 +126,6 @@ button {
   background-color: #181924;
   color: #C8C2C2;
   border-bottom: 1px solid #626262;
-}
-#root #app.regular nav.sidebar {
-  background-color: #313244;
-  color: #D9D9D9;
-  border-right: 1px solid #626262;
-}
-#root #app.regular nav.sidebar a.active {
-  border-left: 4px solid #F8B172;
 }
 #root #app.regular .landing-wrap .landing-nav-lbl {
   color: #D9D9D9;
@@ -313,14 +382,6 @@ button {
   background-color: #0b0b0e;
   color: #bfbfbf;
   border-bottom: 1px solid #858585;
-}
-#root #app.matrix nav.sidebar {
-  background-color: #303030;
-  color: #caf4ff;
-  border-right: 1px solid #858585;
-}
-#root #app.matrix nav.sidebar a.active {
-  border-left: 4px solid #08aab5;
 }
 #root #app.matrix .landing-wrap .landing-nav-lbl {
   color: #caf4ff;
@@ -777,37 +838,6 @@ button {
   #app .content-body-wrap {
     height: inherit;
     display: flex;
-  }
-  #app .content-body-wrap nav {
-    z-index: 1000;
-    width: 56px;
-    height: calc(97.5vh - 6.4px - 32px - 1px);
-    padding: 16px 0;
-    position: sticky;
-    top: calc(2.5vh + 6.4px + 1px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  #app .content-body-wrap nav div {
-    display: flex;
-    flex-direction: column;
-  }
-  #app .content-body-wrap nav div a, #app .content-body-wrap nav div i, #app .content-body-wrap nav div span {
-    text-align: center;
-    font-size: 36px;
-    margin: 2.4px 0;
-    color: inherit;
-    cursor: pointer;
-  }
-  #app .content-body-wrap nav div a.info, #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.info, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.info, #app .content-body-wrap nav div span.flag {
-    font-size: 40px;
-  }
-  #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.flag {
-    transform: rotate(15deg);
-  }
-  #app .content-body-wrap nav div.lower-nav i, #app .content-body-wrap nav div.lower-nav span {
-    margin: 7.2px 0;
   }
   #app .content-body-wrap .content {
     width: calc(100% - 56px);
@@ -2022,37 +2052,6 @@ button {
   #app .content-body-wrap {
     height: inherit;
     display: flex;
-  }
-  #app .content-body-wrap nav {
-    z-index: 1000;
-    width: 70px;
-    height: calc(97.5vh - 8px - 40px - 1px);
-    padding: 20px 0;
-    position: sticky;
-    top: calc(2.5vh + 8px + 1px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  #app .content-body-wrap nav div {
-    display: flex;
-    flex-direction: column;
-  }
-  #app .content-body-wrap nav div a, #app .content-body-wrap nav div i, #app .content-body-wrap nav div span {
-    text-align: center;
-    font-size: 45px;
-    margin: 3px 0;
-    color: inherit;
-    cursor: pointer;
-  }
-  #app .content-body-wrap nav div a.info, #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.info, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.info, #app .content-body-wrap nav div span.flag {
-    font-size: 50px;
-  }
-  #app .content-body-wrap nav div a.flag, #app .content-body-wrap nav div i.flag, #app .content-body-wrap nav div span.flag {
-    transform: rotate(15deg);
-  }
-  #app .content-body-wrap nav div.lower-nav i, #app .content-body-wrap nav div.lower-nav span {
-    margin: 9px 0;
   }
   #app .content-body-wrap .content {
     width: calc(100% - 70px);

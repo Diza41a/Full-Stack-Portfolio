@@ -1,3 +1,5 @@
+@import './sidebar.scss';
+
 @font-face {
   font-weight: normal;
   font-family: 'Code';
@@ -60,18 +62,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     background-color: $mainDark;
     color: $secondText;
     border-bottom: 1px solid $border;
-  }
-
-  nav.sidebar {
-    background-color: $mainMedium;
-    color: $mainText;
-    border-right: 1px solid $border;
-
-    a {
-      &.active {
-        border-left: 4px solid $navHighlight;
-      }
-    }
   }
 
   .landing-wrap {
@@ -670,45 +660,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     .content-body-wrap {
       height: inherit;
       display: flex;
-
-      nav {
-        z-index: 1000;
-        width: $fontSize * 3.5;
-        height: calc(97.5vh - ($fontSize * 0.4) - ($fontSize * 2) - 1px);
-        padding: $fontSize 0;
-        position: sticky;
-        top: calc(2.5vh + ($fontSize * 0.4) + 1px);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        div {
-          display: flex;
-          flex-direction: column;
-
-          a, i, span {
-            text-align: center;
-            font-size: $fontSize * 2.25;
-            margin: $fontSize * 0.15 0;
-            color: inherit;
-            cursor: pointer;
-
-            &.info, &.flag {
-              font-size: $fontSize * 2.5;
-            }
-
-            &.flag {
-              transform: rotate(15deg);
-            }
-          }
-
-          &.lower-nav {
-            i, span {
-              margin: $fontSize * 0.45 0;
-            }
-          }
-        }
-      }
 
       .content {
         width: calc(100% - $fontSize * 3.5);
@@ -2635,6 +2586,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
 #root {
   #app.regular {
+    // $mainDark, $mainDarkTransparent, $mainMedium, $mainText, $secondText, $border,
+    // $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, $resumeButton, $projectListItem
     @include colorTheme(#181924, rgba(24, 25, 36, 0.9), #313244, #D9D9D9, #C8C2C2, #626262, rgba(52, 47, 48, 0.8),
     #575764, #F8B172, #0D1116, #6B727D, #188AEB, #53B0FF);
   }
@@ -2659,12 +2612,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         text-shadow: 0 0 0.24em rgb(237, 242, 255);
       }
     }
-
-
-    // Rest
-    // .sidebar {
-    //   // background-color: #1f1f1fb7!important;
-    // }
 
     .landing-wrap {
       .introduction {
@@ -2767,9 +2714,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 }
 
 @media (min-width: 1600px) {
-  // @include mainView(24px);
-  // @include largeScreens(24px);
-
   .photo-wrap {
     align-self: flex-end!important;
   }

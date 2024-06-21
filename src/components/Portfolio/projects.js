@@ -3,13 +3,13 @@ const IMG_FOLDER_PATH = './assets/images/projects';
 const projects = [
   {
     title: 'Nick Abramov Portfolio',
-    description: `A personal portfolio website created for, and by the UI design of, Nick Abramov.
+    description: `Frontend: Typescript, React (hooks), React Query, MUI (styled components).
+    Backend: Nest.js, Node.js,  MongoDB Atlas + Mongoose ODM.
+    Deployment: Vercel.
+
+    A personal portfolio website created for, and by the UI design of, Nick Abramov.
     Includes landing page with sortable projects, as well as 'about', 'contact', and 'faq' pages.
     The admin has access to a custom-build admin panel for adding/editing/deleting the projects.
-
-    Frontend: Typescript, React (hooks), React Query, MUI (styled components).
-    Backend: Nest.js, MongoDB Atlas + Mongoose ODM.
-    Deployment: Vercel.
     `,
     'github-link': 'https://github.com/Diza41a/ChatterBox',
     'deployed-link': 'http://chatterbox.herokuapp.com/',

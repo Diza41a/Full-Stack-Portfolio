@@ -34,8 +34,8 @@ export default function Sidebar() {
     <nav className="sidebar">
       <div className="upper-nav">
         <NavLink to="landing">
-          <span className="material-symbols-outlined flag">
-            flag
+          <span className="material-symbols-outlined home">
+            home
           </span>
         </NavLink>
         <NavLink to="about">
