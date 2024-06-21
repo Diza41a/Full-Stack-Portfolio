@@ -778,6 +778,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 animation: fadeIn 0.75s ease-in;
                 display: flex;
                 flex-direction: column;
+                width: 100%;
 
                 .code-editor {
                   font-size: $fontSize * 0.9;
@@ -793,6 +794,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 }
 
                 #resume-btn {
+                  width: fit-content;
                   display: inline-block;
                   text-align: center;
                   text-decoration: none;
@@ -800,7 +802,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                   font-family: 'Code';
                   font-size: $fontSize;
                   padding: $fontSize * 0.35 $fontSize * 2;
-                  margin: $fontSize * 1.5 $fontSize * 2;
+                  margin: $fontSize * 1.5 0;
+                  margin-left: $fontSize * 1.25;
                   border: none;
                   border-radius: $fontSize * 0.2;
 
@@ -811,41 +814,26 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               }
 
               .about-me-pics {
-                //bookmark
-                animation: fadeIn 0.75s ease-in;
-                margin: 5vh 0;
-                align-self: center;
-                width: calc(100% - $fontSize * 3.5);
-                max-width: 500px;
-
                 display: flex;
-                flex-direction: column;
+                flex-wrap: wrap;
                 align-items: center;
+                justify-content: center;
+                margin-top: 2vh;
+                margin-bottom: 4vh;
+                row-gap: 20px;
+                column-gap: 50px;
 
                 img {
-                  width: 50vw;
-                  height: 25vh;
-                  max-width: $fontSize * 17;
-                  max-height: $fontSize * 10;
                   object-fit: cover;
                   box-shadow: 0.5vw 0.5vh 0 0 black;
-
-                  &:nth-child(1) {
-                    align-self: flex-start;
-                    margin-bottom: 4vh;
-                    transform: rotate(-5deg);
-                  }
-
-                  &:nth-child(2) {
-                    align-self: flex-end;
-                    transform: rotate(5deg);
-                  }
+                  min-width: 200px;
+                  width: 25vw;
+                  max-width: 425px;
                 }
               }
             }
 
             &.skills {
-
               .skill-container {
                 animation: blurIn 0.75s ease-in;
 
@@ -1235,9 +1223,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             }
 
             .console {
-              * {
-                z-index: 1001;
-              }
               position: absolute;
               top: 2.5%;
               max-width: 360px;
@@ -1245,6 +1230,10 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               height: 95%;
               overflow-y: auto;
               @include scrollbar($fontSize);
+
+              * {
+                z-index: 1001;
+              }
 
               &::after {
                 content: "";
@@ -1262,47 +1251,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 );
               }
 
-              .format-btns {
-                margin: $fontSize * 2 5% 0 5%;
-                // position: sticky;
-                // top: $fontSize * 2;
-
-                .format-btn {
-                  margin: 0 $fontSize * 0.25 $fontSize 0;
-
-                  width: $fontSize * 2.75;
-                  height: $fontSize * 2.75;
-                  border-radius: 50%;
-                  border: none;
-                  background-color: transparent;
-                  position: relative;
-                  cursor: pointer;
-
-                  i, span {
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: $fontSize * 1.85;
-                    color: rgb(221, 220, 220);
-                  }
-
-                  &.active {
-                    background-color: #242424;
-                  }
-
-                  &:hover {
-                    background-color: #272727;
-                  }
-                }
-              }
-
               .questions {
-                margin-top: $fontSize * 0.25;
+                margin-top: $fontSize * 2.25;
                 margin-left: 3%;
                 margin-right: 3%;
 
@@ -1756,45 +1706,23 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
       }
 
       .vs-code-tab-section {
-        flex-basis: 60%;
         flex-grow: 1;
 
         .vs-code-tab-section-body {
-          flex-direction: row!important;
-          flex-wrap: wrap;
-          align-items: center;
+          &.introduction {
+            .about-me-pics {
+              margin-top: 10vh!important;
+              margin-bottom: 10vh!important;
 
-          .description {
-            display: block!important;
-
-            .code-editor {
-              font-size: $fontSize * 0.75!important;
-              max-width: 44.5vw;
-            }
-          }
-
-          .about-me-pics {
-            margin-left: 2.25vw!important;
-            min-width: 300px;
-
-            img {
-              width: 30vw;
-              height: 25vh;
-
-              &:nth-child(1) {
-                align-self: flex-start;
-                transform: rotate(-5deg);
-              }
-
-              &:nth-child(2) {
-                align-self: flex-end;
-                transform: rotate(5deg);
+              img {
+                transform: none!important;
               }
             }
           }
 
           &.skills {
             .skill-container {
+              padding-top: 0!important;
               padding-left: 0!important;
               padding-right: 0!important;
 
@@ -1804,7 +1732,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               }
             }
           }
-
         }
 
         .shuffle-btns {
@@ -2296,7 +2223,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           .tablet {
             display: initial!important;
             max-width: $fontSize * 45;
-            width: 80vw;
+            width: calc(80vw - $fontSize * 10);
             filter: brightness(0.6);
           }
 
@@ -2304,13 +2231,10 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             z-index: 2000!important;
             position: absolute;
             top: 7%!important;
-            left: 10.5%;
-            max-width: $fontSize * 35.4!important;
-            width: 62.75vw!important;
+            left: 7.5%;
+            max-width: $fontSize * 37.25!important;
+            width: calc(64.75vw - $fontSize * 7.75)!important;
             height: 87%!important;
-            // background-image: radial-gradient(
-            //   rgba(0, 150, 0, 0.75), black 120%
-            // );
 
             &::after {
               content: "";
@@ -2326,51 +2250,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 transparent 1px,
                 transparent 2px
               );
-            }
-
-            .format-btns {
-              margin: $fontSize * 2 5% 0 5%;
-
-              .format-btn {
-                margin: 0 $fontSize * 0.25 $fontSize 0;
-
-                width: $fontSize * 2.75;
-                height: $fontSize * 2.75;
-                border-radius: 50%;
-                border: none;
-                background-color: transparent;
-                position: relative;
-                cursor: pointer;
-
-                i {
-                  width: 100%;
-                  height: 100%;
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  font-size: $fontSize * 1.5;
-                  color: rgb(194, 194, 194);
-                }
-
-                &.active {
-                  background-color: #242424;
-                }
-
-                &:hover {
-                  background-color: #272727;
-                }
-
-                .disabled {
-                  filter: brightness(0.5);
-
-                  &:hover {
-                    cursor: not-allowed;
-                  }
-                }
-              }
             }
 
             .questions {
@@ -2516,24 +2395,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         rgba(79, 79, 79, 0.75), rgb(13, 13, 13) 120%
       );
 
-      .format-btn {
-        i, span {
-          color: rgb(100, 198, 255);
-          border-radius: 50%;
-          // box-shadow: 0 0 1vw 0.01vw rgb(100, 146, 255);
-          text-shadow: 0 0 0.51vw rgb(100, 146, 255);
-        }
-
-        &.active {
-          background-color: #24242499;
-          border: 1px solid rgb(100, 146, 255);
-        }
-
-        &:hover {
-          background-color: #24242499;
-        }
-      }
-
       .questions {
         font-family: monospace!important;
       }
@@ -2557,7 +2418,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
   @include largeScreens(20px);
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .direct-links-card {
     &.persisting {
       opacity: 1!important;

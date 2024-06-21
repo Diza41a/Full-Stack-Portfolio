@@ -207,19 +207,6 @@ export default function ReachOut() {
           <img src="./assets/images/projects/tablet-frame-rotated.png" draggable={false} alt="" className="tablet" />
 
           <div className="console">
-            <div className="format-btns">
-              <button type="button" id="email-format" className="format-btn active">
-                <span className="material-symbols-outlined">
-                  mail
-                </span>
-              </button>
-              <button type="button" id="phone-format" className="format-btn">
-                <span className="material-symbols-outlined disabled">
-                  phone
-                </span>
-              </button>
-            </div>
-
             <div className="questions">
               <p>
                 $
