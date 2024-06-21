@@ -2,9 +2,9 @@
 
 @mixin sidebarMainView($fontSize) {
   nav {
-    z-index: 1000;
-    width: $fontSize * 3.5;
+    z-index: 999;
     height: calc(97.5vh - ($fontSize * 0.4) - ($fontSize * 2) - 1px);
+    width: $fontSize * 3.5;
     padding: $fontSize 0;
     position: sticky;
     top: calc(2.5vh + ($fontSize * 0.4) + 1px);
@@ -15,37 +15,69 @@
     div {
       display: flex;
       flex-direction: column;
+      row-gap: $fontSize * 0.75;
 
-      a, i, span {
-        text-align: center;
-        font-size: $fontSize * 2.25;
-        margin: $fontSize * 0.15 0;
+      a, button {
+        display: flex;
+        align-items: center;
+        height: $fontSize * 2.6;
+        padding: 0 $fontSize * 0.5;
+        column-gap: $fontSize * 0.5;
+        font-size: $fontSize * 0.9;
         color: inherit;
         cursor: pointer;
+      }
 
-        &.info {
-          font-size: $fontSize * 2.5;
+      a {
+        text-decoration: none;
+      }
+
+      i, span {
+        font-size: $fontSize * 2.25;
+        cursor: pointer;
+
+        &.projects {
+          font-size: $fontSize * 2;
+          padding-left: $fontSize * 0.2;
         }
       }
 
       &.lower-nav {
-        i, span {
-          margin: $fontSize * 0.45 0;
+        row-gap: $fontSize * 0.5;
+
+        button {
+          background-color: transparent;
+          outline: none;
+          border: none;
+
+          i, span {
+            margin: $fontSize * 0.45 0;
+          }
         }
       }
+    }
+
+    &.expanded {
+      width: $fontSize * 13.5;
     }
   }
 }
 
-@mixin sidebarColorTheme($mainText, $mainMedium, $navHighlight, $border) {
+@mixin sidebarColorTheme($mainText, $mainMedium, $navBackground, $navHighlight, $navActive, $border) {
   nav.sidebar {
-    background-color: $mainMedium;
+    background-color: $navBackground;
     color: $mainText;
     border-right: 1px solid $border;
 
     a {
       &.active {
         border-left: 4px solid $navHighlight;
+        background-color: $navActive;
+      }
+
+      transition: background-color 0.1s ease-in-out;
+      &:hover:not(.active) {
+        background-color: $navHighlight;
       }
     }
   }
@@ -56,7 +88,9 @@
     @include sidebarColorTheme(
       $mainTextRegular,
       $mainMediumRegular,
+      $navBackgroundRegular,
       $navHighlightRegular,
+      $navActiveRegular,
       $borderRegular
     );
   }
@@ -65,7 +99,9 @@
     @include sidebarColorTheme(
       $mainTextMatrix,
       $mainMediumMatrix,
+      $navBackgroundMatrix,
       $navHighlightMatrix,
+      $navActiveMatrix,
       $borderMatrix
     );
   }

@@ -1,9 +1,12 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export default function Sidebar() {
+  const [expanded, setExpanded] = useState(true);
+
+  const classList = ['sidebar'];
+  if (expanded) classList.push('expanded');
+
   const toggleDirectLinksVisibility = (e) => {
     e.preventDefault();
 
@@ -31,36 +34,53 @@ export default function Sidebar() {
   };
 
   return (
-    <nav className="sidebar">
+    <nav className={classList.join(' ')}>
       <div className="upper-nav">
         <NavLink to="landing">
           <span className="material-symbols-outlined home">
             home
           </span>
+          Home
         </NavLink>
         <NavLink to="about">
           <span className="material-symbols-outlined info">
             contact_support
           </span>
+          About me
+        </NavLink>
+        <NavLink to="skills">
+          <span className="material-symbols-outlined">
+            code
+          </span>
+          Skills
         </NavLink>
         <NavLink to="portfolio">
-          <span className="material-symbols-outlined">
+          <span className="material-symbols-outlined projects">
             cases
           </span>
+          Projects
         </NavLink>
         <NavLink to="contact">
           <span className="material-symbols-outlined">
             call
           </span>
+          Reach out
         </NavLink>
       </div>
+
       <div className="lower-nav">
-        <span className="material-symbols-outlined" onClick={toggleDirectLinksVisibility}>
-          account_circle
-        </span>
-        <span className="material-symbols-outlined" onClick={toggleThemeSelectorVisibility}>
-          settings
-        </span>
+        <button type="button" onClick={toggleDirectLinksVisibility}>
+          <span className="material-symbols-outlined">
+            account_circle
+          </span>
+          Direct Links
+        </button>
+        <button type="button" onClick={toggleThemeSelectorVisibility}>
+          <span className="material-symbols-outlined">
+            settings
+          </span>
+          Themes
+        </button>
       </div>
     </nav>
   );
