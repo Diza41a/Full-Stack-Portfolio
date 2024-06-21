@@ -40,31 +40,31 @@ export default function Sidebar() {
           <span className="material-symbols-outlined home">
             home
           </span>
-          Home
+          <p className="nav-link-text">Home</p>
         </NavLink>
         <NavLink to="about">
           <span className="material-symbols-outlined info">
             contact_support
           </span>
-          About me
+          <p className="nav-link-text">About me</p>
         </NavLink>
         <NavLink to="skills">
           <span className="material-symbols-outlined">
             code
           </span>
-          Skills
+          <p className="nav-link-text">Skills</p>
         </NavLink>
         <NavLink to="portfolio">
           <span className="material-symbols-outlined projects">
             cases
           </span>
-          Projects
+          <p className="nav-link-text">Projects</p>
         </NavLink>
         <NavLink to="contact">
           <span className="material-symbols-outlined">
             call
           </span>
-          Reach out
+          <p className="nav-link-text">React out</p>
         </NavLink>
       </div>
 
@@ -73,13 +73,23 @@ export default function Sidebar() {
           <span className="material-symbols-outlined">
             account_circle
           </span>
-          Direct Links
+          <p className="nav-link-text">Direct Links</p>
         </button>
         <button type="button" onClick={toggleThemeSelectorVisibility}>
           <span className="material-symbols-outlined">
             settings
           </span>
-          Themes
+          <p className="nav-link-text">Themes</p>
+        </button>
+
+        <button
+          className="btn-toggle-sidebar"
+          type="button"
+          onClick={() => setExpanded(!expanded)}
+        >
+          <span className="material-symbols-outlined">
+            {expanded ? 'chevron_left' : 'chevron_right'}
+          </span>
         </button>
       </div>
     </nav>

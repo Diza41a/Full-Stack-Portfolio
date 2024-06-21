@@ -53,12 +53,31 @@
           i, span {
             margin: $fontSize * 0.45 0;
           }
+
+          &.btn-toggle-sidebar {
+            height: $fontSize * 1.5;
+            text-align: right;
+
+            span {
+              width: 100%;
+            }
+          }
         }
       }
     }
 
     &.expanded {
       width: $fontSize * 13.5;
+    }
+
+    &:not(.expanded) {
+      a, button {
+        justify-content: center;
+      }
+
+      .nav-link-text {
+        display: none;
+      }
     }
   }
 }
@@ -75,7 +94,6 @@
         background-color: $navActive;
       }
 
-      transition: background-color 0.1s ease-in-out;
       &:hover:not(.active) {
         background-color: $navHighlight;
       }
