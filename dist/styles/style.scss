@@ -1688,6 +1688,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         }
 
         .photo-wrap {
+          margin-left: auto;
           visibility: visible!important;
           overflow: initial!important;
           overflow-y: visible!important;
@@ -2388,10 +2389,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
     .console {
       background-color: black;
-      // background-image: linear-gradient(to left, rgb(11, 110, 164) 1%,#2a69b1 80%);
-      // background-image: radial-gradient(
-      //   rgba(0, 150, 0, 0.75), black 120%
-      // );
       background-image: radial-gradient(
         rgba(79, 79, 79, 0.75), rgb(13, 13, 13) 120%
       );
@@ -2417,9 +2414,23 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 @media (min-width: 850px) {
   @include mainView(20px);
   @include largeScreens(20px);
+
+  #app.matrix {
+    .landing-wrap {
+      .introduction {
+        transform: rotate(-0.5deg);
+      }
+    }
+  }
 }
 
 @media (min-width: 1600px) {
+  .landing-wrap {
+    .photo-wrap {
+      margin-left: 0!important;
+    }
+  }
+
   .direct-links-card {
     &.persisting {
       opacity: 1!important;

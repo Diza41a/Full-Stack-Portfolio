@@ -3036,6 +3036,7 @@ button {
     max-height: 43px !important;
   }
   #app .content .landing-wrap .photo-wrap {
+    margin-left: auto;
     visibility: visible !important;
     overflow: initial !important;
     overflow-y: visible !important;
@@ -3498,8 +3499,16 @@ button {
     right: 0;
     text-align: center;
   }
+
+  #app.matrix .landing-wrap .introduction {
+    transform: rotate(-0.5deg);
+  }
 }
 @media (min-width: 1600px) {
+  .landing-wrap .photo-wrap {
+    margin-left: 0 !important;
+  }
+
   .direct-links-card.persisting {
     opacity: 1 !important;
     right: 0 !important;

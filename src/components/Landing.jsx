@@ -13,9 +13,8 @@ export default function Landing() {
   // Helpers
   const descriptionSlideshow = () => {
     const slideshowContainer = document.querySelector('div.dynamic');
-    if (!slideshowContainer) {
-      return;
-    }
+    if (!slideshowContainer) return;
+
     slideshowContainer.scrollBehavior = 'smooth';
     const style = window.getComputedStyle(slideshowContainer, null).getPropertyValue('font-size');
     const fontSize = parseFloat(style);
@@ -23,7 +22,7 @@ export default function Landing() {
       slideshowContainer.scrollTop = 0;
       return;
     }
-    slideshowContainer.scrollTop += fontSize * 1.2;
+    slideshowContainer.scrollTop += fontSize * 1.4;
   };
 
   // ComponentDidMount
@@ -50,12 +49,6 @@ export default function Landing() {
         }, 500);
       }
     }, 3000);
-    // let delay = 0.1;
-    // letterEls.forEach((letterEl) => {
-    //   letterEl.classList.add('enlarging');
-    //   letterEl.style.animationDelay = `${delay}s`;
-    //   delay += 0.1;
-    // });
 
     document.querySelector('.upper-nav').children[0].classList.add('active');
 
