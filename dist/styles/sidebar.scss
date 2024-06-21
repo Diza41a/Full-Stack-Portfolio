@@ -58,11 +58,8 @@
 
           &.btn-toggle-sidebar {
             height: $fontSize * 1.5;
+            margin-left: auto;
             text-align: right;
-
-            span {
-              width: 100%;
-            }
           }
         }
       }
@@ -113,6 +110,12 @@
     button {
       &:hover:not(.btn-toggle-sidebar) {
         background-color: rgba($navHighlight, 0.75);
+      }
+
+      &.btn-toggle-sidebar:hover {
+        span {
+          background-color: rgba($navHighlight, 0.75);
+        }
       }
     }
   }

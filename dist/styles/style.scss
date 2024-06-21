@@ -1749,15 +1749,16 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
         .project-selector {
           padding: $fontSize * 1.25 0;
-          flex-basis: 35%;
-          min-width: 35vw;
+          flex-basis: 25%;
           flex-grow: 1;
+          min-width: $fontSize * 15;
+          width: 25vw;
+          max-width: $fontSize * 19.25;
           position: sticky;
           top: calc(2.5vh + ($fontSize * 0.4) + 1px);
-          max-width: $fontSize * 25;
 
           .project-selector-list {
-            padding: 10vh $fontSize * 4 $fontSize * 3 $fontSize * 4 !important;
+            padding: 10vh 0 $fontSize * 3 0 !important;
 
             .title {
               font-size: $fontSize * 1.25!important;

@@ -21,6 +21,9 @@
 #root #app.regular nav.sidebar button:hover:not(.btn-toggle-sidebar) {
   background-color: rgba(248, 177, 114, 0.75);
 }
+#root #app.regular nav.sidebar button.btn-toggle-sidebar:hover span {
+  background-color: rgba(248, 177, 114, 0.75);
+}
 #root #app.matrix nav.sidebar {
   background-color: rgba(11, 11, 14, 0.8941176471);
   color: #caf4ff;
@@ -42,6 +45,9 @@
   background-color: rgba(8, 170, 181, 0.75);
 }
 #root #app.matrix nav.sidebar button:hover:not(.btn-toggle-sidebar) {
+  background-color: rgba(8, 170, 181, 0.75);
+}
+#root #app.matrix nav.sidebar button.btn-toggle-sidebar:hover span {
   background-color: rgba(8, 170, 181, 0.75);
 }
 @media (min-width: 850px) {
@@ -97,10 +103,8 @@
   }
   #root nav div.lower-nav button.btn-toggle-sidebar {
     height: 30px;
+    margin-left: auto;
     text-align: right;
-  }
-  #root nav div.lower-nav button.btn-toggle-sidebar span {
-    width: 100%;
   }
   #root nav.expanded {
     width: 270px;
@@ -165,10 +169,8 @@
   }
   #root nav div.lower-nav button.btn-toggle-sidebar {
     height: 24px;
+    margin-left: auto;
     text-align: right;
-  }
-  #root nav div.lower-nav button.btn-toggle-sidebar span {
-    width: 100%;
   }
   #root nav.expanded {
     width: 216px;
@@ -3074,15 +3076,16 @@ button {
   }
   #app .content .portfolio-manager-wrap .project-selector {
     padding: 25px 0;
-    flex-basis: 35%;
-    min-width: 35vw;
+    flex-basis: 25%;
     flex-grow: 1;
+    min-width: 300px;
+    width: 25vw;
+    max-width: 385px;
     position: sticky;
     top: calc(2.5vh + 8px + 1px);
-    max-width: 500px;
   }
   #app .content .portfolio-manager-wrap .project-selector .project-selector-list {
-    padding: 10vh 80px 60px 80px !important;
+    padding: 10vh 0 60px 0 !important;
   }
   #app .content .portfolio-manager-wrap .project-selector .project-selector-list .title {
     font-size: 25px !important;
