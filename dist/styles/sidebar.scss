@@ -24,6 +24,7 @@
         height: $fontSize * 2.6;
         padding: 0 $fontSize * 0.5;
         column-gap: $fontSize * 0.5;
+        position: relative;
         font-size: $fontSize * 0.9;
         color: inherit;
         cursor: pointer;
@@ -91,12 +92,27 @@
 
     a {
       &.active {
-        border-left: 4px solid $navHighlight;
         background-color: $navActive;
+
+        ::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 4px;
+          background-color: $navHighlight;
+        }
       }
 
       &:hover:not(.active) {
-        background-color: $navHighlight;
+        background-color: rgba($navHighlight, 0.75);
+      }
+    }
+
+    button {
+      &:hover:not(.btn-toggle-sidebar) {
+        background-color: rgba($navHighlight, 0.75);
       }
     }
   }

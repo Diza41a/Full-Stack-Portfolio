@@ -9,7 +9,7 @@
 @font-face {
   font-weight: normal;
   font-family: 'Code-Bold';
-  src: url(../assets/fonts/code_pro/Code\ Pro\ LC.otf);
+  src: url(../assets/fonts/code_pro/Code\ Pro\ LC.woff);
 }
 
 @font-face {
@@ -658,7 +658,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
       .content {
         width: calc(100% - $fontSize * 3.5);
-        // margin-left: $fontSize * 3.5;
 
         @keyframes slideInFromLeft {
           from {

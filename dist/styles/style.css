@@ -4,11 +4,22 @@
   border-right: 1px solid #626262;
 }
 #root #app.regular nav.sidebar a.active {
-  border-left: 4px solid #F8B172;
   background-color: #444444;
 }
-#root #app.regular nav.sidebar a:hover:not(.active) {
+#root #app.regular nav.sidebar a.active ::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
   background-color: #F8B172;
+}
+#root #app.regular nav.sidebar a:hover:not(.active) {
+  background-color: rgba(248, 177, 114, 0.75);
+}
+#root #app.regular nav.sidebar button:hover:not(.btn-toggle-sidebar) {
+  background-color: rgba(248, 177, 114, 0.75);
 }
 #root #app.matrix nav.sidebar {
   background-color: rgba(11, 11, 14, 0.8941176471);
@@ -16,11 +27,22 @@
   border-right: 1px solid #858585;
 }
 #root #app.matrix nav.sidebar a.active {
-  border-left: 4px solid #08aab5;
   background-color: #004243;
 }
-#root #app.matrix nav.sidebar a:hover:not(.active) {
+#root #app.matrix nav.sidebar a.active ::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
   background-color: #08aab5;
+}
+#root #app.matrix nav.sidebar a:hover:not(.active) {
+  background-color: rgba(8, 170, 181, 0.75);
+}
+#root #app.matrix nav.sidebar button:hover:not(.btn-toggle-sidebar) {
+  background-color: rgba(8, 170, 181, 0.75);
 }
 @media (min-width: 850px) {
   #root nav {
@@ -46,6 +68,7 @@
     height: 52px;
     padding: 0 10px;
     column-gap: 10px;
+    position: relative;
     font-size: 18px;
     color: inherit;
     cursor: pointer;
@@ -113,6 +136,7 @@
     height: 41.6px;
     padding: 0 8px;
     column-gap: 8px;
+    position: relative;
     font-size: 14.4px;
     color: inherit;
     cursor: pointer;
@@ -179,7 +203,7 @@
 @font-face {
   font-weight: normal;
   font-family: "Code-Bold";
-  src: url(../assets/fonts/code_pro/Code\ Pro\ LC.otf);
+  src: url(../assets/fonts/code_pro/Code\ Pro\ LC.woff);
 }
 @font-face {
   font-family: "Material Icons";
