@@ -4,7 +4,7 @@ import { Routes, Route, HashRouter } from 'react-router-dom';
 
 import MainLayout from './components/reusable/MainLayout';
 import Landing from './components/Landing';
-import AboutMe from './components/AboutMe';
+import AboutMe from './components/AboutMe/AboutMe';
 import Skills from './components/Skills/Skills';
 import PortfolioManager from './components/Portfolio/PortfolioManager';
 import ReachOut from './components/ReachOut/ReachOut';

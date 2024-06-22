@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { EditorView } from '@codemirror/view';
-import api from '../api';
+import bio from './bio';
 
 // Subcomponent imports
-import { codeMirrorTxtTheme } from './styles/Colored';
+import { codeMirrorTxtTheme } from '../styles/Colored';
 
 export default function AboutMe() {
-  const [aboutText, setAboutText] = useState('');
-
-  // ComponentDidMount
-  useEffect(() => {
-    api.get('/bio')
-      .then(({ data: bio }) => setAboutText(bio))
-      .catch((err) => console.log(err));
-  }, []);
-
   return (
     <section className="vs-code-tab-section introduction tab-wrap">
       <p className="tab-title">About me.txt</p>
@@ -24,7 +15,7 @@ export default function AboutMe() {
         <div className="description">
           <CodeMirror
             className="code-editor"
-            value={aboutText}
+            value={bio}
             height="auto"
             readOnly
             theme={codeMirrorTxtTheme}
