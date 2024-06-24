@@ -63,12 +63,6 @@ export default function MainLayout() {
     }
   }, [globalTheme]);
 
-  // To desktop
-  // const toDesktop = (e) => {
-  //   e.preventDefault();
-  //   navigate('/');
-  // };
-
   return (
     <MainContext.Provider value={{
       currentFileName, setCurrentFileName, globalTheme, setGlobalTheme, lastLink: 'vscode/landing',
@@ -77,34 +71,6 @@ export default function MainLayout() {
       {/* // eslint-disable-next-line react/jsx-no-constructed-context-values */}
       <div id="app" className={globalTheme} style={{ backgroundColor: background.color, backgroundImage: background.image }}>
         <header className="toolbar">
-          <div className="buttons">
-            {/* onClick={toDesktop} */}
-            <button
-              type="button"
-              style={{
-                color: 'white', backgroundColor: 'red', cursor: 'not-allowed', filter: 'brightness(0.8)',
-              }}
-            >
-              <i className="fa-solid fa-x" />
-            </button>
-            <button
-              type="button"
-              style={{
-                color: 'black', backgroundColor: '#FFDE59', cursor: 'not-allowed', filter: 'brightness(0.8)',
-              }}
-            >
-              <i className="fa-solid fa-compress" />
-            </button>
-            <button
-              type="button"
-              style={{
-                color: 'white', backgroundColor: '#7ED957', cursor: 'not-allowed', filter: 'brightness(0.8)',
-              }}
-            >
-              <i className="fa-solid fa-minus" />
-            </button>
-          </div>
-
           <p className="file-name">{`${currentFileName} - Davyd Zakorchennyi`}</p>
 
           <strong className="time">{getCurrentTime()}</strong>

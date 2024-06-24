@@ -782,49 +782,20 @@ button {
     line-height: 1.45;
     font-size: 13.6px;
     padding: 12px 24px;
-    cursor: pointer;
+  }
+  .card .body p {
+    min-height: 16px;
   }
   .card .links-wrap {
-    padding: 24px;
+    padding: 16px 24px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
   }
-  .card .links-wrap .octo-logo {
-    text-decoration: none;
-    animation: rotateOctoIcon 15s linear infinite;
-  }
-  @keyframes rotateOctoIcon {
-    from {
-      transform: rotateY(0deg);
-    }
-    5% {
-      transform: rotateY(180deg);
-    }
-    10% {
-      transform: rotateY(0deg);
-    }
-  }
-  .card .links-wrap .octo-logo img {
-    width: 56px;
-  }
-  @keyframes jumpOctoIcon {
-    from {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-1vh);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  .card .links-wrap .octo-logo img:hover {
-    animation: jumpOctoIcon 1s ease-in-out infinite;
-  }
   .card .links-wrap .links {
     display: flex;
     flex-direction: column;
+    row-gap: 5.28px;
   }
   .card .links-wrap .links a {
     text-decoration: none;
@@ -867,27 +838,8 @@ button {
     font-size: 12.8px;
     padding: 3.2px 4px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-  }
-  #app header .buttons button {
-    border-radius: 50%;
-    width: 10.4px;
-    height: 10.4px;
-    border: none;
-    margin: 0 2.4px;
-  }
-  #app header .buttons button i {
-    font-size: 5.6px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    opacity: 0;
-  }
-  #app header .buttons button i:hover {
-    opacity: 1;
   }
   #app header .file-name {
     font-family: "Open Sans", sans-serif;
@@ -1394,7 +1346,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin: 32px 5.6px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card {
@@ -1425,49 +1377,20 @@ button {
     line-height: 1.45;
     font-size: 13.6px;
     padding: 12px 24px;
-    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .body p {
+    min-height: 16px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap {
-    padding: 24px;
+    padding: 16px 24px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
   }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo {
-    text-decoration: none;
-    animation: rotateOctoIcon 15s linear infinite;
-  }
-  @keyframes rotateOctoIcon {
-    from {
-      transform: rotateY(0deg);
-    }
-    5% {
-      transform: rotateY(180deg);
-    }
-    10% {
-      transform: rotateY(0deg);
-    }
-  }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img {
-    width: 56px;
-  }
-  @keyframes jumpOctoIcon {
-    from {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-1vh);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img:hover {
-    animation: jumpOctoIcon 1s ease-in-out infinite;
-  }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links {
     display: flex;
     flex-direction: column;
+    row-gap: 5.28px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a {
     text-decoration: none;
@@ -1717,136 +1640,6 @@ button {
     top: calc(-5 * (2.5vh + 6.4px + 1px));
   }
 
-  .desktop-wrap {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-  }
-  .desktop-wrap .desktop-icon-wrap {
-    position: absolute;
-    cursor: pointer;
-    text-align: center;
-    max-width: 80px;
-    transition: top 0.25s ease-in, left 0.25s ease-in;
-  }
-  .desktop-wrap .desktop-icon-wrap .desktop-icon {
-    user-select: none;
-    width: 64px;
-  }
-  .desktop-wrap .desktop-icon-wrap .icon-title {
-    user-select: none;
-    font-size: 12px;
-    color: white;
-    max-width: 80px;
-  }
-  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon, .desktop-wrap .desktop-icon-wrap:active .desktop-icon {
-    border: 0.5px dashed rgba(190, 189, 189, 0.705);
-  }
-  .desktop-wrap .desktop-icon-wrap.selected .icon-title, .desktop-wrap .desktop-icon-wrap:active .icon-title {
-    background-color: rgba(103, 103, 103, 0.603);
-  }
-  .desktop-wrap .desktop-icon-wrap.vscode-icon {
-    top: 5%;
-    left: 5%;
-  }
-  .desktop-wrap .desktop-icon-wrap.checkers-icon {
-    bottom: 5%;
-    left: 5%;
-  }
-  .desktop-wrap .desktop-icon-wrap.checkers-icon .desktop-icon {
-    width: 53.6px;
-    border-radius: 16px;
-    object-fit: contain;
-  }
-  .desktop-wrap #checkers-iframe {
-    width: 200vw;
-    height: 200vh;
-    position: absolute;
-    top: -50vh;
-    left: -50vw;
-    transform: scale(0.5);
-    margin: auto;
-    display: none;
-  }
-  .desktop-wrap .selection-area {
-    background-color: rgba(165, 165, 165, 0.531);
-    border: 1px solid rgb(211, 211, 211);
-    position: absolute;
-    z-index: 10;
-  }
-  .desktop-wrap .selection-area.hidden {
-    display: none;
-  }
-  .desktop-wrap .toolkit {
-    position: relative;
-    z-index: 1000;
-    user-select: none;
-    padding: 1.6px 4px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 12.8px;
-    background-color: rgba(71, 70, 70, 0.734);
-    color: white;
-  }
-  .desktop-wrap .toolkit .os, .desktop-wrap .toolkit .time {
-    font-family: "Code";
-  }
-  .desktop-wrap .toolkit p {
-    cursor: pointer;
-  }
-  .desktop-wrap .toolkit p .app {
-    font-size: 0.9em;
-    padding-left: 8px;
-  }
-  .desktop-wrap .toolkit #back-to-desktop-btn {
-    z-index: 11000;
-  }
-  .desktop-wrap .toolkit .time {
-    display: none;
-  }
-  .desktop-wrap .clock {
-    border-radius: 50%;
-    background-color: white;
-    border: 5px solid white;
-    box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
-    width: 60vw;
-    height: 60vw;
-    max-height: 200px;
-    max-width: 200px;
-    position: relative;
-  }
-  .desktop-wrap .clock .dot {
-    position: absolute;
-    top: 46.5%;
-    right: 46.5%;
-    height: 3.5%;
-    width: 3.5%;
-    border-radius: 50%;
-    border: 1.5px solid black;
-  }
-  .desktop-wrap .clock .hour {
-    position: absolute;
-    top: 15%;
-    left: 50.25%;
-    height: 35%;
-    width: 2%;
-    background-color: black;
-    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 10px 10px;
-  }
-  .desktop-wrap .clock .minute {
-    position: absolute;
-    top: 5%;
-    left: 50.5%;
-    height: 45%;
-    width: 1.5%;
-    background-color: black;
-    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 10px 10px;
-  }
-
   #app .content-body-wrap .content .landing-wrap {
     justify-content: center;
   }
@@ -1896,49 +1689,20 @@ button {
     line-height: 1.45;
     font-size: 17px;
     padding: 15px 30px;
-    cursor: pointer;
+  }
+  .card .body p {
+    min-height: 20px;
   }
   .card .links-wrap {
-    padding: 30px;
+    padding: 20px 30px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
   }
-  .card .links-wrap .octo-logo {
-    text-decoration: none;
-    animation: rotateOctoIcon 15s linear infinite;
-  }
-  @keyframes rotateOctoIcon {
-    from {
-      transform: rotateY(0deg);
-    }
-    5% {
-      transform: rotateY(180deg);
-    }
-    10% {
-      transform: rotateY(0deg);
-    }
-  }
-  .card .links-wrap .octo-logo img {
-    width: 70px;
-  }
-  @keyframes jumpOctoIcon {
-    from {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-1vh);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  .card .links-wrap .octo-logo img:hover {
-    animation: jumpOctoIcon 1s ease-in-out infinite;
-  }
   .card .links-wrap .links {
     display: flex;
     flex-direction: column;
+    row-gap: 6.6px;
   }
   .card .links-wrap .links a {
     text-decoration: none;
@@ -1981,27 +1745,8 @@ button {
     font-size: 16px;
     padding: 4px 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-  }
-  #app header .buttons button {
-    border-radius: 50%;
-    width: 13px;
-    height: 13px;
-    border: none;
-    margin: 0 3px;
-  }
-  #app header .buttons button i {
-    font-size: 7px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    opacity: 0;
-  }
-  #app header .buttons button i:hover {
-    opacity: 1;
   }
   #app header .file-name {
     font-family: "Open Sans", sans-serif;
@@ -2508,7 +2253,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin: 40px 7px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card {
@@ -2539,49 +2284,20 @@ button {
     line-height: 1.45;
     font-size: 17px;
     padding: 15px 30px;
-    cursor: pointer;
+  }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .body p {
+    min-height: 20px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap {
-    padding: 30px;
+    padding: 20px 30px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
   }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo {
-    text-decoration: none;
-    animation: rotateOctoIcon 15s linear infinite;
-  }
-  @keyframes rotateOctoIcon {
-    from {
-      transform: rotateY(0deg);
-    }
-    5% {
-      transform: rotateY(180deg);
-    }
-    10% {
-      transform: rotateY(0deg);
-    }
-  }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img {
-    width: 70px;
-  }
-  @keyframes jumpOctoIcon {
-    from {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-1vh);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .octo-logo img:hover {
-    animation: jumpOctoIcon 1s ease-in-out infinite;
-  }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links {
     display: flex;
     flex-direction: column;
+    row-gap: 6.6px;
   }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap .links a {
     text-decoration: none;
@@ -2831,136 +2547,6 @@ button {
     top: calc(-5 * (2.5vh + 8px + 1px));
   }
 
-  .desktop-wrap {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-  }
-  .desktop-wrap .desktop-icon-wrap {
-    position: absolute;
-    cursor: pointer;
-    text-align: center;
-    max-width: 100px;
-    transition: top 0.25s ease-in, left 0.25s ease-in;
-  }
-  .desktop-wrap .desktop-icon-wrap .desktop-icon {
-    user-select: none;
-    width: 80px;
-  }
-  .desktop-wrap .desktop-icon-wrap .icon-title {
-    user-select: none;
-    font-size: 15px;
-    color: white;
-    max-width: 100px;
-  }
-  .desktop-wrap .desktop-icon-wrap.selected .desktop-icon, .desktop-wrap .desktop-icon-wrap:active .desktop-icon {
-    border: 0.5px dashed rgba(190, 189, 189, 0.705);
-  }
-  .desktop-wrap .desktop-icon-wrap.selected .icon-title, .desktop-wrap .desktop-icon-wrap:active .icon-title {
-    background-color: rgba(103, 103, 103, 0.603);
-  }
-  .desktop-wrap .desktop-icon-wrap.vscode-icon {
-    top: 5%;
-    left: 5%;
-  }
-  .desktop-wrap .desktop-icon-wrap.checkers-icon {
-    bottom: 5%;
-    left: 5%;
-  }
-  .desktop-wrap .desktop-icon-wrap.checkers-icon .desktop-icon {
-    width: 67px;
-    border-radius: 20px;
-    object-fit: contain;
-  }
-  .desktop-wrap #checkers-iframe {
-    width: 200vw;
-    height: 200vh;
-    position: absolute;
-    top: -50vh;
-    left: -50vw;
-    transform: scale(0.5);
-    margin: auto;
-    display: none;
-  }
-  .desktop-wrap .selection-area {
-    background-color: rgba(165, 165, 165, 0.531);
-    border: 1px solid rgb(211, 211, 211);
-    position: absolute;
-    z-index: 10;
-  }
-  .desktop-wrap .selection-area.hidden {
-    display: none;
-  }
-  .desktop-wrap .toolkit {
-    position: relative;
-    z-index: 1000;
-    user-select: none;
-    padding: 2px 5px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-    background-color: rgba(71, 70, 70, 0.734);
-    color: white;
-  }
-  .desktop-wrap .toolkit .os, .desktop-wrap .toolkit .time {
-    font-family: "Code";
-  }
-  .desktop-wrap .toolkit p {
-    cursor: pointer;
-  }
-  .desktop-wrap .toolkit p .app {
-    font-size: 0.9em;
-    padding-left: 10px;
-  }
-  .desktop-wrap .toolkit #back-to-desktop-btn {
-    z-index: 11000;
-  }
-  .desktop-wrap .toolkit .time {
-    display: none;
-  }
-  .desktop-wrap .clock {
-    border-radius: 50%;
-    background-color: white;
-    border: 5px solid white;
-    box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
-    width: 60vw;
-    height: 60vw;
-    max-height: 200px;
-    max-width: 200px;
-    position: relative;
-  }
-  .desktop-wrap .clock .dot {
-    position: absolute;
-    top: 46.5%;
-    right: 46.5%;
-    height: 3.5%;
-    width: 3.5%;
-    border-radius: 50%;
-    border: 1.5px solid black;
-  }
-  .desktop-wrap .clock .hour {
-    position: absolute;
-    top: 15%;
-    left: 50.25%;
-    height: 35%;
-    width: 2%;
-    background-color: black;
-    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 10px 10px;
-  }
-  .desktop-wrap .clock .minute {
-    position: absolute;
-    top: 5%;
-    left: 50.5%;
-    height: 45%;
-    width: 1.5%;
-    background-color: black;
-    box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 10px 10px;
-  }
-
   html {
     overflow: hidden;
   }
@@ -2979,7 +2565,7 @@ button {
     font-size: 14px;
   }
   .card .links-wrap {
-    padding: 24px;
+    padding: 10px 24px;
   }
   .card .links-wrap .links a {
     font-size: 17px;
@@ -3433,7 +3019,7 @@ button {
     font-size: 14px;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap {
-    padding: 24px;
+    padding: 10px 24px;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap .links a {
     font-size: 17px;

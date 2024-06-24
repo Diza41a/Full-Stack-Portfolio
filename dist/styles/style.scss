@@ -416,7 +416,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 @mixin cardMobile($fontSize) {
   .card {
     max-width: 400px;
-    // margin-bottom: $fontSi`ze * 2;
     margin: 0 $fontSize * 0.75 $fontSize * 2 $fontSize * 0.75;
     border-radius: $fontSize;
 
@@ -447,57 +446,23 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
       line-height: 1.45;
       font-size: $fontSize * 0.85;
       padding: $fontSize * 0.75 $fontSize * 1.5;
-      cursor: pointer;
+
+      p {
+        min-height: $fontSize;
+      }
     }
 
     .links-wrap {
-      padding: $fontSize * 1.5;
+      padding: $fontSize $fontSize * 1.5;
 
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
 
-      .octo-logo {
-        text-decoration: none;
-
-        @keyframes rotateOctoIcon {
-          from {
-            transform: rotateY(0deg);
-          }
-          5% {
-            transform: rotateY(180deg);
-          }
-          10% {
-            transform: rotateY(0deg);
-          }
-        }
-
-        animation: rotateOctoIcon 15s linear infinite;
-
-        img {
-          width: $fontSize * 3.5;
-
-          @keyframes jumpOctoIcon {
-            from {
-              transform: translateY(0);
-            }
-            50% {
-              transform: translateY(-1vh);
-            }
-            to {
-              transform: translateY(0);
-            }
-          }
-
-          &:hover {
-            animation: jumpOctoIcon 1s ease-in-out infinite;
-          }
-        }
-      }
-
       .links {
         display: flex;
         flex-direction: column;
+        row-gap: $fontSize * 0.33;
 
         a {
           text-decoration: none;
@@ -545,13 +510,12 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     }
 
     .links-wrap {
-      padding: $fontSize * 1.2;
+      padding: $fontSize * 0.5 $fontSize * 1.2;
 
       .links {
         a {
           font-size: $fontSize * 0.85;
         }
-
       }
     }
   }
@@ -589,32 +553,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
       padding: $fontSize * 0.2  $fontSize * 0.25;
 
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
-
-      .buttons {
-        button {
-          border-radius: 50%;
-          width: $fontSize * 0.65;
-          height: $fontSize * 0.65;
-          border: none;
-          margin: 0 $fontSize * 0.15;
-
-          i {
-            font-size: $fontSize * 0.35;
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            opacity: 0;
-
-            &:hover {
-              opacity: 1;
-            }
-          }
-        }
-      }
 
       .file-name {
         font-family: 'Open Sans', sans-serif;
@@ -637,13 +577,11 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         @keyframes slideInFromLeft {
           from {
             border: 1px solid gray;
-            // transform: scale(0.5);
             left: -100vw;
             opacity: 0;
           }
           to {
             border: 0 solid transparent;
-            // transform: scale(1);
             left: 0;
             opacity: 1;
           }
@@ -1020,7 +958,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           flex-direction: column;
 
           .project-selector {
-            // padding: $fontSize * 1.25 0;
             position: sticky;
             top: calc(2.5vh + ($fontSize * 0.4) + 1px);
 
@@ -1079,7 +1016,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           }
 
           .project-wrap {
-
             .project-nav-mobile {
               display: flex;
               justify-content: space-between;
@@ -1183,10 +1119,9 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
             .info-cards {
               display: flex;
-              // flex-direction: column;
               flex-wrap: wrap;
               justify-content: center;
-              align-items: center;
+              align-items: flex-start;
               margin: $fontSize * 2 $fontSize * 0.35;
 
               @include cardMobile($fontSize);
@@ -1475,163 +1410,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           top: calc(-5 * (2.5vh + ($fontSize * 0.4) + 1px));
         }
 
-      }
-    }
-  }
-
-  .desktop-wrap {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-
-    .desktop-icon-wrap {
-      position: absolute;
-      cursor: pointer;
-      text-align: center;
-      max-width: $fontSize * 5;
-
-      transition: top 0.25s ease-in, left 0.25s ease-in;
-
-      .desktop-icon {
-        user-select: none;
-        width: $fontSize * 4;
-      }
-
-      .icon-title {
-        user-select: none;
-        font-size: $fontSize * 0.75;
-        color: white;
-        max-width: $fontSize * 5;
-      }
-
-      &.selected, &:active {
-        .desktop-icon {
-          border: 0.5px dashed rgba(190, 189, 189, 0.705);
-        }
-
-        .icon-title {
-          background-color: rgba(103, 103, 103, 0.603);
-        }
-      }
-
-      &.vscode-icon {
-        top: 5%;
-        left: 5%;
-      }
-
-      &.checkers-icon {
-        bottom: 5%;
-        left: 5%;
-        .desktop-icon {
-          width: $fontSize * 3.35;
-          border-radius: $fontSize;
-          object-fit: contain;
-        }
-
-      }
-    }
-
-    #checkers-iframe {
-      width: 200vw;
-      height: 200vh;
-      position: absolute;
-      top: -50vh;
-      left: -50vw;
-      transform: scale(0.5);
-      margin: auto;
-      display: none;
-    }
-
-    .selection-area {
-      background-color: rgba(165, 165, 165, 0.531);
-      border: 1px solid rgb(211, 211, 211);
-
-      position: absolute;
-      z-index: 10;
-
-      &.hidden {
-        display: none;
-      }
-    }
-
-    .toolkit {
-      position: relative;
-      z-index: 1000;
-      user-select: none;
-
-      .os, .time {
-        font-family: 'Code';
-      }
-
-      p {
-        .app {
-          font-size: 0.9em;
-          padding-left: $fontSize * 0.5;
-        }
-
-        cursor: pointer;
-      }
-
-      #back-to-desktop-btn {
-        z-index: 11000;
-      }
-
-
-      padding: $fontSize * 0.1 $fontSize * 0.25;
-      display: flex;
-      justify-content: space-between;
-      font-size: $fontSize * 0.8;
-      background-color: rgba(71, 70, 70, 0.734);
-      color: white;
-
-      .time {
-        display: none;
-      }
-    }
-
-    .clock {
-      border-radius: 50%;
-      background-color: white;
-      border: 5px solid white;
-      box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
-      width: 60vw;
-      height: 60vw;
-      max-height: 200px;
-      max-width: 200px;
-      position: relative;
-
-      .dot {
-        position: absolute;
-        top: 46.5%;
-        right: 46.5%;
-        height: 3.5%;
-        width: 3.5%;
-        border-radius: 50%;
-        border: 1.5px solid black;
-      }
-
-      .hour {
-        position: absolute;
-        top: 15%;
-        left: 50.25%;
-        height: 35%;
-        width: 2%;
-        background-color: black;
-        box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 10px 10px;
-      }
-
-      .minute {
-        position: absolute;
-        top: 5%;
-        left: 50.5%;
-        height: 45%;
-        width: 1.5%;
-        background-color: black;
-        box-shadow: 2px 3px 8px 3px rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 10px 10px;
       }
     }
   }
@@ -2139,7 +1917,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                   from {
                     border: 1px solid gray;
                     transform: scale(0.1);
-                    // left: -100vw;
                     opacity: 0;
                   }
                   to {

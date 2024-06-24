@@ -11,6 +11,7 @@ import { v4 as uuidv4 } from 'uuid';
 // Carousel imports (https://openbase.com/js/react-responsive-carousel/documentation)
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import ProjectLinks from './ProjectLinks';
 
 // Subcomponent/Data imports
 import { ProjectContext } from './PortfolioManager';
@@ -23,21 +24,6 @@ export default function ProjectWrap() {
   const animatedElClasses = ['laptop-wrap', 'tablet-wrap', 'card-body-project'];
   const singleAnimationElClasses = ['card-body-project-desc'];
   // Helpers
-  const expandCard = () => {
-    const infoCard = document.querySelector('p.card-body');
-    if (!infoCard) {
-      return;
-    }
-    if (infoCard?.classList.contains('shrinked')
-    && currentProject.description.length > 350) {
-      infoCard.classList.remove('shrinked');
-      infoCard.innerText = currentProject.description;
-    } else if (!infoCard?.classList.contains('shrinked')
-    && currentProject.description.length > 350) {
-      infoCard.classList.add('shrinked');
-      infoCard.innerText = `${currentProject.description.slice(0, 347)}...`;
-    }
-  };
   const getProjectIndex = (title) => projects.findIndex((project) => (
     project.title === title
   ));
@@ -56,7 +42,6 @@ export default function ProjectWrap() {
       setTimeout((() => {
         setProject(projects[currentProjectIndex + 1]);
       }), 500);
-      // setProject(projects[currentProjectIndex + 1]);
     }
   };
   const prevProject = (e) => {
@@ -205,13 +190,14 @@ export default function ProjectWrap() {
               <i className="fa-solid fa-star star" />
               <h5 className="card-title">App Overview</h5>
             </div>
-            <p className="body card-body card-body-project-desc shrinked" key={uuidv4()} onClick={expandCard}>
-              {(() => {
-                if (currentProject.description.length > 350) {
-                  return `${currentProject.description.slice(0, 347)}...`;
-                }
-                return currentProject.description;
-              })()}
+            <p className="body card-body card-body-project-desc" key={uuidv4()}>
+              {currentProject.description.split('\n').map((line, i) => {
+                console.log('line: ', line);
+
+                return (
+                  <p key={i}>{line}</p>
+                );
+              })}
             </p>
           </div>
           <div className="card">
@@ -220,13 +206,8 @@ export default function ProjectWrap() {
               <h5 className="card-title">Links</h5>
             </div>
             <div className="links-wrap">
-              <a href={currentProject['github-link']} rel="noreferrer" target="_blank" key={uuidv4()} className="octo-logo">
-                <img src="./assets/images/about-skills/github.png" alt="" />
-              </a>
-
               <div className="links">
-                <a href={currentProject['deployed-link']} rel="noreferrer" target="_blank" className="disabled" onClick={((e) => { e.preventDefault(); })}>View Code</a>
-                <a href={currentProject['deployed-link']} rel="noreferrer" target="_blank">View Deployed</a>
+                <ProjectLinks project={currentProject} />
               </div>
             </div>
           </div>
