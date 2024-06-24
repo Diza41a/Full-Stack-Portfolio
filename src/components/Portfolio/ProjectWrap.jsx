@@ -200,17 +200,7 @@ export default function ProjectWrap() {
               })}
             </p>
           </div>
-          <div className="card">
-            <div className="title-wrap">
-              <i className="fa-solid fa-star star" />
-              <h5 className="card-title">Links</h5>
-            </div>
-            <div className="links-wrap">
-              <div className="links">
-                <ProjectLinks project={currentProject} />
-              </div>
-            </div>
-          </div>
+          <ProjectLinks project={currentProject} />
         </div>
 
       </div>

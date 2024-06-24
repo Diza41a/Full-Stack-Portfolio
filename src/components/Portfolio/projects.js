@@ -37,41 +37,26 @@ const projects = [
       ],
     },
   },
-  // {
-  //   title: 'OfKors European Bakery (Legacy)',
-  //   description: `Business website created for the local bakery,
-  //   includes landing page, about us, menu, and reach out sections,
-  //   as well as mongo atlas connected backend for providing website with
-  //   dynamic updates from the admin dashboard. Mobile device friendly.
-  //   Combination of react-i18next translation library and
-  //   Google translation API provides users in the target demographics
-  //   with an intuitive experience that feels natural.
-
-  //   Technologies/Frameworks utilized: React 18(Router), Sass, babel, webpack,
-  //   node.js, express.js, mongodb atlas, mongoose, cors-anywhere(setting up proxy server),
-  //   instagram-private-api
-  //   `,
-  //   'github-link': 'https://github.com/Diza41a/ofkors-european-bakery',
-  //   'deployed-link': 'http://ofkorseurobakery.com/',
-  //   images: {
-  //     main: [
-  //       `${IMG_FOLDER_PATH}/bakery/main/1.png`,
-  //       `${IMG_FOLDER_PATH}/bakery/main/2.png`,
-  //       `${IMG_FOLDER_PATH}/bakery/main/3.png`,
-  //       `${IMG_FOLDER_PATH}/bakery/main/4.png`,
-  //       `${IMG_FOLDER_PATH}/bakery/main/5.png`,
-  //       `${IMG_FOLDER_PATH}/bakery/main/6.png`,
-  //       `${IMG_FOLDER_PATH}/bakery/main/7.png`,
-  //     ],
-  //     mobile: [
-  //       `${IMG_FOLDER_PATH}/bakery/mobile/1.png`,
-  //       `${IMG_FOLDER_PATH}/bakery/mobile/2.png`,
-  //       `${IMG_FOLDER_PATH}/bakery/mobile/3.png`,
-  //       `${IMG_FOLDER_PATH}/bakery/mobile/4.png`,
-  //       `${IMG_FOLDER_PATH}/bakery/mobile/5.png`,
-  //     ],
-  //   },
-  // },
+  {
+    title: 'Aray Esthetics',
+    description: '...',
+    links: {},
+    images: {
+      main: [
+        `${IMG_FOLDER_PATH}/aray_esthetics/main/1.png`,
+        `${IMG_FOLDER_PATH}/aray-esthetics/main/2.png`,
+        `${IMG_FOLDER_PATH}/aray-esthetics/main/3.png`,
+        `${IMG_FOLDER_PATH}/aray-esthetics/main/4.png`,
+        `${IMG_FOLDER_PATH}/aray-esthetics/main/5.png`,
+      ],
+      mobile: [
+        `${IMG_FOLDER_PATH}/aray-esthetics/mobile/1.png`,
+        `${IMG_FOLDER_PATH}/aray-esthetics/mobile/2.png`,
+        `${IMG_FOLDER_PATH}/aray-esthetics/mobile/3.png`,
+        `${IMG_FOLDER_PATH}/aray-esthetics/mobile/4.png`,
+      ],
+    },
+  },
   // {
   //   title: 'Checkers.io (Legacy)',
   //   description: `Multiplayer checkers experience. Includes login/sign up screen,

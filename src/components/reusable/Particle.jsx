@@ -4,7 +4,6 @@ import React, { useCallback } from 'react';
 
 export default function Particle() {
   const particlesInit = useCallback(async (engine) => {
-    // console.log(engine);
     await loadFull(engine);
   }, []);
 

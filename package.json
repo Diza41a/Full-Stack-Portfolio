@@ -45,7 +45,7 @@
     "start": "webpack serve --open",
     "dev": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
-    "sass-dev": "sass dist/styles/style.scss dist/styles/style.css --watch",
-    "css-prefixed": "postcss dist/styles/style.css --use autoprefixer -d dist/styles/style-prefixed.css"
+    "sass-dev": "sass public/styles/style.scss public/styles/style.css --watch",
+    "css-prefixed": "postcss public/styles/style.css --use autoprefixer -d public/styles/style-prefixed.css"
   }
 }
