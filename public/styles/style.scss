@@ -2085,12 +2085,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             margin-bottom: 0;
 
             .dynamic {
-              max-height: $fontSize * 1.5;
+              max-height: $fontSize * 1.6;
             }
-          }
-
-          .photo-wrap {
-            // display: none;
           }
         }
       }
