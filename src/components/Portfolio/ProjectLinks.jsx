@@ -26,7 +26,6 @@ export default function ProjectLinks(props) {
                   href={link}
                   rel="noreferrer"
                   target="_blank"
-                  onClick={((e) => e.preventDefault())}
                 >
                   {codeLinksDict[linkName]}
                 </a>

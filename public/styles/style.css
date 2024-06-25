@@ -790,6 +790,9 @@ button {
   .card .body p {
     min-height: 16px;
   }
+  .card .body p:first-of-type {
+    font-size: 15.2px;
+  }
   .card .links-wrap {
     padding: 16px 24px;
     display: flex;
@@ -1383,6 +1386,9 @@ button {
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .body p {
     min-height: 16px;
   }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .body p:first-of-type {
+    font-size: 15.2px;
+  }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap {
     padding: 16px 24px;
     display: flex;
@@ -1693,6 +1699,9 @@ button {
   }
   .card .body p {
     min-height: 20px;
+  }
+  .card .body p:first-of-type {
+    font-size: 19px;
   }
   .card .links-wrap {
     padding: 20px 30px;
@@ -2287,6 +2296,9 @@ button {
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .body p {
     min-height: 20px;
   }
+  #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .body p:first-of-type {
+    font-size: 19px;
+  }
   #app .content-body-wrap .content .portfolio-manager-wrap .project-wrap .info-cards .card .links-wrap {
     padding: 20px 30px;
     display: flex;
@@ -2562,6 +2574,9 @@ button {
   }
   .card .body {
     font-size: 14px;
+  }
+  .card .body p:first-of-type {
+    font-size: 17px !important;
   }
   .card .links-wrap {
     padding: 10px 24px;
@@ -3015,6 +3030,9 @@ button {
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .body {
     font-size: 14px;
+  }
+  #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .body p:first-of-type {
+    font-size: 17px !important;
   }
   #app .content .portfolio-manager-wrap .tab .project-wrap .info-cards .card .links-wrap {
     padding: 10px 24px;

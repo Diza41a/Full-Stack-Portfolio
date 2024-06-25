@@ -62,10 +62,7 @@ export default function ProjectWrap() {
   };
   const hideLargeCarousel = (e) => {
     const largeCarousel = document.querySelector('.carousel-wrap');
-    if (!largeCarousel
-      || e.target.closest('.carousel-root')) {
-      return;
-    }
+    if (!largeCarousel || e.target.closest('.carousel-root')) return;
 
     largeCarousel.classList.remove('displayed');
   };
@@ -77,10 +74,20 @@ export default function ProjectWrap() {
       carouselEl.style.width = `calc(100vw - ${sidebarEl.offsetWidth}px)`;
     };
     adjustCarouselSize();
+
+    const handleKeyDown = (e) => {
+      console.log(e.code);
+      if (e.key === 'Escape') {
+        const largeCarouselEl = document.querySelector('.carousel-wrap');
+        largeCarouselEl.classList.remove('displayed');
+      }
+    };
     document.addEventListener('sidebar_toggle', adjustCarouselSize);
+    document.addEventListener('keydown', handleKeyDown);
 
     return () => {
       document.removeEventListener('sidebar_toggle', adjustCarouselSize);
+      document.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 

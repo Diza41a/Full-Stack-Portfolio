@@ -449,6 +449,10 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
       p {
         min-height: $fontSize;
+
+        &:first-of-type {
+          font-size: $fontSize * 0.95;
+        }
       }
     }
 
@@ -507,6 +511,12 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
     .body {
       font-size: $fontSize * 0.7;
+
+      p {
+        &:first-of-type {
+          font-size: $fontSize * 0.85!important;
+        }
+      }
     }
 
     .links-wrap {
