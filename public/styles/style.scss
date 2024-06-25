@@ -635,7 +635,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
             .dynamic {
               text-transform: uppercase;
-              // max-height: $fontSize * 1.95;
               max-height: 7vw;
               scroll-behavior: smooth;
               overflow: hidden;
@@ -647,22 +646,22 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           }
 
           .photo-wrap {
-            visibility: hidden;
             align-self: center;
             overflow: hidden;
             position: relative;
             top: $fontSize;
             left: $fontSize * 1.25;
+            margin-top: auto;
 
             $sidebarWidth: ($fontSize * 13.5 - $fontSize * 3.5);
             .robotic-hand {
+              width: 95%;
               position: relative;
               z-index: 1000;
-              width: calc(90vw - $sidebarWidth);
-              max-width: 800px;
             }
 
             .photo {
+              width: 72%;
               filter: grayscale(0.3) contrast(1.45);
               background: #181818a3;
               border-radius: $fontSize;
@@ -670,8 +669,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               top: 11.25%;
               left: 6%;
               height: 62%;
-              width: calc(73vw - $sidebarWidth);
-              max-width: 600px;
               object-fit: cover;
             }
 
@@ -1446,9 +1443,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
 
       .landing-wrap {
         position: relative;
-
         height: calc(110vh - (2.5vh + ($fontSize * 0.4) + 1px))!important;
-        overflow-y: auto!important;
+
         @include scrollbar($fontSize);
 
         .introduction {
@@ -1474,13 +1470,14 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           transform: scale(0.9);
 
           .robotic-hand {
-            max-width: 1000px!important;
+            max-width: 100%;
+            width: 85vh!important;
           }
 
           .photo {
-            max-width: 742px!important;
+            max-width: 76%;
+            width: 64vh!important;
           }
-
         }
       }
 
@@ -1529,7 +1526,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         .project-selector {
           padding: $fontSize * 1.25 0;
           flex-basis: 25%;
-          flex-grow: 1;
           min-width: $fontSize * 15;
           width: 25vw;
           max-width: $fontSize * 19.25;
@@ -2084,7 +2080,9 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             border-width: 1px;
             border-left: none!important;
             border-right: none!important;
-            margin: 0!important;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
 
             .dynamic {
               max-height: $fontSize * 1.5;
@@ -2092,7 +2090,7 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
           }
 
           .photo-wrap {
-            display: none;
+            // display: none;
           }
         }
       }

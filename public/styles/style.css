@@ -920,21 +920,21 @@ button {
     position: relative;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap {
-    visibility: hidden;
     align-self: center;
     overflow: hidden;
     position: relative;
     top: 16px;
     left: 20px;
+    margin-top: auto;
     animation: slideInFromBottom 1s ease-in;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .robotic-hand {
+    width: 95%;
     position: relative;
     z-index: 1000;
-    width: calc(90vw - 160px);
-    max-width: 800px;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .photo {
+    width: 72%;
     filter: grayscale(0.3) contrast(1.45);
     background: rgba(24, 24, 24, 0.6392156863);
     border-radius: 16px;
@@ -942,8 +942,6 @@ button {
     top: 11.25%;
     left: 6%;
     height: 62%;
-    width: calc(73vw - 160px);
-    max-width: 600px;
     object-fit: cover;
   }
   @keyframes slideInFromBottom {
@@ -1647,13 +1645,12 @@ button {
     border-width: 1px;
     border-left: none !important;
     border-right: none !important;
-    margin: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
   }
   #app .content-body-wrap .content .landing-wrap .introduction .dynamic {
     max-height: 24px;
-  }
-  #app .content-body-wrap .content .landing-wrap .photo-wrap {
-    display: none;
   }
 }
 @media (min-width: 850px) {
@@ -1827,21 +1824,21 @@ button {
     position: relative;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap {
-    visibility: hidden;
     align-self: center;
     overflow: hidden;
     position: relative;
     top: 20px;
     left: 25px;
+    margin-top: auto;
     animation: slideInFromBottom 1s ease-in;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .robotic-hand {
+    width: 95%;
     position: relative;
     z-index: 1000;
-    width: calc(90vw - 200px);
-    max-width: 800px;
   }
   #app .content-body-wrap .content .landing-wrap .photo-wrap .photo {
+    width: 72%;
     filter: grayscale(0.3) contrast(1.45);
     background: rgba(24, 24, 24, 0.6392156863);
     border-radius: 20px;
@@ -1849,8 +1846,6 @@ button {
     top: 11.25%;
     left: 6%;
     height: 62%;
-    width: calc(73vw - 200px);
-    max-width: 600px;
     object-fit: cover;
   }
   @keyframes slideInFromBottom {
@@ -2589,7 +2584,6 @@ button {
   #app .content .landing-wrap {
     position: relative;
     height: calc(110vh - (2.5vh + 8px + 1px)) !important;
-    overflow-y: auto !important;
     /* width */
     /* Track */
     /* Handle */
@@ -2630,10 +2624,12 @@ button {
     transform: scale(0.9);
   }
   #app .content .landing-wrap .photo-wrap .robotic-hand {
-    max-width: 1000px !important;
+    max-width: 100%;
+    width: 85vh !important;
   }
   #app .content .landing-wrap .photo-wrap .photo {
-    max-width: 742px !important;
+    max-width: 76%;
+    width: 64vh !important;
   }
   #app .content .vs-code-tab-section {
     flex-grow: 1;
@@ -2664,7 +2660,6 @@ button {
   #app .content .portfolio-manager-wrap .project-selector {
     padding: 25px 0;
     flex-basis: 25%;
-    flex-grow: 1;
     min-width: 300px;
     width: 25vw;
     max-width: 385px;
