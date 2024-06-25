@@ -2944,10 +2944,9 @@ button {
   #app .content .portfolio-manager-wrap .tab .project-wrap .gallery .carousel-wrap.displayed {
     position: fixed;
     z-index: 3000;
-    width: calc(100vw - 70px);
     height: 100vh;
     top: calc(2.5vh + 8px + 1px);
-    left: 70px;
+    right: 0;
     background-color: rgba(14, 14, 14, 0.815);
     display: flex;
     justify-content: center;

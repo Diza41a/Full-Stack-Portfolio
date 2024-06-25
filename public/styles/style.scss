@@ -1896,10 +1896,9 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
               .carousel-wrap.displayed {
                 position: fixed;
                 z-index: 3000;
-                width: calc(100vw - $fontSize * 3.5);
                 height: 100vh;
                 top: calc(2.5vh + ($fontSize * 0.4) + 1px);
-                left: $fontSize * 3.5;
+                right: 0;
                 background-color: rgba(14, 14, 14, 0.815);
 
 

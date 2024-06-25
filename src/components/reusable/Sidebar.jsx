@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export default function Sidebar() {
@@ -32,6 +32,12 @@ export default function Sidebar() {
       themeSelector.classList.add('hidden');
     }
   };
+
+  useEffect(() => {
+    const sidebarToggleEvent = new Event('sidebar_toggle');
+
+    document.dispatchEvent(sidebarToggleEvent);
+  }, [expanded]);
 
   return (
     <nav className={classList.join(' ')}>

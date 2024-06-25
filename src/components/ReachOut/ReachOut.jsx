@@ -68,7 +68,6 @@ export default function ReachOut() {
         if (invalid) {
           e.target.placeholder = questions[questionIndex].error;
           e.target.value = '';
-          console.log('here', e.target.placeholder);
           return;
         }
         answer = answerArr.map((subName) => subName.charAt(0).toUpperCase() + subName.slice(1)).join(' ');

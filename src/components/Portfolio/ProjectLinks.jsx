@@ -10,7 +10,6 @@ export default function ProjectLinks(props) {
     code: 'View Code',
     website: 'View Site',
   };
-  console.log(Object.entries(project.links));
 
   return (
     <div className="card">

@@ -1,4 +1,4 @@
-const IMG_FOLDER_PATH = './assets/images/projects';
+const IMGBB_PREFIX = 'https://i.ibb.co';
 
 const projects = [
   {
@@ -19,41 +19,54 @@ const projects = [
     },
     images: {
       main: [
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_projects(main).png`,
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_project_image(main).png`,
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_project_description(main).png`,
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_nav(main).png`,
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_faq(main).png`,
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_contact(main).png`,
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_admin(main).png`,
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/main/nap_admin_form(main).png`,
+        `${IMGBB_PREFIX}/PTrPcYG/nap-projects-main.jpg`,
+        `${IMGBB_PREFIX}/jfMZn01/nap-project-image-main.jpg`,
+        `${IMGBB_PREFIX}/cYC1Ggc/nap-project-description-main.jpg`,
+        `${IMGBB_PREFIX}/DC3j6zM/nap-nav-main.png`,
+        `${IMGBB_PREFIX}/G0jThJ9/nap-light-mode-main.jpg`,
+        `${IMGBB_PREFIX}/pRDbGsW/nap-faq-main.png`,
+        `${IMGBB_PREFIX}/7VDV7hj/nap-contact-main.jpg`,
+        `${IMGBB_PREFIX}/8BQ25CK/nap-admin-main.jpg`,
+        `${IMGBB_PREFIX}/8B9J2XC/nap-admin-form-main.jpg`,
       ],
       mobile: [
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/mobile/nap_projects(mobile).png`,
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/mobile/nap_project_description(mobile).png`,
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/mobile/nap_nav(mobile).png`,
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/mobile/nap_contact(mobile).png`,
-        `${IMG_FOLDER_PATH}/nick_abramov_portfolio/mobile/nap_admin(mobile).png`,
+        `${IMGBB_PREFIX}/G9vFJcF/nap-projects-mobile.jpg`,
+        `${IMGBB_PREFIX}/dDct5tz/nap-project-description-mobile.jpg`,
+        `${IMGBB_PREFIX}/JtWv8ng/nap-nav-mobile.png`,
+        `${IMGBB_PREFIX}/ZTVdQDW/nap-contact-mobile.png`,
+        `${IMGBB_PREFIX}/zN3sWkh/nap-admin-mobile.jpg`,
       ],
     },
   },
   {
     title: 'Aray Esthetics',
-    description: '...',
-    links: {},
+    description: `
+    Frontend: JavaScript, React (Hooks, Context API), Sass.
+    Backend: Next.js.
+    Deployment: Vercel, AWS EC2 (initially).
+
+    - Developed a visually captivating and user-centric website, showcasing Aray's expertise in beauty and aesthetics. Utilized Next.js, React, and SCSS to create a dynamic and responsive experience.
+    - Implemented a custom theme selection feature with several color scheme options, allowing users to easily switch between different aesthetics.
+    - Integrated a contact form with Nodemailer to enable users to send inquiries directly from the website.
+    - Enhanced the website's performance by optimizing image sizes, implementing lazy loading for images, and utilizing Next.js’s built-in image optimization.
+    `,
+    links: {
+      code: 'https://github.com/Diza41a/Aray-Aesthetics',
+      website: 'https://aray-aesthetics.vercel.app',
+    },
     images: {
       main: [
-        `${IMG_FOLDER_PATH}/aray_esthetics/main/1.png`,
-        `${IMG_FOLDER_PATH}/aray-esthetics/main/2.png`,
-        `${IMG_FOLDER_PATH}/aray-esthetics/main/3.png`,
-        `${IMG_FOLDER_PATH}/aray-esthetics/main/4.png`,
-        `${IMG_FOLDER_PATH}/aray-esthetics/main/5.png`,
+        `${IMGBB_PREFIX}/HXmX3vz/ae-landing-main.jpg`,
+        `${IMGBB_PREFIX}/ZVDMY9R/ae-about-main.jpg`,
+        `${IMGBB_PREFIX}/NyRgkd1/ae-services-main.jpg`,
+        `${IMGBB_PREFIX}/zPSvxYg/ae-gallery-main.jpg`,
+        `${IMGBB_PREFIX}/gw4hmYw/ae-contact-main.jpg`,
       ],
       mobile: [
-        `${IMG_FOLDER_PATH}/aray-esthetics/mobile/1.png`,
-        `${IMG_FOLDER_PATH}/aray-esthetics/mobile/2.png`,
-        `${IMG_FOLDER_PATH}/aray-esthetics/mobile/3.png`,
-        `${IMG_FOLDER_PATH}/aray-esthetics/mobile/4.png`,
+        `${IMGBB_PREFIX}/hydb2qL/ae-landing-mobile.jpg`,
+        `${IMGBB_PREFIX}/p3Hb5tJ/ae-services-mobile.jpg`,
+        `${IMGBB_PREFIX}/Phxt3bD/ae-gallery-mobile.jpg`,
+        `${IMGBB_PREFIX}/P1TzJxf/ae-contact-mobile.jpg`,
       ],
     },
   },

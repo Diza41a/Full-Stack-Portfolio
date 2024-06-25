@@ -5,7 +5,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable import/no-cycle */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 // Carousel imports (https://openbase.com/js/react-responsive-carousel/documentation)
@@ -54,7 +54,6 @@ export default function ProjectWrap() {
       for (const className of singleAnimationElClasses) {
         document.querySelector(`.${className}`)?.classList.add('leaving');
       }
-      console.log(document.querySelector('section.mobile'));
       document.querySelector('section.mobile')?.classList.add('leaving');
       setTimeout((() => {
         setProject(projects[currentProjectIndex - 1]);
@@ -70,6 +69,20 @@ export default function ProjectWrap() {
 
     largeCarousel.classList.remove('displayed');
   };
+
+  useEffect(() => {
+    const sidebarEl = document.querySelector('.sidebar');
+    const carouselEl = document.querySelector('.carousel-wrap');
+    const adjustCarouselSize = () => {
+      carouselEl.style.width = `calc(100vw - ${sidebarEl.offsetWidth}px)`;
+    };
+    adjustCarouselSize();
+    document.addEventListener('sidebar_toggle', adjustCarouselSize);
+
+    return () => {
+      document.removeEventListener('sidebar_toggle', adjustCarouselSize);
+    };
+  }, []);
 
   return (
     <section className="tab">
@@ -118,9 +131,8 @@ export default function ProjectWrap() {
                 <div
                   className="tablet-content"
                   onClick={() => {
-                    if (carouselMode !== 'mobile') {
-                      setCarouselMode('mobile');
-                    }
+                    if (carouselMode !== 'mobile') setCarouselMode('mobile');
+
                     document.querySelector('.carousel-wrap').classList.add('displayed');
                   }}
                 >
@@ -191,13 +203,9 @@ export default function ProjectWrap() {
               <h5 className="card-title">App Overview</h5>
             </div>
             <p className="body card-body card-body-project-desc" key={uuidv4()}>
-              {currentProject.description.split('\n').map((line, i) => {
-                console.log('line: ', line);
-
-                return (
-                  <p key={i}>{line}</p>
-                );
-              })}
+              {currentProject.description.split('\n').map((line, i) => (
+                <p key={i}>{line}</p>
+              ))}
             </p>
           </div>
           <ProjectLinks project={currentProject} />
