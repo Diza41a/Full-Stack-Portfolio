@@ -100,7 +100,7 @@ const projects = [
 ];
 
 const inProgress = [
-  { title: 'Chatterbox' },
+  { title: 'OfKors Bakery (remake)' },
 ];
 
 export { projects, inProgress };
