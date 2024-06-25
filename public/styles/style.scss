@@ -1487,8 +1487,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
         .vs-code-tab-section-body {
           &.introduction {
             .about-me-pics {
-              margin-top: 10vh!important;
-              margin-bottom: 10vh!important;
+              margin-top: $fontSize!important;
+              margin-bottom: $fontSize!important;
 
               img {
                 transform: none!important;
@@ -2167,6 +2167,11 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     .about-me-pics {
       img {
         filter: grayscale(0.85);
+
+        &:hover {
+          transition: filter 0.2s ease-in-out;
+          filter: grayscale(0.25);
+        }
       }
     }
   }
