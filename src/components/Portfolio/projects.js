@@ -5,12 +5,14 @@ const projects = [
     title: 'OfKors European Bakery',
     description: `2024
 
-    Frontend: Typescript, React (Hooks, Router), React Query, i18next, Styled Components.
+    Frontend: Typescript, React (Hooks, Router), React Query, React Hook Form, i18next, Styled Components.
     Backend: Nest.js, Node.js,  MongoDB Atlas + Mongoose ODM.
     Deployment: Vercel.
     Tools: Git, GitHub, Vite.
 
-    ...TBU
+    - Developed a responsive React business website for Inna, a Ukrainian bakery owner.
+    - Implemented multilingual support using i18next to accommodate non-English clients (English, Ukrainian, Russian).
+    - Created a MongoDB (Atlas, Mongoose) connected Nest.JS API for performing CRUD operations on the menu items and hours of operation.
     `,
     links: {
       frontend: 'https://github.com/Diza41a/ofkors-bakery-remake',
