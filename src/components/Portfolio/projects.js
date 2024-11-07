@@ -26,7 +26,7 @@ const projects = [
         `${IMGBB_PREFIX}/sqFYCwB/ob-reach-out.png`,
       ],
       mobile: [
-        `${IMGBB_PREFIX}/c28fhh2/ob-landing-mobile.png`,
+        `${IMGBB_PREFIX}/dK34Gk5/ob-landing-mobile.png`,
         `${IMGBB_PREFIX}/stD4vdw/ob-about-mobile.png`,
         `${IMGBB_PREFIX}/7kRyhm2/ob-gallery-mobile.png`,
         `${IMGBB_PREFIX}/hWvQx6V/ob-menu-mobile.png`,

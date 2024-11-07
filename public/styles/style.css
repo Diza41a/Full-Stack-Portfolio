@@ -72,7 +72,7 @@
     display: flex;
     align-items: center;
     height: 52px;
-    padding: 0 10px;
+    padding: 0 15px 0 10px;
     column-gap: 10px;
     position: relative;
     font-size: 18px;
@@ -82,13 +82,14 @@
   #root nav div a {
     text-decoration: none;
   }
-  #root nav div i, #root nav div span {
-    font-size: 45px;
-    cursor: pointer;
+  #root nav div p {
+    line-height: 1;
   }
-  #root nav div i.projects, #root nav div span.projects {
-    font-size: 40px;
-    padding-left: 4px;
+  #root nav div svg {
+    width: 40px;
+    height: 45px;
+    stroke-width: 1.25px;
+    cursor: pointer;
   }
   #root nav div.lower-nav {
     row-gap: 10px;
@@ -111,6 +112,7 @@
   }
   #root nav:not(.expanded) a, #root nav:not(.expanded) button {
     justify-content: center;
+    padding: 0 10px;
   }
   #root nav:not(.expanded) .nav-link-text {
     display: none;
@@ -138,7 +140,7 @@
     display: flex;
     align-items: center;
     height: 41.6px;
-    padding: 0 8px;
+    padding: 0 12px 0 8px;
     column-gap: 8px;
     position: relative;
     font-size: 14.4px;
@@ -148,13 +150,14 @@
   #root nav div a {
     text-decoration: none;
   }
-  #root nav div i, #root nav div span {
-    font-size: 36px;
-    cursor: pointer;
+  #root nav div p {
+    line-height: 1;
   }
-  #root nav div i.projects, #root nav div span.projects {
-    font-size: 32px;
-    padding-left: 3.2px;
+  #root nav div svg {
+    width: 32px;
+    height: 36px;
+    stroke-width: 1.25px;
+    cursor: pointer;
   }
   #root nav div.lower-nav {
     row-gap: 8px;
@@ -177,6 +180,7 @@
   }
   #root nav:not(.expanded) a, #root nav:not(.expanded) button {
     justify-content: center;
+    padding: 0 8px;
   }
   #root nav:not(.expanded) .nav-link-text {
     display: none;
@@ -188,6 +192,7 @@
   }
   #root nav.expanded a, #root nav.expanded button {
     justify-content: center;
+    padding: 0 8px;
   }
   #root nav.expanded .nav-link-text {
     display: none;
@@ -207,14 +212,6 @@
   font-family: "Code-Bold";
   src: url(../assets/fonts/code_pro/Code\ Pro\ LC.woff);
 }
-@font-face {
-  font-family: "Material Icons";
-  font-display: block;
-}
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 48;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -714,8 +711,8 @@ button {
 #root #app.matrix .title, #root #app.matrix .static {
   text-shadow: 0 0 0.24em rgb(237, 242, 255);
 }
-#root #app.matrix a.active .material-symbols-outlined {
-  text-shadow: 0 0 0.24em rgb(237, 242, 255);
+#root #app.matrix a.active svg {
+  filter: drop-shadow(0px 0px 0.24em rgb(237, 242, 255));
 }
 #root #app.matrix .landing-wrap .introduction {
   box-shadow: 0 0 1vw 0.1vw #caf4ff;
@@ -735,8 +732,13 @@ button {
 #root #app.matrix .landing-wrap .photo {
   filter: grayscale(1) contrast(1.45);
 }
-#root #app.matrix .shuffle-btns button > span, #root #app.matrix .shuffle-btns .tooltip {
+#root #app.matrix .shuffle-btns .tooltip {
   text-shadow: 0 0 0.24em rgb(237, 242, 255);
+}
+#root #app.matrix .shuffle-btns button > svg {
+  filter: drop-shadow(0px 0px 0.24em rgb(237, 242, 255));
+  margin-top: auto;
+  stroke-width: 1.5px;
 }
 #root #app.matrix .console {
   background-color: black;
@@ -1152,13 +1154,16 @@ button {
     margin-left: auto;
     display: flex;
     justify-content: flex-end;
-    padding: 4px;
+    padding: 6.4px 4px;
   }
   #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button {
+    display: flex;
+    align-items: center;
     margin: 0 5.6px;
   }
-  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button span, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button span {
-    font-size: 23.2px;
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button svg, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button svg, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button svg, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button svg {
+    width: 19.2px;
+    height: 19.2px;
   }
   #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button.shuffle-btn {
     margin-left: 24px;
@@ -2062,13 +2067,16 @@ button {
     margin-left: auto;
     display: flex;
     justify-content: flex-end;
-    padding: 5px;
+    padding: 8px 5px;
   }
   #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button {
+    display: flex;
+    align-items: center;
     margin: 0 7px;
   }
-  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button span, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button span, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button span {
-    font-size: 29px;
+  #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button svg, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button svg, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button svg, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button svg {
+    width: 24px;
+    height: 24px;
   }
   #app .content-body-wrap .content .vs-code-tab-section .vs-code-tab-section-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .vs-code-tab-section .tab-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .vs-code-tab-section-body.skills .shuffle-btns button.shuffle-btn, #app .content-body-wrap .content .tab .tab-body.skills .shuffle-btns button.shuffle-btn {
     margin-left: 30px;
@@ -2668,9 +2676,6 @@ button {
   #app .content .vs-code-tab-section .vs-code-tab-section-body.skills .skill-container .skill-section {
     margin-left: 3vw !important;
     margin-right: 3vw !important;
-  }
-  #app .content .vs-code-tab-section .shuffle-btns button[data-task=confirm] {
-    display: initial !important;
   }
   #app .content .portfolio-manager-wrap {
     flex-direction: row !important;

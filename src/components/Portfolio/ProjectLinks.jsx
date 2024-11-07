@@ -26,6 +26,7 @@ export default function ProjectLinks(props) {
                   href={link}
                   rel="noreferrer"
                   target="_blank"
+                  key={linkName}
                 >
                   {codeLinksDict[linkName]}
                 </a>

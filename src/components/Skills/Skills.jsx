@@ -2,6 +2,11 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import {
+  Check as CheckIcon,
+  RotateCcw as RotateIcon,
+  Shuffle as ShuffleIcon,
+} from 'lucide-react';
 
 // Subcomponent/Data imports
 import { frontEndSkills, backEndSkills, devOpsSkills } from './devSkills';
@@ -263,19 +268,13 @@ export default function Skills() {
 
         <div className="shuffle-btns">
           <button type="button" className="skill-tool disabled-skill-tool" data-task="confirm" onClick={skillsQuiz}>
-            <span className="material-symbols-outlined">
-              check
-            </span>
+            <CheckIcon />
           </button>
           <button type="button" className="skill-tool disabled-skill-tool" onClick={resetSkills}>
-            <span className="material-symbols-outlined">
-              restart_alt
-            </span>
+            <RotateIcon />
           </button>
           <button type="button" className="skill-tool shuffle-btn" onClick={shuffleSkills}>
-            <span className="material-symbols-outlined">
-              shuffle
-            </span>
+            <ShuffleIcon />
           </button>
 
           <p className="tooltip">Correcto!</p>

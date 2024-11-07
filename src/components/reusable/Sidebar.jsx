@@ -1,5 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import {
+  House as HouseIcon,
+  FileText as FileIcon,
+  Code as CodeIcon,
+  BriefcaseBusiness as BriefcaseIcon,
+  Phone as PhoneIcon,
+  CircleUser as UserIcon,
+  Cog as CogIcon,
+  ChevronRight as ChevronRightIcon,
+  ChevronLeft as ChevronLeftIcon,
+} from 'lucide-react';
 
 export default function Sidebar() {
   const [expanded, setExpanded] = useState(true);
@@ -43,48 +54,34 @@ export default function Sidebar() {
     <nav className={classList.join(' ')}>
       <div className="upper-nav">
         <NavLink to="landing">
-          <span className="material-symbols-outlined home">
-            home
-          </span>
+          <HouseIcon />
           <p className="nav-link-text">Home</p>
         </NavLink>
         <NavLink to="about-me">
-          <span className="material-symbols-outlined info">
-            description
-          </span>
+          <FileIcon />
           <p className="nav-link-text">About me & Resume</p>
         </NavLink>
         <NavLink to="skills">
-          <span className="material-symbols-outlined">
-            code
-          </span>
+          <CodeIcon />
           <p className="nav-link-text">Skills</p>
         </NavLink>
         <NavLink to="portfolio">
-          <span className="material-symbols-outlined projects">
-            cases
-          </span>
+          <BriefcaseIcon />
           <p className="nav-link-text">Projects</p>
         </NavLink>
         <NavLink to="contact">
-          <span className="material-symbols-outlined">
-            call
-          </span>
+          <PhoneIcon />
           <p className="nav-link-text">Reach out</p>
         </NavLink>
       </div>
 
       <div className="lower-nav">
         <button type="button" onClick={toggleDirectLinksVisibility}>
-          <span className="material-symbols-outlined">
-            account_circle
-          </span>
+          <UserIcon />
           <p className="nav-link-text">Direct Links</p>
         </button>
         <button type="button" onClick={toggleThemeSelectorVisibility}>
-          <span className="material-symbols-outlined">
-            settings
-          </span>
+          <CogIcon />
           <p className="nav-link-text">Themes</p>
         </button>
 
@@ -93,9 +90,7 @@ export default function Sidebar() {
           type="button"
           onClick={() => setExpanded(!expanded)}
         >
-          <span className="material-symbols-outlined">
-            {expanded ? 'chevron_left' : 'chevron_right'}
-          </span>
+          {expanded ? <ChevronLeftIcon /> : <ChevronRightIcon />}
         </button>
       </div>
     </nav>

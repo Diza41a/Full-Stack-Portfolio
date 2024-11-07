@@ -12,19 +12,6 @@
   src: url(../assets/fonts/code_pro/Code\ Pro\ LC.woff);
 }
 
-@font-face {
-  font-family: 'Material Icons';
-  font-display: block;
-}
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 300,
-  'GRAD' 0,
-  'opsz' 48
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -905,13 +892,16 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
                 margin-left: auto;
                 display: flex;
                 justify-content: flex-end;
-                padding: $fontSize * 0.25;
+                padding: $fontSize * 0.4 $fontSize * 0.25;
 
                 button {
+                  display: flex;
+                  align-items: center;
                   margin: 0 $fontSize * 0.35;
 
-                  span {
-                    font-size: $fontSize * 1.45;
+                  svg {
+                    width: $fontSize * 1.2;
+                    height: $fontSize * 1.2;
                   }
 
                   &.shuffle-btn {
@@ -1519,14 +1509,6 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
             }
           }
         }
-
-        .shuffle-btns {
-          button {
-            &[data-task="confirm"] {
-              display: initial!important;
-            }
-          }
-        }
       }
 
       .portfolio-manager-wrap {
@@ -2127,8 +2109,8 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     }
 
     a.active {
-      .material-symbols-outlined {
-        text-shadow: 0 0 0.24em rgb(237, 242, 255);
+      svg {
+        filter: drop-shadow(0px 0px 0.24em rgb(237, 242, 255));
       }
     }
 
@@ -2157,8 +2139,14 @@ $tab, $subsectionSelector, $navHighlight, $gutterBackground, $gutterForeground, 
     }
 
     .shuffle-btns {
-      button > span, .tooltip {
-          text-shadow: 0 0 0.24em rgb(237, 242, 255);
+      .tooltip {
+        text-shadow: 0 0 0.24em rgb(237, 242, 255);
+      }
+
+      button > svg {
+        filter: drop-shadow(0px 0px 0.24em rgb(237, 242, 255));
+        margin-top: auto;
+        stroke-width: 1.5px;
       }
     }
 
