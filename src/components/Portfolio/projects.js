@@ -2,10 +2,43 @@ const IMGBB_PREFIX = 'https://i.ibb.co';
 
 const projects = [
   {
+    title: 'OfKors European Bakery',
+    description: `2024
+
+    Frontend: Typescript, React (Hooks, Router), React Query, i18next, Styled Components.
+    Backend: Nest.js, Node.js,  MongoDB Atlas + Mongoose ODM.
+    Deployment: Vercel.
+    Tools: Git, GitHub, Vite.
+
+    ...TBU
+    `,
+    links: {
+      frontend: 'https://github.com/Diza41a/ofkors-bakery-remake',
+      backend: 'https://github.com/Diza41a/ofkors-bakery-remake-server',
+      website: 'https://OfKorsEuroBakery.com',
+    },
+    images: {
+      main: [
+        `${IMGBB_PREFIX}/ZYHzbqp/ob-landing.png`,
+        `${IMGBB_PREFIX}/1QNpLtw/ob-about.png`,
+        `${IMGBB_PREFIX}/NK3Fpqf/ob-gallery.png`,
+        `${IMGBB_PREFIX}/HrYKBNz/ob-menu.png`,
+        `${IMGBB_PREFIX}/sqFYCwB/ob-reach-out.png`,
+      ],
+      mobile: [
+        `${IMGBB_PREFIX}/c28fhh2/ob-landing-mobile.png`,
+        `${IMGBB_PREFIX}/stD4vdw/ob-about-mobile.png`,
+        `${IMGBB_PREFIX}/7kRyhm2/ob-gallery-mobile.png`,
+        `${IMGBB_PREFIX}/hWvQx6V/ob-menu-mobile.png`,
+        `${IMGBB_PREFIX}/BCfR0Zj/ob-reach-out-mobile.png`,
+      ],
+    },
+  },
+  {
     title: 'Nick Abramov Portfolio',
     description: `2024
 
-    Frontend: Typescript, React (hooks), React Query, MUI (styled components).
+    Frontend: Typescript, React (Hooks, Router), React Query, MUI (styled components).
     Backend: Nest.js, Node.js,  MongoDB Atlas + Mongoose ODM.
     Deployment: Vercel.
     Tools: Git, GitHub, Webpack, Babel.
@@ -109,7 +142,7 @@ const projects = [
 ];
 
 const inProgress = [
-  { title: 'OfKors Bakery (remake)' },
+  { title: 'TBD React Native Project' },
 ];
 
 export { projects, inProgress };
